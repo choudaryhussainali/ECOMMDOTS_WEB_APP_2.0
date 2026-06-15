@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Testimonials — Ecommdots | What Tycoons Say</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/testimonials.css') }}">
+</head>
+<body>
+
+<!-- ── CURSOR ── -->
+<div id="cur-dot"></div>
+<div id="cur-ring"></div>
+
+<!-- ── SOCIAL SIDEBAR ── -->
+<div class="social-sidebar open" id="socialSidebar">
+  <button class="toggle-btn" id="toggleBtn" aria-label="Toggle sidebar">
+    <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </button>
+  <div class="social-links" id="socialLinks">
+    <a href="https://wa.me/923420147244" target="_blank" rel="noopener noreferrer" class="social-btn whatsapp-btn" aria-label="WhatsApp">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+      </svg>
+    </a>
+    <!-- <a href="mailto:help@telsolutionspk.com" class="social-btn email-btn" aria-label="Email">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+        <polyline points="22,4 12,13 2,4"></polyline>
+      </svg>
+    </a> -->
+    <a href="https://linkedin.com/company/yourcompany" target="_blank" rel="noopener noreferrer" class="social-btn linkedin-btn" aria-label="LinkedIn">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+      </svg>
+    </a>
+    <a href="https://youtube.com/@yourchannel" target="_blank" rel="noopener noreferrer" class="social-btn youtube-btn" aria-label="YouTube">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.5 12 3.5 12 3.5s-7.505 0-9.377.55a3.015 3.015 0 0 0-2.122 2.136C0 8.07 0 12 0 12s0 3.93.501 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.55 9.377.55 9.377.55s7.505 0 9.377-.55a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+      </svg>
+    </a>
+  </div>
+</div>
+
+<nav class="mobile-nav" id="mobileNav" aria-label="Mobile Navigation">
+  <div class="mobile-nav-links">
+    <a href="services" data-close-nav>Services</a>
+    <a href="./#brands" data-close-nav>Brands</a>
+    <a href="about" data-close-nav>About</a>
+    <a href="./#case-studies" data-close-nav>Case Studies</a>
+    <a href="blog" data-close-nav>Blog</a>
+    <a href="testimonials" data-close-nav>Testimonials</a>
+    <a href="career" data-close-nav>Careers</a>
+  </div>
+  <div class="mobile-nav-cta">
+    <a href="#" class="btn-audit" id="mobileCalendlyBtn">BOOK FREE CONSULTATION</a>
+  </div>
+</nav>
+
+<header class="main-header" id="mainHeader">
+    <nav class="container nav-wrapper">
+        <a href="index.html" class="brand-logo">
+            <div class="brand-icon-wrap">
+                <svg class="brand-icon-svg" viewBox="0 0 180 180" preserveAspectRatio="xMidYMid meet">
+                    <defs>
+                        <linearGradient id="header-lacquer" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#ff4d5a" />
+                            <stop offset="40%" stop-color="#d9232d" />
+                            <stop offset="100%" stop-color="#991118" />
+                        </linearGradient>
+                        <filter id="header-glow" x="-30%" y="-30%" width="160%" height="160%">
+                            <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#d9232d" flood-opacity="0.45" />
+                        </filter>
+                    </defs>
+                    <g class="header-mark-group">
+                        <circle cx="90" cy="90" r="65" fill="url(#header-lacquer)" filter="url(#header-glow)" />
+                        <g class="header-ed-text">
+                            <text x="68" y="110" font-family="'Montserrat', 'Futura', 'Century Gothic', sans-serif" font-weight="200" font-size="66" fill="#ffffff" text-anchor="middle" transform="rotate(-24 68 90)">e</text>
+                            <text x="112" y="112" font-family="'Montserrat', 'Futura', 'Century Gothic', sans-serif" font-weight="200" font-size="74" fill="#ffffff" text-anchor="middle">d</text>
+                        </g>
+                    </g>
+                </svg>
+            </div>
+            <div class="brand-text">ECOMM<span class="gradient-text">DOTS</span></div>
+        </a>
+        <ul class="nav-links">
+            <li class="nav-has-dropdown">
+                <a href="services" class="nav-drop-trigger">
+                    Services 
+                    <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" fill="none"><path d="M6 9l6 6 6-6"/></svg>
+                </a>
+                <div class="nav-dropdown">
+                    <div class="nav-dropdown-inner mega-menu">
+                        <a href="services#product-launch-strategy" class="nav-drop-item">
+                            <span class="nd-title">Product Launch Strategy</span>
+                            <span class="nd-sub">End-to-end marketplace readiness</span>
+                        </a>
+                        <a href="services#product-research-analysis" class="nav-drop-item">
+                            <span class="nd-title">Product Research Analysis</span>
+                            <span class="nd-sub">Data-driven opportunity discovery</span>
+                        </a>
+                        <a href="services#sourcing-logistics-solutions" class="nav-drop-item">
+                            <span class="nd-title">Sourcing & Logistics</span>
+                            <span class="nd-sub">Supply chain & global manufacturing</span>
+                        </a>
+                        <a href="services#listing-optimization" class="nav-drop-item">
+                            <span class="nd-title">Listing Optimization</span>
+                            <span class="nd-sub">SEO & conversion rate refinement</span>
+                        </a>
+                        <a href="services#creative-design-solutions" class="nav-drop-item">
+                            <span class="nd-title">Creative Design</span>
+                            <span class="nd-sub">High-converting visual assets</span>
+                        </a>
+                        <a href="services#ppc-account-management" class="nav-drop-item">
+                            <span class="nd-title">PPC Management</span>
+                            <span class="nd-sub">Strategic ad spend optimization</span>
+                        </a>
+                        <a href="services#account-health-support" class="nav-drop-item">
+                            <span class="nd-title">Account Health Support</span>
+                            <span class="nd-sub">Compliance & risk mitigation</span>
+                        </a>
+                        <a href="services#multichannel-commerce-integration" class="nav-drop-item">
+                            <span class="nd-title">Multichannel Integration</span>
+                            <span class="nd-sub">Unified ecommerce ecosystem</span>
+                        </a>
+                        <a href="services" class="nav-drop-item">
+                            <span class="nd-title">All Services</span>
+                            <span class="nd-sub">Bespoke 8-figure architectures</span>
+                        </a>
+                    </div>
+                </div>
+            </li>
+            <li><a href="./#brands">Brands</a></li>
+            <li class="nav-has-dropdown">
+                <a href="about" class="nav-drop-trigger">
+                    About 
+                    <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" fill="none"><path d="M6 9l6 6 6-6"/></svg>
+                </a>
+                <div class="nav-dropdown">
+                    <div class="nav-dropdown-inner">
+                        <a href="about#about" class="nav-drop-item">
+                            <span class="nd-title">Our Story</span>
+                            <span class="nd-sub">About ECOMMDOTS</span>
+                        </a>
+                        <a href="/about#mission" class="nav-drop-item">
+                            <span class="nd-title">Core Philosophy</span>
+                            <span class="nd-sub">Our mission & manifesto</span>
+                        </a>
+                        <a href="/about#legacy" class="nav-drop-item">
+                            <span class="nd-title">Agency Genesis</span>
+                            <span class="nd-sub">The legacy we're building</span>
+                        </a>
+                        <a href="/about#team" class="nav-drop-item">
+                            <span class="nd-title">The Architects</span>
+                            <span class="nd-sub">Leadership & strategy team</span>
+                        </a>
+                    </div>
+                </div>
+            </li>
+            <li><a href="testimonials">Testimonials</a></li>
+            <li><a href="career">Career</a></li>
+        </ul>
+        <div class="nav-controls">
+            <a href="#" class="btn-audit" id="desktopCalendlyBtn">BOOK FREE CONSULTATION</a>
+            <button class="hamburger" id="hamburger" aria-label="Open Menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+</header>
+
+<!-- ═══════════════ HERO — HALL OF PROOF ═══════════════ -->
+<section class="testi-hero">
+  <div class="hero-bloom bloom-1"></div>
+  <div class="hero-bloom bloom-2"></div>
+  <div class="hero-v-label">HALL OF PROOF — 2019 TO PRESENT</div>
+
+  <div class="container hero-inner">
+
+    <!-- Left: Statement -->
+    <div class="hero-left">
+      <div class="hero-eyebrow">
+        <span class="ey-line"></span>
+        <span class="ey-text">VERIFIED CLIENT FEEDBACK</span>
+      </div>
+      <h1 class="hero-h1">VOICES<br>THAT <span class="red">PROVE</span><br>RESULTS.</h1>
+      <p class="hero-desc">Not marketing claims. Not scripted testimonials. Real feedback from founders and operators who partnered with us to scale their Amazon and eCommerce brands—and experienced measurable growth.</p>
+      <div class="hero-stats-row">
+        <div class="hstat">
+          <div class="hstat-num"><span class="counter" data-target="87">0</span><span>+</span></div>
+          <div class="hstat-label">Brands Successfully Scaled</div>
+        </div>
+        <div class="hstat">
+          <div class="hstat-num">5<span>/5</span></div>
+          <div class="hstat-label">Average Client Rating</div>
+        </div>
+        <div class="hstat">
+          <div class="hstat-num">96<span>%</span></div>
+          <div class="hstat-label">Client Renewal Rate</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: Portrait mosaic -->
+    <div class="hero-right">
+      <div class="portrait-card pc-1">
+        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&auto=format&fit=crop&q=80" alt="Client">
+      </div>
+      <div class="portrait-card pc-2">
+        <img src="https://images.unsplash.com/photo-1573496799652-408c2ac9fe98?w=500&auto=format&fit=crop&q=80" alt="Client">
+      </div>
+      <div class="portrait-card pc-3">
+        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&auto=format&fit=crop&q=80" alt="Client">
+      </div>
+      <div class="portrait-card pc-4">
+        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&auto=format&fit=crop&q=80" alt="Client">
+      </div>
+      <div class="portrait-card pc-5">
+        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&auto=format&fit=crop&q=80" alt="Client">
+      </div>
+
+      <!-- Floating testimonial badge -->
+      <div class="hero-quote-badge">
+        <div class="hqb-stars">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <div class="hqb-quote">"Saif Is Fantastic! Very high level of expertise in ecommerce. Highly recommended!"</div>
+        <div class="hqb-author">
+          <img class="hqb-avatar" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&auto=format&fit=crop&q=80" alt="Adrian J.">
+          <div>
+            <div class="hqb-name">ADRIAN J.</div>
+            <div class="hqb-role">Co-Founder, UNO Brands</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ── PROOF STRIP ── -->
+<div class="proof-strip">
+  <div class="strip-track" id="stripTrack"></div>
+</div>
+
+<!-- ═══════════════ VIDEO TESTIMONIALS ═══════════════ -->
+<section class="video-section" id="video-testimonials">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-eyebrow" style="justify-content:center;margin-bottom:12px;">
+        <span class="ey-line"></span>
+        <span class="ey-text">Watch & Believe</span>
+      </div>
+      <h2>VIDEO <span style="color:var(--red)">TESTIMONIALS</span></h2>
+      <p>Hear directly from the founders and brand owners who partnered with Ecommdots to scale their Amazon and eCommerce businesses through structured strategy, execution, and performance-driven growth.</p>
+    </div>
+
+    <div class="video-carousel-wrap reveal">
+      <div class="video-track" id="videoTrack">
+
+        <!-- VID 1 -->
+        <div class="video-card" data-client="Adrian J.">
+          <div class="vc-thumb">
+            <img src="https://images.unsplash.com/photo-1556761175-4b46a572b786?w=600&auto=format&fit=crop&q=80" alt="Adrian J. Video">
+            <div class="vc-stars">
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <div class="vc-play">
+              <div class="vc-play-btn"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+            </div>
+            <div class="vc-duration">2:34</div>
+          </div>
+          <div class="vc-body">
+            <div class="vc-meta">FULL ACCOUNT MANAGEMENT · AMAZON US</div>
+            <div class="vc-quote">"Went above and beyond what was necessary. Very high level of expertise in ecommerce."</div>
+            <div class="vc-author">
+              <img class="vc-avatar" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&auto=format&fit=crop&q=80" alt="Adrian J.">
+              <div>
+                <div class="vc-name">Adrian J.</div>
+                <div class="vc-role">Co-Founder · UNO Brands</div>
+                <div class="vc-platform">Verified Upwork Review</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- VID 2 -->
+        <div class="video-card" data-client="Serdar A.">
+          <div class="vc-thumb">
+            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600&auto=format&fit=crop&q=80" alt="Serdar A. Video">
+            <div class="vc-stars">
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <div class="vc-play">
+              <div class="vc-play-btn"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+            </div>
+            <div class="vc-duration">3:12</div>
+          </div>
+          <div class="vc-body">
+            <div class="vc-meta">BRAND MANAGEMENT · AMAZON EU</div>
+            <div class="vc-quote">"Very reliable and understands new tasks in a short time. I would hire him again anytime."</div>
+            <div class="vc-author">
+              <img class="vc-avatar" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=80" alt="Serdar A.">
+              <div>
+                <div class="vc-name">Serdar A.</div>
+                <div class="vc-role">Founder · Serasar</div>
+                <div class="vc-platform">Verified Upwork Review</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- VID 3 -->
+        <div class="video-card" data-client="Brooks M.">
+          <div class="vc-thumb">
+            <img src="https://images.unsplash.com/photo-1573496799652-408c2ac9fe98?w=600&auto=format&fit=crop&q=80" alt="Brooks M. Video">
+            <div class="vc-stars">
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <div class="vc-play">
+              <div class="vc-play-btn"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+            </div>
+            <div class="vc-duration">1:58</div>
+          </div>
+          <div class="vc-body">
+            <div class="vc-meta">AMAZON PPC & LISTING REPAIR</div>
+            <div class="vc-quote">"Did exactly what was needed to upload and repair multiple Amazon listings seamlessly."</div>
+            <div class="vc-author">
+              <img class="vc-avatar" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&auto=format&fit=crop&q=80" alt="Brooks M.">
+              <div>
+                <div class="vc-name">Brooks M.</div>
+                <div class="vc-role">Founder · Earth Fed Muscle</div>
+                <div class="vc-platform">Verified Upwork Review</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- VID 4 -->
+        <div class="video-card" data-client="Joseph W.">
+          <div class="vc-thumb">
+            <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=600&auto=format&fit=crop&q=80" alt="Joseph W. Video">
+            <div class="vc-stars">
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <div class="vc-play">
+              <div class="vc-play-btn"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+            </div>
+            <div class="vc-duration">4:05</div>
+          </div>
+          <div class="vc-body">
+            <div class="vc-meta">LARGE CATALOG MANAGEMENT</div>
+            <div class="vc-quote">"Great work. Fast learner and helped us manage a large portfolio of products. Highly recommend!"</div>
+            <div class="vc-author">
+              <img class="vc-avatar" src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=100&auto=format&fit=crop&q=80" alt="Joseph W.">
+              <div>
+                <div class="vc-name">Joseph W.</div>
+                <div class="vc-role">Founder · Willis Worxs</div>
+                <div class="vc-platform">Verified Upwork Review</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- VID 5 -->
+        <div class="video-card" data-client="Emily B.">
+          <div class="vc-thumb">
+            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=600&auto=format&fit=crop&q=80" alt="Emily B. Video">
+            <div class="vc-stars">
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <div class="vc-play">
+              <div class="vc-play-btn"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+            </div>
+            <div class="vc-duration">2:22</div>
+          </div>
+          <div class="vc-body">
+            <div class="vc-meta">AMAZON KDP & LISTING OPTIMIZATION</div>
+            <div class="vc-quote">"I've worked with Saif on several projects — always happy with the quality and timeliness."</div>
+            <div class="vc-author">
+              <img class="vc-avatar" src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=100&auto=format&fit=crop&q=80" alt="Emily B.">
+              <div>
+                <div class="vc-name">Emily B.</div>
+                <div class="vc-role">Author · Amazon KDP Seller</div>
+                <div class="vc-platform">Verified Upwork Review</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /video-track -->
+    </div><!-- /carousel-wrap -->
+
+    <!-- Controls -->
+    <div class="carousel-controls reveal">
+      <button class="cc-btn" id="vcPrev" aria-label="Previous">
+        <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <div class="cc-dots" id="vcDots"></div>
+      <button class="cc-btn" id="vcNext" aria-label="Next">
+        <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════ FEATURED QUOTE BREAK ═══════════════ -->
+<section class="featured-quote-section">
+  <div class="fq-bg-text">PROOF</div>
+  <div class="container fq-inner reveal scale">
+    <span class="fq-quote-mark">"</span>
+    <p class="fq-text">
+      Working with Ecommdots was a <strong>turning point for our brand.</strong>
+      In six months they transformed our entire Amazon architecture — our ROAS went from
+      1.8× to over 6× and we finally cracked <strong>seven figures on the platform.</strong>
+      This isn't an agency; they're co-founders who genuinely care about your numbers.
+    </p>
+    <div class="fq-author">
+      <img class="fq-avatar" src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=200&auto=format&fit=crop&q=80" alt="Marcus T.">
+      <div class="fq-info">
+        <div class="fq-name">MARCUS T.</div>
+        <div class="fq-role">Founder · Departure Outdoor — $2.4M Amazon Revenue</div>
+        <div class="fq-stars">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ TEXT REVIEWS MOSAIC ═══════════════ -->
+<section class="reviews-section" id="reviews">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-eyebrow" style="justify-content:center;margin-bottom:12px;">
+        <span class="ey-line"></span>
+        <span class="ey-text">Written Proof</span>
+      </div>
+      <h2>WHAT CLIENTS <span style="color:var(--red)">SAY.</span></h2>
+      <p style="color:#666;">Authentic, verified feedback from brand owners and operators across multiple platforms. Real experiences from clients who partnered with Ecommdots to scale their Amazon and eCommerce businesses through structured execution and measurable growth.</p>
+    </div>
+
+    <div class="reviews-mosaic">
+
+      <!-- Card 1 — Featured Dark -->
+      <div class="review-card featured reveal del-1">
+        <div class="rv-header">
+          <div class="rv-stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <span class="rv-platform-badge badge-direct">Direct</span>
+        </div>
+        <span class="rv-quote">"</span>
+        <div class="rv-text">Saif Is Fantastic! He went above and beyond what was necessary. Very high level of expertise in ecommerce. Highly recommended!!!</div>
+        <div class="rv-author">
+          <img class="rv-avatar" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&auto=format&fit=crop&q=80" alt="Adrian J.">
+          <div>
+            <div class="rv-name">Adrian J.</div>
+            <div class="rv-role">Co-Founder · UNO Brands</div>
+            <div class="rv-date">Verified · Upwork</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="review-card reveal del-2">
+        <div class="rv-header">
+          <div class="rv-stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <span class="rv-platform-badge badge-upwork">Upwork</span>
+        </div>
+        <span class="rv-quote">"</span>
+        <div class="rv-text">Very hardworking freelancer, very good English skills. Very reliable and understands new tasks in a short time. I would hire him again anytime.</div>
+        <div class="rv-author">
+          <img class="rv-avatar" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=80" alt="Serdar A.">
+          <div>
+            <div class="rv-name">Serdar A.</div>
+            <div class="rv-role">Founder · Serasar</div>
+            <div class="rv-date">Verified · Upwork</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="review-card reveal del-3">
+        <div class="rv-header">
+          <div class="rv-stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <span class="rv-platform-badge badge-amazon">Amazon</span>
+        </div>
+        <span class="rv-quote">"</span>
+        <div class="rv-text">Did exactly what was needed to upload and repair multiple Amazon listings. Clean, efficient, and delivered exactly on time without back-and-forth.</div>
+        <div class="rv-author">
+          <img class="rv-avatar" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&auto=format&fit=crop&q=80" alt="Brooks M.">
+          <div>
+            <div class="rv-name">Brooks M.</div>
+            <div class="rv-role">Founder · Earth Fed Muscle</div>
+            <div class="rv-date">Verified · Amazon Seller Community</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="review-card reveal del-1">
+        <div class="rv-header">
+          <div class="rv-stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <span class="rv-platform-badge badge-upwork">Upwork</span>
+        </div>
+        <span class="rv-quote">"</span>
+        <div class="rv-text">I've worked with Saif on several projects; I am always happy with the quality of work and his timeliness. I will work with him in the future.</div>
+        <div class="rv-author">
+          <img class="rv-avatar" src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=100&auto=format&fit=crop&q=80" alt="Emily B.">
+          <div>
+            <div class="rv-name">Emily B.</div>
+            <div class="rv-role">Author · Amazon KDP Seller</div>
+            <div class="rv-date">Verified · Upwork</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 5 — Featured Dark -->
+      <div class="review-card featured reveal del-2">
+        <div class="rv-header">
+          <div class="rv-stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <span class="rv-platform-badge badge-direct">Direct</span>
+        </div>
+        <span class="rv-quote">"</span>
+        <div class="rv-text">Great work. Was a fast learner and helped us manage a large portfolio of products. Great communication and work ethic. Highly recommend!</div>
+        <div class="rv-author">
+          <img class="rv-avatar" src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=100&auto=format&fit=crop&q=80" alt="Joseph W.">
+          <div>
+            <div class="rv-name">Joseph W.</div>
+            <div class="rv-role">Founder · Willis Worxs</div>
+            <div class="rv-date">Verified · Upwork</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="review-card reveal del-3">
+        <div class="rv-header">
+          <div class="rv-stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <span class="rv-platform-badge badge-upwork">Upwork</span>
+        </div>
+        <span class="rv-quote">"</span>
+        <div class="rv-text">Saif is professional and highly experienced with Amazon. Would definitely recommend for anyone looking to scale their e-commerce operations.</div>
+        <div class="rv-author">
+          <img class="rv-avatar" src="https://images.unsplash.com/photo-1573496799652-408c2ac9fe98?w=100&auto=format&fit=crop&q=80" alt="Leesa M.">
+          <div>
+            <div class="rv-name">Leesa M.</div>
+            <div class="rv-role">Author · Amazon KDP Seller</div>
+            <div class="rv-date">Verified · Upwork</div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /reviews-mosaic -->
+  </div>
+</section>
+
+<!-- ═══════════════ RATINGS OVERVIEW ═══════════════ -->
+<section class="ratings-overview" id="ratings">
+  <div class="container">
+    <div class="section-header reveal" style="margin-bottom:80px;">
+      <div class="section-eyebrow" style="justify-content:center;margin-bottom:12px;">
+        <span class="ey-line"></span>
+        <span class="ey-text">The Numbers</span>
+      </div>
+      <h2 style="font-family:var(--font-d);font-size:clamp(52px,7vw,100px);line-height:.9;letter-spacing:.02em;margin-top:12px;">RATINGS <span style="color:var(--red)">OVERVIEW</span></h2>
+    </div>
+    <div class="ratings-grid">
+
+      <!-- Score -->
+      <div class="ro-score-side reveal scale">
+        <div class="ro-big-num">5<span>.0</span></div>
+        <div class="ro-star-row">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <div class="ro-total">Average across 87+ verified reviews</div>
+      </div>
+
+      <!-- Bar chart -->
+      <div class="ro-bars reveal">
+        <div class="ro-bar-row">
+          <span class="ro-bar-label">5</span>
+          <div class="ro-bar-track"><div class="ro-bar-fill" style="--w:.92" data-width=".92"></div></div>
+          <span class="ro-bar-pct">92%</span>
+        </div>
+        <div class="ro-bar-row">
+          <span class="ro-bar-label">4</span>
+          <div class="ro-bar-track"><div class="ro-bar-fill" style="--w:.06" data-width=".06"></div></div>
+          <span class="ro-bar-pct">6%</span>
+        </div>
+        <div class="ro-bar-row">
+          <span class="ro-bar-label">3</span>
+          <div class="ro-bar-track"><div class="ro-bar-fill" style="--w:.02" data-width=".02"></div></div>
+          <span class="ro-bar-pct">2%</span>
+        </div>
+        <div class="ro-bar-row">
+          <span class="ro-bar-label">2</span>
+          <div class="ro-bar-track"><div class="ro-bar-fill" style="--w:.00" data-width="0"></div></div>
+          <span class="ro-bar-pct">0%</span>
+        </div>
+        <div class="ro-bar-row">
+          <span class="ro-bar-label">1</span>
+          <div class="ro-bar-track"><div class="ro-bar-fill" style="--w:.00" data-width="0"></div></div>
+          <span class="ro-bar-pct">0%</span>
+        </div>
+      </div>
+
+      <!-- Platform breakdown -->
+      <div class="ro-platforms reveal from-right">
+        <div class="ro-platform">
+          <div class="ro-platform-icon" style="background:rgba(255,153,0,.1);">
+            <svg width="24" height="24" viewBox="0 0 448 512" fill="#FF9900"><path d="M257.2 162.7c-48.7 1.8-169.5 15.5-169.5 117.5 0 109.5 138.3 114 183.5 43.2 6.5 10.2 35.4 37.5 45.3 46.8l56.8-56S341 288.9 341 261.4V114.3C341 89 316.5 32 228.7 32 140.7 32 94 87 94 136.3l73.5 6.8c16.3-49.5 54.2-49.5 54.2-49.5 40.7-.1 35.5 29.8 35.5 69.1z"/></svg>
+          </div>
+          <div class="ro-platform-info"><h4>Amazon</h4><span>47 verified reviews</span></div>
+          <div class="ro-platform-stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+        </div>
+        <div class="ro-platform">
+          <div class="ro-platform-icon" style="background:rgba(20,133,62,.1);">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#14853e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+          </div>
+          <div class="ro-platform-info"><h4>Upwork</h4><span>31 verified reviews</span></div>
+          <div class="ro-platform-stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+        </div>
+        <div class="ro-platform">
+          <div class="ro-platform-icon" style="background:rgba(66,133,244,.1);">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4285F4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div class="ro-platform-info"><h4>Direct Clients</h4><span>9 verified reviews</span></div>
+          <div class="ro-platform-stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════ CONTACT SECTION ═══════════════════ -->
+<section class="contact-section" id="contact">
+    <div class="container">
+        <div class="contact-inner">
+
+            <div class="contact-copy">
+                <div class="section-eyebrow" style="margin-bottom:24px;">
+                    <span class="ey-line" style="background: rgba(255, 255, 255, 0.5);"></span>
+                    <span class="ey-text" style="color: #ffffff;">Get In Touch</span>
+                </div>
+                <h2 class="contact-h2">LET'S BUILD<br>SOMETHING<br><em>UNFORGETTABLE</em></h2>
+                <p class="contact-lead">Tell us where your brand is today. We'll show you exactly where it can be — and map the fastest path to get there. No fluff, no pitch decks. Just clarity.</p>
+
+                <div class="contact-trust">
+                    <div class="ct-item">
+                        <div class="ct-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                        </div>
+                        <div class="ct-text">
+                            <strong>Offices</strong>
+                            <span>London, UK · New York, US · Dubai, UAE<br>Lahore, Pakistan</span>
+                        </div>
+                    </div>
+
+                    <div class="ct-item">
+                        <div class="ct-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                            </svg>
+                        </div>
+                        <div class="ct-text">
+                            <strong>Phone Number</strong>
+                            <span><a href="tel:+923420147244" style="color: inherit; text-decoration: none;">+92 342 014 7244</a></span>
+                        </div>
+                    </div>
+
+                    <div class="ct-item">
+                        <div class="ct-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                        </div>
+                        <div class="ct-text">
+                            <strong>Mail Address</strong>
+                            <span><a href="mailto:help@telsolutionspk.com" style="color: inherit; text-decoration: none;">help@telsolutionspk.com</a></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form-card">
+                <div id="contactForm">
+                    <div class="form-title">FREE AUDIT</div>
+                    <div class="form-subtitle">Fill in the details below and a senior strategist will review your account personally.</div>
+
+                    <div class="form-grid">
+                        
+                        <div class="form-row-2">
+                            <div class="form-group">
+                                <label class="form-label" for="cf-name">Full Name</label>
+                                <input type="text" id="cf-name" class="form-input" placeholder="Your name" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="cf-email">Business Email</label>
+                                <input type="email" id="cf-email" class="form-input" placeholder="you@company.com" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row-2">
+                            <div class="form-group">
+                                <label class="form-label" for="cf-brand">Brand / Company</label>
+                                <input type="text" id="cf-brand" class="form-input" placeholder="Your Amazon brand">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="cf-phone">Phone Number</label>
+                                <input type="tel" id="cf-phone" class="form-input" placeholder="+1 (555) 000-0000">
+                            </div>
+                        </div>
+
+                        <div class="form-group full">
+                            <label class="form-label" for="cf-revenue">Monthly Amazon Revenue</label>
+                            <select id="cf-revenue" class="form-select">
+                                <option value="" disabled selected>Select your revenue range</option>
+                                <option>Under $10,000 / month</option>
+                                <option>$10,000 – $50,000 / month</option>
+                                <option>$50,000 – $100,000 / month</option>
+                                <option>$100,000 – $500,000 / month</option>
+                                <option>$500,000+ / month</option>
+                                <option>Pre-launch (Not yet selling)</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group full">
+                            <label class="form-label" style="margin-bottom: 6px;">Services You're Interested In</label>
+                            <div class="form-checkgroup">
+                                <label class="form-check">
+                                    <input type="checkbox" value="ppc">
+                                    <span class="form-check-label">PPC Management</span>
+                                </label>
+                                <label class="form-check">
+                                    <input type="checkbox" value="listing">
+                                    <span class="form-check-label">Listing Optimisation</span>
+                                </label>
+                                <label class="form-check">
+                                    <input type="checkbox" value="creative">
+                                    <span class="form-check-label">Creative Studio</span>
+                                </label>
+                                <label class="form-check">
+                                    <input type="checkbox" value="health">
+                                    <span class="form-check-label">Account Health</span>
+                                </label>
+                                <label class="form-check">
+                                    <input type="checkbox" value="sourcing">
+                                    <span class="form-check-label">Product Sourcing</span>
+                                </label>
+                                <label class="form-check">
+                                    <input type="checkbox" value="global">
+                                    <span class="form-check-label">Global Expansion</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group full">
+                            <label class="form-label" for="cf-challenge">Primary Challenge</label>
+                            <select id="cf-challenge" class="form-select">
+                                <option value="" disabled selected>What's your biggest challenge right now?</option>
+                                <option>PPC / Ad spend efficiency</option>
+                                <option>Listing conversion rate</option>
+                                <option>Organic ranking & SEO</option>
+                                <option>Account health / suspension</option>
+                                <option>New product launch</option>
+                                <option>International expansion</option>
+                                <option>Brand protection</option>
+                                <option>Overall profitability</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group full">
+                            <label class="form-label" for="cf-message">Tell Us About Your Brand</label>
+                            <textarea id="cf-message" class="form-textarea" placeholder="Share your current situation, goals, or anything you'd like us to know going in — the more detail, the better your audit will be..."></textarea>
+                        </div>
+
+                    </div>
+                    
+                    <button class="form-submit" id="formSubmit" type="button">
+                        <span>REQUEST MY FREE AUDIT</span>
+                        <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </button>
+                    
+                    <p class="form-fine">By submitting you agree to our privacy policy. We never share your data with third parties, ever.</p>
+                </div>
+
+                <div class="form-success" id="formSuccess">
+                    <div class="form-success-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                    </div>
+                    <h3>AUDIT BOOKED.</h3>
+                    <p>A senior strategist from our team will review your account and be in touch personally within 24 hours. Check your inbox for a confirmation.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════ FOOTER ═══════════════════ -->
+<footer class="footer">
+    <div class="footer-glow"></div>
+
+    <div class="container relative-z">
+        <div class="footer-grid-premium">
+            
+            <div class="footer-brand-col">
+                <a href="#" class="brand-logo" style="margin-bottom: 24px; gap: 6px;">
+                    <div class="brand-icon-wrap" style="width: 48px; height: 48px;">
+                        <svg class="brand-icon-svg" viewBox="0 0 180 180" preserveAspectRatio="xMidYMid meet">
+                            <defs>
+                                <linearGradient id="header-lacquer" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#ff4d5a" />
+                                    <stop offset="40%" stop-color="#d9232d" />
+                                    <stop offset="100%" stop-color="#991118" />
+                                </linearGradient>
+                                <filter id="header-glow" x="-30%" y="-30%" width="160%" height="160%">
+                                    <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#d9232d" flood-opacity="0.45" />
+                                </filter>
+                            </defs>
+                            <g class="header-mark-group">
+                                <circle cx="90" cy="90" r="65" fill="url(#header-lacquer)" filter="url(#header-glow)" />
+                                <g class="header-ed-text">
+                                    <text x="68" y="110" font-family="'Montserrat', 'Futura', 'Century Gothic', sans-serif" font-weight="200" font-size="66" fill="#ffffff" text-anchor="middle" transform="rotate(-24 68 90)">e</text>
+                                    <text x="112" y="112" font-family="'Montserrat', 'Futura', 'Century Gothic', sans-serif" font-weight="200" font-size="74" fill="#ffffff" text-anchor="middle">d</text>
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="brand-text" style="font-size: 2.2rem;">ECOMM<span class="gradient-text">DOTS</span></div>
+                </a>
+                <p class="footer-desc">The global Amazon digital services agency for brands that are serious about growth. Data-driven, creatively led, and results-obsessed since 2019.</p>
+            </div>
+
+            <div class="footer-nav-col">
+                <div class="footer-col-title">Expertise</div>
+                <div class="footer-links">
+                    <a href="services#product-launch-strategy"><span>Product Launch</span></a>
+                    <a href="services#product-research-analysis"><span>Product Research</span></a>
+                    <a href="services#sourcing-logistics-solutions"><span>Sourcing & Logistics</span></a>
+                    <a href="services#creative-design-solutions"><span>Creative Design</span></a>
+                    <a href="services#ppc-account-management"><span>PPC Management</span></a>
+                    <a href="services#account-health-support"><span>Account Health</span></a>
+                </div>
+            </div>
+
+            <div class="footer-nav-col">
+                <div class="footer-col-title">The Agency</div>
+                <div class="footer-links">
+                    <a href="about"><span>About Us</span></a>
+                    <a href="./#case-studies"><span>Case Studies</span></a>
+                    <a href="about#team"><span>Our Team</span></a>
+                    <a href="blog"><span>Intelligence Hub</span></a>
+                    <a href="#contact"><span>Book an Audit</span></a>
+                </div>
+            </div>
+
+            <!-- Column 4: Corporate HQ -->
+            <div class="footer-nav-col">
+                <div class="footer-col-title">Corporate HQ</div>
+                <div class="footer-locations">
+                    <div class="loc-item">
+                        <strong>Operations Center</strong>
+                        <span>Lahore, Pakistan</span>
+                    </div>
+                    <div class="loc-item">
+                        <strong>Global Support Hours</strong>
+                        <span>Mon - Fri · 9:00 AM - 6:00 PM (PKT)</span>
+                    </div>
+                    <div class="loc-item">
+                        <strong>Direct Contact</strong>
+                        <a href="mailto:hello@ecommdots.com" class="loc-link">hello@ecommdots.com</a>
+                        <a href="tel:+923420147244" class="loc-link">+92 342 014 7244</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-giant-text">ECOMMDOTS</div>
+
+        <div class="footer-bottom-bar">
+            <div class="fb-copy-wrap">
+                <div class="fb-copy">© 2026 Ecommdots. Engineered for dominance.</div>
+                <div class="fb-watermark">
+                    <span class="wm-text">Developed by</span>
+                    <a href="https://choudaryhussainali.online/" target="_blank" rel="noopener noreferrer" class="wm-link">CHA</a>
+                </div>
+            </div>
+            
+            <div class="fb-legal">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+
+            <div class="fb-socials">
+                <a href="#" class="fb-social-btn" aria-label="LinkedIn">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                </a>
+                <a href="#" class="fb-social-btn" aria-label="Instagram">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                </a>
+                <a href="#" class="fb-social-btn" aria-label="YouTube">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.5 12 3.5 12 3.5s-7.505 0-9.377.55a3.015 3.015 0 0 0-2.122 2.136C0 8.07 0 12 0 12s0 3.93.501 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.55 9.377.55 9.377.55s7.505 0 9.377-.55a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- ── VIDEO MODAL ── -->
+<div class="vid-modal-overlay" id="vidModal">
+  <div class="vid-modal-box">
+    <button class="vid-modal-close" id="vidModalClose">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <div class="vid-placeholder" id="vidPlaceholder">
+      <div class="vp-icon"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+      <p id="vidClientName">Client Testimonial</p>
+    </div>
+  </div>
+</div>
+
+<script src="{{ url_for('static', filename='js/testimonials.js') }}"></script>
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+</body>
+</html>

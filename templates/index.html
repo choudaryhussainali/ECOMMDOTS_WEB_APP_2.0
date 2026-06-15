@@ -1,0 +1,1967 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecommdots — Global Amazon Digital Services Agency</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;800;900&family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+
+<div id="luxury-preloader">
+    <div class="lp-grid-overlay"></div>
+    <div class="lp-content">
+        <svg class="lp-logo-svg" viewBox="0 0 680 250" preserveAspectRatio="xMidYMid meet">
+            <defs>
+                <linearGradient id="lacquer" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#ff4d5a" />
+                    <stop offset="40%" stop-color="#d9232d" />
+                    <stop offset="100%" stop-color="#991118" />
+                </linearGradient>
+                <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+                    <feDropShadow dx="0" dy="12" stdDeviation="18" flood-color="#d9232d" flood-opacity="0.35" />
+                </filter>
+                <clipPath id="text-wipe">
+                    <rect class="lp-wipe-rect" x="225" y="0" width="0" height="250" />
+                </clipPath>
+            </defs>
+
+            <g class="lp-spark-group">
+                <circle cx="167" cy="33" r="9" fill="none" stroke="url(#lacquer)" stroke-width="6" filter="url(#glow)" />
+            </g>
+
+            <circle class="lp-main-circle" cx="90" cy="95" r="65" fill="url(#lacquer)" filter="url(#glow)" />
+
+            <g class="lp-ed-text">
+                <text x="70" y="115" font-family="'Montserrat', 'Futura', 'Century Gothic', sans-serif" font-weight="200" font-size="66" fill="#ffffff" text-anchor="middle" transform="rotate(-24 70 95)">e</text>
+                <text x="110" y="117" font-family="'Montserrat', 'Futura', 'Century Gothic', sans-serif" font-weight="200" font-size="74" fill="#ffffff" text-anchor="middle">d</text>
+            </g>
+
+            <rect class="lp-divider" x="205" y="45" width="4" height="100" fill="url(#lacquer)" rx="2" />
+
+            <g clip-path="url(#text-wipe)">
+                <text class="lp-brand-main" x="245" y="110" font-family="'Bebas Neue', sans-serif" font-size="88" fill="url(#lacquer)" letter-spacing="0.04em">ECOMMDOTS</text>
+                <text class="lp-brand-sub" x="250" y="142" font-family="'Barlow', sans-serif" font-weight="400" font-size="22" fill="#d9232d" letter-spacing="0.45em">DIGITAL AGENCY</text>
+            </g>
+
+            <rect class="lp-glare" x="-100" y="0" width="50" height="250" fill="rgba(255,255,255,0.4)" transform="skewX(-25)" />
+
+            <g class="lp-amz-group">
+                <image class="lp-amz-img" x="-250" y="10" width="1320" height="360" href="{{ url_for('static', filename='images/preloader/arrow.png') }}" filter="url(#glow)" preserveAspectRatio="xMidYMid contain" />           
+            </g>
+
+        </svg>
+    </div>
+</div>
+
+<div class="social-sidebar open" id="socialSidebar">
+  <button class="toggle-btn" id="toggleBtn" aria-label="Toggle sidebar">
+    <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </button>
+    <div class="social-links" id="socialLinks">
+    <!-- Existing WhatsApp -->
+    <a href="https://wa.me/YOUR_NUMBER" target="_blank" rel="noopener noreferrer" class="social-btn whatsapp-btn" aria-label="WhatsApp">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+    </a>
+
+    <!-- Existing Email -->
+    <!-- <a href="mailto:your@email.com" class="social-btn email-btn" aria-label="Email">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+        <polyline points="22,4 12,13 2,4"></polyline>
+        </svg>
+    </a> -->
+
+    <!-- NEW LinkedIn -->
+    <a href="https://linkedin.com/company/yourcompany" target="_blank" rel="noopener noreferrer" class="social-btn linkedin-btn" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+        </svg>
+    </a>
+
+    <!-- NEW YouTube -->
+    <a href="https://youtube.com/@yourchannel" target="_blank" rel="noopener noreferrer" class="social-btn youtube-btn" aria-label="YouTube">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.5 12 3.5 12 3.5s-7.505 0-9.377.55a3.015 3.015 0 0 0-2.122 2.136C0 8.07 0 12 0 12s0 3.93.501 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.55 9.377.55 9.377.55s7.505 0 9.377-.55a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+        </svg>
+    </a>
+    </div>
+</div>
+
+<div id="cur-dot"></div>
+<div id="cur-ring"></div>
+
+<nav class="mobile-nav" id="mobileNav" aria-label="Mobile Navigation">
+  <div class="mobile-nav-links">
+    <a href="services" data-close-nav>Services</a>
+    <a href="./#brands" data-close-nav>Brands</a>
+    <a href="about" data-close-nav>About</a>
+    <a href="./#case-studies" data-close-nav>Case Studies</a>
+    <a href="blog" data-close-nav>Blog</a>
+    <a href="testimonials" data-close-nav>Testimonials</a>
+    <a href="career" data-close-nav>Careers</a>
+  </div>
+  <div class="mobile-nav-cta">
+    <a href="#" class="btn-audit" id="mobileCalendlyBtn">BOOK FREE CONSULTATION</a>
+  </div>
+</nav>
+<header class="main-header" id="mainHeader">
+    <nav class="container nav-wrapper">
+        <a href="index.html" class="brand-logo">
+            <div class="brand-icon-wrap">
+                <svg class="brand-icon-svg" viewBox="0 0 180 180" preserveAspectRatio="xMidYMid meet">
+                    <defs>
+                        <linearGradient id="header-lacquer" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#ff4d5a" />
+                            <stop offset="40%" stop-color="#d9232d" />
+                            <stop offset="100%" stop-color="#991118" />
+                        </linearGradient>
+                        <filter id="header-glow" x="-30%" y="-30%" width="160%" height="160%">
+                            <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#d9232d" flood-opacity="0.45" />
+                        </filter>
+                    </defs>
+                    <g class="header-mark-group">
+                        <circle cx="90" cy="90" r="65" fill="url(#header-lacquer)" filter="url(#header-glow)" />
+                        <g class="header-ed-text">
+                            <text x="68" y="110" font-family="'Montserrat', 'Futura', 'Century Gothic', sans-serif" font-weight="200" font-size="66" fill="#ffffff" text-anchor="middle" transform="rotate(-24 68 90)">e</text>
+                            <text x="112" y="112" font-family="'Montserrat', 'Futura', 'Century Gothic', sans-serif" font-weight="200" font-size="74" fill="#ffffff" text-anchor="middle">d</text>
+                        </g>
+                    </g>
+                </svg>
+            </div>
+            <div class="brand-text">ECOMM<span class="gradient-text">DOTS</span></div>
+        </a>
+        <ul class="nav-links">
+            <li class="nav-has-dropdown">
+                <a href="#services" class="nav-drop-trigger">
+                    Services 
+                    <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" fill="none"><path d="M6 9l6 6 6-6"/></svg>
+                </a>
+                <div class="nav-dropdown">
+                    <div class="nav-dropdown-inner mega-menu">
+                        <a href="services#product-launch-strategy" class="nav-drop-item">
+                            <span class="nd-title">Product Launch Strategy</span>
+                            <span class="nd-sub">End-to-end marketplace readiness</span>
+                        </a>
+                        <a href="services#product-research-analysis" class="nav-drop-item">
+                            <span class="nd-title">Product Research Analysis</span>
+                            <span class="nd-sub">Data-driven opportunity discovery</span>
+                        </a>
+                        <a href="services#sourcing-logistics-solutions" class="nav-drop-item">
+                            <span class="nd-title">Sourcing & Logistics</span>
+                            <span class="nd-sub">Supply chain & global manufacturing</span>
+                        </a>
+                        <a href="services#listing-optimization" class="nav-drop-item">
+                            <span class="nd-title">Listing Optimization</span>
+                            <span class="nd-sub">SEO & conversion rate refinement</span>
+                        </a>
+                        <a href="services#creative-design-solutions" class="nav-drop-item">
+                            <span class="nd-title">Creative Design</span>
+                            <span class="nd-sub">High-converting visual assets</span>
+                        </a>
+                        <a href="services#ppc-account-management" class="nav-drop-item">
+                            <span class="nd-title">PPC Management</span>
+                            <span class="nd-sub">Strategic ad spend optimization</span>
+                        </a>
+                        <a href="services#account-health-support" class="nav-drop-item">
+                            <span class="nd-title">Account Health Support</span>
+                            <span class="nd-sub">Compliance & risk mitigation</span>
+                        </a>
+                        <a href="services#multichannel-commerce-integration" class="nav-drop-item">
+                            <span class="nd-title">Multichannel Integration</span>
+                            <span class="nd-sub">Unified ecommerce ecosystem</span>
+                        </a>
+                        <a href="services" class="nav-drop-item">
+                            <span class="nd-title">All Services</span>
+                            <span class="nd-sub">Bespoke 8-figure architectures</span>
+                        </a>
+                    </div>
+                </div>
+            </li>
+            <li><a href="./#brands">Brands</a></li>
+            <li class="nav-has-dropdown">
+                <a href="about" class="nav-drop-trigger">
+                    About 
+                    <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" fill="none"><path d="M6 9l6 6 6-6"/></svg>
+                </a>
+                <div class="nav-dropdown">
+                    <div class="nav-dropdown-inner">
+                        <a href="about#about" class="nav-drop-item">
+                            <span class="nd-title">Our Story</span>
+                            <span class="nd-sub">About ECOMMDOTS</span>
+                        </a>
+                        <a href="/about#mission" class="nav-drop-item">
+                            <span class="nd-title">Core Philosophy</span>
+                            <span class="nd-sub">Our mission & manifesto</span>
+                        </a>
+                        <a href="/about#legacy" class="nav-drop-item">
+                            <span class="nd-title">Agency Genesis</span>
+                            <span class="nd-sub">The legacy we're building</span>
+                        </a>
+                        <a href="/about#team" class="nav-drop-item">
+                            <span class="nd-title">The Architects</span>
+                            <span class="nd-sub">Leadership & strategy team</span>
+                        </a>
+                    </div>
+                </div>
+            </li>
+            <li><a href="testimonials">Testimonials</a></li>
+            <li><a href="career">Career</a></li>
+        </ul>
+        <div class="nav-controls">
+            <a href="#" class="btn-audit" id="desktopCalendlyBtn">BOOK FREE CONSULTATION</a>
+            <button class="hamburger" id="hamburger" aria-label="Open Menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+</header>
+
+<!-- ═══════════════════ HERO SECTION (EXACT AS IS) ═══════════════════ -->
+<main class="hero-section">
+    <img src="{{ url_for('static', filename='images/homepage/Hero.png') }}" alt="Amazon Scaling Graphic" class="hero-bg-img">
+    <div class="hero-ambient-glow"></div>
+    <div class="container hero-content-wrapper">
+        <div class="hero-content" style="position:relative; z-index:1">
+            <div class="hero-eyebrow">
+                <span class="eyebrow-line"></span>
+                <span class="eyebrow-text">ECOMMERCE GROWTH PARTNERS</span>
+                <span class="live-dot"></span>
+            </div>
+            <h1 class="hero-h1">
+                WE DON'T JUST<br>
+                MANAGE BRANDS.<br>
+                <span class="type-line">WE <span class="gradient-text typed-word"></span><span class="cursor"></span> THEM.</span>
+            </h1>
+            <div class="trust-badges-pill">
+                <div class="badge-item">
+                    <svg class="badge-icon" viewBox="0 0 448 512" width="30" height="30">
+                        <path fill="#ffffff" d="M257.2 162.7c-48.7 1.8-169.5 15.5-169.5 117.5 0 109.5 138.3 114 183.5 43.2 6.5 10.2 35.4 37.5 45.3 46.8l56.8-56S341 288.9 341 261.4V114.3C341 89 316.5 32 228.7 32 140.7 32 94 87 94 136.3l73.5 6.8c16.3-49.5 54.2-49.5 54.2-49.5 40.7-.1 35.5 29.8 35.5 69.1zm0 86.8c0 80-84.2 68-84.2 17.2 0-47.2 50.5-56 84.2-57.8v40.6z"/>
+                    </svg>
+                    <span class="badge-label">Amazon</span>
+                </div>
+                <div class="badge-divider"></div>
+                <div class="badge-item">
+                    <svg class="badge-icon" viewBox="0 0 24 24" width="30" height="30">
+                        <g stroke="#ffc220" stroke-width="2.5" stroke-linecap="round">
+                            <line x1="12" y1="3" x2="12" y2="7"/><line x1="12" y1="17" x2="12" y2="21"/>
+                            <line x1="4.2" y1="7.5" x2="7.7" y2="9.5"/><line x1="16.3" y1="14.5" x2="19.8" y2="16.5"/>
+                            <line x1="4.2" y1="16.5" x2="7.7" y2="14.5"/><line x1="16.3" y1="9.5" x2="19.8" y2="7.5"/>
+                        </g>
+                    </svg>
+                    <span class="badge-label">Walmart</span>
+                </div>
+                <div class="badge-divider"></div>
+                <div class="badge-item">
+                    <svg class="badge-icon" viewBox="0 0 24 24" width="30" height="30">
+                        <text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle" fill="#F56400" font-family="Georgia, serif" font-weight="bold" font-size="22">E</text>
+                    </svg>
+                    <span class="badge-label">Etsy</span>
+                </div>
+                <div class="badge-divider"></div>
+                <div class="badge-item">
+                    <svg class="badge-icon" viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="9" cy="20" r="1.5" fill="#fff"></circle><circle cx="19" cy="20" r="1.5" fill="#fff"></circle>
+                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                        <circle cx="11" cy="11" r="1" fill="#fff" stroke="none"></circle><circle cx="15" cy="11" r="1" fill="#fff" stroke="none"></circle><circle cx="19" cy="11" r="1" fill="#fff" stroke="none"></circle>
+                    </svg>
+                    <span class="badge-label">Other Platforms</span>
+                </div>
+            </div>
+
+            <!-- <p class="hero-sub">We help Amazon-first brands unlock predictable, profitable growth through data, strategy, and execution that actually moves the needle.</p> -->
+            <div class="hero-ctas">
+                <a href="#contact" class="btn-primary"><span>Get Free Account Audit →</span></a>
+                <a href="#team" class="btn-outline">Meet Our Experts</a>
+            </div>
+        </div>
+        <div class="hero-graphic-col"></div>
+    </div>
+</main>
+
+<!-- DIVIDER: White → Black -->
+<div class="divider-dark-to-light">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="0,0 1440,80 1440,80 0,80" fill="#080808"/>
+        <polygon points="0,80 1440,0 1440,80" fill="#080808"/>
+    </svg>
+</div>
+
+<!-- ═══════════════════ STATS BAR ═══════════════════ -->
+<section class="stats-section">
+    <div class="container">
+        <div class="stats-wrapper-new">
+
+            <!-- Card 1: Revenue -->
+            <div class="stat-card">
+                <div class="stat-icon-wrap">
+                    <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: 100%;">
+                        <defs>
+                            <linearGradient id="gradRed" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#ff0044"/>
+                                <stop offset="1" stop-color="#cc0000"/>
+                            </linearGradient>
+                            <linearGradient id="glowBase" x1="0" y1="0" x2="0" y2="48">
+                                <stop stop-color="#e60000" stop-opacity="0.25"/>
+                                <stop offset="1" stop-color="#e60000" stop-opacity="0"/>
+                            </linearGradient>
+                        </defs>
+                        <path d="M8 36 L18 24 L28 28 L40 12 L40 40 L8 40 Z" fill="url(#glowBase)"/>
+                        <path d="M4 40 H44 M8 40 V8 M8 32 H44 M8 24 H44 M8 16 H44" stroke="rgba(255,255,255,0.06)" stroke-width="1" stroke-dasharray="2 2"/>
+                        <rect x="12" y="28" width="6" height="12" rx="1" fill="url(#gradRed)"/>
+                        <rect x="22" y="20" width="6" height="20" rx="1" fill="url(#gradRed)"/>
+                        <rect x="32" y="12" width="6" height="28" rx="1" fill="url(#gradRed)"/>
+                    </svg>
+                </div>
+                <div class="stat-num"><span class="counter" data-target="75">0</span><span class="stat-num-accent">M+</span></div>
+                <div class="stat-bar-label">Revenue Managed</div>
+            </div>
+
+            <!-- Card 2: Brands -->
+            <div class="stat-card">
+                <div class="stat-icon-wrap">
+                    <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+                </div>
+                <div class="stat-num"><span class="counter" data-target="50">0</span><span class="stat-num-accent">+</span></div>
+                <div class="stat-bar-label">Brands Supported</div>
+            </div>
+
+            <!-- Card 3: Satisfaction -->
+            <div class="stat-card">
+                <div class="stat-icon-wrap">
+                    <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                </div>
+                <div class="stat-num"><span class="counter" data-target="5" data-decimal="">0</span><span class="stat-num-accent">/5</span></div>
+                <div class="stat-bar-label">Client Satisfaction</div>
+            </div>
+
+            <!-- Card 4: Launches -->
+            <div class="stat-card">
+                <div class="stat-icon-wrap">
+                    <svg viewBox="0 0 24 24"><path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"/></svg>
+                </div>
+                <div class="stat-num"><span class="counter" data-target="100">0</span><span class="stat-num-accent">+</span></div>
+                <div class="stat-bar-label">Amazon Launches</div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- DIVIDER: Black → Light Gray -->
+<div style="display:block;line-height:0;background:#0f0f0f;">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%;height:80px;">
+        <path d="M0,80 L1440,0 L1440,80 Z" fill="#f5f5f5"/>
+    </svg>
+</div>
+
+<!-- ═══════════════════ SERVICES SECTION ═══════════════════ -->
+<!-- ═══════════════════ SERVICES SECTION ═══════════════════ -->
+<section class="services-section" id="services">
+    <div class="container">
+
+        <!-- Header -->
+        <div class="services-header">
+            <div class="section-eyebrow">
+                <span class="ey-line"></span>
+                <span class="ey-text" style="color:#555">Proven Performance</span>
+            </div>
+            
+            <h2 class="services-h2">
+                <span class="text-charcoal">EVERY SERVICE,</span><br>
+                <span class="text-red">ONE SYSTEM.</span>
+            </h2>
+        </div>
+
+        <!-- Grid -->
+        <!-- Grid -->
+        <div class="services-grid">
+            
+            <a href="services.html#account-management" class="service-card">
+              <div class="sc-image">
+                <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YWNjb3VudGluZyUyMHNlcnZpY2VzfGVufDB8fDB8fHww?auto=format&fit=crop&w=600&q=80" alt="Amazon Product Launch Strategy">
+                <div class="sc-image-overlay"></div>
+              </div>
+              
+              <div class="sc-body">
+                <div class="sc-num">01</div>
+                <div class="sc-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="12 2 2 7 12 12 22 7 12 2"/>
+                    <polyline points="2 17 12 22 22 17"/>
+                    <polyline points="2 12 12 17 22 12"/>
+                  </svg>
+                </div>
+                <div class="sc-title">Amazon Product Launch Strategy</div>
+                <div class="sc-body-text">From product setup to marketplace readiness, we manage every step required to launch your product successfully on Amazon. Our process ensures a smooth and compliant launch experience. We focus on creating a strong foundation through optimized listings, launch planning, and strategic execution to help your product gain visibility and traction from day one.</div>
+                <div class="sc-link">
+                    <span>Explore Service</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+              </div>
+            </a>
+
+            <a href="services.html#ppc-advertising" class="service-card">
+              <div class="sc-image">
+                <img src="https://images.unsplash.com/photo-1649734926695-1b1664e98842?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8QW1hem9uJTIwcHBjfGVufDB8fDB8fHww?auto=format&fit=crop&w=600&q=80" alt="Amazon Product Research Analysis">
+                <div class="sc-image-overlay"></div>
+              </div>
+              
+              <div class="sc-body">
+                <div class="sc-num">02</div>
+                <div class="sc-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="20" x2="18" y2="10"/>
+                    <line x1="12" y1="20" x2="12" y2="4"/>
+                    <line x1="6" y1="20" x2="6" y2="14"/>
+                  </svg>
+                </div>
+                <div class="sc-title">Amazon Product Research Analysis</div>
+                <div class="sc-body-text">We identify profitable product opportunities through in-depth market research, competitor analysis, and demand validation. Our data-driven approach helps reduce risk and improve decision-making. By evaluating market trends, competition levels, and customer demand, we help brands select products with strong growth potential and long-term sustainability.</div>
+                <div class="sc-link">
+                    <span>Explore Service</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+              </div>
+            </a>
+
+            <a href="services.html#product-research" class="service-card">
+              <div class="sc-image">
+                <img src="https://plus.unsplash.com/premium_photo-1681488262364-8aeb1b6aac56?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8ZWNvbW1lcmNlfGVufDB8fDB8fHww?auto=format&fit=crop&w=600&q=80" alt="Amazon Sourcing Logistics Solutions">
+                <div class="sc-image-overlay"></div>
+              </div>
+              
+              <div class="sc-body">
+                <div class="sc-num">03</div>
+                <div class="sc-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"/>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                    <line x1="11" y1="8" x2="11" y2="14"/>
+                    <line x1="8" y1="11" x2="14" y2="11"/>
+                  </svg>
+                </div>
+                <div class="sc-title">Amazon Sourcing Logistics Solutions</div>
+                <div class="sc-body-text">Our sourcing and logistics services help streamline your supply chain from manufacturer selection to inventory delivery. We prioritize quality, cost efficiency, and operational reliability. By managing supplier communication, production oversight, and shipping coordination, we ensure your products reach Amazon fulfillment centers on time and without complications.</div>
+                <div class="sc-link">
+                    <span>Explore Service</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+              </div>
+            </a>
+
+            <a href="services.html#brand-protection" class="service-card">
+              <div class="sc-image">
+                <img src="https://plus.unsplash.com/premium_photo-1726873225734-9cacf545806a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YnJhbmQlMjByZWNvZ25pdGlvbnxlbnwwfHwwfHx8MA%3D%3D?auto=format&fit=crop&w=600&q=80" alt="Amazon Listing Optimization Services">
+                <div class="sc-image-overlay"></div>
+              </div>
+              
+              <div class="sc-body">
+                <div class="sc-num">04</div>
+                <div class="sc-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                    <path d="M9 12l2 2 4-4"/>
+                  </svg>
+                </div>
+                <div class="sc-title">Amazon Listing Optimization Services</div>
+                <div class="sc-body-text">We optimize every aspect of your Amazon listings to improve search visibility, click-through rates, and conversion performance. Our strategy combines keyword research with customer-focused content. From titles and bullet points to backend search terms and descriptions, we create listings designed to attract buyers and maximize sales potential.</div>
+                <div class="sc-link">
+                    <span>Explore Service</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+              </div>
+            </a>
+
+            <a href="services.html#sourcing-management" class="service-card">
+              <div class="sc-image">
+                <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=600&q=80" alt="Amazon Creative Design Solutions">
+                <div class="sc-image-overlay"></div>
+              </div>
+              
+              <div class="sc-body">
+                <div class="sc-num">05</div>
+                <div class="sc-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                    <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                    <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                  </svg>
+                </div>
+                <div class="sc-title">Amazon Creative Design Solutions</div>
+                <div class="sc-body-text">We create high-converting visual assets that strengthen your brand presence and improve customer engagement. Our design services include listing images, A+ Content, Brand Story modules, and Storefronts. By combining compelling visuals with strategic messaging, we help brands communicate value effectively and stand out in competitive marketplaces.</div>
+                <div class="sc-link">
+                    <span>Explore Service</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+              </div>
+            </a>
+
+            <a href="services.html#product-images-videos" class="service-card">
+              <div class="sc-image">
+                <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&w=600&q=80" alt="Amazon PPC Account Management">
+                <div class="sc-image-overlay"></div>
+              </div>
+              
+              <div class="sc-body">
+                <div class="sc-num">06</div>
+                <div class="sc-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"/>
+                    <line x1="7" y1="2" x2="7" y2="22"/>
+                    <line x1="17" y1="2" x2="17" y2="22"/>
+                    <line x1="2" y1="12" x2="22" y2="12"/>
+                    <line x1="2" y1="7" x2="7" y2="7"/>
+                    <line x1="2" y1="17" x2="7" y2="17"/>
+                    <line x1="17" y1="17" x2="22" y2="17"/>
+                    <line x1="17" y1="7" x2="22" y2="7"/>
+                  </svg>
+                </div>
+                <div class="sc-title">Amazon PPC Account Management</div>
+                <div class="sc-body-text">Our PPC and account management services focus on driving profitable growth through continuous optimization and performance monitoring. We manage campaigns strategically to maximize return on ad spend. From keyword targeting and bid adjustments to account-level growth planning, we ensure your advertising efforts align with your business objectives.</div>
+                <div class="sc-link">
+                    <span>Explore Service</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+              </div>
+            </a>
+
+            <a href="#services" class="service-card" id="aplus-content">
+              <div class="sc-image">
+                <img src="https://plus.unsplash.com/premium_photo-1681487852901-3decdb9c698b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8QW1hem9ufGVufDB8fDB8fHww?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDB8fEElMkIlMjBjb250ZW50JTIwYW1hem9ufGVufDB8fDB8fHww?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8QSUyQiUyMGNvbnRlbnQlMjBhbWF6b258ZW58MHx8MHx8fDA%3D?auto=format&fit=crop&w=600&q=80" alt="Amazon Account Health Support">
+                <div class="sc-image-overlay"></div>
+              </div>
+              
+              <div class="sc-body">
+                <div class="sc-num">07</div>
+                <div class="sc-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                    <line x1="3" y1="9" x2="21" y2="9"/>
+                    <line x1="9" y1="21" x2="9" y2="9"/>
+                  </svg>
+                </div>
+                <div class="sc-title">Amazon Account Health Support</div>
+                <div class="sc-body-text">Maintaining a healthy Amazon account is critical for long-term success. We monitor account performance metrics and address potential issues before they impact operations. Our proactive approach helps protect account standing, improve compliance, and minimize disruptions that could affect sales and marketplace visibility.</div>
+                <div class="sc-link">
+                    <span>Explore Service</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+              </div>
+            </a>
+
+
+            <!-- Service 08 -->
+            <a href="services.html#multichannel-commerce" class="service-card">
+              <div class="sc-image">
+                <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=600&q=80" alt="Multichannel Commerce Integration">
+                <div class="sc-image-overlay"></div>
+              </div>
+              
+              <div class="sc-body">
+                <div class="sc-num">08</div>
+                <div class="sc-icon">
+                  <!-- Hexagon Ecosystem Icon -->
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="12 2 21 7 21 17 12 22 3 17 3 7 12 2" />
+                        <polygon points="12 6 17 9 17 15 12 18 7 15 7 9 12 6" />
+                        <path d="M12 10v8" />
+                        <path d="M7 9l5 3" />
+                        <path d="M17 9l-5 3" />
+                        <path d="M12 2v4" />
+                        <path d="M21 7l-4 2" />
+                        <path d="M21 17l-4-2" />
+                        <path d="M12 22v-4" />
+                        <path d="M3 17l4-2" />
+                        <path d="M3 7l4 2" />
+                    </svg>
+                </div>
+                <div class="sc-title">Multichannel Commerce Integration</div>
+                <div class="sc-body-text">We connect Amazon with platforms such as Shopify and other sales channels to create a unified ecommerce ecosystem. This helps streamline operations and improve inventory synchronization. By integrating multiple channels efficiently, we enable businesses to manage orders, inventory, and customer experiences more effectively across platforms.</div>
+                <div class="sc-link">
+                    <span>Explore Service</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+              </div>
+            </a>
+
+
+            <a href="#contact" class="service-card sc-cta-card">
+              <div class="sc-cta-bg-glow"></div>
+              
+              <div class="sc-body sc-cta-body">
+                <div class="sc-cta-icon-wrap">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                  </svg>
+                </div>
+                
+                <div class="sc-cta-title">CUSTOM STRATEGY?</div>
+                <div class="sc-cta-text">Don't see exactly what you need? We build bespoke growth architectures for 7 and 8-figure brands. Let's map yours out.</div>
+                
+                <div class="sc-cta-btn">
+                    <span>Book Your Free Audit</span>
+                    <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+              </div>
+            </a>
+
+        </div>
+    </div>
+    <!-- <div class="services-cta-row reveal" style="text-align: center; padding: 48px; background: var(--card); border-top: 1px solid var(--border);">
+        <p style="font-size:15px;color:var(--gray-400);margin-bottom:24px; font-weight:500;">Not sure which pillar is the bottleneck for your brand?</p>
+        <a href="#contact" class="btn-primary"><span>Get a Free Account Audit →</span></a>
+    </div> -->
+    <!-- ============================================================
+        TRUST STRIP
+    ============================================================ -->
+    <div class="trust-strip">
+       <div class="trust-track" id="trustTrack"></div>
+    </div>
+
+</section>
+
+<!-- DIVIDER: Light → Dark
+<div style="display:block;line-height:0;background:#ebebeb;">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%;height:80px;">
+        <path d="M0,0 L1440,80 L0,80 Z" fill="#0a0a0a"/>
+    </svg>
+</div> -->
+
+<!-- ═══════════════════ RESULTS SECTION ═══════════════════
+<section class="results-section" id="results">
+    <div class="container results-inner">
+
+        <div class="results-header">
+            <div class="section-eyebrow" style="justify-content:center;margin-bottom:20px;">
+                <span class="ey-line"></span>
+                <span class="ey-text" style="color:#555">Proven Performance</span>
+            </div>
+            <h2 class="results-h2">NUMBERS THAT<br><span class="shimmer-text">DON'T LIE</span></h2>
+            <p class="results-sub">Every metric below is drawn from real client accounts, verified over the past 36 months.</p>
+        </div>
+
+        <div class="results-grid">
+            <div class="result-block">
+                <div class="result-label">Revenue Impact</div>
+                <div class="result-number"><span>$</span>100M<span>+</span></div>
+                <div class="result-desc">Total gross merchandise value managed across all client accounts on Amazon, Walmart, and Etsy since founding.</div>
+            </div>
+            <div class="result-block">
+                <div class="result-label">Ad Performance</div>
+                <div class="result-number">340<span>%</span></div>
+                <div class="result-desc">Average improvement in Return on Ad Spend achieved within the first 180 days of our PPC management engagement.</div>
+            </div>
+            <div class="result-block">
+                <div class="result-label">Client Retention</div>
+                <div class="result-number">96<span>%</span></div>
+                <div class="result-desc">Of clients who signed a 6-month agreement have renewed for an additional term. Results build loyalty.</div>
+            </div>
+            <div class="result-block">
+                <div class="result-label">Launch Success</div>
+                <div class="result-number">87<span>+</span></div>
+                <div class="result-desc">Brands scaled from five-figure monthly revenue to consistent six and seven-figure Amazon businesses.</div>
+            </div>
+        </div>
+
+        <div class="results-image-strip">
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1400&q=80" alt="Growth Analytics">
+            <div class="results-image-overlay">
+                <span>PERFORMANCE THAT COMPOUNDS</span>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+
+
+DIVIDER: Neon Eclipse Arc -->
+<div style="display:block; line-height:0; background:#0a0a0a; position:relative; overflow:hidden;">
+    <svg viewBox="0 0 1440 120" preserveAspectRatio="none" style="width:100%; height:120px; display:block;">
+        <path d="M0,0 C480,120 960,120 1440,0 L1440,120 L0,120 Z" fill="#050505"/>
+        <path d="M0,0 C480,120 960,120 1440,0" fill="none" stroke="var(--red)" stroke-width="2" opacity="0.4"/>
+    </svg>
+    <div style="position:absolute; top:20px; left:50%; transform:translateX(-50%); width:400px; height:100px; background:var(--red); filter:blur(90px); opacity:0.15; pointer-events:none;"></div>
+</div>
+
+<!-- ═══════════════════ MILLION DOLLAR VISUAL PROOF ═══════════════════ -->
+<section class="visual-proof-section" id="brands">
+    <div class="container vp-header">
+        <div class="section-eyebrow" style="justify-content:center;margin-bottom:16px;">
+            <span class="ey-line"></span>
+            <span class="ey-text" style="color:#555">The Visual Evidence</span>
+        </div>
+        <h2 class="results-h2">BRANDS WE'VE<br><span class="red" style="color:var(--red);">ELEVATED</span></h2>
+    </div>
+
+    <div class="vp-track-container">
+        <!-- ROW 1 (Forward) -->
+        <div class="vp-track row-1">
+            <!-- First Set (8 Unique Cards) -->
+            <div class="vp-card">
+                <img class="vp-image" src="https://images.unsplash.com/photo-1624218656926-da680b8127c9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8ZmlzaGluZyUyMHJvZHxlbnwwfHwwfHx8MA%3D%3D?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTE2fHxmaXNoaW5nJTIwcHJvZHVjdHN8ZW58MHx8MHx8fDA%3D?w=600&q=80" alt="Discount Tackle">
+                <div class="vp-card-glare"></div>
+                <div class="vp-content">
+                    <div class="vp-brand">DISCOUNT TACKLE</div>
+                    <div class="vp-category">Fishing Products</div>
+                </div>
+            </div>
+            
+            <div class="vp-card">
+                <img class="vp-image" src="https://plus.unsplash.com/premium_photo-1698084059560-9a53de7b816b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bGF3fGVufDB8fDB8fHww?w=600&q=80" alt="Safariland">
+                <div class="vp-card-glare"></div>
+                <div class="vp-content">
+                    <div class="vp-brand">SAFARILAND</div>
+                    <div class="vp-category">Law Enforcement</div>
+                </div>
+            </div>
+            
+            <div class="vp-card">
+                <img class="vp-image" src="https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?w=600&q=80" alt="Boldify">
+                <div class="vp-card-glare"></div>
+                <div class="vp-content">
+                    <div class="vp-brand">BOLDIFY</div>
+                    <div class="vp-category">Hair Care</div>
+                </div>
+            </div>
+            
+            <div class="vp-card">
+                <img class="vp-image" src="https://images.unsplash.com/photo-1679748150708-27aad9517d37?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzV8fEhhdHMlMjBhbmQlMjBjYXBzfGVufDB8fDB8fHww?w=600&q=80" alt="American Hat Makers">
+                <div class="vp-card-glare"></div>
+                <div class="vp-content">
+                    <div class="vp-brand">AMERICAN HAT MAKERS</div>
+                    <div class="vp-category">Hats & Caps</div>
+                </div>
+            </div>
+            
+            <!-- NEW IMAGE FOR DEPARTURE OUTDOOR -->
+            <div class="vp-card">
+                <img class="vp-image" src="https://images.unsplash.com/photo-1698731048404-1c12d7189e48?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzF8fG91dGRvb3IlMjBhbmQlMjBjYW1waW5nfGVufDB8fDB8fHww?w=600&q=80" alt="Departure Outdoor">
+                <div class="vp-card-glare"></div>
+                <div class="vp-content">
+                    <div class="vp-brand">DEPARTURE OUTDOOR</div>
+                    <div class="vp-category">Camping & Hunting</div>
+                </div>
+            </div>
+            
+            <div class="vp-card">
+                <img class="vp-image" src="https://images.unsplash.com/photo-1460353581641-37baddab0fa2?w=600&q=80" alt="Burlinghams">
+                <div class="vp-card-glare"></div>
+                <div class="vp-content">
+                    <div class="vp-brand">BURLINGHAMS</div>
+                    <div class="vp-category">Shoe Accessories</div>
+                </div>
+            </div>
+
+            <div class="vp-card">
+                <img class="vp-image" src="https://plus.unsplash.com/premium_photo-1733306627803-33da6c171f3c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8bWVucyUyMGpld2VsbGVyeXxlbnwwfHwwfHx8MA%3D%3D?w=600&q=80" alt="Serasar">
+                <div class="vp-card-glare"></div>
+                <div class="vp-content">
+                    <div class="vp-brand">SERASAR</div>
+                    <div class="vp-category">Mens Jewellery</div>
+                </div>
+            </div>
+
+            <div class="vp-card">
+                <img class="vp-image" src="https://images.unsplash.com/photo-1707307316720-2ec59066f6dc?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzF8fHNhZmV0eSUyMHZlc3RzfGVufDB8fDB8fHww?w=600&q=80" alt="Arcridge">
+                <div class="vp-card-glare"></div>
+                <div class="vp-content">
+                    <div class="vp-brand">ARCRIDGE</div>
+                    <div class="vp-category">Safety Vests</div>
+                </div>
+            </div>
+
+            <!-- Duplicate Set for Seamless Loop (DEPARTURE OUTDOOR IMAGE UPDATED HERE TOO) -->
+            <div class="vp-card"><img class="vp-image" src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=600&q=80" alt="Discount Tackle"><div class="vp-card-glare"></div><div class="vp-content"><div class="vp-brand">DISCOUNT TACKLE</div><div class="vp-category">Fishing Products</div></div></div>
+            <div class="vp-card"><img class="vp-image" src="https://images.unsplash.com/photo-1601362840469-51e4d8d58785?w=600&q=80" alt="Safariland"><div class="vp-card-glare"></div><div class="vp-content"><div class="vp-brand">SAFARILAND</div><div class="vp-category">Law Enforcement</div></div></div>
+            <div class="vp-card"><img class="vp-image" src="https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?w=600&q=80" alt="Boldify"><div class="vp-card-glare"></div><div class="vp-content"><div class="vp-brand">BOLDIFY</div><div class="vp-category">Hair Care</div></div></div>
+            <div class="vp-card"><img class="vp-image" src="https://images.unsplash.com/photo-1514327605112-b887c0e61c0a?w=600&q=80" alt="American Hat Makers"><div class="vp-card-glare"></div><div class="vp-content"><div class="vp-brand">AMERICAN HAT MAKERS</div><div class="vp-category">Hats & Caps</div></div></div>
+            <div class="vp-card"><img class="vp-image" src="https://images.unsplash.com/photo-1523987355523-c7b5b0dd90a7?w=600&q=80" alt="Departure Outdoor"><div class="vp-card-glare"></div><div class="vp-content"><div class="vp-brand">DEPARTURE OUTDOOR</div><div class="vp-category">Camping & Hunting</div></div></div>
+            <div class="vp-card"><img class="vp-image" src="https://images.unsplash.com/photo-1460353581641-37baddab0fa2?w=600&q=80" alt="Burlinghams"><div class="vp-card-glare"></div><div class="vp-content"><div class="vp-brand">BURLINGHAMS</div><div class="vp-category">Shoe Accessories</div></div></div>
+            <div class="vp-card"><img class="vp-image" src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=600&q=80" alt="Serasar"><div class="vp-card-glare"></div><div class="vp-content"><div class="vp-brand">SERASAR</div><div class="vp-category">Mens Jewellery</div></div></div>
+            <div class="vp-card"><img class="vp-image" src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80" alt="Arcridge"><div class="vp-card-glare"></div><div class="vp-content"><div class="vp-brand">ARCRIDGE</div><div class="vp-category">Safety Vests</div></div></div>
+        </div>
+
+        <!-- ROW 2 (Reverse) -->
+        <div class="vp-track row-2">
+            <!-- Second Set (7 Unique Cards) -->
+            <div class="vp-card">
+                <img class="vp-image" src="https://images.unsplash.com/photo-1505628346881-b72b27e84530?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fFBldCUyMGdyb29taW5nfGVufDB8fDB8fHww?w=600&q=80" alt="Warren London">
+                <div class="vp-card-glare"></div>
+                <div class="vp-content">
+                    <div class="vp-brand">WARREN LONDON</div>
+                    <div class="vp-category">Pet Grooming</div>
+                </div>
+            </div>
+            
+            <!-- NEW IMAGE FOR HOUSEABLES -->
+            <div class="vp-card">
+                <img class="vp-image" src="https://plus.unsplash.com/premium_photo-1678375722686-c7ea507c3003?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8a2l0Y2hlbiUyMGFjY2Vzc29yaWVzfGVufDB8fDB8fHww?w=600&q=80" alt="Houseables">
+                <div class="vp-card-glare"></div>
+                <div class="vp-content">
+                    <div class="vp-brand">HOUSEABLES</div>
+                    <div class="vp-category">Home & Kitchen</div>
+                </div>
+            </div>
+            
+            <div class="vp-card">
+                <img class="vp-image" src="https://images.unsplash.com/photo-1644416598043-11c2816eec28?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8a2lkcyUyMGJvb2tzfGVufDB8fDB8fHww?w=600&q=80" alt="Testing Mom">
+                <div class="vp-card-glare"></div>
+                <div class="vp-content">
+                    <div class="vp-brand">TESTING MOM</div>
+                    <div class="vp-category">Kids Books</div>
+                </div>
+            </div>
+            
+            <div class="vp-card">
+                <img class="vp-image" src="https://plus.unsplash.com/premium_photo-1663853294058-3f85f18a4bed?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8d2hleSUyMHByb3RlaW58ZW58MHx8MHx8fDA%3D?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Z3ltJTIwc3VwcGxlbWVudHN8ZW58MHx8MHx8fDA%3D?w=600&q=80" alt="Earth Fed Muscle">
+                <div class="vp-card-glare"></div>
+                <div class="vp-content">
+                    <div class="vp-brand">EARTH FED MUSCLE</div>
+                    <div class="vp-category">Whey Protein</div>
+                </div>
+            </div>
+            
+            <div class="vp-card">
+                <img class="vp-image" src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=600&q=80" alt="Cucu Fashion">
+                <div class="vp-card-glare"></div>
+                <div class="vp-content">
+                    <div class="vp-brand">CUCU FASHION</div>
+                    <div class="vp-category">Footwear</div>
+                </div>
+            </div>
+            
+            <div class="vp-card">
+                <img class="vp-image" src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=600&q=80" alt="Theraplex">
+                <div class="vp-card-glare"></div>
+                <div class="vp-content">
+                    <div class="vp-brand">THERAPLEX</div>
+                    <div class="vp-category">Anti Aging Creams</div>
+                </div>
+            </div>
+
+            <div class="vp-card">
+                <img class="vp-image" src="https://images.unsplash.com/photo-1719936455494-651fac2cbd6d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDZ8fHBsYXlpbmclMjBkaXNjc3xlbnwwfHwwfHx8MA%3D%3D?w=600&q=80" alt="Infinite Discs">
+                <div class="vp-card-glare"></div>
+                <div class="vp-content">
+                    <div class="vp-brand">INFINITE DISCS</div>
+                    <div class="vp-category">Playing Discs</div>
+                </div>
+            </div>
+
+            <!-- Duplicate Set for Seamless Loop (HOUSEABLES IMAGE UPDATED HERE TOO) -->
+            <div class="vp-card"><img class="vp-image" src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?w=600&q=80" alt="Warren London"><div class="vp-card-glare"></div><div class="vp-content"><div class="vp-brand">WARREN LONDON</div><div class="vp-category">Pet Grooming</div></div></div>
+            <div class="vp-card"><img class="vp-image" src="https://images.unsplash.com/photo-1556911220-bff31c812dba?w=600&q=80" alt="Houseables"><div class="vp-card-glare"></div><div class="vp-content"><div class="vp-brand">HOUSEABLES</div><div class="vp-category">Home & Kitchen</div></div></div>
+            <div class="vp-card"><img class="vp-image" src="https://images.unsplash.com/photo-1512820790803-83ca734da794?w=600&q=80" alt="Testing Mom"><div class="vp-card-glare"></div><div class="vp-content"><div class="vp-brand">TESTING MOM</div><div class="vp-category">Kids Books</div></div></div>
+            <div class="vp-card"><img class="vp-image" src="https://images.unsplash.com/photo-1579758629938-03607ccdbaba?w=600&q=80" alt="Earth Fed Muscle"><div class="vp-card-glare"></div><div class="vp-content"><div class="vp-brand">EARTH FED MUSCLE</div><div class="vp-category">Whey Protein</div></div></div>
+            <div class="vp-card"><img class="vp-image" src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=600&q=80" alt="Cucu Fashion"><div class="vp-card-glare"></div><div class="vp-content"><div class="vp-brand">CUCU FASHION</div><div class="vp-category">Footwear</div></div></div>
+            <div class="vp-card"><img class="vp-image" src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=600&q=80" alt="Theraplex"><div class="vp-card-glare"></div><div class="vp-content"><div class="vp-brand">THERAPLEX</div><div class="vp-category">Anti Aging Creams</div></div></div>
+            <div class="vp-card"><img class="vp-image" src="https://images.unsplash.com/photo-1596727362302-b8d891c42ab8?w=600&q=80" alt="Infinite Discs"><div class="vp-card-glare"></div><div class="vp-content"><div class="vp-brand">INFINITE DISCS</div><div class="vp-category">Playing Discs</div></div></div>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- ═══════════════════ ABOUT SECTION (MILLION DOLLAR UPGRADE) ═══════════════════ -->
+<section class="about-premium" id="about">
+    <div class="container ap-grid">
+
+        <div class="ap-visual-composition">
+            <div class="ap-img-wrap ap-img-1">
+                <img class="ap-img-inner" src="https://images.unsplash.com/photo-1612296727716-d6c69d2a2cbb?q=80&w=871&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Ecommdots Strategy Team">
+            </div>
+            
+            <div class="ap-img-wrap ap-img-2">
+                <img class="ap-img-inner" src="{{ url_for('static', filename='images/homepage/logo.png') }}" alt="Data Analytics">
+            </div>
+
+            <div class="ap-glass-badge">
+                <div class="ap-badge-val">2019</div>
+                <div class="ap-badge-label">Established</div>
+            </div>
+        </div>
+
+        <div class="ap-content reveal">
+            <div class="section-eyebrow">
+                <span class="ey-line"></span>
+                <span class="ey-text" style="color:var(--red)">Who We Are</span>
+            </div>
+            
+            <h2 class="ap-h2">YOUR AMAZON<br><span style="color:var(--red)">GROWTH PARTNER.</span></h2>
+            
+            <p class="ap-lead">Ecommdots is a full-service Amazon agency helping brands launch, optimize, and scale successfully in competitive marketplaces. We provide end-to-end solutions covering product research, sourcing, listing optimization, creative design, PPC management, and account growth.</p>
+            
+            <div class="ap-sub-lead">
+                With years of hands-on experience supporting private label brands, we focus on strategies that drive visibility, increase conversions, and build sustainable long-term growth. Our goal is simple: help businesses achieve measurable results while navigating the complexities of Amazon with confidence.
+            </div>
+            
+            <div class="ap-index-list">
+                <div class="ap-index-item">
+                    <span class="ap-index-num">01</span>
+                    <div class="ap-index-content">
+                        <span class="ap-index-text">Data-Driven Strategies</span>
+                        <span class="ap-index-desc">Every decision is backed by market research, performance data, and industry insights to maximize growth opportunities and improve profitability.</span>
+                    </div>
+                </div>
+                
+                <div class="ap-index-item">
+                    <span class="ap-index-num">02</span>
+                    <div class="ap-index-content">
+                        <span class="ap-index-text">Brand-Focused Execution</span>
+                        <span class="ap-index-desc">From product listings and storefronts to premium A+ Content, we create compelling brand experiences that attract customers and increase conversions.</span>
+                    </div>
+                </div>
+                
+                <div class="ap-index-item">
+                    <span class="ap-index-num">03</span>
+                    <div class="ap-index-content">
+                        <span class="ap-index-text">Long-Term Partnership</span>
+                        <span class="ap-index-desc">We work as an extension of your team, providing ongoing support, optimization, and strategic guidance to help your business scale sustainably.</span>
+                    </div>
+                </div>
+            </div>
+
+            <a href="about.html#about" class="btn-primary"><span>Partner With Us →</span></a>
+        </div>
+
+    </div>
+</section>
+
+
+
+<!-- DIVIDER: White → Dark -->
+<div style="display:block;line-height:0;background:#f4f4f6;">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%;height:80px;">
+        <path d="M0,0 L1440,80 L0,80 Z" fill="#050505"/>
+    </svg>
+</div>
+
+<section class="testimonial-section" id="testimonials">
+    
+    <div class="testi-header container">
+        <h2 class="testi-h2">Loved by brands <span class="gradient-text">everywhere</span></h2>
+        <div class="testi-stars">
+            <div style="display:flex; gap:2px;">
+                <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            </div>
+            <span>Driven by Strategy, Performance & Partnership </span>
+        </div>
+    </div>
+
+    <div class="testi-marquee-wrapper">
+        <div class="testi-track fwd">
+            
+            <div class="testi-card tc-video">
+                <video src="assets/videos/review1.mp4" autoplay loop muted playsinline></video>
+                <div class="tc-play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+                <div class="tc-video-meta">
+                    <div class="tc-video-name">Sarah Mitchell</div>
+                    <div class="tc-video-role">VP of Sales, Premier Group</div>
+                </div>
+            </div>
+            <div class="testi-card tc-video">
+                <video src="assets/videos/review2.mp4" autoplay loop muted playsinline></video>
+                <div class="tc-play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+                <div class="tc-video-meta">
+                    <div class="tc-video-name">Marcus Hill</div>
+                    <div class="tc-video-role">Sales Director, Apex</div>
+                </div>
+            </div>
+            <div class="testi-card tc-video">
+                <video src="assets/videos/review3.mp4" autoplay loop muted playsinline></video>
+                <div class="tc-play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+                <div class="tc-video-meta">
+                    <div class="tc-video-name">Rachel Foster</div>
+                    <div class="tc-video-role">Marketing Lead, Northstar</div>
+                </div>
+            </div>
+            <div class="testi-card tc-video">
+                <video src="assets/videos/review4.mp4" autoplay loop muted playsinline></video>
+                <div class="tc-play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+                <div class="tc-video-meta">
+                    <div class="tc-video-name">Dr. Michael Chen</div>
+                    <div class="tc-video-role">Practice Manager, HealthFirst</div>
+                </div>
+            </div>
+
+            <div class="testi-card tc-video">
+                <video src="assets/videos/review1.mp4" autoplay loop muted playsinline></video>
+                <div class="tc-play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+                <div class="tc-video-meta">
+                    <div class="tc-video-name">Sarah Mitchell</div>
+                    <div class="tc-video-role">VP of Sales, Premier Group</div>
+                </div>
+            </div>
+            <div class="testi-card tc-video">
+                <video src="assets/videos/review2.mp4" autoplay loop muted playsinline></video>
+                <div class="tc-play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+                <div class="tc-video-meta">
+                    <div class="tc-video-name">Marcus Hill</div>
+                    <div class="tc-video-role">Sales Director, Apex</div>
+                </div>
+            </div>
+            <div class="testi-card tc-video">
+                <video src="assets/videos/review3.mp4" autoplay loop muted playsinline></video>
+                <div class="tc-play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+                <div class="tc-video-meta">
+                    <div class="tc-video-name">Rachel Foster</div>
+                    <div class="tc-video-role">Marketing Lead, Northstar</div>
+                </div>
+            </div>
+            <div class="testi-card tc-video">
+                <video src="assets/videos/review4.mp4" autoplay loop muted playsinline></video>
+                <div class="tc-play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+                <div class="tc-video-meta">
+                    <div class="tc-video-name">Dr. Michael Chen</div>
+                    <div class="tc-video-role">Practice Manager, HealthFirst</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <style>
+        /* Micro-patch to ensure client images fit perfectly in the round avatars */
+        img.tc-avatar { object-fit: cover; border: 1px solid rgba(255,255,255,0.1); background: #111; }
+    </style>
+    
+    <div class="testi-marquee-wrapper">
+        <div class="testi-track rev">
+            
+            <div class="testi-card tc-text">
+                <div class="tc-header">
+                    <div class="tc-user">
+                        <img src="clients/Adrian J.jpg" class="tc-avatar" alt="Adrian J.">
+                        <div>
+                            <div class="tc-name">Adrian J.</div>
+                            <div class="tc-role">Co Founder at UNO Brands</div>
+                        </div>
+                    </div>
+                    <div class="tc-platform"><svg viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg></div>
+                </div>
+                <div class="tc-rating">
+                    <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                </div>
+                <p class="tc-review">"Saif Is Fantastic! He went above and beyond what was necessary. Very high level of expertise in ecommerce. Highly recommended!!!"</p>
+            </div>
+
+            <div class="testi-card tc-text">
+                <div class="tc-header">
+                    <div class="tc-user">
+                        <img src="clients/Serdar A.jpg" class="tc-avatar" alt="Serdar A.">
+                        <div>
+                            <div class="tc-name">Serdar A.</div>
+                            <div class="tc-role">Founder at Serasar</div>
+                        </div>
+                    </div>
+                    <div class="tc-platform"><svg viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg></div>
+                </div>
+                <div class="tc-rating">
+                    <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                </div>
+                <p class="tc-review">"Very hardworking freelancer, very good English skills. Very reliable and understands new tasks in a short time. I would hire him again anytime."</p>
+            </div>
+
+            <div class="testi-card tc-text">
+                <div class="tc-header">
+                    <div class="tc-user">
+                        <img src="clients/Brooks M.jpg" class="tc-avatar" alt="Brooks M.">
+                        <div>
+                            <div class="tc-name">Brooks M.</div>
+                            <div class="tc-role">Founder at Earth Fed Muscle</div>
+                        </div>
+                    </div>
+                    <div class="tc-platform"><svg viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg></div>
+                </div>
+                <div class="tc-rating">
+                    <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                </div>
+                <p class="tc-review">"Did exactly what was needed to upload/repair multiple Amazon listings."</p>
+            </div>
+
+            <div class="testi-card tc-text">
+                <div class="tc-header">
+                    <div class="tc-user">
+                        <img src="clients/Emily B.jpg" class="tc-avatar" alt="Emily B.">
+                        <div>
+                            <div class="tc-name">Emily B.</div>
+                            <div class="tc-role">Author & Amazon KDP Seller</div>
+                        </div>
+                    </div>
+                    <div class="tc-platform"><svg viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg></div>
+                </div>
+                <div class="tc-rating">
+                    <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                </div>
+                <p class="tc-review">"I've worked with Saif on several projects; I am always happy with the quality of work and his timeliness. I will work with him in the future."</p>
+            </div>
+
+            <div class="testi-card tc-text">
+                <div class="tc-header">
+                    <div class="tc-user">
+                        <img src="clients/Joseph W.jpg" class="tc-avatar" alt="Joseph W.">
+                        <div>
+                            <div class="tc-name">Joseph W.</div>
+                            <div class="tc-role">Founder at Willis Worxs</div>
+                        </div>
+                    </div>
+                    <div class="tc-platform"><svg viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg></div>
+                </div>
+                <div class="tc-rating">
+                    <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                </div>
+                <p class="tc-review">"Great work. Was a fast learner and helped us manage a large portfolio of products. Great communication and work ethic. Highly recommend!"</p>
+            </div>
+
+            <div class="testi-card tc-text">
+                <div class="tc-header">
+                    <div class="tc-user">
+                        <img src="clients/Leesa M.jpg" class="tc-avatar" alt="Leesa M.">
+                        <div>
+                            <div class="tc-name">Leesa M.</div>
+                            <div class="tc-role">Author & Amazon KDP Seller</div>
+                        </div>
+                    </div>
+                    <div class="tc-platform"><svg viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg></div>
+                </div>
+                <div class="tc-rating">
+                    <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                </div>
+                <p class="tc-review">"Saif is professional and highly experienced with Amazon."</p>
+            </div>
+            
+            <div class="testi-card tc-text">
+                <div class="tc-header">
+                    <div class="tc-user">
+                        <img src="clients/Adrian J.jpg" class="tc-avatar" alt="Adrian J.">
+                        <div>
+                            <div class="tc-name">Adrian J.</div>
+                            <div class="tc-role">Co Founder at UNO Brands</div>
+                        </div>
+                    </div>
+                    <div class="tc-platform"><svg viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg></div>
+                </div>
+                <div class="tc-rating"><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg></div>
+                <p class="tc-review">"Saif Is Fantastic! He went above and beyond what was necessary. Very high level of expertise in ecommerce. Highly recommended!!!"</p>
+            </div>
+
+            <div class="testi-card tc-text">
+                <div class="tc-header">
+                    <div class="tc-user">
+                        <img src="clients/Serdar A.jpg" class="tc-avatar" alt="Serdar A.">
+                        <div>
+                            <div class="tc-name">Serdar A.</div>
+                            <div class="tc-role">Founder at Serasar</div>
+                        </div>
+                    </div>
+                    <div class="tc-platform"><svg viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg></div>
+                </div>
+                <div class="tc-rating"><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg></div>
+                <p class="tc-review">"Very hardworking freelancer, very good English skills. Very reliable and understands new tasks in a short time. I would hire him again anytime."</p>
+            </div>
+
+            <div class="testi-card tc-text">
+                <div class="tc-header">
+                    <div class="tc-user">
+                        <img src="clients/Brooks M.jpg" class="tc-avatar" alt="Brooks M.">
+                        <div>
+                            <div class="tc-name">Brooks M.</div>
+                            <div class="tc-role">Founder at Earth Fed Muscle</div>
+                        </div>
+                    </div>
+                    <div class="tc-platform"><svg viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg></div>
+                </div>
+                <div class="tc-rating"><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg></div>
+                <p class="tc-review">"Did exactly what was needed to upload/repair multiple Amazon listings."</p>
+            </div>
+
+            <div class="testi-card tc-text">
+                <div class="tc-header">
+                    <div class="tc-user">
+                        <img src="clients/Emily B.jpg" class="tc-avatar" alt="Emily B.">
+                        <div>
+                            <div class="tc-name">Emily B.</div>
+                            <div class="tc-role">Author & Amazon KDP Seller</div>
+                        </div>
+                    </div>
+                    <div class="tc-platform"><svg viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg></div>
+                </div>
+                <div class="tc-rating"><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg></div>
+                <p class="tc-review">"I've worked with Saif on several projects; I am always happy with the quality of work and his timeliness. I will work with him in the future."</p>
+            </div>
+
+            <div class="testi-card tc-text">
+                <div class="tc-header">
+                    <div class="tc-user">
+                        <img src="clients/Joseph W.jpg" class="tc-avatar" alt="Joseph W.">
+                        <div>
+                            <div class="tc-name">Joseph W.</div>
+                            <div class="tc-role">Founder at Willis Worxs</div>
+                        </div>
+                    </div>
+                    <div class="tc-platform"><svg viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg></div>
+                </div>
+                <div class="tc-rating"><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg></div>
+                <p class="tc-review">"Great work. Was a fast learner and helped us manage a large portfolio of products. Great communication and work ethic. Highly recommend!"</p>
+            </div>
+
+            <div class="testi-card tc-text">
+                <div class="tc-header">
+                    <div class="tc-user">
+                        <img src="clients/Leesa M.jpg" class="tc-avatar" alt="Leesa M.">
+                        <div>
+                            <div class="tc-name">Leesa M.</div>
+                            <div class="tc-role">Author & Amazon KDP Seller</div>
+                        </div>
+                    </div>
+                    <div class="tc-platform"><svg viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg></div>
+                </div>
+                <div class="tc-rating"><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg></div>
+                <p class="tc-review">"Saif is professional and highly experienced with Amazon."</p>
+            </div>
+
+        </div>
+    </div>
+    <!-- ═══════════════════ THE APEX CTA ═══════════════════ -->
+    <div class="testi-global-cta">
+        <a href="testimonials.html" class="btn-primary"><span>EXPLORE ALL VERIFIED REVIEWS →</span></a>
+    </div>
+</section>
+
+<!-- DIVIDER: Testimonials (Dark) → Case Studies (Light) -->
+<div style="display:block;line-height:0;background:#050505;">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%;height:80px;">
+        <path d="M0,0 L1440,80 L0,80 Z" fill="#ffffff"/>
+    </svg>
+</div>
+
+
+
+<section class="editorial-cases" id="case-studies">
+    <div class="container">
+        
+        <div class="ec-header reveal-ec">
+            <div class="section-eyebrow" style="margin-bottom:16px;">
+                <span class="ey-line"></span>
+                <span class="ey-text" style="color:#555">OUR WORK</span>
+            </div>
+            <h2 class="ec-h2">DRIVING MEASURABLE<br><span style="color:var(--red)">GROWTH</span></h2>
+        </div>
+
+        <div class="ec-track">
+            
+            <div class="ec-row reveal-ec">
+                <div class="ec-visual">
+                    <div class="ec-img-frame">
+                        <img class="ec-parallax-img" src="https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?w=1200&q=80" alt="Boldify Hair Care">
+                    </div>
+                </div>
+                <div class="ec-content">
+                    <div class="ec-meta"><span class="ec-num">01</span><span class="ec-dot"></span>HAIR CARE & BEAUTY</div>
+                    <h3 class="ec-client">BOLDIFY</h3>
+                    <div class="ec-stats">
+                        <div class="ec-stat">
+                            <div class="ec-val">220<span>%</span></div>
+                            <div class="ec-lbl">Sales Growth</div>
+                        </div>
+                        <div class="ec-stat">
+                            <div class="ec-val">5.1<span>X</span></div>
+                            <div class="ec-lbl">Return On Ad Spend</div>
+                        </div>
+                        <div class="ec-stat">
+                            <div class="ec-val">45<span>%</span></div>
+                            <div class="ec-lbl">Organic Traffic Increase</div>
+                        </div>
+                    </div>
+                    <p class="ec-desc">We partnered with Boldify to strengthen their Amazon presence through strategic listing optimization, premium creative assets, and performance-focused PPC management. Our approach improved product visibility and increased customer engagement across key categories.<br><br>By combining data-driven advertising with continuous account optimization, we helped drive sustainable revenue growth, improve advertising efficiency, and expand the brand's organic market share.</p>
+                </div>
+            </div>
+
+            <div class="ec-row ec-reverse reveal-ec">
+                <div class="ec-visual">
+                    <div class="ec-img-frame">
+                        <img class="ec-parallax-img" src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=1200&q=80" alt="Earth Fed Muscle Supplements">
+                    </div>
+                </div>
+                <div class="ec-content">
+                    <div class="ec-meta"><span class="ec-num">02</span><span class="ec-dot"></span>SPORTS NUTRITION</div>
+                    <h3 class="ec-client">EARTH FED MUSCLE</h3>
+                    <div class="ec-stats">
+                        <div class="ec-stat">
+                            <div class="ec-val">6.2<span>X</span></div>
+                            <div class="ec-lbl">Average ROAS</div>
+                        </div>
+                        <div class="ec-stat">
+                            <div class="ec-val">85<span>%</span></div>
+                            <div class="ec-lbl">Subscribe & Save Growth</div>
+                        </div>
+                        <div class="ec-stat">
+                            <div class="ec-val"><span>$</span>2.4M<span>+</span></div>
+                            <div class="ec-lbl">Revenue Generated</div>
+                        </div>
+                    </div>
+                    <p class="ec-desc">We helped Earth Fed Muscle accelerate growth through strategic Amazon PPC management, conversion-focused listing optimization, and customer retention initiatives designed to maximize long-term value.<br><br>By implementing a high-performing Subscribe & Save strategy and data-driven advertising campaigns, we increased customer loyalty, improved repeat purchase rates, and drove consistent revenue growth throughout the year.</p>
+                </div>
+            </div>
+
+            <div class="ec-row reveal-ec">
+                <div class="ec-visual">
+                    <div class="ec-img-frame">
+                        <img class="ec-parallax-img" src="https://images.unsplash.com/photo-1677201795281-7ba80bcacc1c?w=1200&q=80" alt="Serasar Men's Jewellery">
+                    </div>
+                </div>
+                <div class="ec-content">
+                    <div class="ec-meta"><span class="ec-num">03</span><span class="ec-dot"></span>MEN'S LUXURY JEWELLERY</div>
+                    <h3 class="ec-client">SERASAR</h3>
+                    <div class="ec-stats">
+                        <div class="ec-stat">
+                            <div class="ec-val">90<span>%</span></div>
+                            <div class="ec-lbl">AOV Increase</div>
+                        </div>
+                        <div class="ec-stat">
+                            <div class="ec-val">14<span>%</span></div>
+                            <div class="ec-lbl">Conversion Rate</div>
+                        </div>
+                        <div class="ec-stat">
+                            <div class="ec-val">TOP<span> 3</span></div>
+                            <div class="ec-lbl">Category Ranking</div>
+                        </div>
+                    </div>
+                    <p class="ec-desc">We partnered with Serasar to enhance its premium brand presence on Amazon through luxury-focused creative design, optimized product listings, and a refined customer experience strategy.<br><br>By implementing Premium A+ Content, high-converting visual assets, and strategic keyword targeting, we helped increase product visibility, improve conversion performance, and strengthen the brand's position within a highly competitive category.</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ═══════════════════ THE APEX CTA (NEW) ═══════════════════ -->
+        <div class="ec-global-cta reveal-ec">
+            <a href="/blogs" class="md-section-btn">
+                <span>EXPLORE ALL CASE STUDIES</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+        </div>
+
+    </div>
+</section>
+
+
+
+<!-- DIVIDER: Team (Light) → Intelligence Hub (Deep Black) -->
+<div style="display:block;line-height:0;background:#f0f0f0;">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%;height:80px;">
+        <path d="M0,0 L1440,80 L0,80 Z" fill="#050505"/>
+    </svg>
+</div>
+
+<!-- ═══════════════════ THE MILLION DOLLAR INTELLIGENCE HUB ═══════════════════ -->
+<section class="premium-blogs-v2" id="insights">
+    <div class="container">
+        
+        <div class="pb2-header reveal">
+            <div class="section-eyebrow" style="justify-content:center;margin-bottom:16px;">
+                <span class="ey-line"></span>
+                <span class="ey-text" style="color:var(--red);"> Our Blogs</span>
+            </div>
+            <h2 class="pb2-h2">USE OUR EXPERT TIPS TO<br>DOMINATE THE MARKET</h2>
+        </div>
+
+        <div class="pb2-controls reveal">
+            <div class="pb2-filters">
+                <button class="pb2-filter active">Articles</button>
+                <button class="pb2-filter">News</button>
+                <button class="pb2-filter">Interviews</button>
+            </div>
+            <a href="#all-insights" class="pb2-view-all">
+                All News 
+                <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+        </div>
+
+        <div class="pb2-grid">
+            
+            <article class="pb2-featured reveal">
+                <a href="#" style="text-decoration: none;">
+                    <div class="pb2-feat-img-wrap">
+                        <img src="https://plus.unsplash.com/premium_photo-1661764570116-b1b0a2da783c?w=800&auto=format&fit=crop&q=80" alt="Team collaborating">
+                    </div>
+                    <h3 class="pb2-feat-title">10 TIPS TO ACE YOUR NEXT PRODUCT LAUNCH.</h3>
+                    <p class="pb2-feat-desc">In today's highly saturated market, nailing the launch sequence is crucial to capturing category dominance. This article details ten actionable tips to structure your PPC, prepare your listing, and leave a lasting impression on the A9 algorithm.</p>
+                </a>
+                <div>
+                    <a href="blogs.html" class="btn-primary" style="border-radius: 100px;"><span>Learn More</span></a>
+                </div>
+            </article>
+
+            <div class="pb2-sidebar reveal">
+                
+                <a href="#" class="pb2-side-item">
+                    <div class="pb2-side-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=500&auto=format&fit=crop&q=60" alt="Resume/Listing Guide">
+                    </div>
+                    <div class="pb2-side-info">
+                        <h4 class="pb2-side-title">The Ultimate Guide to Crafting a Listing That Converts</h4>
+                        <div class="pb2-meta">
+                            <span>3 min read</span>
+                            <span>12 Jun 2024</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#" class="pb2-side-item">
+                    <div class="pb2-side-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=500&auto=format&fit=crop&q=60" alt="Career/Market Change">
+                    </div>
+                    <div class="pb2-side-info">
+                        <h4 class="pb2-side-title">How to Navigate a Category Saturation Change</h4>
+                        <div class="pb2-meta">
+                            <span>5 min read</span>
+                            <span>8 Jun 2024</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#" class="pb2-side-item">
+                    <div class="pb2-side-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=500&auto=format&fit=crop&q=60" alt="Emerging Industries">
+                    </div>
+                    <div class="pb2-side-info">
+                        <h4 class="pb2-side-title">Top 5 Emerging Marketplaces to Watch This Year</h4>
+                        <div class="pb2-meta">
+                            <span>6 min read</span>
+                            <span>2 Jun 2024</span>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- ═══════════════════ TEAM SECTION (EDITORIAL SPLIT) ═══════════════════ -->
+<section class="team-section-light" id="team">
+    <div class="container tl-container">
+        
+        <!-- Left Column: Intro & Controls -->
+        <div class="tl-intro reveal">
+            <div class="section-eyebrow" style="margin-bottom:16px;">
+                <span class="ey-line"></span>
+                <span class="ey-text" style="color:var(--red)">The Architects</span>
+            </div>
+            <h2 class="tl-h2">MEET OUR<span class="tl-highlight"> TEAM </span></h2>
+            <p class="tl-sub">Behind every successful Amazon brand is a team of dedicated specialists focused on strategy, execution, and continuous optimization.</p>
+            
+            <div class="tl-nav">
+                <button class="tl-nav-btn prev" id="tlPrev" aria-label="Previous">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                </button>
+                <button class="tl-nav-btn next" id="tlNext" aria-label="Next">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Right Column: Cinematic Track -->
+        <div class="tl-carousel-wrapper">
+            <div class="tl-track" id="tlTrack">
+                
+                <!-- Card 1: Saif Ur Rehman -->
+                <div class="tl-card">
+                    <div class="tl-img-box">
+                        <img src="Team/Saif Ur Rehman.jpg" alt="Saif Ur Rehman">
+                    </div>
+                    <div class="tl-info">
+                        <h3 class="tl-name">Saif Ur Rehman</h3>
+                        <p class="tl-role">Chief Executive Officer (CEO) & Founder</p>
+                        <p class="tl-desc">Visionary leader driving the company’s growth, strategic direction, and client success across global eCommerce marketplaces.</p>
+                    </div>
+                </div>
+
+                <!-- Card 2: Muhammad Arslan -->
+                <div class="tl-card">
+                    <div class="tl-img-box">
+                        <img src="Team/Muhammad Arslan.jpg" alt="Muhammad Arslan">
+                    </div>
+                    <div class="tl-info">
+                        <h3 class="tl-name">Muhammad Arslan</h3>
+                        <p class="tl-role">Chief Operating Officer (COO)</p>
+                        <p class="tl-desc">Oversees daily operations, team coordination, and process optimization to ensure smooth business execution.</p>
+                    </div>
+                </div>
+
+                <!-- Card 3: Abdul Moeed -->
+                <div class="tl-card">
+                    <div class="tl-img-box">
+                        <img src="Team/Abdul Moeed.jpg" alt="Abdul Moeed">
+                    </div>
+                    <div class="tl-info">
+                        <h3 class="tl-name">Abdul Moeed</h3>
+                        <p class="tl-role">Brand & Catalog Manager</p>
+                        <p class="tl-desc">Specializes in Amazon brand management, catalog optimization, and scalable listing strategies for marketplace growth.</p>
+                    </div>
+                </div>
+
+                <!-- Card 4: Abdul Wahab -->
+                <div class="tl-card">
+                    <div class="tl-img-box">
+                        <img src="Team/Abdul Wahab.jpg" alt="Abdul Wahab">
+                    </div>
+                    <div class="tl-info">
+                        <h3 class="tl-name">Abdul Wahab</h3>
+                        <p class="tl-role">Brand & Marketing Strategist</p>
+                        <p class="tl-desc">Leads branding initiatives and marketing campaigns focused on customer engagement and revenue growth.</p>
+                    </div>
+                </div>
+
+                <!-- Card 5: Muhammad Farhan -->
+                <div class="tl-card">
+                    <div class="tl-img-box">
+                        <img src="Team/Muhammad Farhan.jpg" alt="Muhammad Farhan">
+                    </div>
+                    <div class="tl-info">
+                        <h3 class="tl-name">Muhammad Farhan</h3>
+                        <p class="tl-role">Creative Operations Manager</p>
+                        <p class="tl-desc">Manages visual branding, creative direction, and high-converting multimedia content for eCommerce brands.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- DIVIDER: Dark → Dark (seamless to clients) -->
+<!-- <div style="display:block;line-height:0;background:#080808;">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%;height:80px;">
+        <path d="M0,80 L1440,0 L1440,80 Z" fill="#0a0a0a"/>
+    </svg>
+</div> -->
+
+
+
+<!-- ═══════════════════ CLIENT LOGOS (OBSIDIAN GLASS PLATES) ═══════════════════ -->
+<!-- <section class="clients-section">
+    <div class="container">
+        <div class="clients-header">
+            <div class="section-eyebrow" style="justify-content:center;margin-bottom:16px;">
+                <span class="ey-line"></span>
+                <span class="ey-text" style="color:#555">Trusted By</span>
+            </div>
+            <h2 class="clients-h2">BRANDS THAT<br>TRUST US</h2>
+            <p class="clients-sub">From challenger brands to market leaders — they all chose Ecommdots.</p>
+        </div>
+    </div> -->
+    
+    <!-- Track 1: Forward Motion -->
+    <!-- <div class="marquee-container" style="margin-bottom: 32px;">
+        <div class="marquee-track fwd"> -->
+            <!-- FIRST SET -->
+            <!-- <div class="logo-item"><img src="assets/logos/1.jpg" alt="UNO Brands" class="client-logo"></div>
+            <div class="logo-item"><img src="assets/logos/2.jpg" alt="Safariland" class="client-logo"></div>
+            <div class="logo-item"><img src="assets/logos/3.jpg" alt="Serasar" class="client-logo"></div>
+            <div class="logo-item"><img src="assets/logos/11.jpg" alt="Earth Fed Muscle" class="client-logo"></div>
+            <div class="logo-item"><img src="assets/logos/5.jpg" alt="Testing Mom" class="client-logo"></div>
+            <div class="logo-item"><img src="assets/logos/6.jpg" alt="Boldify" class="client-logo"></div>
+            <div class="logo-item"><img src="assets/logos/7.jpg" alt="American Hat Makers" class="client-logo"></div>
+             -->
+            <!-- DUPLICATE SET (Required for the seamless loop) -->
+            <!-- <div class="logo-item"><img src="assets/logos/8.jpg" alt="UNO Brands" class="client-logo"></div>
+            <div class="logo-item"><img src="assets/logos/9.jpg" alt="Safariland" class="client-logo"></div>
+            <div class="logo-item"><img src="assets/logos/10.jpg" alt="Serasar" class="client-logo"></div>
+            <div class="logo-item"><img src="assets/logos/11.jpg" alt="Earth Fed Muscle" class="client-logo"></div>
+            <div class="logo-item"><img src="assets/logos/12.jpg" alt="Testing Mom" class="client-logo"></div>
+            <div class="logo-item"><img src="assets/logos/13.jpg" alt="Boldify" class="client-logo"></div>
+            <div class="logo-item"><img src="assets/logos/14.jpg" alt="American Hat Makers" class="client-logo"></div>
+        </div> -->
+    <!-- </div> -->
+
+    <!-- Track 2: Reverse Motion (Offset for visual variety) -->
+    <!-- <div class="marquee-container">
+        <div class="marquee-track rev"> -->
+            <!-- FIRST SET -->
+            <!-- <div class="logo-item"><img src="assets/logos/1.jpg" alt="Departure Outdoor" class="client-logo"></div>
+            <div class="logo-item"><img src="assets/logos/2.jpg" alt="Houseables" class="client-logo"></div>
+            <div class="logo-item"><img src="assets/logos/3.jpg" alt="Warren London" class="client-logo"></div>
+            <div class="logo-item"><img src="assets/logos/11.jpg" alt="Arcridge" class="client-logo"></div>
+            <div class="logo-item"><img src="assets/logos/5.jpg" alt="Burlinghams" class="client-logo"></div>
+            <div class="logo-item"><img src="assets/logos/6.jpg" alt="Infinite Discs" class="client-logo"></div>
+            <div class="logo-item"><img src="assets/logos/7.jpg" alt="Theraplex" class="client-logo"></div> -->
+
+            <!-- DUPLICATE SET (Required for the seamless loop) -->
+            <!-- <div class="logo-item"><img src="assets/logos/8.jpg" alt="Departure Outdoor" class="client-logo"></div>
+            <div class="logo-item"><img src="assets/logos/9.jpg" alt="Houseables" class="client-logo"></div>
+            <div class="logo-item"><img src="assets/logos/10.jpg" alt="Warren London" class="client-logo"></div>
+            <div class="logo-item"><img src="assets/logos/11.jpg" alt="Arcridge" class="client-logo"></div>
+            <div class="logo-item"><img src="assets/logos/12.jpg" alt="Burlinghams" class="client-logo"></div>
+            <div class="logo-item"><img src="assets/logos/13.jpg" alt="Infinite Discs" class="client-logo"></div>
+            <div class="logo-item"><img src="assets/logos/14.jpg" alt="American Hat Makers" class="client-logo"></div>
+        </div>
+    </div>
+</section> -->
+
+<!-- DIVIDER: Dark → Red -->
+<div style="display:block;line-height:0;background:#111111;">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%;height:80px;">
+        <path d="M0,80 L1440,0 L1440,80 Z" fill="#a00000"/>
+    </svg>
+</div>
+
+<!-- ═══════════════════ CTA STRIP ═══════════════════ -->
+<!-- <section class="cta-strip">
+    <div class="container cta-strip-inner">
+        <div class="section-eyebrow" style="justify-content:center;margin-bottom:20px;">
+            <span class="ey-line" style="background:rgba(255,255,255,0.4);"></span>
+            <span class="ey-text" style="color:rgba(255,255,255,0.7);">Limited Spots Available</span>
+        </div>
+        <h2>READY TO<br>DOMINATE<br>AMAZON?</h2>
+        <p>We take on fewer than 10 new clients per quarter. Book your free audit before the next cohort closes — it takes 15 minutes and could change everything.</p>
+        <a href="#contact" class="cta-strip-btn">BOOK YOUR FREE AUDIT →</a>
+        <div class="cta-trust-row">
+            <span><svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg> No commitment required</span>
+            <span><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg> Guaranteed response in 24 hours</span>
+            <span><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg> Results-first partnership</span>
+        </div>
+    </div>
+</section> -->
+
+
+<section class="contact-section" id="contact">
+    <div class="container">
+        <div class="contact-inner">
+
+            <div class="contact-copy">
+                <div class="section-eyebrow" style="margin-bottom:24px;">
+                    <span class="ey-line" style="background: rgba(255, 255, 255, 0.5);"></span>
+                    <span class="ey-text" style="color: #ffffff;">Get In Touch</span>
+                </div>
+                <h2 class="contact-h2">READY TO UNLOCK<br>YOUR NEXT<br><em>LEVEL OF GROWTH?</em></h2>
+                <p class="contact-lead">Every successful brand starts with a conversation. Tell us where your business stands today, what challenges you're facing, and where you want to go. We'll identify opportunities, outline a strategy, and help you build a scalable path forward. From product launches and creative design to PPC management and account growth, we're here to turn ambitious goals into measurable results.</p>
+
+                <div class="contact-trust">
+                    <div class="ct-item">
+                        <div class="ct-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                        </div>
+                        <div class="ct-text">
+                            <strong>Offices</strong>
+                            <span>London, UK · New York, US · Dubai, UAE<br>Lahore, Pakistan</span>
+                        </div>
+                    </div>
+
+                    <div class="ct-item">
+                        <div class="ct-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                            </svg>
+                        </div>
+                        <div class="ct-text">
+                            <strong>Phone Number</strong>
+                            <span><a href="tel:+923420147244" style="color: inherit; text-decoration: none;">+92 342 014 7244</a></span>
+                        </div>
+                    </div>
+
+                    <div class="ct-item">
+                        <div class="ct-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                        </div>
+                        <div class="ct-text">
+                            <strong>Mail Address</strong>
+                            <span><a href="mailto:help@telsolutionspk.com" style="color: inherit; text-decoration: none;">help@telsolutionspk.com</a></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form-card">
+                <div id="contactForm">
+                    <div class="form-title">FREE AUDIT</div>
+                    <div class="form-subtitle">Fill in the details below and a senior strategist will review your account personally.</div>
+
+                    <div class="form-grid">
+                        
+                        <div class="form-row-2">
+                            <div class="form-group">
+                                <label class="form-label" for="cf-name">Full Name</label>
+                                <input type="text" id="cf-name" class="form-input" placeholder="Your name" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="cf-email">Business Email</label>
+                                <input type="email" id="cf-email" class="form-input" placeholder="you@company.com" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row-2">
+                            <div class="form-group">
+                                <label class="form-label" for="cf-brand">Brand / Company</label>
+                                <input type="text" id="cf-brand" class="form-input" placeholder="Your Amazon brand">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="cf-phone">Phone Number</label>
+                                <input type="tel" id="cf-phone" class="form-input" placeholder="+1 (555) 000-0000">
+                            </div>
+                        </div>
+
+                        <div class="form-group full">
+                            <label class="form-label" for="cf-revenue">Monthly Amazon Revenue</label>
+                            <select id="cf-revenue" class="form-select">
+                                <option value="" disabled selected>Select your revenue range</option>
+                                <option>Under $10,000 / month</option>
+                                <option>$10,000 – $50,000 / month</option>
+                                <option>$50,000 – $100,000 / month</option>
+                                <option>$100,000 – $500,000 / month</option>
+                                <option>$500,000+ / month</option>
+                                <option>Pre-launch (Not yet selling)</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group full">
+                            <label class="form-label" style="margin-bottom: 6px;">Services You're Interested In</label>
+                            <div class="form-checkgroup">
+                                <label class="form-check">
+                                    <input type="checkbox" value="ppc">
+                                    <span class="form-check-label">PPC Management</span>
+                                </label>
+                                <label class="form-check">
+                                    <input type="checkbox" value="listing">
+                                    <span class="form-check-label">Listing Optimisation</span>
+                                </label>
+                                <label class="form-check">
+                                    <input type="checkbox" value="creative">
+                                    <span class="form-check-label">Creative Studio</span>
+                                </label>
+                                <label class="form-check">
+                                    <input type="checkbox" value="health">
+                                    <span class="form-check-label">Account Health</span>
+                                </label>
+                                <label class="form-check">
+                                    <input type="checkbox" value="sourcing">
+                                    <span class="form-check-label">Product Sourcing</span>
+                                </label>
+                                <label class="form-check">
+                                    <input type="checkbox" value="global">
+                                    <span class="form-check-label">Global Expansion</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group full">
+                            <label class="form-label" for="cf-challenge">Primary Challenge</label>
+                            <select id="cf-challenge" class="form-select">
+                                <option value="" disabled selected>What's your biggest challenge right now?</option>
+                                <option>PPC / Ad spend efficiency</option>
+                                <option>Listing conversion rate</option>
+                                <option>Organic ranking & SEO</option>
+                                <option>Account health / suspension</option>
+                                <option>New product launch</option>
+                                <option>International expansion</option>
+                                <option>Brand protection</option>
+                                <option>Overall profitability</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group full">
+                            <label class="form-label" for="cf-message">Tell Us About Your Brand</label>
+                            <textarea id="cf-message" class="form-textarea" placeholder="Share your current situation, goals, or anything you'd like us to know going in — the more detail, the better your audit will be..."></textarea>
+                        </div>
+
+                    </div>
+                    
+                    <button class="form-submit" id="formSubmit" type="button">
+                        <span>REQUEST MY FREE AUDIT</span>
+                        <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </button>
+                    
+                    <p class="form-fine">By submitting you agree to our privacy policy. We never share your data with third parties, ever.</p>
+                </div>
+
+                <div class="form-success" id="formSuccess">
+                    <div class="form-success-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                    </div>
+                    <h3>AUDIT BOOKED.</h3>
+                    <p>A senior strategist from our team will review your account and be in touch personally within 24 hours. Check your inbox for a confirmation.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+<!-- DIVIDER: Dark → Dark (seamless to clients) -->
+<div style="display:block;line-height:0;background:#080808;">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%;height:80px;">
+        <path d="M0,80 L1440,0 L1440,80 Z" fill="#0a0a0a"/>
+    </svg>
+</div>
+
+
+<!-- ═══════════════════ FOOTER ═══════════════════ -->
+<footer class="footer">
+    <div class="footer-glow"></div>
+
+    <div class="container relative-z">
+        <div class="footer-grid-premium">
+            
+            <div class="footer-brand-col">
+                <a href="#" class="brand-logo" style="margin-bottom: 24px; gap: 6px;">
+                    <div class="brand-icon-wrap" style="width: 48px; height: 48px;">
+                        <svg class="brand-icon-svg" viewBox="0 0 180 180" preserveAspectRatio="xMidYMid meet">
+                            <defs>
+                                <linearGradient id="header-lacquer" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#ff4d5a" />
+                                    <stop offset="40%" stop-color="#d9232d" />
+                                    <stop offset="100%" stop-color="#991118" />
+                                </linearGradient>
+                                <filter id="header-glow" x="-30%" y="-30%" width="160%" height="160%">
+                                    <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#d9232d" flood-opacity="0.45" />
+                                </filter>
+                            </defs>
+                            <g class="header-mark-group">
+                                <circle cx="90" cy="90" r="65" fill="url(#header-lacquer)" filter="url(#header-glow)" />
+                                <g class="header-ed-text">
+                                    <text x="68" y="110" font-family="'Montserrat', 'Futura', 'Century Gothic', sans-serif" font-weight="200" font-size="66" fill="#ffffff" text-anchor="middle" transform="rotate(-24 68 90)">e</text>
+                                    <text x="112" y="112" font-family="'Montserrat', 'Futura', 'Century Gothic', sans-serif" font-weight="200" font-size="74" fill="#ffffff" text-anchor="middle">d</text>
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="brand-text" style="font-size: 2.2rem;">ECOMM<span class="gradient-text">DOTS</span></div>
+                </a>
+                <p class="footer-desc">The global Amazon digital services agency for brands that are serious about growth. Data-driven, creatively led, and results-obsessed since 2019.</p>
+            </div>
+
+            <div class="footer-nav-col">
+                <div class="footer-col-title">Expertise</div>
+                <div class="footer-links">
+                    <a href="services#product-launch-strategy"><span>Product Launch</span></a>
+                    <a href="services#product-research-analysis"><span>Product Research</span></a>
+                    <a href="services#sourcing-logistics-solutions"><span>Sourcing & Logistics</span></a>
+                    <a href="services#creative-design-solutions"><span>Creative Design</span></a>
+                    <a href="services#ppc-account-management"><span>PPC Management</span></a>
+                    <a href="services#account-health-support"><span>Account Health</span></a>
+                </div>
+            </div>
+
+            <div class="footer-nav-col">
+                <div class="footer-col-title">The Agency</div>
+                <div class="footer-links">
+                    <a href="about"><span>About Us</span></a>
+                    <a href="./#case-studies"><span>Case Studies</span></a>
+                    <a href="about#team"><span>Our Team</span></a>
+                    <a href="blog"><span>Intelligence Hub</span></a>
+                    <a href="#contact"><span>Book an Audit</span></a>
+                </div>
+            </div>
+
+            <!-- Column 4: Corporate HQ -->
+            <div class="footer-nav-col">
+                <div class="footer-col-title">Corporate HQ</div>
+                <div class="footer-locations">
+                    <div class="loc-item">
+                        <strong>Operations Center</strong>
+                        <span>Lahore, Pakistan</span>
+                    </div>
+                    <div class="loc-item">
+                        <strong>Global Support Hours</strong>
+                        <span>Mon - Fri · 9:00 AM - 6:00 PM (PKT)</span>
+                    </div>
+                    <div class="loc-item">
+                        <strong>Direct Contact</strong>
+                        <a href="mailto:hello@ecommdots.com" class="loc-link">hello@ecommdots.com</a>
+                        <a href="tel:+923420147244" class="loc-link">+92 342 014 7244</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-giant-text">ECOMMDOTS</div>
+
+        <div class="footer-bottom-bar">
+            <div class="fb-copy-wrap">
+                <div class="fb-copy">© 2026 Ecommdots. Engineered for dominance.</div>
+                <div class="fb-watermark">
+                    <span class="wm-text">Developed by</span>
+                    <a href="https://choudaryhussainali.online/" target="_blank" rel="noopener noreferrer" class="wm-link">CHA</a>
+                </div>
+            </div>
+            
+            <div class="fb-legal">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+
+            <div class="fb-socials">
+                <a href="#" class="fb-social-btn" aria-label="LinkedIn">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                </a>
+                <a href="#" class="fb-social-btn" aria-label="Instagram">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                </a>
+                <a href="#" class="fb-social-btn" aria-label="YouTube">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.5 12 3.5 12 3.5s-7.505 0-9.377.55a3.015 3.015 0 0 0-2.122 2.136C0 8.07 0 12 0 12s0 3.93.501 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.55 9.377.55 9.377.55s7.505 0 9.377-.55a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="{{ url_for('static', filename='js/index.js') }}"></script>
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+</body>
+</html>
+
+
+
+
+

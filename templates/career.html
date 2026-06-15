@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers — Build the Future of Ecommerce | Ecommdots</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;800;900&family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/career.css') }}">
+</head>
+<body>
+
+<!-- ═══════════════ CURSOR ═══════════════ -->
+<div id="cur-dot"></div>
+<div id="cur-ring"></div>
+
+<!-- ═══════════════ SOCIAL SIDEBAR ═══════════════ -->
+<div class="social-sidebar" id="socialSidebar">
+    <button class="toggle-btn" id="sidebarToggle" aria-label="Toggle social links">
+        <svg class="arrow-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
+    </button>
+    <div class="social-links">
+        <a href="https://wa.me/923420147244" target="_blank" rel="noopener noreferrer" class="social-btn whatsapp-btn" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </a>
+        <a href="https://linkedin.com/company/ecommdots" target="_blank" rel="noopener noreferrer" class="social-btn linkedin-btn" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+        </a>
+        <a href="https://youtube.com/@ecommdots" target="_blank" rel="noopener noreferrer" class="social-btn youtube-btn" aria-label="YouTube">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.5 12 3.5 12 3.5s-7.505 0-9.377.55a3.015 3.015 0 0 0-2.122 2.136C0 8.07 0 12 0 12s0 3.93.501 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.55 9.377.55 9.377.55s7.505 0 9.377-.55a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        </a>
+    </div>
+</div>
+
+<nav class="mobile-nav" id="mobileNav" aria-label="Mobile Navigation">
+  <div class="mobile-nav-links">
+    <a href="services" data-close-nav>Services</a>
+    <a href="./#brands" data-close-nav>Brands</a>
+    <a href="about" data-close-nav>About</a>
+    <a href="./#case-studies" data-close-nav>Case Studies</a>
+    <a href="blog" data-close-nav>Blog</a>
+    <a href="testimonials" data-close-nav>Testimonials</a>
+    <a href="career" data-close-nav>Careers</a>
+  </div>
+  <div class="mobile-nav-cta">
+    <a href="#" class="btn-audit" id="mobileCalendlyBtn">BOOK FREE CONSULTATION</a>
+  </div>
+</nav>
+<header class="main-header" id="mainHeader">
+    <nav class="container nav-wrapper">
+        <a href="index.html" class="brand-logo">
+            <div class="brand-icon-wrap">
+                <svg class="brand-icon-svg" viewBox="0 0 180 180" preserveAspectRatio="xMidYMid meet">
+                    <defs>
+                        <linearGradient id="header-lacquer" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#ff4d5a" />
+                            <stop offset="40%" stop-color="#d9232d" />
+                            <stop offset="100%" stop-color="#991118" />
+                        </linearGradient>
+                        <filter id="header-glow" x="-30%" y="-30%" width="160%" height="160%">
+                            <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#d9232d" flood-opacity="0.45" />
+                        </filter>
+                    </defs>
+                    <g class="header-mark-group">
+                        <circle cx="90" cy="90" r="65" fill="url(#header-lacquer)" filter="url(#header-glow)" />
+                        <g class="header-ed-text">
+                            <text x="68" y="110" font-family="'Montserrat', 'Futura', 'Century Gothic', sans-serif" font-weight="200" font-size="66" fill="#ffffff" text-anchor="middle" transform="rotate(-24 68 90)">e</text>
+                            <text x="112" y="112" font-family="'Montserrat', 'Futura', 'Century Gothic', sans-serif" font-weight="200" font-size="74" fill="#ffffff" text-anchor="middle">d</text>
+                        </g>
+                    </g>
+                </svg>
+            </div>
+            <div class="brand-text">ECOMM<span class="gradient-text">DOTS</span></div>
+        </a>
+        <ul class="nav-links">
+            <li class="nav-has-dropdown">
+                <a href="services" class="nav-drop-trigger">
+                    Services 
+                    <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" fill="none"><path d="M6 9l6 6 6-6"/></svg>
+                </a>
+                <div class="nav-dropdown">
+                    <div class="nav-dropdown-inner mega-menu">
+                        <a href="services#product-launch-strategy" class="nav-drop-item">
+                            <span class="nd-title">Product Launch Strategy</span>
+                            <span class="nd-sub">End-to-end marketplace readiness</span>
+                        </a>
+                        <a href="services#product-research-analysis" class="nav-drop-item">
+                            <span class="nd-title">Product Research Analysis</span>
+                            <span class="nd-sub">Data-driven opportunity discovery</span>
+                        </a>
+                        <a href="services#sourcing-logistics-solutions" class="nav-drop-item">
+                            <span class="nd-title">Sourcing & Logistics</span>
+                            <span class="nd-sub">Supply chain & global manufacturing</span>
+                        </a>
+                        <a href="services#listing-optimization" class="nav-drop-item">
+                            <span class="nd-title">Listing Optimization</span>
+                            <span class="nd-sub">SEO & conversion rate refinement</span>
+                        </a>
+                        <a href="services#creative-design-solutions" class="nav-drop-item">
+                            <span class="nd-title">Creative Design</span>
+                            <span class="nd-sub">High-converting visual assets</span>
+                        </a>
+                        <a href="services#ppc-account-management" class="nav-drop-item">
+                            <span class="nd-title">PPC Management</span>
+                            <span class="nd-sub">Strategic ad spend optimization</span>
+                        </a>
+                        <a href="services#account-health-support" class="nav-drop-item">
+                            <span class="nd-title">Account Health Support</span>
+                            <span class="nd-sub">Compliance & risk mitigation</span>
+                        </a>
+                        <a href="services#multichannel-commerce-integration" class="nav-drop-item">
+                            <span class="nd-title">Multichannel Integration</span>
+                            <span class="nd-sub">Unified ecommerce ecosystem</span>
+                        </a>
+                        <a href="services" class="nav-drop-item">
+                            <span class="nd-title">All Services</span>
+                            <span class="nd-sub">Bespoke 8-figure architectures</span>
+                        </a>
+                    </div>
+                </div>
+            </li>
+            <li><a href="./#brands">Brands</a></li>
+            <li class="nav-has-dropdown">
+                <a href="about" class="nav-drop-trigger">
+                    About 
+                    <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" fill="none"><path d="M6 9l6 6 6-6"/></svg>
+                </a>
+                <div class="nav-dropdown">
+                    <div class="nav-dropdown-inner">
+                        <a href="about#about" class="nav-drop-item">
+                            <span class="nd-title">Our Story</span>
+                            <span class="nd-sub">About ECOMMDOTS</span>
+                        </a>
+                        <a href="/about#mission" class="nav-drop-item">
+                            <span class="nd-title">Core Philosophy</span>
+                            <span class="nd-sub">Our mission & manifesto</span>
+                        </a>
+                        <a href="/about#legacy" class="nav-drop-item">
+                            <span class="nd-title">Agency Genesis</span>
+                            <span class="nd-sub">The legacy we're building</span>
+                        </a>
+                        <a href="/about#team" class="nav-drop-item">
+                            <span class="nd-title">The Architects</span>
+                            <span class="nd-sub">Leadership & strategy team</span>
+                        </a>
+                    </div>
+                </div>
+            </li>
+            <li><a href="testimonials">Testimonials</a></li>
+            <li><a href="career">Career</a></li>
+        </ul>
+        <div class="nav-controls">
+            <a href="#" class="btn-audit" id="desktopCalendlyBtn">BOOK FREE CONSULTATION</a>
+            <button class="hamburger" id="hamburger" aria-label="Open Menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+</header>
+
+<!-- ═══════════════ HERO ═══════════════ -->
+<section class="careers-hero">
+    <div class="careers-hero-bg"></div>
+    <div class="container careers-hero-inner">
+        <div class="careers-hero-content">
+            <div class="careers-hero-eyebrow">
+                <span class="ey-line"></span>
+                <span class="ey-text">WE'RE HIRING</span>
+                <span style="width:8px;height:8px;background:var(--red);border-radius:50%;position:relative;"><span style="position:absolute;inset:0;border-radius:50%;background:var(--red);animation:livePulse 2s cubic-bezier(0.4,0,0.6,1) infinite;"></span></span>
+            </div>
+            <h1 class="careers-hero-h1">
+                BUILD THE<br>
+                FUTURE OF<br>
+                <span>ECOMMERCE.</span>
+            </h1>
+            <p class="careers-hero-sub">
+                Join a team of operators, strategists, and creatives who are redefining how Amazon and eCommerce brands scale through data, execution, and performance-driven systems.<br><br>We’re not building an agency. We’re building a growth engine—and we’re looking for people who want real ownership, real impact, and real results.
+            </p>
+            <div class="careers-hero-ctas">
+                <a href="#positions" class="btn-hero-primary">
+                    <span>SEE OPEN ROLES</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+                <a href="#culture" class="btn-hero-outline">OUR CULTURE</a>
+            </div>
+        </div>
+        <div class="careers-hero-visual">
+            <div class="hero-stats-card">
+                <div class="hero-stat-row">
+                    <div class="hero-stat-item">
+                        <div class="hero-stat-num">50<span>+</span></div>
+                        <div class="hero-stat-label">Team Members Across Global Markets</div>
+                    </div>
+                    <div class="hero-stat-item">
+                        <div class="hero-stat-num">8<span>+</span></div>
+                        <div class="hero-stat-label">Nationalities Represented</div>
+                    </div>
+                    <div class="hero-stat-item">
+                        <div class="hero-stat-num">5<span>/5</span></div>
+                        <div class="hero-stat-label">Employee Satisfaction Rating</div>
+                    </div>
+                    <div class="hero-stat-item">
+                        <div class="hero-stat-num">94<span>%</span></div>
+                        <div class="hero-stat-label">Team Retention Rate</div>
+                    </div>
+                </div>
+                <div class="hero-card-divider"></div>
+                <div class="hero-card-culture">
+                    <div class="hero-card-culture-item">
+                        <div class="hc-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+                        <span class="hc-text">Remote-first, results-driven culture</span>
+                    </div>
+                    <div class="hero-card-culture-item">
+                        <div class="hc-icon"><svg viewBox="0 0 24 24"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
+                        <span class="hc-text">Real ownership, real impact</span>
+                    </div>
+                    <div class="hero-card-culture-item">
+                        <div class="hc-icon"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+                        <span class="hc-text">Growth paths tied to agency scale</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- DIVIDER -->
+<div class="divider-dark-to-light">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,80 L1440,0 L1440,80 Z" fill="#f5f5f5"/>
+    </svg>
+</div>
+
+<!-- ═══════════════ ABOUT WORKING HERE ═══════════════ -->
+<section class="about-working" id="culture">
+    <div class="container about-working-inner">
+        <div class="about-working-content">
+            <div class="section-eyebrow">
+                <span class="ey-line"></span>
+                <span class="ey-text" style="color:#555">OUR CULTURE.</span>
+            </div>
+            <h2 class="about-working-h2">WHY <span class="red">ECOMMDOTS.</span></h2>
+            <p class="about-working-desc">
+                We’re not a traditional agency. We operate like owners, think in systems, and move with speed and precision. Every team member is trusted with responsibility, accountability, and a direct impact on real brand performance.
+            </p>
+            <div class="about-working-pillars">
+                <div class="pillar-item">
+                    <div class="pillar-icon">
+                        <svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                    </div>
+                    <div class="pillar-body">
+                        <div class="pillar-title">Move at Startup Speed</div>
+                        <div class="pillar-desc">We prioritize execution speed and decision-making. Work moves in hours, not weeks, because momentum is critical in fast-changing marketplaces like Amazon.</div>
+                    </div>
+                </div>
+                <div class="pillar-item">
+                    <div class="pillar-icon">
+                        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    </div>
+                    <div class="pillar-body">
+                        <div class="pillar-title">A Team of Specialists</div>
+                        <div class="pillar-desc">You work with focused experts across PPC, SEO, design, and strategy—each bringing deep domain knowledge and hands-on marketplace experience.</div>
+                    </div>
+                </div>
+                <div class="pillar-item">
+                    <div class="pillar-icon">
+                        <svg viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+                    </div>
+                    <div class="pillar-body">
+                        <div class="pillar-title">Outcomes Over Hours</div>
+                        <div class="pillar-desc">We don’t measure success by time spent. We measure it by performance, results, and the actual growth delivered to brands.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="about-working-visual">
+            <div class="aw-glass-card">
+                <div class="aw-card-header">
+                    <div class="aw-card-title">AGENCY VITALS</div>
+                    <div class="aw-card-sub">Real Performance Metrics</div>
+                </div>
+                <div class="aw-stat-grid">
+                    <div class="aw-stat-cell">
+                        <div class="aw-stat-num">$75<span>M+</span></div>
+                        <div class="aw-stat-label">Revenue Managed</div>
+                    </div>
+                    <div class="aw-stat-cell">
+                        <div class="aw-stat-num">100<span>+</span></div>
+                        <div class="aw-stat-label">Successful Product Launches</div>
+                    </div>
+                    <div class="aw-stat-cell">
+                        <div class="aw-stat-num">6<span>+</span></div>
+                        <div class="aw-stat-label">Years of Operating Experience</div>
+                    </div>
+                    <div class="aw-stat-cell">
+                        <div class="aw-stat-num">50<span>+</span></div>
+                        <div class="aw-stat-label">Brands Actively Served</div>
+                    </div>
+                </div>
+            </div>
+            <div class="aw-float-badge">
+                <div class="aw-badge-num">#1</div>
+                <div class="aw-badge-label">PKT Agency</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- DIVIDER -->
+<div class="divider-light-to-dark" style="background:#f5f5f5;">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,0 L1440,80 L0,80 Z" fill="#ffffff"/>
+    </svg>
+</div>
+
+<!-- ═══════════════ OPEN POSITIONS ═══════════════ -->
+<section class="positions-section" id="positions">
+    <div class="container">
+        <div class="positions-header">
+            <div class="positions-header-left">
+                <div class="section-eyebrow">
+                    <span class="ey-line"></span>
+                    <span class="ey-text" style="color:#555">Join the Team</span>
+                </div>
+                <h2 class="positions-h2">OPEN <span class="red">POSITIONS.</span></h2>
+                <p class="positions-sub">We're growing fast. Find your role and come build with us.</p>
+            </div>
+        </div>
+
+        <div class="positions-filters" id="posFilters">
+            <button class="pos-filter active" data-dept="All">All Roles</button>
+            <button class="pos-filter" data-dept="Marketing">Marketing</button>
+            <button class="pos-filter" data-dept="Operations">Operations</button>
+            <button class="pos-filter" data-dept="Design">Design</button>
+            <button class="pos-filter" data-dept="Technology">Technology</button>
+            <button class="pos-filter" data-dept="Strategy">Strategy</button>
+        </div>
+
+        <div class="jobs-grid" id="jobsGrid">
+            <!-- Rendered by JS -->
+        </div>
+    </div>
+</section>
+
+<!-- DIVIDER -->
+<div class="divider-white-to-dark">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,0 L1440,80 L0,80 Z" fill="#050505"/>
+    </svg>
+</div>
+
+<!-- ═══════════════ BENEFITS ═══════════════ -->
+<section class="benefits-section">
+    <div class="container">
+        <div class="benefits-header">
+            <div class="blog-hero-eyebrow" style="justify-content:center;">
+                <span class="eyebrow-line"></span>
+                <div class="live-dot-wrap"><span class="live-dot"></span><span class="live-dot-text">Perks & Benefits</span></div>
+                <span class="eyebrow-line"></span>
+            </div>
+            <h2 class="benefits-h2">WHAT YOU <span class="red">GET.</span></h2>
+        </div>
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <div class="benefit-card-inner-glow"></div>
+                <div class="benefit-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+                <div class="benefit-title">Structured Work Environment</div>
+                <div class="benefit-desc">Work from our office in a focused and collaborative setting. We believe great ideas grow faster when teams work closely together and communicate effectively.</div>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-card-inner-glow"></div>
+                <div class="benefit-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+                <div class="benefit-title">Career Growth Opportunities</div>
+                <div class="benefit-desc">Take on meaningful projects, learn from experienced professionals, and build skills that help you grow within the company and your career.</div>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-card-inner-glow"></div>
+                <div class="benefit-icon"><svg viewBox="0 0 24 24"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
+                <div class="benefit-title">Learning & Development</div>
+                <div class="benefit-desc">Access opportunities to expand your knowledge through training sessions, industry resources, workshops, and continuous learning initiatives.</div>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-card-inner-glow"></div>
+                <div class="benefit-icon"><svg viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></div>
+                <div class="benefit-title">Performance Recognition</div>
+                <div class="benefit-desc">We value results and dedication. Outstanding contributions are recognized through performance-based rewards, growth opportunities, and professional recognition.</div>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-card-inner-glow"></div>
+                <div class="benefit-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+                <div class="benefit-title">Collaborative Team Culture</div>
+                <div class="benefit-desc">Work alongside supportive teammates in an environment that encourages knowledge sharing, teamwork, and open communication.</div>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-card-inner-glow"></div>
+                <div class="benefit-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+                <div class="benefit-title">Employee Well-Being</div>
+                <div class="benefit-desc">We strive to create a positive workplace experience with a healthy work environment, work-life balance initiatives, and a culture that respects people and their contributions.</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- DIVIDER -->
+<div class="divider-dark-to-light" style="background:#050505;">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,80 L1440,0 L1440,80 Z" fill="#f5f5f5"/>
+    </svg>
+</div>
+
+<!-- ═══════════════ WORKFLOW ═══════════════ -->
+<section class="workflow-section">
+    <div class="container">
+        <div class="workflow-header">
+            <div class="section-eyebrow" style="justify-content:center;">
+                <span class="ey-line"></span>
+                <span class="ey-text" style="color:#555">Application Process</span>
+                <span class="ey-line"></span>
+            </div>
+            <h2 class="workflow-h2">HOW TO <span class="red">APPLY.</span></h2>
+            <p class="workflow-sub">Four steps from application to your first day. We move quickly and keep you informed throughout.</p>
+        </div>
+        <div class="workflow-steps">
+            <div class="workflow-step">
+                <div class="step-icon-wrap">
+                    <span class="step-num">01</span>
+                    <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                </div>
+                <div class="step-title">Submit Application</div>
+                <div class="step-desc">Click Apply Now on your target role. Fill the short Google Form — no lengthy cover letters required. Just your story.</div>
+            </div>
+            <div class="workflow-step">
+                <div class="step-icon-wrap">
+                    <span class="step-num">02</span>
+                    <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.5 2 2 0 0 1 3.59 1.36h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16.92"/></svg>
+                </div>
+                <div class="step-title">Initial Screen</div>
+                <div class="step-desc">A 30-minute intro call with someone from our team. Casual, conversational — we want to hear how you think.</div>
+            </div>
+            <div class="workflow-step">
+                <div class="step-icon-wrap">
+                    <span class="step-num">03</span>
+                    <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                </div>
+                <div class="step-title">Skills Assessment</div>
+                <div class="step-desc">A focused, practical task relevant to your role. Designed to take 2–3 hours. Paid for senior positions.</div>
+            </div>
+            <div class="workflow-step">
+                <div class="step-icon-wrap">
+                    <span class="step-num">04</span>
+                    <svg viewBox="0 0 24 24"><path d="M20 7H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                </div>
+                <div class="step-title">Offer & Onboard</div>
+                <div class="step-desc">Offer issued within 48 hours of final interview. Structured 30-day onboarding to set you up for success.</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- DIVIDER -->
+<div class="divider-charcoal-to-white" style="background:#f5f5f5;">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,0 L1440,80 L0,80 Z" fill="#0a0a0a"/>
+    </svg>
+</div>
+
+<section class="faq-section">
+    <div class="container">
+        <div class="faq-inner">
+            <div class="faq-sidebar">
+                <div class="faq-sidebar-label">Common Questions</div>
+                <h2 class="faq-h2">YOUR<br><span class="red">QUESTIONS.</span></h2>
+                <p class="faq-sidebar-desc">Didn't find what you were looking for? Our team is happy to answer any questions about opportunities at Ecommdots before you apply.</p>
+                <a href="mailto:careers@ecommdots.com" class="faq-contact-link">
+                    EMAIL US DIRECTLY
+                    <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </a>
+            </div>
+            <div class="faq-list" id="faqList">
+                            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════ CTA ═══════════════ -->
+<div class="careers-cta-strip">
+    <div class="container cta-strip-inner">
+        <h2>DON'T SEE<br>YOUR ROLE?</h2>
+        <p>We're always looking for exceptional talent. Send us your CV and tell us how you'd make us better.</p>
+        <a href="mailto:careers@ecommdots.com" class="cta-strip-btn">SEND YOUR APPLICATION →</a>
+    </div>
+</div>
+
+<!-- ═══════════════════ FOOTER ═══════════════════ -->
+<footer class="footer">
+    <div class="footer-glow"></div>
+
+    <div class="container relative-z">
+        <div class="footer-grid-premium">
+            
+            <div class="footer-brand-col">
+                <a href="#" class="brand-logo" style="margin-bottom: 24px; gap: 6px;">
+                    <div class="brand-icon-wrap" style="width: 48px; height: 48px;">
+                        <svg class="brand-icon-svg" viewBox="0 0 180 180" preserveAspectRatio="xMidYMid meet">
+                            <defs>
+                                <linearGradient id="header-lacquer" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#ff4d5a" />
+                                    <stop offset="40%" stop-color="#d9232d" />
+                                    <stop offset="100%" stop-color="#991118" />
+                                </linearGradient>
+                                <filter id="header-glow" x="-30%" y="-30%" width="160%" height="160%">
+                                    <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#d9232d" flood-opacity="0.45" />
+                                </filter>
+                            </defs>
+                            <g class="header-mark-group">
+                                <circle cx="90" cy="90" r="65" fill="url(#header-lacquer)" filter="url(#header-glow)" />
+                                <g class="header-ed-text">
+                                    <text x="68" y="110" font-family="'Montserrat', 'Futura', 'Century Gothic', sans-serif" font-weight="200" font-size="66" fill="#ffffff" text-anchor="middle" transform="rotate(-24 68 90)">e</text>
+                                    <text x="112" y="112" font-family="'Montserrat', 'Futura', 'Century Gothic', sans-serif" font-weight="200" font-size="74" fill="#ffffff" text-anchor="middle">d</text>
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="brand-text" style="font-size: 2.2rem;">ECOMM<span class="gradient-text">DOTS</span></div>
+                </a>
+                <p class="footer-desc">The global Amazon digital services agency for brands that are serious about growth. Data-driven, creatively led, and results-obsessed since 2019.</p>
+            </div>
+
+            <div class="footer-nav-col">
+                <div class="footer-col-title">Expertise</div>
+                <div class="footer-links">
+                    <a href="services#product-launch-strategy"><span>Product Launch</span></a>
+                    <a href="services#product-research-analysis"><span>Product Research</span></a>
+                    <a href="services#sourcing-logistics-solutions"><span>Sourcing & Logistics</span></a>
+                    <a href="services#creative-design-solutions"><span>Creative Design</span></a>
+                    <a href="services#ppc-account-management"><span>PPC Management</span></a>
+                    <a href="services#account-health-support"><span>Account Health</span></a>
+                </div>
+            </div>
+
+            <div class="footer-nav-col">
+                <div class="footer-col-title">The Agency</div>
+                <div class="footer-links">
+                    <a href="about"><span>About Us</span></a>
+                    <a href="./#case-studies"><span>Case Studies</span></a>
+                    <a href="about#team"><span>Our Team</span></a>
+                    <a href="blog"><span>Intelligence Hub</span></a>
+                    <a href="#contact"><span>Book an Audit</span></a>
+                </div>
+            </div>
+
+            <!-- Column 4: Corporate HQ -->
+            <div class="footer-nav-col">
+                <div class="footer-col-title">Corporate HQ</div>
+                <div class="footer-locations">
+                    <div class="loc-item">
+                        <strong>Operations Center</strong>
+                        <span>Lahore, Pakistan</span>
+                    </div>
+                    <div class="loc-item">
+                        <strong>Global Support Hours</strong>
+                        <span>Mon - Fri · 9:00 AM - 6:00 PM (PKT)</span>
+                    </div>
+                    <div class="loc-item">
+                        <strong>Direct Contact</strong>
+                        <a href="mailto:hello@ecommdots.com" class="loc-link">hello@ecommdots.com</a>
+                        <a href="tel:+923420147244" class="loc-link">+92 342 014 7244</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-giant-text">ECOMMDOTS</div>
+
+        <div class="footer-bottom-bar">
+            <div class="fb-copy-wrap">
+                <div class="fb-copy">© 2026 Ecommdots. Engineered for dominance.</div>
+                <div class="fb-watermark">
+                    <span class="wm-text">Developed by</span>
+                    <a href="https://choudaryhussainali.online/" target="_blank" rel="noopener noreferrer" class="wm-link">CHA</a>
+                </div>
+            </div>
+            
+            <div class="fb-legal">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+
+            <div class="fb-socials">
+                <a href="#" class="fb-social-btn" aria-label="LinkedIn">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                </a>
+                <a href="#" class="fb-social-btn" aria-label="Instagram">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                </a>
+                <a href="#" class="fb-social-btn" aria-label="YouTube">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.5 12 3.5 12 3.5s-7.505 0-9.377.55a3.015 3.015 0 0 0-2.122 2.136C0 8.07 0 12 0 12s0 3.93.501 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.55 9.377.55 9.377.55s7.505 0 9.377-.55a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- ═══════════════ ADMIN FAB ═══════════════ -->
+<button class="admin-fab" id="adminFab" aria-label="Manage Job Listings">
+    <span class="admin-fab-label">MANAGE JOBS</span>
+    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+</button>
+
+<!-- ═══════════════ ADMIN OVERLAY ═══════════════ -->
+<div class="admin-overlay" id="adminOverlay">
+    <div class="admin-panel">
+        <div class="admin-header">
+            <div>
+                <div class="admin-title">JOB MANAGER</div>
+                <div class="admin-subtitle">Add, edit, reorder, and toggle your open positions</div>
+            </div>
+            <button class="admin-close" id="adminClose">
+                <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
+        </div>
+        <div class="admin-body">
+            <div class="admin-instructions-banner">
+                <div class="aib-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
+                <div class="aib-text">
+                    <strong>Changes save instantly.</strong> Toggle visibility with the switch, drag to reorder, click edit to update content, or delete to remove. The live page updates immediately.
+                </div>
+            </div>
+            <button class="admin-add-btn" id="adminAddBtn">
+                <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                ADD NEW POSITION
+            </button>
+            <div class="admin-job-list" id="adminJobList">
+                <!-- Rendered by JS -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ═══════════════ EDIT FORM OVERLAY ═══════════════ -->
+<div class="edit-form-overlay" id="editFormOverlay">
+    <div class="edit-form-panel">
+        <div class="edit-form-title" id="editFormTitle">ADD POSITION</div>
+        <div class="form-group">
+            <label class="form-label" for="fieldTitle">Job Title *</label>
+            <input type="text" id="fieldTitle" class="form-control" placeholder="e.g. Senior PPC Specialist">
+        </div>
+        <div class="form-row-2">
+            <div class="form-group">
+                <label class="form-label" for="fieldDept">Department *</label>
+                <select id="fieldDept" class="form-control">
+                    <option value="Marketing">Marketing</option>
+                    <option value="Operations">Operations</option>
+                    <option value="Design">Design</option>
+                    <option value="Technology">Technology</option>
+                    <option value="Strategy">Strategy</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="fieldType">Job Type *</label>
+                <select id="fieldType" class="form-control">
+                    <option value="Full-Time">Full-Time</option>
+                    <option value="Part-Time">Part-Time</option>
+                    <option value="Contract">Contract</option>
+                    <option value="Internship">Internship</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="fieldLocation">Location</label>
+            <input type="text" id="fieldLocation" class="form-control" placeholder="e.g. Remote · Lahore, Pakistan">
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="fieldDesc">Short Description *</label>
+            <textarea id="fieldDesc" class="form-control" placeholder="Briefly describe the role and what you're looking for..."></textarea>
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="fieldApplyLink">Apply Link (URL or mailto:) *</label>
+            <input type="text" id="fieldApplyLink" class="form-control" placeholder="https://forms.google.com/... or mailto:careers@ecommdots.com">
+        </div>
+        <div class="edit-form-actions">
+            <button class="btn-cancel" id="editFormCancel">CANCEL</button>
+            <button class="btn-save" id="editFormSave">SAVE POSITION</button>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+
+<script src="{{ url_for('static', filename='js/career.js') }}"></script>
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+</body>
+</html>

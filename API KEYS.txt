@@ -1,0 +1,7 @@
+Public key:  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRtdm55aHpsc256cm92Y2xoamViIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODExMTMxMDYsImV4cCI6MjA5NjY4OTEwNn0.9DHfyeeoG90YeQJ8h3_LREGTa5LUHo-mKvAq2U9AB2Q
+
+Project URL:    dmvnyhzlsnzrovclhjeb
+
+
+NEXT_PUBLIC_SUPABASE_URL=https://dmvnyhzlsnzrovclhjeb.supabase.co
+NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=sb_publishable_cK1yO_m_CdqT6UZXBr79TQ_KY9nf570

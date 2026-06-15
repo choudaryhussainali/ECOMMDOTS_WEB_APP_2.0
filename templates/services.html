@@ -1,0 +1,2141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services — Ecommdots | Elite Amazon Agency</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/services.css') }}">
+</head>
+<body>
+
+<div class="social-sidebar open" id="socialSidebar">
+  <button class="toggle-btn" id="toggleBtn" aria-label="Toggle sidebar">
+    <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </button>
+  <div class="social-links" id="socialLinks">
+    <a href="https://wa.me/YOUR_NUMBER" target="_blank" rel="noopener noreferrer" class="social-btn whatsapp-btn" aria-label="WhatsApp">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+      </svg>
+    </a>
+    <!-- <a href="mailto:your@email.com" class="social-btn email-btn" aria-label="Email">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+        <polyline points="22,4 12,13 2,4"></polyline>
+      </svg>
+    </a> -->
+    <a href="https://linkedin.com/company/yourcompany" target="_blank" rel="noopener noreferrer" class="social-btn linkedin-btn" aria-label="LinkedIn">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+      </svg>
+    </a>
+
+    <a href="https://youtube.com/@yourchannel" target="_blank" rel="noopener noreferrer" class="social-btn youtube-btn" aria-label="YouTube">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.5 12 3.5 12 3.5s-7.505 0-9.377.55a3.015 3.015 0 0 0-2.122 2.136C0 8.07 0 12 0 12s0 3.93.501 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.55 9.377.55 9.377.55s7.505 0 9.377-.55a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+      </svg>
+    </a>
+
+  </div>
+</div>
+
+<div id="cur-dot"></div>
+<div id="cur-ring"></div>
+
+<nav class="mobile-nav" id="mobileNav" aria-label="Mobile Navigation">
+  <div class="mobile-nav-links">
+    <a href="services" data-close-nav>Services</a>
+    <a href="./#brands" data-close-nav>Brands</a>
+    <a href="about" data-close-nav>About</a>
+    <a href="./#case-studies" data-close-nav>Case Studies</a>
+    <a href="blog" data-close-nav>Blog</a>
+    <a href="testimonials" data-close-nav>Testimonials</a>
+    <a href="career" data-close-nav>Careers</a>
+  </div>
+  <div class="mobile-nav-cta">
+    <a href="#" class="btn-audit" id="mobileCalendlyBtn">BOOK FREE CONSULTATION</a>
+  </div>
+</nav>
+
+<header class="main-header" id="mainHeader">
+    <nav class="container nav-wrapper">
+        <a href="index.html" class="brand-logo">
+            <div class="brand-icon-wrap">
+                <svg class="brand-icon-svg" viewBox="0 0 180 180" preserveAspectRatio="xMidYMid meet">
+                    <defs>
+                        <linearGradient id="header-lacquer" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#ff4d5a" />
+                            <stop offset="40%" stop-color="#d9232d" />
+                            <stop offset="100%" stop-color="#991118" />
+                        </linearGradient>
+                        <filter id="header-glow" x="-30%" y="-30%" width="160%" height="160%">
+                            <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#d9232d" flood-opacity="0.45" />
+                        </filter>
+                    </defs>
+                    <g class="header-mark-group">
+                        <circle cx="90" cy="90" r="65" fill="url(#header-lacquer)" filter="url(#header-glow)" />
+                        <g class="header-ed-text">
+                            <text x="68" y="110" font-family="'Montserrat', 'Futura', 'Century Gothic', sans-serif" font-weight="200" font-size="66" fill="#ffffff" text-anchor="middle" transform="rotate(-24 68 90)">e</text>
+                            <text x="112" y="112" font-family="'Montserrat', 'Futura', 'Century Gothic', sans-serif" font-weight="200" font-size="74" fill="#ffffff" text-anchor="middle">d</text>
+                        </g>
+                    </g>
+                </svg>
+            </div>
+            <div class="brand-text">ECOMM<span class="gradient-text">DOTS</span></div>
+        </a>
+        <ul class="nav-links">
+            <li class="nav-has-dropdown">
+                <a href="#" class="nav-drop-trigger">
+                    Services 
+                    <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" fill="none"><path d="M6 9l6 6 6-6"/></svg>
+                </a>
+                <div class="nav-dropdown">
+                    <div class="nav-dropdown-inner mega-menu">
+                        <a href="services#product-launch-strategy" class="nav-drop-item">
+                            <span class="nd-title">Product Launch Strategy</span>
+                            <span class="nd-sub">End-to-end marketplace readiness</span>
+                        </a>
+                        <a href="services#product-research-analysis" class="nav-drop-item">
+                            <span class="nd-title">Product Research Analysis</span>
+                            <span class="nd-sub">Data-driven opportunity discovery</span>
+                        </a>
+                        <a href="services#sourcing-logistics-solutions" class="nav-drop-item">
+                            <span class="nd-title">Sourcing & Logistics</span>
+                            <span class="nd-sub">Supply chain & global manufacturing</span>
+                        </a>
+                        <a href="services#listing-optimization" class="nav-drop-item">
+                            <span class="nd-title">Listing Optimization</span>
+                            <span class="nd-sub">SEO & conversion rate refinement</span>
+                        </a>
+                        <a href="services#creative-design-solutions" class="nav-drop-item">
+                            <span class="nd-title">Creative Design</span>
+                            <span class="nd-sub">High-converting visual assets</span>
+                        </a>
+                        <a href="services#ppc-account-management" class="nav-drop-item">
+                            <span class="nd-title">PPC Management</span>
+                            <span class="nd-sub">Strategic ad spend optimization</span>
+                        </a>
+                        <a href="services#account-health-support" class="nav-drop-item">
+                            <span class="nd-title">Account Health Support</span>
+                            <span class="nd-sub">Compliance & risk mitigation</span>
+                        </a>
+                        <a href="services#multichannel-commerce-integration" class="nav-drop-item">
+                            <span class="nd-title">Multichannel Integration</span>
+                            <span class="nd-sub">Unified ecommerce ecosystem</span>
+                        </a>
+                        <a href="services" class="nav-drop-item">
+                            <span class="nd-title">All Services</span>
+                            <span class="nd-sub">Bespoke 8-figure architectures</span>
+                        </a>
+                    </div>
+                </div>
+            </li>
+            <li><a href="./#brands">Brands</a></li>
+            <li class="nav-has-dropdown">
+                <a href="about" class="nav-drop-trigger">
+                    About 
+                    <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" fill="none"><path d="M6 9l6 6 6-6"/></svg>
+                </a>
+                <div class="nav-dropdown">
+                    <div class="nav-dropdown-inner">
+                        <a href="about#about" class="nav-drop-item">
+                            <span class="nd-title">Our Story</span>
+                            <span class="nd-sub">About ECOMMDOTS</span>
+                        </a>
+                        <a href="/about#mission" class="nav-drop-item">
+                            <span class="nd-title">Core Philosophy</span>
+                            <span class="nd-sub">Our mission & manifesto</span>
+                        </a>
+                        <a href="/about#legacy" class="nav-drop-item">
+                            <span class="nd-title">Agency Genesis</span>
+                            <span class="nd-sub">The legacy we're building</span>
+                        </a>
+                        <a href="/about#team" class="nav-drop-item">
+                            <span class="nd-title">The Architects</span>
+                            <span class="nd-sub">Leadership & strategy team</span>
+                        </a>
+                    </div>
+                </div>
+            </li>
+            <li><a href="testimonials">Testimonials</a></li>
+            <li><a href="career">Career</a></li>
+        </ul>
+        <div class="nav-controls">
+            <a href="#" class="btn-audit" id="desktopCalendlyBtn">BOOK FREE CONSULTATION</a>
+            <button class="hamburger" id="hamburger" aria-label="Open Menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+</header>
+<!-- ══════════════════════════════════════════════════
+     HERO
+══════════════════════════════════════════════════ -->
+<section class="services-hero">
+    <div class="hero-bg">
+        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2000&q=80" alt="Premium Agency Workspace">
+    </div>
+    <div class="container hero-inner">
+        <div class="hero-tag">
+            <div class="hero-tag-dot"></div>
+            <span>Elite Amazon Growth Partners</span>
+        </div>
+        <h1 class="hero-h1">WE BUILD <br><span class="red-word">EMPIRES.</span></h1>
+        <p class="hero-sub">No fluff. No technical jargon. Just relentless, visual-first strategies designed to dominate your market share and maximize your profit.</p>
+        <div class="hero-ctas">
+            <a href="#contact" class="btn-primary">Claim Your Market Share</a>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════
+     STICKY NAV (DYNAMIC & SYNCHRONIZED)
+══════════════════════════════════════════════════ -->
+<nav class="services-nav-sticky" id="servicesNav">
+    <div class="container sn-inner">
+        <a class="sn-item active" href="#product-launch-strategy"><span class="sn-num">01</span> Launch</a>
+        <a class="sn-item" href="#product-research-analysis"><span class="sn-num">02</span> Research</a>
+        <a class="sn-item" href="#sourcing-logistics-solutions"><span class="sn-num">03</span> Logistics</a>
+        <a class="sn-item" href="#listing-optimization"><span class="sn-num">04</span> Optimization</a>
+        <a class="sn-item" href="#creative-design-solutions"><span class="sn-num">05</span> Creative</a>
+        <a class="sn-item" href="#ppc-account-management"><span class="sn-num">06</span> PPC</a>
+        <a class="sn-item" href="#account-health-support"><span class="sn-num">07</span> Health</a>
+        <a class="sn-item" href="#multichannel-commerce-integration"><span class="sn-num">08</span> Multichannel</a>
+    </div>
+</nav>
+
+<!-- ══════════════════════════════════════════════════
+     01 — AMAZON PRODUCT LAUNCH STRATEGY
+══════════════════════════════════════════════════ -->
+<section class="premium-section bg-light" id="product-launch-strategy">
+    <div class="container">
+        <div class="split-layout">
+            <div class="visual-box reveal scale">
+                <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=1200&q=80" alt="Amazon Product Launch Strategy">
+            </div>
+            <div class="text-box reveal from-right">
+                <div class="section-num-pill">01 &mdash; Launch</div>
+                <h2 class="huge-heading">PRODUCT LAUNCH <br><span class="red">STRATEGY.</span></h2>
+                <p class="clean-desc">From product setup to marketplace readiness, we manage every step required to launch your product successfully on Amazon. Our process ensures a smooth and compliant launch experience.</p>
+            </div>
+        </div>
+
+        <!-- ══════════════════════════════════════════════════
+             01 — SUB-SERVICES (MILLION DOLLAR GRID)
+        ══════════════════════════════════════════════════ -->
+        <div class="sub-grid">
+            
+            <!-- CARD 1: Product Launch Planning -->
+            <div class="sub-card reveal del-1">
+                <div class="sub-card-media">
+                    <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=600&q=80" alt="Product Launch Planning">
+                    <div class="sub-card-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                    </div>
+                </div>
+                
+                <div class="sub-card-content">
+                    <h3>Product Launch Planning</h3>
+                    <p>Create a structured Amazon launch roadmap designed for visibility, ranking, and early sales momentum.</p>
+                    
+                    <div class="hidden-details" style="display:none;">
+                        <p>We build a complete launch plan that defines how your product enters the market with clarity and direction. This ensures every step is aligned with ranking goals and sales growth.</p>
+                        <ul>
+                            <li>Launch Timeline & Keyword Roadmap Creation</li>
+                            <li>Competitor Launch Mapping & Reverse Study</li>
+                            <li>Demand Timing & Market Entry Analysis</li>
+                            <li>Pricing & Promotional Structure Planning</li>
+                        </ul>
+                    </div>
+
+                    <a href="#contact" class="sub-card-btn">
+                        Plan Launch 
+                        <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- CARD 2: Listing Setup & Compliance -->
+            <div class="sub-card reveal del-2">
+                <div class="sub-card-media">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80" alt="Listing Setup & Compliance">
+                    <div class="sub-card-icon">
+                        <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                    </div>
+                </div>
+                
+                <div class="sub-card-content">
+                    <h3>Listing Setup & Compliance</h3>
+                    <p>Build a fully optimized and Amazon-compliant listing ready for a successful product launch.</p>
+                    
+                    <div class="hidden-details" style="display:none;">
+                        <p>We ensure your product listing is correctly structured, optimized, and fully compliant with Amazon policies before launch to avoid delays or suppression.</p>
+                        <ul>
+                            <li>SEO Foundation Setup & Category Mapping</li>
+                            <li>Variation Structuring & Backend Configuration</li>
+                            <li>Amazon Policy Analysis & Structure Review</li>
+                            <li>Pre-Launch Compliance Verification</li>
+                        </ul>
+                    </div>
+
+                    <a href="#contact" class="sub-card-btn">
+                        Setup Listing 
+                        <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- CARD 3: Inventory & Readiness Management -->
+            <div class="sub-card reveal del-3">
+                <div class="sub-card-media">
+                    <img src="https://images.unsplash.com/photo-1586528116311-ad8c73875062?auto=format&fit=crop&w=600&q=80" alt="Inventory Readiness Management">
+                    <div class="sub-card-icon">
+                        <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                    </div>
+                </div>
+                
+                <div class="sub-card-content">
+                    <h3>Inventory & Readiness Management</h3>
+                    <p>Ensure your inventory is fully prepared and aligned with your Amazon launch timeline.</p>
+                    
+                    <div class="hidden-details" style="display:none;">
+                        <p>We manage inventory planning and coordination so your product is available at the right time without stockouts or delays.</p>
+                        <ul>
+                            <li>Predictive Demand Forecasting & Analysis</li>
+                            <li>Production & Shipment Coordination</li>
+                            <li>Lead Time Planning & Stock Level Control</li>
+                            <li>Complete FBA Fulfillment Readiness</li>
+                        </ul>
+                    </div>
+
+                    <a href="#contact" class="sub-card-btn">
+                        Manage Stock 
+                        <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- CARD 4: Launch Execution Strategy -->
+            <div class="sub-card reveal del-4">
+                <div class="sub-card-media">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80" alt="Launch Execution Strategy">
+                    <div class="sub-card-icon">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="22" y1="12" x2="18" y2="12"/><line x1="6" y1="12" x2="2" y2="12"/><line x1="12" y1="6" x2="12" y2="2"/><line x1="12" y1="22" x2="12" y2="18"/></svg>
+                    </div>
+                </div>
+                
+                <div class="sub-card-content">
+                    <h3>Launch Execution Strategy</h3>
+                    <p>Execute a structured Amazon launch plan designed to generate visibility, traffic, and early sales.</p>
+                    
+                    <div class="hidden-details" style="display:none;">
+                        <p>We implement a step-by-step launch execution strategy focused on ranking improvement, visibility boost, and sales acceleration from day one.</p>
+                        <ul>
+                            <li>Launch Campaign Setup & PPC Structuring</li>
+                            <li>Aggressive Keyword Ranking Push Strategy</li>
+                            <li>Promotional Coordination & Traffic Generation</li>
+                            <li>Ad-Driven Visibility Scaling</li>
+                        </ul>
+                    </div>
+
+                    <a href="#contact" class="sub-card-btn">
+                        Execute Launch 
+                        <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- CARD 5: Performance Monitoring -->
+            <div class="sub-card reveal" style="transition-delay: 0.5s;">
+                <div class="sub-card-media">
+                    <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=600&q=80" alt="Performance Monitoring">
+                    <div class="sub-card-icon">
+                        <svg viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+                    </div>
+                </div>
+                
+                <div class="sub-card-content">
+                    <h3>Performance Monitoring</h3>
+                    <p>Track and optimize your Amazon launch performance using real-time data and analytics.</p>
+                    
+                    <div class="hidden-details" style="display:none;">
+                        <p>We continuously monitor your launch performance and adjust strategies to improve rankings, conversions, and overall sales performance.</p>
+                        <ul>
+                            <li>Sales Velocity & Conversion Tracking</li>
+                            <li>Keyword Ranking & KPI Monitoring</li>
+                            <li>PPC Performance & Data-Driven Optimization</li>
+                            <li>Performance Benchmarking & Adjustments</li>
+                        </ul>
+                    </div>
+
+                    <a href="#contact" class="sub-card-btn">
+                        Monitor Data 
+                        <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════
+     02 — AMAZON PRODUCT RESEARCH ANALYSIS
+══════════════════════════════════════════════════ -->
+<section class="premium-section bg-charcoal" id="product-research-analysis">
+    <div class="container">
+        <div class="split-layout reverse">
+            <div class="visual-box reveal scale">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80" alt="Amazon Product Research Analysis">
+            </div>
+            <div class="text-box reveal from-left">
+                <div class="section-num-pill">02 &mdash; Research Analysis</div>
+                <h2 class="huge-heading">PRODUCT RESEARCH <br><span class="red">ANALYSIS.</span></h2>
+                <p class="clean-desc">We identify profitable product opportunities through in-depth market research, competitor analysis, and demand validation. Our data-driven approach helps reduce risk and improve decision-making.</p>
+            </div>
+        </div>
+
+        <!-- ══════════════════════════════════════════════════
+             02 — SUB-SERVICES (MILLION DOLLAR GRID)
+        ══════════════════════════════════════════════════ -->
+        <div class="sub-grid">
+            
+            <!-- CARD 1: Product Ideas Collection -->
+            <div class="sub-card reveal del-1">
+                <div class="sub-card-media">
+                    <img src="https://images.unsplash.com/photo-1432888117247-3682080dcb99?auto=format&fit=crop&w=600&q=80" alt="Product Ideas Collection">
+                    <div class="sub-card-icon">
+                        <svg viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/></svg>
+                    </div>
+                </div>
+                
+                <div class="sub-card-content">
+                    <h3>Product Ideas Collection</h3>
+                    <p>Identify profitable Amazon product opportunities using real market demand and trend analysis.</p>
+                    
+                    <div class="hidden-details" style="display:none;">
+                        <p>We research Amazon markets to uncover product ideas with strong demand, low-to-medium competition, and healthy profit potential. This helps you avoid risky investments and focus only on scalable opportunities.</p>
+                        <ul>
+                            <li>Market Trend & Minus String Research</li>
+                            <li>Demand Identification & Search Volume Validation</li>
+                            <li>Category Exploration & Competitor Store Scanning</li>
+                            <li>Customer Pain Point Mapping & Opportunity Discovery</li>
+                        </ul>
+                    </div>
+
+                    <a href="#contact" class="sub-card-btn">
+                        Collect Ideas 
+                        <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- CARD 2: Initial Product Screening -->
+            <div class="sub-card reveal del-2">
+                <div class="sub-card-media">
+                    <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=600&q=80" alt="Initial Product Screening">
+                    <div class="sub-card-icon">
+                        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                    </div>
+                </div>
+                
+                <div class="sub-card-content">
+                    <h3>Initial Product Screening</h3>
+                    <p>Quickly filter product ideas to eliminate high-risk and low-potential opportunities.</p>
+                    
+                    <div class="hidden-details" style="display:none;">
+                        <p>We screen all collected product ideas using core performance indicators to ensure only viable products move forward into deeper analysis stages.</p>
+                        <ul>
+                            <li>Idea Shortlisting & Risk Evaluation</li>
+                            <li>Demand vs. Competition & Density Analysis</li>
+                            <li>Price Range Validation & Sales Estimation Logic</li>
+                            <li>Profit Potential Filtering & Seasonality Check</li>
+                        </ul>
+                    </div>
+
+                    <a href="#contact" class="sub-card-btn">
+                        Screen Products 
+                        <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- CARD 3: Product Validation -->
+            <div class="sub-card reveal del-3">
+                <div class="sub-card-media">
+                    <img src="https://images.unsplash.com/photo-1556155092-490a1ba16284?auto=format&fit=crop&w=600&q=80" alt="Product Validation">
+                    <div class="sub-card-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+                    </div>
+                </div>
+                
+                <div class="sub-card-content">
+                    <h3>Product Validation</h3>
+                    <p>Validate product profitability using deep market and competitor data analysis.</p>
+                    
+                    <div class="hidden-details" style="display:none;">
+                        <p>We perform detailed validation to confirm whether a product is truly worth investing in by analyzing demand stability, competition strength, and margin potential.</p>
+                        <ul>
+                            <li>Sales Trend Analysis & Historical Tracking</li>
+                            <li>Competitor Benchmarking & Performance Review</li>
+                            <li>Profit Margin Estimation & Price Elasticity Analysis</li>
+                            <li>Market Stability & Demand Consistency Validation</li>
+                        </ul>
+                    </div>
+
+                    <a href="#contact" class="sub-card-btn">
+                        Validate Product 
+                        <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- CARD 4: Market & Competitor Analysis -->
+            <div class="sub-card reveal del-4">
+                <div class="sub-card-media">
+                    <img src="https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?auto=format&fit=crop&w=600&q=80" alt="Market & Competitor Analysis">
+                    <div class="sub-card-icon">
+                        <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    </div>
+                </div>
+                
+                <div class="sub-card-content">
+                    <h3>Market & Competitor Analysis</h3>
+                    <p>Analyze competitors and market dynamics to identify gaps and positioning opportunities.</p>
+                    
+                    <div class="hidden-details" style="display:none;">
+                        <p>We study top competitors, pricing strategies, customer behavior, and listing performance to understand market structure and uncover opportunities for differentiation.</p>
+                        <ul>
+                            <li>Competitor Listing Analysis & Reverse Engineering</li>
+                            <li>Pricing Structure Review & Market Share Estimation</li>
+                            <li>Customer Review Mining & Keyword Gap Analysis</li>
+                            <li>Market Gap Identification & Positioning Strategy</li>
+                        </ul>
+                    </div>
+
+                    <a href="#contact" class="sub-card-btn">
+                        Analyze Market 
+                        <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- CARD 5: Product Development & ICP Analysis -->
+            <div class="sub-card reveal" style="transition-delay: 0.5s;">
+                <div class="sub-card-media">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80" alt="Product Development & ICP Analysis">
+                    <div class="sub-card-icon">
+                        <svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                    </div>
+                </div>
+                
+                <div class="sub-card-content">
+                    <h3>Product Development & ICP Analysis</h3>
+                    <p>Define ideal customers and refine product direction for maximum market success.</p>
+                    
+                    <div class="hidden-details" style="display:none;">
+                        <p>We analyze customer behavior and define your Ideal Customer Profile (ICP) to ensure product development aligns perfectly with real buyer needs and expectations.</p>
+                        <ul>
+                            <li>ICP Definition & Buyer Persona Mapping</li>
+                            <li>Customer Behavior Analysis & Behavioral Trend Tracking</li>
+                            <li>Review Mining & Pain Point Identification</li>
+                            <li>Product Improvement & Target Audience Segmentation</li>
+                        </ul>
+                    </div>
+
+                    <a href="#contact" class="sub-card-btn">
+                        Define ICP 
+                        <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+<section class="premium-section bg-light" id="sourcing-logistics-solutions">
+    <div class="container">
+        <div class="split-layout">
+            <div class="visual-box reveal scale">
+                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80" alt="Amazon Sourcing Logistics Solutions">
+            </div>
+            <div class="text-box reveal from-right">
+                <div class="section-num-pill">03 &mdash; Sourcing Logistics</div>
+                <h2 class="huge-heading">SOURCING LOGISTICS <br><span class="red">SOLUTIONS.</span></h2>
+                <p class="clean-desc">Our sourcing and logistics services help streamline your supply chain from manufacturer selection to inventory delivery. We prioritize quality, cost efficiency, and operational reliability.</p>
+            </div>
+        </div>
+
+        <div class="sub-grid">
+            
+            <div class="sub-card reveal del-1">
+                <div class="sub-card-media">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80" alt="Supplier Identification">
+                    <div class="sub-card-icon">
+                        <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                    </div>
+                </div>
+                
+                <div class="sub-card-content">
+                    <h3>Supplier Identification</h3>
+                    <p>Find reliable manufacturers that match your product quality, budget, and production requirements.</p>
+                    
+                    <div class="hidden-details" style="display:none;">
+                        <p>We identify and evaluate manufacturers based on reliability, production capability, pricing structure, and communication quality. This ensures you work with suppliers who can consistently meet your business needs.</p>
+                        <ul>
+                            <li>Manufacturer Research & Database Search</li>
+                            <li>Supplier Shortlisting & Background Check</li>
+                            <li>Capability Assessment & Trade Platform Analysis</li>
+                            <li>Communication Verification & Production Capacity Check</li>
+                        </ul>
+                    </div>
+
+                    <a href="#contact" class="sub-card-btn">
+                        Find Suppliers 
+                        <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="sub-card reveal del-2">
+                <div class="sub-card-media">
+                    <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=600&q=80" alt="Supplier Negotiation">
+                    <div class="sub-card-icon">
+                        <svg viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                    </div>
+                </div>
+                
+                <div class="sub-card-content">
+                    <h3>Supplier Negotiation</h3>
+                    <p>Secure better pricing, terms, and production conditions with trusted manufacturers.</p>
+                    
+                    <div class="hidden-details" style="display:none;">
+                        <p>We handle negotiation with suppliers to ensure you get competitive pricing, favorable payment terms, and clear production agreements that improve profitability and reduce risk.</p>
+                        <ul>
+                            <li>Price Negotiation & Market Price Benchmarking</li>
+                            <li>MOQ Optimization & Cost Structure Analysis</li>
+                            <li>Payment Terms Discussion & Negotiation Strategy</li>
+                            <li>Production Timeline Alignment & Contract Clarification</li>
+                        </ul>
+                    </div>
+
+                    <a href="#contact" class="sub-card-btn">
+                        Negotiate Terms 
+                        <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="sub-card reveal del-3">
+                <div class="sub-card-media">
+                    <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=600&q=80" alt="Sample Evaluation">
+                    <div class="sub-card-icon">
+                        <svg viewBox="0 0 24 24"><rect x="18" y="3" width="4" height="18"/><rect x="10" y="8" width="4" height="13"/><rect x="2" y="13" width="4" height="8"/></svg>
+                    </div>
+                </div>
+                
+                <div class="sub-card-content">
+                    <h3>Sample Evaluation</h3>
+                    <p>Verify product quality through detailed sample testing before mass production.</p>
+                    
+                    <div class="hidden-details" style="display:none;">
+                        <p>We evaluate product samples to ensure they meet your required quality standards, specifications, and customer expectations before moving into bulk production.</p>
+                        <ul>
+                            <li>Sample Ordering & Physical Product Review</li>
+                            <li>Quality Inspection & Specification Comparison</li>
+                            <li>Material Verification & Durability Testing</li>
+                            <li>Functionality Testing & Design Confirmation</li>
+                        </ul>
+                    </div>
+
+                    <a href="#contact" class="sub-card-btn">
+                        Evaluate Samples 
+                        <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="sub-card reveal del-4">
+                <div class="sub-card-media">
+                    <img src="https://images.unsplash.com/photo-1580519542036-ed47f3e42a9b?auto=format&fit=crop&w=600&q=80" alt="Production Management">
+                    <div class="sub-card-icon">
+                        <svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                    </div>
+                </div>
+                
+                <div class="sub-card-content">
+                    <h3>Production Management</h3>
+                    <p>Monitor manufacturing progress to ensure quality control and timely production delivery.</p>
+                    
+                    <div class="hidden-details" style="display:none;">
+                        <p>We manage the entire production process by coordinating with suppliers, tracking manufacturing progress, and ensuring production meets agreed standards and deadlines.</p>
+                        <ul>
+                            <li>Production Tracking & Milestone Monitoring</li>
+                            <li>Supplier Coordination & Factory Communication</li>
+                            <li>Quality Monitoring & Checkpoint Review</li>
+                            <li>Timeline Management & Risk Resolution</li>
+                        </ul>
+                    </div>
+
+                    <a href="#contact" class="sub-card-btn">
+                        Manage Production 
+                        <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="sub-card reveal" style="transition-delay: 0.5s;">
+                <div class="sub-card-media">
+                    <img src="https://images.unsplash.com/photo-1493946740644-2d8a1f1a6aff?auto=format&fit=crop&w=600&q=80" alt="Shipping Logistics Coordination">
+                    <div class="sub-card-icon">
+                        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    </div>
+                </div>
+                
+                <div class="sub-card-content">
+                    <h3>Shipping & Logistics Coordination</h3>
+                    <p>Manage shipping, customs, and delivery to Amazon fulfillment centers efficiently.</p>
+                    
+                    <div class="hidden-details" style="display:none;">
+                        <p>We handle end-to-end logistics coordination including freight forwarding, customs clearance, and Amazon FBA delivery to ensure smooth and timely product arrival.</p>
+                        <ul>
+                            <li>Freight Arrangement & Logistics Route Planning</li>
+                            <li>Customs Documentation & Compliance Review</li>
+                            <li>Shipping Coordination & Freight Comparison</li>
+                            <li>FBA Delivery Planning & Cost Optimization</li>
+                        </ul>
+                    </div>
+
+                    <a href="#contact" class="sub-card-btn">
+                        Coordinate Shipping 
+                        <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════
+     04 — AMAZON LISTING OPTIMIZATION SERVICES
+══════════════════════════════════════════════════ -->
+<section class="premium-section bg-dark" id="listing-optimization">
+    <div class="container">
+        <div class="split-layout reverse">
+            <div class="visual-box reveal scale">
+                <img src="https://images.unsplash.com/photo-1614064641913-a53f910ea1eb?auto=format&fit=crop&w=1200&q=80" alt="Amazon Listing Optimization Services">
+            </div>
+            <div class="text-box reveal from-left">
+                <div class="section-num-pill">04 &mdash; Listing Optimization</div>
+                <h2 class="huge-heading">LISTING <br><span class="red">OPTIMIZATION.</span></h2>
+                <p class="clean-desc" style="color: #cccccc;">We optimize every aspect of your Amazon listings to improve search visibility, click-through rates, and conversion performance. Our strategy combines keyword research with customer-focused content.</p>
+            </div>
+        </div>
+
+        <!-- ══════════════════════════════════════════════════
+             04 — SUB-SERVICES (MILLION DOLLAR GRID)
+        ══════════════════════════════════════════════════ -->
+        <div class="sub-grid">
+            
+            <!-- CARD 1: Keyword Research -->
+            <div class="sub-card reveal del-1">
+                <div class="sub-card-media">
+                    <img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&w=600&q=80" alt="Keyword Research">
+                    <div class="sub-card-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+                    </div>
+                </div>
+                
+                <div class="sub-card-content">
+                    <h3>Keyword Research</h3>
+                    <p>Find high-impact keywords that improve visibility and drive qualified Amazon traffic.</p>
+                    
+                    <div class="hidden-details" style="display:none;">
+                        <p>We conduct in-depth keyword research to identify the most relevant and high-performing search terms customers use on Amazon. This ensures your product appears in front of the right audience.</p>
+                        <ul>
+                            <li>Search Volume Analysis & Trend Evaluation</li>
+                            <li>Competitor Keyword Extraction & Reverse ASIN Analysis</li>
+                            <li>Amazon Autocomplete Mining & Category Breakdown</li>
+                            <li>Long-Tail Keyword Discovery & Clustering</li>
+                        </ul>
+                    </div>
+
+                    <a href="#contact" class="sub-card-btn">
+                        Research Keywords 
+                        <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- CARD 2: Listing Content Creation -->
+            <div class="sub-card reveal del-2">
+                <div class="sub-card-media">
+                    <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=600&q=80" alt="Listing Content Creation">
+                    <div class="sub-card-icon">
+                        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    </div>
+                </div>
+                
+                <div class="sub-card-content">
+                    <h3>Listing Content Creation</h3>
+                    <p>Craft persuasive Amazon listings that clearly communicate value and drive conversions.</p>
+                    
+                    <div class="hidden-details" style="display:none;">
+                        <p>We create optimized product titles, bullet points, and descriptions designed to attract customers and increase conversion rates while maintaining Amazon SEO standards.</p>
+                        <ul>
+                            <li>Title Optimization & SEO Integration Strategy</li>
+                            <li>Bullet Point Writing & Benefit-Focused Messaging</li>
+                            <li>Product Description Creation & Conversion Structuring</li>
+                            <li>Copywriting Frameworks & Buyer Psychology Mapping</li>
+                        </ul>
+                    </div>
+
+                    <a href="#contact" class="sub-card-btn">
+                        Create Content 
+                        <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- CARD 3: SEO Optimization -->
+            <div class="sub-card reveal del-3">
+                <div class="sub-card-media">
+                    <img src="https://images.unsplash.com/photo-1510511459019-5d01974106ce?auto=format&fit=crop&w=600&q=80" alt="SEO Optimization">
+                    <div class="sub-card-icon">
+                        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg>
+                    </div>
+                </div>
+                
+                <div class="sub-card-content">
+                    <h3>SEO Optimization</h3>
+                    <p>Improve organic rankings by aligning listings with Amazon search algorithm requirements.</p>
+                    
+                    <div class="hidden-details" style="display:none;">
+                        <p>We optimize your entire listing structure to improve organic ranking potential by aligning content with Amazon’s A9 algorithm and customer search behavior.</p>
+                        <ul>
+                            <li>Listing SEO Audit & Content Optimization</li>
+                            <li>Keyword Placement Strategy & Density Balancing</li>
+                            <li>A9 Algorithm Alignment & Search Relevance</li>
+                            <li>Competitor SEO Comparison & Ranking Analysis</li>
+                        </ul>
+                    </div>
+
+                    <a href="#contact" class="sub-card-btn">
+                        Optimize SEO 
+                        <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- CARD 4: Backend Search Terms -->
+            <div class="sub-card reveal del-4">
+                <div class="sub-card-media">
+                    <img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&w=600&q=80" alt="Backend Search Terms">
+                    <div class="sub-card-icon">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>
+                    </div>
+                </div>
+                
+                <div class="sub-card-content">
+                    <h3>Backend Search Terms</h3>
+                    <p>Maximize product visibility using hidden keyword optimization in Amazon backend fields.</p>
+                    
+                    <div class="hidden-details" style="display:none;">
+                        <p>We strategically use backend search terms to increase product discoverability without affecting frontend readability, ensuring broader keyword indexing.</p>
+                        <ul>
+                            <li>Backend Keyword Research & Hidden Mapping</li>
+                            <li>Synonym Inclusion & Misspelling Coverage</li>
+                            <li>Indexing Gap Analysis & Keyword Variation Mapping</li>
+                            <li>Competitor Backend Review & Coverage Expansion</li>
+                        </ul>
+                    </div>
+
+                    <a href="#contact" class="sub-card-btn">
+                        Maximize Visibility 
+                        <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- CARD 5: Conversion Rate Optimization -->
+            <div class="sub-card reveal" style="transition-delay: 0.5s;">
+                <div class="sub-card-media">
+                    <img src="https://images.unsplash.com/photo-1481481365942-8858d20fa678?auto=format&fit=crop&w=600&q=80" alt="Conversion Rate Optimization">
+                    <div class="sub-card-icon">
+                        <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                    </div>
+                </div>
+                
+                <div class="sub-card-content">
+                    <h3>Conversion Rate Optimization</h3>
+                    <p>Turn listing traffic into actual buyers through optimized messaging and structure.</p>
+                    
+                    <div class="hidden-details" style="display:none;">
+                        <p>We analyze listing performance and improve content structure, visuals alignment, and messaging to increase conversion rates and overall sales performance.</p>
+                        <ul>
+                            <li>Listing Performance Review & Bottleneck Analysis</li>
+                            <li>Content Refinement & Messaging Optimization</li>
+                            <li>Conversion Funnel Analysis & A/B Testing Insights</li>
+                            <li>Customer Review Mining & Behavioral Data Interpretation</li>
+                        </ul>
+                    </div>
+
+                    <a href="#contact" class="sub-card-btn">
+                        Boost Conversions 
+                        <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════
+     05 — AMAZON CREATIVE DESIGN SOLUTIONS
+══════════════════════════════════════════════════ -->
+<section class="premium-section bg-offwhite" id="creative-design-solutions">
+    <div class="container">
+        <div class="split-layout">
+            <div class="visual-box reveal scale">
+                <img src="https://images.unsplash.com/photo-1600607686527-6fb886090705?auto=format&fit=crop&w=1200&q=80" alt="Amazon Creative Design Solutions">
+            </div>
+            <div class="text-box reveal from-right">
+                <div class="section-num-pill">05 &mdash; Creative Design</div>
+                <h2 class="huge-heading">CREATIVE DESIGN <br><span class="red">SOLUTIONS.</span></h2>
+                <p class="clean-desc">We create high-converting visual assets that strengthen your brand presence and improve customer engagement. Our design services include listing images, A+ Content, Brand Story modules, and Storefronts.</p>
+            </div>
+        </div>
+
+        <!-- ══════════════════════════════════════════════════
+             05 — SUB-SERVICES (MILLION DOLLAR GRID)
+        ══════════════════════════════════════════════════ -->
+        <div class="sub-grid">
+            
+            <!-- CARD 1: Product Listing Images -->
+            <div class="sub-card reveal del-1">
+                <div class="sub-card-media">
+                    <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&w=600&q=80" alt="Product Listing Images">
+                    <div class="sub-card-icon">
+                        <svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+                    </div>
+                </div>
+                
+                <div class="sub-card-content">
+                    <h3>Product Listing Images</h3>
+                    <p>Create high-impact product images that clearly communicate value and boost conversions.</p>
+                    
+                    <div class="hidden-details" style="display:none;">
+                        <p>We design professional Amazon listing images that highlight your product features, benefits, and usage scenarios. Each image is structured to improve clarity, trust, and purchase intent.</p>
+                        <ul>
+                            <li>Main Image Optimization & Feature Highlights</li>
+                            <li>Lifestyle Image Creation & Detail Visuals</li>
+                            <li>Visual Hierarchy Planning & Conversion Layout</li>
+                            <li>Amazon Compliance Rules & Buyer Psychology Mapping</li>
+                        </ul>
+                    </div>
+
+                    <a href="#contact" class="sub-card-btn">
+                        Design Images 
+                        <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- CARD 2: Infographics Design -->
+            <div class="sub-card reveal del-2">
+                <div class="sub-card-media">
+                    <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=600&q=80" alt="Infographics Design">
+                    <div class="sub-card-icon">
+                        <svg viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                    </div>
+                </div>
+                
+                <div class="sub-card-content">
+                    <h3>Infographics Design</h3>
+                    <p>Present product features clearly using visually engaging and easy-to-understand infographics.</p>
+                    
+                    <div class="hidden-details" style="display:none;">
+                        <p>We create infographic-based visuals that simplify complex product information and highlight key benefits in a clear and attractive format for Amazon shoppers.</p>
+                        <ul>
+                            <li>Feature Breakdown Graphics & Benefit Visualization</li>
+                            <li>Comparison Charts & Instructional Visuals</li>
+                            <li>Visual Communication & Information Hierarchy</li>
+                            <li>Competitor Analysis & Conversion-Driven Layout</li>
+                        </ul>
+                    </div>
+
+                    <a href="#contact" class="sub-card-btn">
+                        Create Infographics 
+                        <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- CARD 3: A+ Content Design -->
+            <div class="sub-card reveal del-3">
+                <div class="sub-card-media">
+                    <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=600&q=80" alt="A+ Content Design">
+                    <div class="sub-card-icon">
+                        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    </div>
+                </div>
+                
+                <div class="sub-card-content">
+                    <h3>A+ Content Design</h3>
+                    <p>Build premium brand content that improves trust and increases conversion rates.</p>
+                    
+                    <div class="hidden-details" style="display:none;">
+                        <p>We design Amazon A+ Content modules that enhance storytelling, improve brand credibility, and provide detailed product explanations to increase customer confidence.</p>
+                        <ul>
+                            <li>A+ Module Design & Brand Storytelling Layout</li>
+                            <li>Enhanced Product Sections & Feature Breakdowns</li>
+                            <li>Brand Storytelling Frameworks & Visual Optimization</li>
+                            <li>Customer Journey Mapping & Amazon A+ Guidelines</li>
+                        </ul>
+                    </div>
+
+                    <a href="#contact" class="sub-card-btn">
+                        Design A+ Content 
+                        <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- CARD 4: Brand Story Creation -->
+            <div class="sub-card reveal del-4">
+                <div class="sub-card-media">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=600&q=80" alt="Brand Story Creation">
+                    <div class="sub-card-icon">
+                        <svg viewBox="0 0 24 24"><path d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34"/><polygon points="18 2 22 6 12 16 8 16 8 12 18 2"/></svg>
+                    </div>
+                </div>
+                
+                <div class="sub-card-content">
+                    <h3>Brand Story Creation</h3>
+                    <p>Craft a compelling brand story that builds emotional connection and trust with customers.</p>
+                    
+                    <div class="hidden-details" style="display:none;">
+                        <p>We design Amazon Brand Story sections that communicate your brand identity, mission, and value proposition in a way that resonates with customers and strengthens brand loyalty.</p>
+                        <ul>
+                            <li>Brand Identity Structuring & Mission Storytelling</li>
+                            <li>Visual Storytelling Design & Emotional Elements</li>
+                            <li>Storytelling Frameworks & Emotional Branding Strategy</li>
+                            <li>Customer Perception Mapping & Competitor Analysis</li>
+                        </ul>
+                    </div>
+
+                    <a href="#contact" class="sub-card-btn">
+                        Craft Brand Story 
+                        <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- CARD 5: Amazon Storefront Design -->
+            <div class="sub-card reveal" style="transition-delay: 0.5s;">
+                <div class="sub-card-media">
+                    <img src="https://images.unsplash.com/photo-1481481365942-8858d20fa678?auto=format&fit=crop&w=600&q=80" alt="Amazon Storefront Design">
+                    <div class="sub-card-icon">
+                        <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                    </div>
+                </div>
+                
+                <div class="sub-card-content">
+                    <h3>Amazon Storefront Design</h3>
+                    <p>Design a professional Amazon storefront that showcases your brand and product range effectively.</p>
+                    
+                    <div class="hidden-details" style="display:none;">
+                        <p>We create structured Amazon storefronts that organize your products into clear categories while enhancing brand identity and improving navigation for customers.</p>
+                        <ul>
+                            <li>Storefront Structure Design & Category Organization</li>
+                            <li>Banner Creation & Navigation Flow Setup</li>
+                            <li>UX-Based Layout Planning & Brand Architecture</li>
+                            <li>Competitor Analysis & Conversion Flow Optimization</li>
+                        </ul>
+                    </div>
+
+                    <a href="#contact" class="sub-card-btn">
+                        Build Storefront 
+                        <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+
+
+<!-- ══════════════════════════════════════════════════
+     06 — AMAZON PPC ACCOUNT MANAGEMENT
+══════════════════════════════════════════════════ -->
+<section class="premium-section bg-dark" id="ppc-account-management">
+    <div class="container">
+        <div class="split-layout reverse">
+            <div class="visual-box reveal scale">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80" alt="Amazon PPC Account Management">
+            </div>
+            <div class="text-box reveal from-left">
+                <div class="section-num-pill">06 &mdash; PPC Management</div>
+                <h2 class="huge-heading">PPC ACCOUNT <br><span class="red">MANAGEMENT.</span></h2>
+                <p class="clean-desc" style="color: #cccccc;">Our PPC and account management services focus on driving profitable growth through continuous optimization and performance monitoring. We manage campaigns strategically to maximize return on ad spend.</p>
+            </div>
+        </div>
+
+        <!-- ══════════════════════════════════════════════════
+             06 — SUB-SERVICES (MILLION DOLLAR GRID)
+        ══════════════════════════════════════════════════ -->
+        <div class="sub-grid">
+            
+            <!-- CARD 1: Campaign Structure Setup -->
+            <div class="sub-card reveal del-1">
+                <div class="sub-card-media">
+                    <img src="https://images.unsplash.com/photo-1432888117247-3682080dcb99?auto=format&fit=crop&w=600&q=80" alt="Campaign Structure Setup">
+                    <div class="sub-card-icon">
+                        <svg viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/></svg>
+                    </div>
+                </div>
+                
+                <div class="sub-card-content">
+                    <h3>Campaign Structure Setup</h3>
+                    <p>Build a well-organized PPC campaign structure designed for scalable and profitable Amazon advertising.</p>
+                    
+                    <div class="hidden-details" style="display:none;">
+                        <p>We create a structured PPC foundation by organizing campaigns into clear objectives such as discovery, ranking, and conversion. This ensures better control, tracking, and optimization of ad performance.</p>
+                        <ul>
+                            <li>Campaign Segmentation & Ad Group Structuring</li>
+                            <li>Objective-Based Mapping & Funnel Structure</li>
+                            <li>Product Targeting & Competitor Ad Analysis</li>
+                            <li>Budget Allocation & Performance Logic</li>
+                        </ul>
+                    </div>
+
+                    <a href="#contact" class="sub-card-btn">
+                        Structure Campaigns 
+                        <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- CARD 2: Keyword Targeting Strategy -->
+            <div class="sub-card reveal del-2">
+                <div class="sub-card-media">
+                    <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=600&q=80" alt="Keyword Targeting Strategy">
+                    <div class="sub-card-icon">
+                        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                    </div>
+                </div>
+                
+                <div class="sub-card-content">
+                    <h3>Keyword Targeting Strategy</h3>
+                    <p>Identify and target high-performing keywords that drive relevant traffic and sales.</p>
+                    
+                    <div class="hidden-details" style="display:none;">
+                        <p>We develop a keyword targeting strategy that focuses on high-intent search terms, competitor keywords, and long-tail opportunities to maximize ad efficiency and conversions.</p>
+                        <ul>
+                            <li>Keyword Discovery & Reverse ASIN Analysis</li>
+                            <li>High-Intent & Competitor Keyword Targeting</li>
+                            <li>Long-Tail Selection & Search Term Filtering</li>
+                            <li>Negative Keyword Planning & Intent Grouping</li>
+                        </ul>
+                    </div>
+
+                    <a href="#contact" class="sub-card-btn">
+                        Target Keywords 
+                        <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- CARD 3: Bid & Budget Optimization -->
+            <div class="sub-card reveal del-3">
+                <div class="sub-card-media">
+                    <img src="https://images.unsplash.com/photo-1556155092-490a1ba16284?auto=format&fit=crop&w=600&q=80" alt="Bid & Budget Optimization">
+                    <div class="sub-card-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+                    </div>
+                </div>
+                
+                <div class="sub-card-content">
+                    <h3>Bid & Budget Optimization</h3>
+                    <p>Optimize bids and budgets to maximize ROI and reduce wasted ad spend.</p>
+                    
+                    <div class="hidden-details" style="display:none;">
+                        <p>We continuously adjust bids and budgets based on performance data to ensure your ads remain profitable while scaling high-performing campaigns.</p>
+                        <ul>
+                            <li>Bid Adjustment & Cost-Per-Click Optimization</li>
+                            <li>Budget Reallocation & Real-Time Data Analysis</li>
+                            <li>ACOS Reduction & ROAS Tracking</li>
+                            <li>Campaign Scaling Control & Conversion Evaluation</li>
+                        </ul>
+                    </div>
+
+                    <a href="#contact" class="sub-card-btn">
+                        Optimize Spend 
+                        <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- CARD 4: Performance Reporting -->
+            <div class="sub-card reveal del-4">
+                <div class="sub-card-media">
+                    <img src="https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?auto=format&fit=crop&w=600&q=80" alt="Performance Reporting">
+                    <div class="sub-card-icon">
+                        <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    </div>
+                </div>
+                
+                <div class="sub-card-content">
+                    <h3>Performance Reporting</h3>
+                    <p>Track PPC performance with clear, data-driven reports and actionable insights.</p>
+                    
+                    <div class="hidden-details" style="display:none;">
+                        <p>We provide detailed performance reports that help you understand what’s working, what’s not, and how to improve your Amazon advertising campaigns.</p>
+                        <ul>
+                            <li>Campaign Performance & Ad Spend Monitoring</li>
+                            <li>Keyword Reporting & Sales Attribution Analysis</li>
+                            <li>Data Analytics Dashboards & Metric Evaluation</li>
+                            <li>Optimization Insights & Trend Comparison</li>
+                        </ul>
+                    </div>
+
+                    <a href="#contact" class="sub-card-btn">
+                        Track Performance 
+                        <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- CARD 5: Account Growth Strategy -->
+            <div class="sub-card reveal" style="transition-delay: 0.5s;">
+                <div class="sub-card-media">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80" alt="Account Growth Strategy">
+                    <div class="sub-card-icon">
+                        <svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                    </div>
+                </div>
+                
+                <div class="sub-card-content">
+                    <h3>Account Growth Strategy</h3>
+                    <p>Develop long-term PPC strategies focused on sustainable scaling and profit growth.</p>
+                    
+                    <div class="hidden-details" style="display:none;">
+                        <p>We design growth-focused PPC strategies that align with your business goals, ensuring continuous scaling of profitable campaigns while maintaining efficiency.</p>
+                        <ul>
+                            <li>Long-Term PPC Planning & Scaling Strategy</li>
+                            <li>Product & Market Expansion Targeting</li>
+                            <li>Profit Optimization & Growth Funnel Analysis</li>
+                            <li>Historical Performance & Threshold Analysis</li>
+                        </ul>
+                    </div>
+
+                    <a href="#contact" class="sub-card-btn">
+                        Scale Account 
+                        <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════
+     07 — AMAZON ACCOUNT HEALTH SUPPORT
+══════════════════════════════════════════════════ -->
+<section class="premium-section bg-light" id="account-health-support">
+    <div class="container">
+        <div class="split-layout">
+            <div class="visual-box reveal scale">
+                <img src="https://images.unsplash.com/photo-1542744094-3a31f272c490?auto=format&fit=crop&w=1200&q=80" alt="Amazon Account Health Support">
+            </div>
+            <div class="text-box reveal from-right">
+                <div class="section-num-pill">07 &mdash; Account Health</div>
+                <h2 class="huge-heading">ACCOUNT HEALTH <br><span class="red">SUPPORT.</span></h2>
+                <p class="clean-desc">Maintaining a healthy Amazon account is critical for long-term success. We monitor account performance metrics and address potential issues before they impact operations.</p>
+            </div>
+        </div>
+
+        <!-- ══════════════════════════════════════════════════
+             07 — SUB-SERVICES (MILLION DOLLAR GRID)
+        ══════════════════════════════════════════════════ -->
+        <div class="sub-grid">
+            
+            <!-- CARD 1: Account Health Monitoring -->
+            <div class="sub-card reveal del-1">
+                <div class="sub-card-media">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80" alt="Account Health Monitoring">
+                    <div class="sub-card-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                    </div>
+                </div>
+                
+                <div class="sub-card-content">
+                    <h3>Account Health Monitoring</h3>
+                    <p>Continuously monitor your Amazon account to prevent risks and maintain strong performance metrics.</p>
+                    
+                    <div class="hidden-details" style="display:none;">
+                        <p>We actively track your account health metrics to ensure your seller account remains in good standing. This helps prevent suspensions, performance drops, and compliance issues before they escalate.</p>
+                        <ul>
+                            <li>Dashboard Monitoring & Performance Tracking</li>
+                            <li>Policy Violation Alerts & Defect Rate Analysis</li>
+                            <li>Daily/Weekly Audits & Risk Threshold Tracking</li>
+                            <li>Amazon Policy Alignment & Trend Analysis</li>
+                        </ul>
+                    </div>
+
+                    <a href="#contact" class="sub-card-btn">
+                        Monitor Account 
+                        <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- CARD 2: Policy Compliance Management -->
+            <div class="sub-card reveal del-2">
+                <div class="sub-card-media">
+                    <img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&w=600&q=80" alt="Policy Compliance Management">
+                    <div class="sub-card-icon">
+                        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    </div>
+                </div>
+                
+                <div class="sub-card-content">
+                    <h3>Policy Compliance Management</h3>
+                    <p>Ensure your Amazon account follows all marketplace policies to avoid violations and penalties.</p>
+                    
+                    <div class="hidden-details" style="display:none;">
+                        <p>We manage compliance across your entire Amazon account by ensuring all listings, operations, and seller activities meet Amazon’s strict policies and requirements.</p>
+                        <ul>
+                            <li>Policy Review & Listing Compliance Checks</li>
+                            <li>Restricted Product & Documentation Validation</li>
+                            <li>Amazon Guidelines Review & Gap Analysis</li>
+                            <li>Listing Audit Procedures & Risk Classification</li>
+                        </ul>
+                    </div>
+
+                    <a href="#contact" class="sub-card-btn">
+                        Manage Compliance 
+                        <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- CARD 3: Listing Issue Resolution -->
+            <div class="sub-card reveal del-3">
+                <div class="sub-card-media">
+                    <img src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&w=600&q=80" alt="Listing Issue Resolution">
+                    <div class="sub-card-icon">
+                        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg>
+                    </div>
+                </div>
+                
+                <div class="sub-card-content">
+                    <h3>Listing Issue Resolution</h3>
+                    <p>Quickly identify and fix listing problems that affect visibility and sales performance.</p>
+                    
+                    <div class="hidden-details" style="display:none;">
+                        <p>We resolve suppressed, inactive, or incorrectly categorized listings to restore visibility and ensure uninterrupted sales performance.</p>
+                        <ul>
+                            <li>Suppressed Listing & Category Correction</li>
+                            <li>Attribute Validation & Image Compliance Fixes</li>
+                            <li>Listing Audit Diagnostics & Error Code Analysis</li>
+                            <li>Category Mapping Correction & SEO Revalidation</li>
+                        </ul>
+                    </div>
+
+                    <a href="#contact" class="sub-card-btn">
+                        Resolve Issues 
+                        <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- CARD 4: Performance Metric Improvement -->
+            <div class="sub-card reveal del-4">
+                <div class="sub-card-media">
+                    <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=600&q=80" alt="Performance Metric Improvement">
+                    <div class="sub-card-icon">
+                        <svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                    </div>
+                </div>
+                
+                <div class="sub-card-content">
+                    <h3>Performance Metric Improvement</h3>
+                    <p>Improve seller performance metrics to maintain strong Amazon account health.</p>
+                    
+                    <div class="hidden-details" style="display:none;">
+                        <p>We focus on optimizing key performance indicators such as order defect rate, late shipment rate, and customer satisfaction to keep your account stable and healthy.</p>
+                        <ul>
+                            <li>Order Defect Rate & Late Shipment Optimization</li>
+                            <li>Customer Feedback Improvement & Return Analysis</li>
+                            <li>KPI Tracking Systems & Behavioral Analysis</li>
+                            <li>Operational Workflow & Performance Benchmarking</li>
+                        </ul>
+                    </div>
+
+                    <a href="#contact" class="sub-card-btn">
+                        Improve Metrics 
+                        <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- CARD 5: Appeal & Reinstatement Support -->
+            <div class="sub-card reveal" style="transition-delay: 0.5s;">
+                <div class="sub-card-media">
+                    <img src="https://images.unsplash.com/photo-1455390582262-044cdead27d8?auto=format&fit=crop&w=600&q=80" alt="Appeal & Reinstatement Support">
+                    <div class="sub-card-icon">
+                        <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                    </div>
+                </div>
+                
+                <div class="sub-card-content">
+                    <h3>Appeal & Reinstatement Support</h3>
+                    <p>Support Amazon account and listing reinstatements with structured appeal strategies.</p>
+                    
+                    <div class="hidden-details" style="display:none;">
+                        <p>We assist in resolving account suspensions, ASIN removals, and policy violations by preparing strong, compliant appeal plans tailored to Amazon’s requirements.</p>
+                        <ul>
+                            <li>Suspension Appeal Writing & ASIN Reinstatement</li>
+                            <li>Policy Violation Response & Plan of Action (POA)</li>
+                            <li>Amazon Appeal Guideline & Root Cause Analysis</li>
+                            <li>Documentation Structuring & Compliance Correction</li>
+                        </ul>
+                    </div>
+
+                    <a href="#contact" class="sub-card-btn">
+                        Recover Account 
+                        <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════
+     08 — MULTICHANNEL COMMERCE INTEGRATION
+══════════════════════════════════════════════════ -->
+<section class="premium-section bg-dark" id="multichannel-commerce-integration">
+    <div class="container">
+        <div class="split-layout reverse">
+            <div class="visual-box reveal scale">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80" alt="Multichannel Commerce Integration">
+            </div>
+            <div class="text-box reveal from-left">
+                <div class="section-num-pill">08 &mdash; Multichannel</div>
+                <h2 class="huge-heading">MULTICHANNEL <br><span class="red">INTEGRATION.</span></h2>
+                <p class="clean-desc" style="color: #cccccc;">We connect Amazon with platforms such as Shopify and other sales channels to create a unified ecommerce ecosystem. This helps streamline operations and improve inventory synchronization.</p>
+            </div>
+        </div>
+
+        <!-- ══════════════════════════════════════════════════
+             08 — SUB-SERVICES (MILLION DOLLAR GRID)
+        ══════════════════════════════════════════════════ -->
+        <div class="sub-grid">
+            
+            <!-- CARD 1: Marketplace Integration -->
+            <div class="sub-card reveal del-1">
+                <div class="sub-card-media">
+                    <img src="https://images.unsplash.com/photo-1432888117247-3682080dcb99?auto=format&fit=crop&w=600&q=80" alt="Marketplace Integration">
+                    <div class="sub-card-icon">
+                        <svg viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                    </div>
+                </div>
+                
+                <div class="sub-card-content">
+                    <h3>Marketplace Integration</h3>
+                    <p>Connect Amazon with Shopify and other platforms to build a unified selling ecosystem.</p>
+                    
+                    <div class="hidden-details" style="display:none;">
+                        <p>We integrate your sales channels into one connected system, allowing seamless operations between Amazon, Shopify, and other marketplaces. This improves efficiency and reduces manual workload.</p>
+                        <ul>
+                            <li>Amazon & Shopify API Integration Setup</li>
+                            <li>Multi-Platform Syncing & Connection Mapping</li>
+                            <li>System Configuration & Operational Workflow</li>
+                            <li>System Synchronization & Data Flow Alignment</li>
+                        </ul>
+                    </div>
+
+                    <a href="#contact" class="sub-card-btn">
+                        Connect Channels 
+                        <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- CARD 2: Inventory Synchronization -->
+            <div class="sub-card reveal del-2">
+                <div class="sub-card-media">
+                    <img src="https://images.unsplash.com/photo-1556155092-490a1ba16284?auto=format&fit=crop&w=600&q=80" alt="Inventory Synchronization">
+                    <div class="sub-card-icon">
+                        <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                    </div>
+                </div>
+                
+                <div class="sub-card-content">
+                    <h3>Inventory Synchronization</h3>
+                    <p>Keep inventory updated across all sales channels in real time.</p>
+                    
+                    <div class="hidden-details" style="display:none;">
+                        <p>We ensure your inventory levels stay accurate across all connected platforms to avoid overselling, stock mismatches, or fulfillment delays.</p>
+                        <ul>
+                            <li>Inventory Syncing Setup & Real-Time Configuration</li>
+                            <li>Multi-Channel Inventory Control & SKU Mapping</li>
+                            <li>Stock Level Automation & Tracking Systems</li>
+                            <li>SKU Structure Standardization & Flow Optimization</li>
+                        </ul>
+                    </div>
+
+                    <a href="#contact" class="sub-card-btn">
+                        Sync Inventory 
+                        <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- CARD 3: Order Management Automation -->
+            <div class="sub-card reveal del-3">
+                <div class="sub-card-media">
+                    <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=600&q=80" alt="Order Management Automation">
+                    <div class="sub-card-icon">
+                        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+                    </div>
+                </div>
+                
+                <div class="sub-card-content">
+                    <h3>Order Management Automation</h3>
+                    <p>Automate order processing across multiple sales channels for faster fulfillment.</p>
+                    
+                    <div class="hidden-details" style="display:none;">
+                        <p>We streamline order management by automating order routing, processing, and tracking across Amazon and other platforms to improve efficiency and reduce manual errors.</p>
+                        <ul>
+                            <li>Order Routing Setup & Automated Workflows</li>
+                            <li>Multi-Channel Tracking & Fulfillment Coordination</li>
+                            <li>Workflow Automation Design & Integration Mapping</li>
+                            <li>Order Lifecycle Optimization & Process Analysis</li>
+                        </ul>
+                    </div>
+
+                    <a href="#contact" class="sub-card-btn">
+                        Automate Orders 
+                        <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- CARD 4: Fulfillment Coordination -->
+            <div class="sub-card reveal del-4">
+                <div class="sub-card-media">
+                    <img src="https://images.unsplash.com/photo-1493946740644-2d8a1f1a6aff?auto=format&fit=crop&w=600&q=80" alt="Fulfillment Coordination">
+                    <div class="sub-card-icon">
+                        <svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/></svg>
+                    </div>
+                </div>
+                
+                <div class="sub-card-content">
+                    <h3>Fulfillment Coordination</h3>
+                    <p>Ensure smooth fulfillment operations across all marketplaces and warehouses.</p>
+                    
+                    <div class="hidden-details" style="display:none;">
+                        <p>We coordinate fulfillment processes across Amazon FBA, Shopify, and third-party logistics providers to ensure fast and accurate delivery performance.</p>
+                        <ul>
+                            <li>FBA Coordination & Third-Party Logistics Setup</li>
+                            <li>Warehouse Communication & Shipment Alignment</li>
+                            <li>Fulfillment Workflow Mapping & Logistics Optimization</li>
+                            <li>Carrier Coordination Planning & Delivery Tracking</li>
+                        </ul>
+                    </div>
+
+                    <a href="#contact" class="sub-card-btn">
+                        Coordinate Fulfillment 
+                        <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- CARD 5: Customer Experience Optimization -->
+            <div class="sub-card reveal" style="transition-delay: 0.5s;">
+                <div class="sub-card-media">
+                    <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=600&q=80" alt="Customer Experience Optimization">
+                    <div class="sub-card-icon">
+                        <svg viewBox="0 0 24 24"><path d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34"/><polygon points="18 2 22 6 12 16 8 16 8 12 18 2"/></svg>
+                    </div>
+                </div>
+                
+                <div class="sub-card-content">
+                    <h3>Customer Experience Optimization</h3>
+                    <p>Deliver a consistent and high-quality customer experience across all sales channels.</p>
+                    
+                    <div class="hidden-details" style="display:none;">
+                        <p>We optimize the end-to-end customer journey from purchase to delivery and post-sale support, ensuring brand consistency and higher customer satisfaction across platforms.</p>
+                        <ul>
+                            <li>Customer Journey Mapping & Experience Consistency</li>
+                            <li>Review Improvement Strategy & Support Workflow</li>
+                            <li>CX Analysis Framework & Customer Feedback Review</li>
+                            <li>Journey Optimization Mapping & Behavior Tracking</li>
+                        </ul>
+                    </div>
+
+                    <a href="#contact" class="sub-card-btn">
+                        Optimize CX 
+                        <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════
+     ELITE MICRO-MARQUEE SEPARATOR
+══════════════════════════════════════════════════ -->
+<section class="elite-micro-marquee">
+    <div class="marquee-track-container">
+        <div class="marquee-track">
+            <!-- GROUP 1 -->
+            <div class="marquee-item"><span>STRATEGIC DOMINANCE</span><div class="micro-core"></div></div>
+            <div class="marquee-item"><span>ALGORITHMIC PRECISION</span><div class="micro-core"></div></div>
+            <div class="marquee-item"><span>PROFIT MAXIMIZATION</span><div class="micro-core"></div></div>
+            <div class="marquee-item"><span>MARKET SHARE CAPTURE</span><div class="micro-core"></div></div>
+            
+            <!-- GROUP 2 (Exact Duplicate for Seamless Loop) -->
+            <div class="marquee-item"><span>STRATEGIC DOMINANCE</span><div class="micro-core"></div></div>
+            <div class="marquee-item"><span>ALGORITHMIC PRECISION</span><div class="micro-core"></div></div>
+            <div class="marquee-item"><span>PROFIT MAXIMIZATION</span><div class="micro-core"></div></div>
+            <div class="marquee-item"><span>MARKET SHARE CAPTURE</span><div class="micro-core"></div></div>
+        </div>
+    </div>
+</section>
+
+<section class="apex-process-section" id="process">
+    <div class="container process-grid">
+        
+        <!-- The Pinned Sidebar -->
+        <div class="process-sticky-sidebar reveal">
+            <div class="section-num-pill">THE FRAMEWORK</div>
+            <h2 class="huge-heading">HOW WE SCALE <br><span class="red">BRANDS.</span></h2>
+            <p class="clean-desc">A structured, performance-driven system designed to eliminate inefficiencies, outperform competitors, and systematically grow Amazon and eCommerce brands through data, execution, and continuous optimization.</p>
+        </div>
+
+        <!-- The Scrolling Cards -->
+        <div class="process-cards-wrapper">
+            
+            <!-- Phase 01 -->
+            <div class="lux-scroll-card lux-observe" data-step="01">
+                <div class="lux-card-content">
+                    <span class="lux-phase-label">Phase One</span>
+                    <h3>Deep Audit</h3>
+                    <p>A detailed analysis of your Amazon or eCommerce setup to identify performance gaps, missed opportunities, and inefficiencies affecting growth and profitability.</p>
+                </div>
+            </div>
+
+            <!-- Phase 02 -->
+            <div class="lux-scroll-card lux-observe" data-step="02">
+                <div class="lux-card-content">
+                    <span class="lux-phase-label">Phase Two</span>
+                    <h3>Strategy</h3>
+                    <p>We develop a custom growth blueprint based on data, competition, and market demand to position your brand for long-term scalability and sustainable advantage.</p>
+                </div>
+            </div>
+
+            <!-- Phase 03 -->
+            <div class="lux-scroll-card lux-observe" data-step="03">
+                <div class="lux-card-content">
+                    <span class="lux-phase-label">Phase Three</span>
+                    <h3>Execution</h3>
+                    <p>Implementation of high-converting creatives, optimized listings, and targeted campaign structures designed to improve visibility and drive measurable sales performance.</p>
+                </div>
+            </div>
+
+            <!-- Phase 04 -->
+            <div class="lux-scroll-card lux-observe" data-step="04">
+                <div class="lux-card-content">
+                    <span class="lux-phase-label">Phase Four</span>
+                    <h3>Optimization</h3>
+                    <p>Continuous performance monitoring and data-driven refinement across listings and ad campaigns to improve efficiency, reduce wasted spend, and increase ROAS.</p>
+                </div>
+            </div>
+
+            <!-- Phase 05 -->
+            <div class="lux-scroll-card lux-observe" data-step="05">
+                <div class="lux-card-content">
+                    <span class="lux-phase-label">Phase Five</span>
+                    <h3>Scale</h3>
+                    <p>Strategic expansion of winning products through increased ad investment, market expansion, and operational improvements to grow revenue and market share.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════
+     WHY US (Simplified)
+══════════════════════════════════════════════════ -->
+<section class="premium-section bg-dark" style="text-align:center;">
+    <div class="container">
+        <h2 class="huge-heading reveal">THE <span class="red">DIFFERENCE</span></h2>
+        <p class="clean-desc reveal" style="max-width:700px; margin:0 auto;">We don’t optimize for vanity metrics. We optimize for what actually matters—profitability, sustainable margins, and long-term market dominance.</p>
+        
+        <div class="minimal-grid reveal" style="margin-top: 60px;">
+            <div class="minimal-card">
+                <h3>01</h3>
+                <div style="font-weight: 600; color: #ffffff; margin-bottom: 12px; font-size: 1.2rem; font-family: var(--font-display); letter-spacing: 0.05em;">Real Operator Experience</div>
+                <p>Your strategy is led by professionals with real Amazon and eCommerce scaling experience, not theory or agency guesswork.</p>
+            </div>
+            <div class="minimal-card">
+                <h3>02</h3>
+                <div style="font-weight: 600; color: #ffffff; margin-bottom: 12px; font-size: 1.2rem; font-family: var(--font-display); letter-spacing: 0.05em;">Dedicated Execution Teams</div>
+                <p>No rotating handlers. No inconsistent communication. You get a focused team that understands your brand and executes with continuity.</p>
+            </div>
+            <div class="minimal-card">
+                <h3>03</h3>
+                <div style="font-weight: 600; color: #ffffff; margin-bottom: 12px; font-size: 1.2rem; font-family: var(--font-display); letter-spacing: 0.05em;">Performance-Driven Partnership</div>
+                <p>We align our success with your results. Growth, sales performance, and profitability are the only metrics that define our work.</p>
+            </div>
+        </div>
+    </div>
+    <br><br>
+    <!-- ══════════════════════════════════════════════════
+         EXECUTIVE RETURN BUTTON (MINIMALIST & PREMIUM)
+    ══════════════════════════════════════════════════ -->
+    <div class="executive-return-wrapper">
+        <a href="index.html" class="executive-return-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="19" y1="12" x2="5" y2="12"></line>
+                <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+            <span>RETURN TO HOMEPAGE</span>
+        </a>
+    </div>
+
+</section>
+
+
+
+<!-- ═══════════════════ CONTACT SECTION ═══════════════════ -->
+<section class="contact-section" id="contact">
+    <div class="container">
+        <div class="contact-inner">
+
+            <div class="contact-copy">
+                <div class="section-eyebrow" style="margin-bottom:24px;">
+                    <span class="ey-line" style="background: rgba(255, 255, 255, 0.5);"></span>
+                    <span class="ey-text" style="color: #ffffff;">Get In Touch</span>
+                </div>
+                <h2 class="contact-h2">LET'S BUILD<br>SOMETHING<br><em>UNFORGETTABLE</em></h2>
+                <p class="contact-lead">Tell us where your brand is today. We'll show you exactly where it can be — and map the fastest path to get there. No fluff, no pitch decks. Just clarity.</p>
+
+                <div class="contact-trust">
+                    <div class="ct-item">
+                        <div class="ct-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                        </div>
+                        <div class="ct-text">
+                            <strong>Offices</strong>
+                            <span>London, UK · New York, US · Dubai, UAE<br>Lahore, Pakistan</span>
+                        </div>
+                    </div>
+
+                    <div class="ct-item">
+                        <div class="ct-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                            </svg>
+                        </div>
+                        <div class="ct-text">
+                            <strong>Phone Number</strong>
+                            <span><a href="tel:+923420147244" style="color: inherit; text-decoration: none;">+92 342 014 7244</a></span>
+                        </div>
+                    </div>
+
+                    <div class="ct-item">
+                        <div class="ct-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                        </div>
+                        <div class="ct-text">
+                            <strong>Mail Address</strong>
+                            <span><a href="mailto:help@telsolutionspk.com" style="color: inherit; text-decoration: none;">help@telsolutionspk.com</a></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form-card">
+                <div id="contactForm">
+                    <div class="form-title">FREE AUDIT</div>
+                    <div class="form-subtitle">Fill in the details below and a senior strategist will review your account personally.</div>
+
+                    <div class="form-grid">
+                        
+                        <div class="form-row-2">
+                            <div class="form-group">
+                                <label class="form-label" for="cf-name">Full Name</label>
+                                <input type="text" id="cf-name" class="form-input" placeholder="Your name" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="cf-email">Business Email</label>
+                                <input type="email" id="cf-email" class="form-input" placeholder="you@company.com" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row-2">
+                            <div class="form-group">
+                                <label class="form-label" for="cf-brand">Brand / Company</label>
+                                <input type="text" id="cf-brand" class="form-input" placeholder="Your Amazon brand">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="cf-phone">Phone Number</label>
+                                <input type="tel" id="cf-phone" class="form-input" placeholder="+1 (555) 000-0000">
+                            </div>
+                        </div>
+
+                        <div class="form-group full">
+                            <label class="form-label" for="cf-revenue">Monthly Amazon Revenue</label>
+                            <select id="cf-revenue" class="form-select">
+                                <option value="" disabled selected>Select your revenue range</option>
+                                <option>Under $10,000 / month</option>
+                                <option>$10,000 – $50,000 / month</option>
+                                <option>$50,000 – $100,000 / month</option>
+                                <option>$100,000 – $500,000 / month</option>
+                                <option>$500,000+ / month</option>
+                                <option>Pre-launch (Not yet selling)</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group full">
+                            <label class="form-label" style="margin-bottom: 6px;">Services You're Interested In</label>
+                            <div class="form-checkgroup">
+                                <label class="form-check">
+                                    <input type="checkbox" value="ppc">
+                                    <span class="form-check-label">PPC Management</span>
+                                </label>
+                                <label class="form-check">
+                                    <input type="checkbox" value="listing">
+                                    <span class="form-check-label">Listing Optimisation</span>
+                                </label>
+                                <label class="form-check">
+                                    <input type="checkbox" value="creative">
+                                    <span class="form-check-label">Creative Studio</span>
+                                </label>
+                                <label class="form-check">
+                                    <input type="checkbox" value="health">
+                                    <span class="form-check-label">Account Health</span>
+                                </label>
+                                <label class="form-check">
+                                    <input type="checkbox" value="sourcing">
+                                    <span class="form-check-label">Product Sourcing</span>
+                                </label>
+                                <label class="form-check">
+                                    <input type="checkbox" value="global">
+                                    <span class="form-check-label">Global Expansion</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group full">
+                            <label class="form-label" for="cf-challenge">Primary Challenge</label>
+                            <select id="cf-challenge" class="form-select">
+                                <option value="" disabled selected>What's your biggest challenge right now?</option>
+                                <option>PPC / Ad spend efficiency</option>
+                                <option>Listing conversion rate</option>
+                                <option>Organic ranking & SEO</option>
+                                <option>Account health / suspension</option>
+                                <option>New product launch</option>
+                                <option>International expansion</option>
+                                <option>Brand protection</option>
+                                <option>Overall profitability</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group full">
+                            <label class="form-label" for="cf-message">Tell Us About Your Brand</label>
+                            <textarea id="cf-message" class="form-textarea" placeholder="Share your current situation, goals, or anything you'd like us to know going in — the more detail, the better your audit will be..."></textarea>
+                        </div>
+
+                    </div>
+                    
+                    <button class="form-submit" id="formSubmit" type="button">
+                        <span>REQUEST MY FREE AUDIT</span>
+                        <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </button>
+                    
+                    <p class="form-fine">By submitting you agree to our privacy policy. We never share your data with third parties, ever.</p>
+                </div>
+
+                <div class="form-success" id="formSuccess">
+                    <div class="form-success-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                    </div>
+                    <h3>AUDIT BOOKED.</h3>
+                    <p>A senior strategist from our team will review your account and be in touch personally within 24 hours. Check your inbox for a confirmation.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════
+     THE UNIVERSAL CONCIERGE MODAL (THE FORM OVERLAY)
+══════════════════════════════════════════════════ -->
+<div class="elite-modal-overlay" id="conciergeModal">
+    <!-- Restrained width specifically for the form -->
+    <div class="elite-modal-container" style="max-width: 650px; background: transparent; border: none; box-shadow: none;">
+        
+        <div class="contact-form-wrapper" style="margin: 0; position: relative;">
+            <button class="elite-modal-close" id="conciergeClose" style="top: 16px; right: 16px;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+
+            <div style="margin-bottom: 30px; padding-right: 40px;">
+                <div class="modal-badge">Direct Executive Access</div>
+                <h2 style="font-family: var(--font-display); font-size: 38px; color: #ffffff; letter-spacing: 0.05em; line-height: 1; margin-top: 8px;">SECURE <span class="red">AUDIT.</span></h2>
+            </div>
+            
+            <form id="eliteContactForm" class="elite-form">
+                <div class="form-row">
+                    <div class="input-group">
+                        <input type="text" id="name" required placeholder=" ">
+                        <label for="name">Full Name</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="email" id="email" required placeholder=" ">
+                        <label for="email">Work Email</label>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <input type="text" id="brand" required placeholder=" ">
+                    <label for="brand">Brand / Company URL</label>
+                </div>
+
+                <!-- The Dual-Function Concierge Field -->
+                <div class="input-group target-group" id="targetGroup">
+                    <input type="hidden" id="serviceSubject" name="serviceSubject" value="General Audit Request">
+                    <div class="custom-select-trigger" id="customSelectTrigger">
+                        <span id="customSelectText">General Audit Request</span>
+                        <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </div>
+                    <label class="active-label">Targeted Protocol</label>
+
+                    <div class="custom-select-options" id="customSelectOptions">
+                        <div class="custom-option active" data-value="General Audit Request">General Audit Request</div>
+                        <div class="custom-option" data-value="Product Launch Strategy">Product Launch Strategy</div>
+                        <div class="custom-option" data-value="Product Research Analysis">Product Research Analysis</div>
+                        <div class="custom-option" data-value="Sourcing Logistics Solutions">Sourcing Logistics Solutions</div>
+                        <div class="custom-option" data-value="Listing Optimization Services">Listing Optimization Services</div>
+                        <div class="custom-option" data-value="Creative Design Solutions">Creative Design Solutions</div>
+                        <div class="custom-option" data-value="PPC Account Management">PPC Account Management</div>
+                        <div class="custom-option" data-value="Account Health Support">Account Health Support</div>
+                        <div class="custom-option" data-value="Multichannel Commerce Integration">Multichannel Integration</div>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <textarea id="message" rows="3" required placeholder=" "></textarea>
+                    <label for="message">Current Monthly Revenue & Goals</label>
+                </div>
+
+                <button type="submit" class="form-submit-btn">
+                    REQUEST AUDIT
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!-- ═══════════════════ FOOTER ═══════════════════ -->
+<footer class="footer">
+    <div class="footer-glow"></div>
+
+    <div class="container relative-z">
+        <div class="footer-grid-premium">
+            
+            <div class="footer-brand-col">
+                <a href="#" class="brand-logo" style="margin-bottom: 24px; gap: 6px;">
+                    <div class="brand-icon-wrap" style="width: 48px; height: 48px;">
+                        <svg class="brand-icon-svg" viewBox="0 0 180 180" preserveAspectRatio="xMidYMid meet">
+                            <defs>
+                                <linearGradient id="header-lacquer" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#ff4d5a" />
+                                    <stop offset="40%" stop-color="#d9232d" />
+                                    <stop offset="100%" stop-color="#991118" />
+                                </linearGradient>
+                                <filter id="header-glow" x="-30%" y="-30%" width="160%" height="160%">
+                                    <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#d9232d" flood-opacity="0.45" />
+                                </filter>
+                            </defs>
+                            <g class="header-mark-group">
+                                <circle cx="90" cy="90" r="65" fill="url(#header-lacquer)" filter="url(#header-glow)" />
+                                <g class="header-ed-text">
+                                    <text x="68" y="110" font-family="'Montserrat', 'Futura', 'Century Gothic', sans-serif" font-weight="200" font-size="66" fill="#ffffff" text-anchor="middle" transform="rotate(-24 68 90)">e</text>
+                                    <text x="112" y="112" font-family="'Montserrat', 'Futura', 'Century Gothic', sans-serif" font-weight="200" font-size="74" fill="#ffffff" text-anchor="middle">d</text>
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="brand-text" style="font-size: 2.2rem;">ECOMM<span class="gradient-text">DOTS</span></div>
+                </a>
+                <p class="footer-desc">The global Amazon digital services agency for brands that are serious about growth. Data-driven, creatively led, and results-obsessed since 2019.</p>
+            </div>
+
+            <div class="footer-nav-col">
+                <div class="footer-col-title">Expertise</div>
+                <div class="footer-links">
+                    <a href="#product-launch-strategy"><span>Product Launch</span></a>
+                    <a href="#product-research-analysis"><span>Product Research</span></a>
+                    <a href="#sourcing-logistics-solutions"><span>Sourcing & Logistics</span></a>
+                    <a href="#creative-design-solutions"><span>Creative Design</span></a>
+                    <a href="#ppc-account-management"><span>PPC Management</span></a>
+                    <a href="#account-health-support"><span>Account Health</span></a>
+                </div>
+            </div>
+
+            <div class="footer-nav-col">
+                <div class="footer-col-title">The Agency</div>
+                <div class="footer-links">
+                    <a href="about"><span>About Us</span></a>
+                    <a href="./#case-studies"><span>Case Studies</span></a>
+                    <a href="about#team"><span>Our Team</span></a>
+                    <a href="blog"><span>Intelligence Hub</span></a>
+                    <a href="#contact"><span>Book an Audit</span></a>
+                </div>
+            </div>
+
+            <!-- Column 4: Corporate HQ -->
+            <div class="footer-nav-col">
+                <div class="footer-col-title">Corporate HQ</div>
+                <div class="footer-locations">
+                    <div class="loc-item">
+                        <strong>Operations Center</strong>
+                        <span>Lahore, Pakistan</span>
+                    </div>
+                    <div class="loc-item">
+                        <strong>Global Support Hours</strong>
+                        <span>Mon - Fri · 9:00 AM - 6:00 PM (PKT)</span>
+                    </div>
+                    <div class="loc-item">
+                        <strong>Direct Contact</strong>
+                        <a href="mailto:hello@ecommdots.com" class="loc-link">hello@ecommdots.com</a>
+                        <a href="tel:+923420147244" class="loc-link">+92 342 014 7244</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-giant-text">ECOMMDOTS</div>
+
+        <div class="footer-bottom-bar">
+            <div class="fb-copy-wrap">
+                <div class="fb-copy">© 2026 Ecommdots. Engineered for dominance.</div>
+                <div class="fb-watermark">
+                    <span class="wm-text">Developed by</span>
+                    <a href="https://choudaryhussainali.online/" target="_blank" rel="noopener noreferrer" class="wm-link">CHA</a>
+                </div>
+            </div>
+            
+            <div class="fb-legal">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+
+            <div class="fb-socials">
+                <a href="#" class="fb-social-btn" aria-label="LinkedIn">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                </a>
+                <a href="#" class="fb-social-btn" aria-label="Instagram">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                </a>
+                <a href="#" class="fb-social-btn" aria-label="YouTube">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.5 12 3.5 12 3.5s-7.505 0-9.377.55a3.015 3.015 0 0 0-2.122 2.136C0 8.07 0 12 0 12s0 3.93.501 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.55 9.377.55 9.377.55s7.505 0 9.377-.55a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<!-- ══════════════════════════════════════════════════
+     THE ELITE DYNAMIC MODAL
+══════════════════════════════════════════════════ -->
+<div class="elite-modal-overlay" id="eliteModal">
+    <div class="elite-modal-container">
+        <!-- Floating Close Button -->
+        <button class="elite-modal-close" id="modalClose">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+        
+        <div class="elite-modal-grid">
+            <!-- Left Side: Dynamic Media -->
+            <div class="elite-modal-media">
+                <img id="modalImg" src="" alt="Service Image">
+                <div class="elite-modal-icon" id="modalIcon"></div>
+            </div>
+            
+            <!-- Right Side: Dynamic Content -->
+            <div class="elite-modal-content">
+                <div class="modal-badge">Elite Service Protocol</div>
+                <h2 id="modalTitle">Service Title</h2>
+                <div class="modal-divider"></div>
+                
+                <p class="modal-lead" id="modalLead">Short description goes here.</p>
+                
+                <!-- Extended Details will be injected here -->
+                <div class="modal-extended" id="modalExtended"></div>
+                
+                <!-- The Final CTA -->
+                <a href="#contact" class="modal-fcta-btn" id="modalActionBtn">
+                    INITIALIZE PROTOCOL
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════
+     THE APEX RETURN (BILLION-DOLLAR BACK TO TOP)
+══════════════════════════════════════════════════ -->
+<button class="apex-return-btn" id="apexReturn" aria-label="Return to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="12" y1="19" x2="12" y2="5"></line>
+        <polyline points="5 12 12 5 19 12"></polyline>
+    </svg>
+</button>
+
+<script src="{{ url_for('static', filename='js/services.js') }}"></script>
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+</body>
+</html>

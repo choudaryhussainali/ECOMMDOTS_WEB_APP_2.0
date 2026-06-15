@@ -1,0 +1,1345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — Ecommdots</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">
+</head>
+<body>
+
+<div id="cur-dot"></div>
+<div id="cur-ring"></div>
+
+<div class="social-sidebar open" id="socialSidebar">
+  <button class="toggle-btn" id="toggleBtn" aria-label="Toggle sidebar">
+    <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </button>
+  <div class="social-links" id="socialLinks">
+    <a href="https://wa.me/923420147244" target="_blank" rel="noopener noreferrer" class="social-btn whatsapp-btn" aria-label="WhatsApp">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+      </svg>
+    </a>
+    <!-- <a href="mailto:help@telsolutionspk.com" class="social-btn email-btn" aria-label="Email">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+        <polyline points="22,4 12,13 2,4"></polyline>
+      </svg>
+    </a> -->
+    <a href="https://linkedin.com/company/yourcompany" target="_blank" rel="noopener noreferrer" class="social-btn linkedin-btn" aria-label="LinkedIn">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+      </svg>
+    </a>
+    <a href="https://youtube.com/@yourchannel" target="_blank" rel="noopener noreferrer" class="social-btn youtube-btn" aria-label="YouTube">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.5 12 3.5 12 3.5s-7.505 0-9.377.55a3.015 3.015 0 0 0-2.122 2.136C0 8.07 0 12 0 12s0 3.93.501 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.55 9.377.55 9.377.55s7.505 0 9.377-.55a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+      </svg>
+    </a>
+  </div>
+</div>
+
+<nav class="mobile-nav" id="mobileNav" aria-label="Mobile Navigation">
+  <div class="mobile-nav-links">
+    <a href="services" data-close-nav>Services</a>
+    <a href="./#brands" data-close-nav>Brands</a>
+    <a href="about" data-close-nav>About</a>
+    <a href="./#case-studies" data-close-nav>Case Studies</a>
+    <a href="blog" data-close-nav>Blog</a>
+    <a href="testimonials" data-close-nav>Testimonials</a>
+    <a href="career" data-close-nav>Careers</a>
+  </div>
+  <div class="mobile-nav-cta">
+    <a href="#" class="btn-audit" id="mobileCalendlyBtn">BOOK FREE CONSULTATION</a>
+  </div>
+</nav>
+
+<header class="main-header" id="mainHeader">
+    <nav class="container nav-wrapper">
+        <a href="index.html" class="brand-logo">
+            <div class="brand-icon-wrap">
+                <svg class="brand-icon-svg" viewBox="0 0 180 180" preserveAspectRatio="xMidYMid meet">
+                    <defs>
+                        <linearGradient id="header-lacquer" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#ff4d5a" />
+                            <stop offset="40%" stop-color="#d9232d" />
+                            <stop offset="100%" stop-color="#991118" />
+                        </linearGradient>
+                        <filter id="header-glow" x="-30%" y="-30%" width="160%" height="160%">
+                            <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#d9232d" flood-opacity="0.45" />
+                        </filter>
+                    </defs>
+                    <g class="header-mark-group">
+                        <circle cx="90" cy="90" r="65" fill="url(#header-lacquer)" filter="url(#header-glow)" />
+                        <g class="header-ed-text">
+                            <text x="68" y="110" font-family="'Montserrat', 'Futura', 'Century Gothic', sans-serif" font-weight="200" font-size="66" fill="#ffffff" text-anchor="middle" transform="rotate(-24 68 90)">e</text>
+                            <text x="112" y="112" font-family="'Montserrat', 'Futura', 'Century Gothic', sans-serif" font-weight="200" font-size="74" fill="#ffffff" text-anchor="middle">d</text>
+                        </g>
+                    </g>
+                </svg>
+            </div>
+            <div class="brand-text">ECOMM<span class="gradient-text">DOTS</span></div>
+        </a>
+        <ul class="nav-links">
+            <li class="nav-has-dropdown">
+                <a href="services" class="nav-drop-trigger">
+                    Services 
+                    <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" fill="none"><path d="M6 9l6 6 6-6"/></svg>
+                </a>
+                <div class="nav-dropdown">
+                    <div class="nav-dropdown-inner mega-menu">
+                        <a href="services#product-launch-strategy" class="nav-drop-item">
+                            <span class="nd-title">Product Launch Strategy</span>
+                            <span class="nd-sub">End-to-end marketplace readiness</span>
+                        </a>
+                        <a href="services#product-research-analysis" class="nav-drop-item">
+                            <span class="nd-title">Product Research Analysis</span>
+                            <span class="nd-sub">Data-driven opportunity discovery</span>
+                        </a>
+                        <a href="services#sourcing-logistics-solutions" class="nav-drop-item">
+                            <span class="nd-title">Sourcing & Logistics</span>
+                            <span class="nd-sub">Supply chain & global manufacturing</span>
+                        </a>
+                        <a href="services#listing-optimization" class="nav-drop-item">
+                            <span class="nd-title">Listing Optimization</span>
+                            <span class="nd-sub">SEO & conversion rate refinement</span>
+                        </a>
+                        <a href="services#creative-design-solutions" class="nav-drop-item">
+                            <span class="nd-title">Creative Design</span>
+                            <span class="nd-sub">High-converting visual assets</span>
+                        </a>
+                        <a href="services#ppc-account-management" class="nav-drop-item">
+                            <span class="nd-title">PPC Management</span>
+                            <span class="nd-sub">Strategic ad spend optimization</span>
+                        </a>
+                        <a href="services#account-health-support" class="nav-drop-item">
+                            <span class="nd-title">Account Health Support</span>
+                            <span class="nd-sub">Compliance & risk mitigation</span>
+                        </a>
+                        <a href="services#multichannel-commerce-integration" class="nav-drop-item">
+                            <span class="nd-title">Multichannel Integration</span>
+                            <span class="nd-sub">Unified ecommerce ecosystem</span>
+                        </a>
+                        <a href="services" class="nav-drop-item">
+                            <span class="nd-title">All Services</span>
+                            <span class="nd-sub">Bespoke 8-figure architectures</span>
+                        </a>
+                    </div>
+                </div>
+            </li>
+            <li><a href="./#brands">Brands</a></li>
+            <li class="nav-has-dropdown">
+                <a href="about" class="nav-drop-trigger">
+                    About 
+                    <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" fill="none"><path d="M6 9l6 6 6-6"/></svg>
+                </a>
+                <div class="nav-dropdown">
+                    <div class="nav-dropdown-inner">
+                        <a href="about#about" class="nav-drop-item">
+                            <span class="nd-title">Our Story</span>
+                            <span class="nd-sub">About ECOMMDOTS</span>
+                        </a>
+                        <a href="/about#mission" class="nav-drop-item">
+                            <span class="nd-title">Core Philosophy</span>
+                            <span class="nd-sub">Our mission & manifesto</span>
+                        </a>
+                        <a href="/about#legacy" class="nav-drop-item">
+                            <span class="nd-title">Agency Genesis</span>
+                            <span class="nd-sub">The legacy we're building</span>
+                        </a>
+                        <a href="/about#team" class="nav-drop-item">
+                            <span class="nd-title">The Architects</span>
+                            <span class="nd-sub">Leadership & strategy team</span>
+                        </a>
+                    </div>
+                </div>
+            </li>
+            <li><a href="testimonials">Testimonials</a></li>
+            <li><a href="career">Career</a></li>
+        </ul>
+        <div class="nav-controls">
+            <a href="#" class="btn-audit" id="desktopCalendlyBtn">BOOK FREE CONSULTATION</a>
+            <button class="hamburger" id="hamburger" aria-label="Open Menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+</header>
+
+<!-- ═══════════════════ PAGE HERO ═══════════════════ -->
+<section class="page-hero">
+  <div class="hero-bg-word">ABOUT</div>
+  <div class="container hero-inner">
+
+    <!-- Left -->
+    <div class="hero-left">
+      <div class="hero-tag">
+        <span class="hero-tag-dot"></span>
+        <span>THE ARCHITECTURE BEHIND THE RESULTS</span>
+      </div>
+      <h1 class="hero-h1">WE ARE<br>ECOMM<em>DOTS</em></h1>
+      <p class="hero-sub">Built from real Amazon marketplace experience by operators who understand exactly what impacts your rankings, profitability, and growth—and how to fix it with precision. We don’t guess. We analyze, execute, and optimize with a system designed for measurable eCommerce performance.</p>
+    </div>
+
+    <!-- Right: stat stack -->
+    <div class="hero-stat-stack">
+      <div class="hero-stat-card">
+        <div class="hsc-val"><span>$</span>100M<span>+</span></div>
+        <div class="hsc-label">Revenue Managed Across Amazon & eCommerce Brands</div>
+      </div>
+      <div class="hero-stat-card">
+        <div class="hsc-val">87<span>+</span></div>
+        <div class="hsc-label">Brands Successfully Scaled Across Multiple Niches</div>
+      </div>
+      <div class="hero-stat-card">
+        <div class="hsc-val">340<span>%</span></div>
+        <div class="hsc-label">Average Improvement in Advertising Efficiency & ROAS</div>
+      </div>
+    </div>
+
+  </div>
+  <div class="hero-scroll">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- DIVIDER: Dark → White -->
+<div class="div-dark-white">
+  <svg viewBox="0 0 1440 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,100 C360,0 1080,100 1440,20 L1440,100 Z" fill="#ffffff"/>
+    <path d="M0,100 C360,0 1080,100 1440,20" fill="none" stroke="rgba(217,35,45,0.25)" stroke-width="1.5"/>
+  </svg>
+</div>
+
+<!-- ═══════════════════ ABOUT SECTION (TOP HALF) ═══════════════════ -->
+<section class="about-section" id="about">
+  <div class="container">
+
+    <div class="about-grid">
+
+      <!-- Visual stack (Untouched) -->
+      <div class="about-visual reveal-right">
+        <div class="av-main">
+          <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=900&q=80" alt="Ecommdots Strategy Team">
+        </div>
+        <div class="av-accent">
+          <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=700&q=80" alt="Data Analytics Session">
+        </div>
+        <div class="av-badge reveal-scale delay-3">
+          <div class="av-badge-num">7</div>
+          <div class="av-badge-txt">Years Of Mastery</div>
+        </div>
+        <div class="av-line"></div>
+      </div>
+
+      <!-- Content -->
+      <div class="about-content reveal-left">
+        <div class="section-eyebrow">
+          <span class="ey-line"></span>
+          <span class="ey-text" style="color:var(--red)">OUR STORY</span>
+        </div>
+
+        <h2 class="about-h2">BUILT BY<br>SELLERS.<br><em>FOR SELLERS.</em></h2>
+
+        <p class="about-lead">We are not a traditional marketing agency. We are former Amazon operators who understand firsthand why strong products fail—and how strategic execution turns them into market leaders.</p>
+
+        <p class="about-body">We built Ecommdots after seeing brands lose ground not because of product quality, but because of weak positioning, poor optimization, and disconnected marketing systems. So we rebuilt everything from the ground up: a data-led, performance-driven growth system focused on one goal—scaling brands into profitable, sustainable category leaders.</p>
+
+        <p class="about-body" style="margin-top: -24px;">Every strategy we deploy, every dollar optimized, and every creative we design is built to drive measurable growth, not vanity metrics.</p>
+
+        <div class="about-pillars">
+          <div class="pillar-item">
+            <div class="pi-icon">
+              <svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div class="pi-title">Speed to Scale</div>
+            <div class="pi-desc">Our onboarding process is designed to create early momentum within the first 30 days through structured execution and rapid optimization cycles.</div>
+          </div>
+          <div class="pillar-item">
+            <div class="pi-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div class="pi-title">Brand Protection</div>
+            <div class="pi-desc">We actively monitor listings and account health to prevent suppressions, policy risks, and external threats that can impact revenue.</div>
+          </div>
+          <div class="pillar-item">
+            <div class="pi-icon">
+              <svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+            </div>
+            <div class="pi-title">Data-Driven Decisions</div>
+            <div class="pi-desc">Every move is backed by real marketplace data, keyword intelligence, and competitor analysis—no guesswork involved.</div>
+          </div>
+          <div class="pillar-item">
+            <div class="pi-icon">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+            </div>
+            <div class="pi-title">Creative That Converts</div>
+            <div class="pi-desc">We design visuals and messaging based on buyer psychology and conversion behavior, not subjective design preferences.</div>
+          </div>
+        </div>
+
+        <a href="#contact" class="btn-primary">
+          <span>Start Your Growth Journey</span>
+          <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+
+    </div>
+    
+
+    <!-- ─ PREMIUM JOURNEY SECTION ─ -->
+    <div class="premium-journey-wrapper" id="legacy">
+      
+      <div class="pj-header reveal">
+        <div class="section-eyebrow" style="justify-content: center; margin-bottom: 20px;">
+          <span class="ey-line"></span>
+          <span class="ey-text" style="color: #aaa">OUR LEGACY</span>
+        </div>
+        <h3 style="font-family:var(--font-display);font-size:clamp(48px,6vw,80px);color:var(--charcoal);text-align:center;margin-bottom:0;letter-spacing:0.02em;line-height:0.9;">
+          THE EVOLUTION OF<br><span style="color:var(--red)">GROWTH</span>
+        </h3>
+      </div>
+
+      <div class="pj-track-container" id="pjTrack">
+        <div class="pj-center-line"><div class="pj-center-line-fill" id="pjFill"></div></div>
+
+        <!-- Node 01 -->
+        <div class="pj-node">
+          <div class="pj-dot"></div>
+          <div class="pj-card">
+            <div class="pj-year">2019</div>
+            <div class="pj-title">The Beginning</div>
+            <div class="pj-desc">Ecommdots Digital Agency was founded in Lahore with a simple mission — to help Amazon sellers build profitable, sustainable eCommerce businesses. Starting with a small team and a handful of clients, we focused on execution, not noise.</div>
+          </div>
+          <div style="width: 42%;" class="hide-mobile"></div>
+        </div>
+
+        <!-- Node 02 -->
+        <div class="pj-node">
+          <div class="pj-dot"></div>
+          <div class="pj-card">
+            <div class="pj-year">2021</div>
+            <div class="pj-title">Building the System</div>
+            <div class="pj-desc">We refined our internal frameworks for Amazon PPC, listing optimization, and product research. This was the stage where our data-driven approach started consistently delivering measurable growth for early-stage brands.</div>
+          </div>
+          <div style="width: 42%;" class="hide-mobile"></div>
+        </div>
+
+        <!-- Node 03 -->
+        <div class="pj-node">
+          <div class="pj-dot"></div>
+          <div class="pj-card">
+            <div class="pj-year">2023</div>
+            <div class="pj-title">Scaling Brands</div>
+            <div class="pj-desc">Our systems matured into full-scale growth engines. We began helping brands expand beyond initial traction into structured scaling through advertising optimization, conversion improvements, and catalog expansion strategies.</div>
+          </div>
+          <div style="width: 42%;" class="hide-mobile"></div>
+        </div>
+
+        <!-- Node 04 -->
+        <div class="pj-node">
+          <div class="pj-dot"></div>
+          <div class="pj-card">
+            <div class="pj-year">2025</div>
+            <div class="pj-title">Performance at Scale</div>
+            <div class="pj-desc">Ecommdots evolved into a multi-service eCommerce growth partner, managing end-to-end Amazon operations for growing brands. Our focus shifted to sustainable scaling, profit optimization, and long-term brand positioning.</div>
+          </div>
+          <div style="width: 42%;" class="hide-mobile"></div>
+        </div>
+
+      </div>
+    </div>
+</section>
+
+<!-- DIVIDER: White → Deep Dark (jagged industrial) -->
+<div class="div-white-dark">
+  <svg viewBox="0 0 1440 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <polygon points="0,0 1440,100 1440,0" fill="#0d0d0d"/>
+    <polygon points="0,0 700,100 1440,40 1440,0" fill="#0d0d0d" opacity="0.5"/>
+    <line x1="0" y1="0" x2="1440" y2="100" stroke="rgba(217,35,45,0.2)" stroke-width="1.5"/>
+  </svg>
+</div>
+
+<!-- ═══════════════════ MISSION / VALUES ═══════════════════ -->
+<section class="mission-section" id="mission">
+  <div class="mission-orb-1"></div>
+  <div class="mission-orb-2"></div>
+
+  <div class="container">
+
+    <div class="mission-grid">
+      <div class="mission-left reveal-right">
+        <div class="section-eyebrow" style="margin-bottom:20px;">
+          <span class="ey-line"></span>
+          <span class="ey-text" style="color:#444">WHAT WE STAND FOR</span>
+        </div>
+        <h2 class="mission-h2">OUR<br>MISSION.<br><em>YOUR</em><br>GROWTH.</h2>
+      </div>
+
+      <div class="mission-right reveal-left">
+        <p class="mission-right-text">We exist to ensure strong products don’t lose in competitive marketplaces due to poor execution. Our mission is to fix that gap through structured strategy, precise execution, and continuous optimization across Amazon and eCommerce platforms.</p>
+        <div class="mission-facts">
+          <div class="mf-item">
+            <span class="mf-num">01</span>
+            <span class="mf-text"><strong>Profitable Growth First:</strong> We prioritize sustainable profitability over vanity metrics like impressions or clicks that don’t translate into real business growth.</span>
+          </div>
+          <div class="mf-item">
+            <span class="mf-num">02</span>
+            <span class="mf-text"><strong>Long-Term Brand Building:</strong> We focus on building durable brand equity that supports consistent performance instead of short-lived tactics or shortcuts.</span>
+          </div>
+          <div class="mf-item">
+            <span class="mf-num">03</span>
+            <span class="mf-text"><strong>Radical Transparency:</strong> Every decision, action, and result is communicated clearly so you always know exactly what is happening with your account.</span>
+          </div>
+          <div class="mf-item">
+            <span class="mf-num">04</span>
+            <span class="mf-text"><strong>Data-Driven Execution:</strong> We rely on marketplace data, customer behavior, and performance analytics—not assumptions or guesswork.</span>
+          </div>
+          <div class="mf-item">
+            <span class="mf-num">05</span>
+            <span class="mf-text"><strong>Full Ownership Mindset:</strong> We treat every account like our own business, taking responsibility for performance, outcomes, and long-term success.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Values grid -->
+    <div class="values-grid">
+      <div class="value-card reveal delay-1">
+        <div class="vc-num">01</div>
+        <div class="vc-icon">
+          <svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="vc-title">Data Architecture</div>
+        <div class="vc-desc">Every strategy is driven by real marketplace intelligence, not assumptions. We leverage tools like Helium 10, DataDive, and advanced research systems to uncover opportunities, keyword signals, and competitor gaps that others overlook.</div>
+      </div>
+      <div class="value-card reveal delay-2">
+        <div class="vc-num">02</div>
+        <div class="vc-icon">
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="vc-title">Creative Excellence</div>
+        <div class="vc-desc">We design high-performing A+ Content, product visuals, and ad creatives that are built to convert. Every asset is crafted to balance strong aesthetics with measurable performance outcomes.</div>
+      </div>
+      <div class="value-card reveal delay-3">
+        <div class="vc-num">03</div>
+        <div class="vc-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="vc-title">Brand Protection</div>
+        <div class="vc-desc">We actively safeguard your Amazon business from hijackers, listing suppressions, and policy risks. Our monitoring ensures your account stays stable, compliant, and protected from unexpected disruptions.</div>
+      </div>
+      <div class="value-card reveal delay-4">
+        <div class="vc-num">04</div>
+        <div class="vc-icon">
+          <svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="vc-title">Profit Engineering</div>
+        <div class="vc-desc">We focus on protecting and improving your margins—not just increasing revenue. Through sourcing optimization, cost control, and inventory planning, we build profitability into every stage of growth.</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- DIVIDER: Dark → Light Gray (sweeping arc) -->
+<div class="div-dark-gray">
+  <svg viewBox="0 0 1440 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,0 C480,120 960,0 1440,80 L1440,100 L0,100 Z" fill="#f4f4f5"/>
+    <path d="M0,0 C480,120 960,0 1440,80" fill="none" stroke="rgba(217,35,45,0.2)" stroke-width="2"/>
+  </svg>
+</div>
+
+<!-- ═══════════════════ PORTFOLIO SECTION ═══════════════════ -->
+<section class="portfolio-section" id="portfolio">
+  <div class="container">
+
+    <div class="portfolio-header">
+      <div class="ph-left reveal-right">
+        <div class="section-eyebrow" style="margin-bottom: 16px;">
+          <span class="ey-line"></span>
+          <span class="ey-text" style="color: #888">Proven Work</span>
+        </div>
+        <h2 class="portfolio-h2">BRANDS<br>WE'VE <em>BUILT.</em></h2>
+      </div>
+      <p class="ph-right reveal-left delay-2">From challenger brands entering a crowded category to market leaders defending their moat — this is what the work actually looks like.</p>
+    </div>
+
+    <!-- Filter tabs -->
+    <div class="portfolio-filters reveal delay-1">
+      <button class="pf-tab active" data-filter="all">All Projects</button>
+      <button class="pf-tab" data-filter="health">Health & Beauty</button>
+      <button class="pf-tab" data-filter="tech">Consumer Tech</button>
+      <button class="pf-tab" data-filter="home">Home & Kitchen</button>
+      <button class="pf-tab" data-filter="apparel">Apparel</button>
+      <button class="pf-tab" data-filter="grocery">Grocery</button>
+    </div>
+
+    <!-- Asymmetric grid -->
+    <div class="portfolio-grid reveal">
+
+      <!-- Card 1 — Large -->
+      <div class="port-card">
+        <div class="port-img-wrap">
+          <img class="port-img" src="https://images.unsplash.com/photo-1523474438810-b04a2480633c?auto=format&fit=crop&w=1000&q=80" alt="Vitacore">
+        </div>
+        <div class="port-overlay"></div>
+        <div class="port-arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="port-content">
+          <div class="port-category">Health & Beauty</div>
+          <div class="port-brand">VITACORE PLUS</div>
+          <div class="port-stats">
+            <div>
+              <div class="port-stat-val">312<span>%</span></div>
+              <div class="port-stat-lbl">Revenue Growth</div>
+            </div>
+            <div>
+              <div class="port-stat-val">64<span>%</span></div>
+              <div class="port-stat-lbl">ACoS Reduction</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="port-card">
+        <div class="port-img-wrap">
+          <img class="port-img" src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80" alt="Prism Audio">
+        </div>
+        <div class="port-overlay"></div>
+        <div class="port-arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="port-content">
+          <div class="port-category">Consumer Tech</div>
+          <div class="port-brand">PRISM AUDIO</div>
+          <div class="port-stats">
+            <div>
+              <div class="port-stat-val"><span>$</span>2.1M</div>
+              <div class="port-stat-lbl">Year 1 Revenue</div>
+            </div>
+            <div>
+              <div class="port-stat-val"><span>#</span>1</div>
+              <div class="port-stat-lbl">Category Rank</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="port-card">
+        <div class="port-img-wrap">
+          <img class="port-img" src="https://images.unsplash.com/photo-1610701596007-11502861dcfa?auto=format&fit=crop&w=700&q=80" alt="Nordic Nest">
+        </div>
+        <div class="port-overlay"></div>
+        <div class="port-arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="port-content">
+          <div class="port-category">Home & Kitchen</div>
+          <div class="port-brand">NORDIC NEST</div>
+          <div class="port-stats">
+            <div>
+              <div class="port-stat-val">4.8<span>×</span></div>
+              <div class="port-stat-lbl">Revenue Uplift</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="port-card">
+        <div class="port-img-wrap">
+          <img class="port-img" src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=700&q=80" alt="Stride Athletics">
+        </div>
+        <div class="port-overlay"></div>
+        <div class="port-arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="port-content">
+          <div class="port-category">Apparel & Footwear</div>
+          <div class="port-brand">STRIDE</div>
+          <div class="port-stats">
+            <div>
+              <div class="port-stat-val">280<span>%</span></div>
+              <div class="port-stat-lbl">ROAS Growth</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="port-card">
+        <div class="port-img-wrap">
+          <img class="port-img" src="https://images.unsplash.com/photo-1526947425960-945c6e72858f?auto=format&fit=crop&w=700&q=80" alt="Apex Grooming">
+        </div>
+        <div class="port-overlay"></div>
+        <div class="port-arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="port-content">
+          <div class="port-category">Personal Care</div>
+          <div class="port-brand">APEX GROOMING</div>
+          <div class="port-stats">
+            <div>
+              <div class="port-stat-val">196<span>%</span></div>
+              <div class="port-stat-lbl">Units Sold Growth</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 6 — Wide -->
+      <div class="port-card">
+        <div class="port-img-wrap">
+          <img class="port-img" src="https://images.unsplash.com/photo-1571781526291-c477ebefa148?auto=format&fit=crop&w=1200&q=80" alt="Terra Roasters">
+        </div>
+        <div class="port-overlay"></div>
+        <div class="port-arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="port-content">
+          <div class="port-category">Grocery & Gourmet</div>
+          <div class="port-brand">TERRA ROASTERS</div>
+          <div class="port-stats">
+            <div>
+              <div class="port-stat-val"><span>#</span>3</div>
+              <div class="port-stat-lbl">Gourmet Coffee</div>
+            </div>
+            <div>
+              <div class="port-stat-val">420<span>%</span></div>
+              <div class="port-stat-lbl">Subscribe & Save</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 7 -->
+      <div class="port-card">
+        <div class="port-img-wrap">
+          <img class="port-img" src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=700&q=80" alt="Iron Gear">
+        </div>
+        <div class="port-overlay"></div>
+        <div class="port-arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="port-content">
+          <div class="port-category">Sports & Outdoors</div>
+          <div class="port-brand">IRON GEAR</div>
+          <div class="port-stats">
+            <div>
+              <div class="port-stat-val">52<span>%</span></div>
+              <div class="port-stat-lbl">ACoS Drop</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="portfolio-cta reveal">
+      <p>Want to see the full case study breakdown?</p>
+      <a href="#contact" class="btn-primary">
+        <span>Request Full Portfolio PDF</span>
+        <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- DIVIDER: Gray → Deep Black (lightning bolt) -->
+<div class="div-gray-dark">
+  <svg viewBox="0 0 1440 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <polygon points="0,100 720,0 1440,100" fill="#080808"/>
+    <line x1="0" y1="100" x2="720" y2="0" stroke="rgba(217,35,45,0.3)" stroke-width="1.5"/>
+    <line x1="720" y1="0" x2="1440" y2="100" stroke="rgba(217,35,45,0.15)" stroke-width="1.5"/>
+  </svg>
+</div>
+
+<!-- ═══════════════════ METRICS BAND ═══════════════════ -->
+<section class="metrics-section">
+  <div class="container">
+    <div class="metrics-strip">
+      <div class="metric-item reveal delay-1">
+        <div class="metric-val"><span>$</span>100<span>M+</span></div>
+        <div class="metric-label">Gross Merchandise Value Managed</div>
+      </div>
+      <div class="metric-item reveal delay-2">
+        <div class="metric-val">87<span>+</span></div>
+        <div class="metric-label">Brands Successfully Scaled</div>
+      </div>
+      <div class="metric-item reveal delay-3">
+        <div class="metric-val">340<span>%</span></div>
+        <div class="metric-label">Average ROAS Improvement</div>
+      </div>
+      <div class="metric-item reveal delay-4">
+        <div class="metric-val">96<span>%</span></div>
+        <div class="metric-label">Client Retention Rate</div>
+      </div>
+      <div class="metric-item reveal delay-5">
+        <div class="metric-val">5<span>/5</span></div>
+        <div class="metric-label">Client Satisfaction Score</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIVIDER: Dark → White (sweeping arch) -->
+<div class="div-dark-gray" style="background:#080808;">
+  <svg viewBox="0 0 1440 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,100 Q720,-20 1440,100 L1440,100 L0,100 Z" fill="#ffffff"/>
+    <path d="M0,100 Q720,-20 1440,100" fill="none" stroke="rgba(217,35,45,0.2)" stroke-width="2"/>
+  </svg>
+</div>
+
+<!-- ═══════════════════ TEAM SECTION ═══════════════════ -->
+<section class="team-section" id="team">
+  <div class="container">
+
+    <div class="team-header">
+      <div class="reveal-right">
+        <div class="section-eyebrow" style="margin-bottom: 16px;">
+          <span class="ey-line"></span>
+          <span class="ey-text" style="color: var(--red)">THE ARCHITECTS</span>
+        </div>
+        <h2 class="team-h2">MEET THE<br><em>PEOPLE</em><br>BEHIND IT.</h2>
+      </div>
+      <div class="reveal-left">
+        <p class="team-sub">Our team is made up of former Amazon sellers, performance strategists, data analysts, creative specialists, and eCommerce operators. Every member brings hands-on marketplace experience, not just theory—people who understand what it actually takes to build, scale, and sustain profitable brands on Amazon and beyond.</p>
+        <div class="team-tabs">
+          <button class="tt-btn active" data-dept="all">All Team</button>
+          <button class="tt-btn" data-dept="leadership">Leadership</button>
+          <button class="tt-btn" data-dept="strategy">Strategy</button>
+          <button class="tt-btn" data-dept="creative">Creative</button>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 1. Executive Leadership & Strategy -->
+    <div class="team-dept-divider reveal">
+      <span class="tdd-label">Executive Leadership & Strategy</span>
+      <span class="tdd-line"></span>
+    </div>
+
+    <div class="team-grid">
+      <!-- Saif Ur Rehman -->
+      <div class="team-card reveal delay-1">
+        <div class="tc-img-box">
+          <img src="Team/Saif Ur Rehman.jpg" alt="Saif Ur Rehman">
+          <div class="tc-overlay">
+            <div class="tc-hover-content">
+              <p class="tc-hover-bio">Visionary leader driving the company's growth, strategic direction, and client success across global eCommerce marketplaces.</p>
+              <div class="tc-socials">
+                <a class="tc-social" href="#"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tc-info">
+          <div class="tc-name">Saif Ur Rehman</div>
+          <div class="tc-role">CEO & Founder</div>
+        </div>
+      </div>
+
+      <!-- Muhammad Arslan -->
+      <div class="team-card reveal delay-2">
+        <div class="tc-img-box">
+          <img src="Team/Muhammad Arslan.jpg" alt="Muhammad Arslan">
+          <div class="tc-overlay">
+            <div class="tc-hover-content">
+              <p class="tc-hover-bio">Oversees daily operations, team coordination, and process optimization to ensure smooth, flawless business execution.</p>
+              <div class="tc-socials">
+                <a class="tc-social" href="#"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tc-info">
+          <div class="tc-name">Muhammad Arslan</div>
+          <div class="tc-role">Chief Operating Officer</div>
+        </div>
+      </div>
+
+      <!-- Abdul Wahab -->
+      <div class="team-card reveal delay-3">
+        <div class="tc-img-box">
+          <img src="Team/Abdul Wahab.jpg" alt="Abdul Wahab">
+          <div class="tc-overlay">
+            <div class="tc-hover-content">
+              <p class="tc-hover-bio">Leads branding initiatives and marketing campaigns focused on customer engagement, market dominance, and revenue growth.</p>
+              <div class="tc-socials">
+                <a class="tc-social" href="#"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tc-info">
+          <div class="tc-name">Abdul Wahab</div>
+          <div class="tc-role">Brand & Marketing Strategist</div>
+        </div>
+      </div>
+
+      <!-- Abdul Moeed -->
+      <div class="team-card reveal delay-4">
+        <div class="tc-img-box">
+          <img src="Team/Abdul Moeed.jpg" alt="Abdul Moeed">
+          <div class="tc-overlay">
+            <div class="tc-hover-content">
+              <p class="tc-hover-bio">Specializes in Amazon brand management, catalog optimization, and scalable listing strategies designed for rapid marketplace growth.</p>
+              <div class="tc-socials">
+                <a class="tc-social" href="#"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tc-info">
+          <div class="tc-name">Abdul Moeed</div>
+          <div class="tc-role">Brand & Catalog Manager</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. Marketplace Operations & Growth -->
+    <div class="team-dept-divider reveal">
+      <span class="tdd-label">Marketplace Operations & Growth</span>
+      <span class="tdd-line"></span>
+    </div>
+
+    <div class="team-grid">
+      <!-- Ahsan Zahid -->
+      <div class="team-card reveal delay-1">
+        <div class="tc-img-box">
+          <img src="Team/Ahsan Zahid.jpg" alt="Ahsan Zahid">
+          <div class="tc-overlay">
+            <div class="tc-hover-content">
+              <p class="tc-hover-bio">Oversees global supplier sourcing, purchasing operations, and inventory coordination for highly streamlined fulfillment.</p>
+              <div class="tc-socials">
+                <a class="tc-social" href="#"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tc-info">
+          <div class="tc-name">Ahsan Zahid</div>
+          <div class="tc-role">Supply Chain Manager</div>
+        </div>
+      </div>
+
+      <!-- Ali Hassan -->
+      <div class="team-card reveal delay-2">
+        <div class="tc-img-box">
+          <img src="Team/Ali Hassan.jpg" alt="Ali Hassan">
+          <div class="tc-overlay">
+            <div class="tc-hover-content">
+              <p class="tc-hover-bio">Identifies profitable product opportunities and develops sophisticated, data-driven strategies for successful product launches.</p>
+              <div class="tc-socials">
+                <a class="tc-social" href="#"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tc-info">
+          <div class="tc-name">Ali Hassan</div>
+          <div class="tc-role">Product R&D Manager</div>
+        </div>
+      </div>
+
+      <!-- Muhammad Kabeer -->
+      <div class="team-card reveal delay-3">
+        <div class="tc-img-box">
+          <img src="Team/Muhammad Kabeer.jpg" alt="Muhammad Kabeer">
+          <div class="tc-overlay">
+            <div class="tc-hover-content">
+              <p class="tc-hover-bio">Drives organic visibility through advanced SEO strategies, precise keyword optimization, and aggressive marketplace ranking improvements.</p>
+              <div class="tc-socials">
+                <a class="tc-social" href="#"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tc-info">
+          <div class="tc-name">Muhammad Kabeer</div>
+          <div class="tc-role">SEO & Organic Growth</div>
+        </div>
+      </div>
+
+      <!-- Abdullah Ahsan -->
+      <div class="team-card reveal delay-4">
+        <div class="tc-img-box">
+          <img src="Team/Abdullah Ahsaan.jpg" alt="Abdullah Ahsan">
+          <div class="tc-overlay">
+            <div class="tc-hover-content">
+              <p class="tc-hover-bio">Handles critical account operations, daily performance monitoring, and comprehensive marketplace management to maintain business efficiency.</p>
+              <div class="tc-socials">
+                <a class="tc-social" href="#"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tc-info">
+          <div class="tc-name">Abdullah Ahsan</div>
+          <div class="tc-role">Amazon Account Manager</div>
+        </div>
+      </div>
+
+      <!-- Saqib Tufail -->
+      <div class="team-card reveal delay-1">
+        <div class="tc-img-box">
+          <img src="Team/Saqib Tufail.jpg" alt="Saqib Tufail">
+          <div class="tc-overlay">
+            <div class="tc-hover-content">
+              <p class="tc-hover-bio">Ensures account and product compliance with Amazon's strict policies while rapidly resolving regulatory and listing issues.</p>
+              <div class="tc-socials">
+                <a class="tc-social" href="#"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tc-info">
+          <div class="tc-name">Saqib Tufail</div>
+          <div class="tc-role">Compliance & Policy Manager</div>
+        </div>
+      </div>
+
+      <!-- Aryan Khalid -->
+      <div class="team-card reveal delay-2">
+        <div class="tc-img-box">
+          <img src="Team/Aryan Khalid.jpg" alt="Aryan Khalid">
+          <div class="tc-overlay">
+            <div class="tc-hover-content">
+              <p class="tc-hover-bio">Monitors vital seller account health metrics and implements proactive, defensive solutions to maintain flawless marketplace compliance.</p>
+              <div class="tc-socials">
+                <a class="tc-social" href="#"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tc-info">
+          <div class="tc-name">Aryan Khalid</div>
+          <div class="tc-role">Account Health Expert</div>
+        </div>
+      </div>
+
+      <!-- Abid Saeed -->
+      <div class="team-card reveal delay-3">
+        <div class="tc-img-box">
+          <img src="Team/Abid Saeed.jpg" alt="Abid Saeed">
+          <div class="tc-overlay">
+            <div class="tc-hover-content">
+              <p class="tc-hover-bio">Conducts in-depth market and competitor analysis, reverse-engineering the landscape to identify high-potential eCommerce opportunities.</p>
+              <div class="tc-socials">
+                <a class="tc-social" href="#"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tc-info">
+          <div class="tc-name">Abid Saeed</div>
+          <div class="tc-role">Product Research Expert</div>
+        </div>
+      </div>
+
+      <!-- Abdul Qayyum -->
+      <div class="team-card reveal delay-4">
+        <div class="tc-img-box">
+          <img src="Team/Abdul Qayyum.jpg" alt="Abdul Qayyum">
+          <div class="tc-overlay">
+            <div class="tc-hover-content">
+              <p class="tc-hover-bio">Identifies and connects with potential elite clients through strategic outreach and business development initiatives to drive company growth.</p>
+              <div class="tc-socials">
+                <a class="tc-social" href="#"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tc-info">
+          <div class="tc-name">Abdul Qayyum</div>
+          <div class="tc-role">Lead Generation Specialist</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. Creative Studio & Design -->
+    <div class="team-dept-divider reveal">
+      <span class="tdd-label">Creative Studio & Design</span>
+      <span class="tdd-line"></span>
+    </div>
+
+    <!-- We keep the same 4-column grid framework but center the 3 cards naturally -->
+    <div class="team-grid">
+      <!-- Muhammad Farhan -->
+      <div class="team-card reveal delay-1">
+        <div class="tc-img-box">
+          <img src="Team/Muhammad Farhan.jpg" alt="Muhammad Farhan">
+          <div class="tc-overlay">
+            <div class="tc-hover-content">
+              <p class="tc-hover-bio">Manages visual branding, overall creative direction, and high-converting multimedia content for top-tier eCommerce brands.</p>
+              <div class="tc-socials">
+                <a class="tc-social" href="#"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tc-info">
+          <div class="tc-name">Muhammad Farhan</div>
+          <div class="tc-role">Creative Ops Manager</div>
+        </div>
+      </div>
+
+      <!-- Abu Zar -->
+      <div class="team-card reveal delay-2">
+        <div class="tc-img-box">
+          <img src="Team/Abu Zar.jpg" alt="Abu Zar">
+          <div class="tc-overlay">
+            <div class="tc-hover-content">
+              <p class="tc-hover-bio">Creates compelling visual assets, premium product creatives, and brand-focused designs engineered for digital marketplaces.</p>
+              <div class="tc-socials">
+                <a class="tc-social" href="#"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tc-info">
+          <div class="tc-name">Abu Zar</div>
+          <div class="tc-role">Senior Graphic Designer</div>
+        </div>
+      </div>
+
+      <!-- Ramish -->
+      <div class="team-card reveal delay-3">
+        <div class="tc-img-box">
+          <img src="Team/Ramish.jpg" alt="Ramish">
+          <div class="tc-overlay">
+            <div class="tc-hover-content">
+              <p class="tc-hover-bio">Designs engaging graphics and visual content tailored to aggressively strengthen product presentation and brand identity.</p>
+              <div class="tc-socials">
+                <a class="tc-social" href="#"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tc-info">
+          <div class="tc-name">Ramish</div>
+          <div class="tc-role">Creative Graphic Designer</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Advisor strip -->
+    <div class="advisor-strip reveal" style="margin-top: 80px;">
+      <span class="as-label">Advisory Board</span>
+      <div class="as-avatars">
+        <div class="as-avatar"><img src="Team/Abdul Moeed.jpg" alt="Advisor"></div>
+        <div class="as-avatar"><img src="Team/Ahsan Zahid.jpg" alt="Advisor"></div>
+        <div class="as-avatar"><img src="Team/Ali Hassan.jpg" alt="Advisor"></div>
+        <div class="as-avatar"><img src="Team/Muhammad Kabeer.jpg" alt="Advisor"></div>
+        <div class="as-avatar"><img src="Team/Abdullah Ahsaan.jpg" alt="Advisor"></div>
+      </div>
+      <p class="as-text"><strong>12 world-class advisors.</strong> Ex-Amazon executives, PE-backed brand operators, and digital marketing legends who guide our long-term strategy and client outcomes.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- DIVIDER: White → Red (dramatic diagonal slice) -->
+<div class="div-white-dark" style="background:#ffffff;">
+  <svg viewBox="0 0 1440 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <polygon points="0,0 1440,100 1440,0" fill="#880000"/>
+    <polygon points="0,0 900,100 1440,0 1440,100 0,100" fill="#cc0000" opacity="0.6"/>
+    <line x1="0" y1="0" x2="1440" y2="100" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+  </svg>
+</div>
+
+
+<!-- ═══════════════════ CONTACT SECTION ═══════════════════ -->
+<section class="contact-section" id="contact">
+    <div class="container">
+        <div class="contact-inner">
+
+            <div class="contact-copy">
+                <div class="section-eyebrow" style="margin-bottom:24px;">
+                    <span class="ey-line" style="background: rgba(255, 255, 255, 0.5);"></span>
+                    <span class="ey-text" style="color: #ffffff;">Get In Touch</span>
+                </div>
+                <h2 class="contact-h2">LET'S BUILD<br>SOMETHING<br><em>UNFORGETTABLE</em></h2>
+                <p class="contact-lead">Tell us where your brand is today. We'll show you exactly where it can be — and map the fastest path to get there. No fluff, no pitch decks. Just clarity.</p>
+
+                <div class="contact-trust">
+                    <div class="ct-item">
+                        <div class="ct-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                        </div>
+                        <div class="ct-text">
+                            <strong>Offices</strong>
+                            <span>London, UK · New York, US · Dubai, UAE<br>Lahore, Pakistan</span>
+                        </div>
+                    </div>
+
+                    <div class="ct-item">
+                        <div class="ct-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                            </svg>
+                        </div>
+                        <div class="ct-text">
+                            <strong>Phone Number</strong>
+                            <span><a href="tel:+923420147244" style="color: inherit; text-decoration: none;">+92 342 014 7244</a></span>
+                        </div>
+                    </div>
+
+                    <div class="ct-item">
+                        <div class="ct-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                        </div>
+                        <div class="ct-text">
+                            <strong>Mail Address</strong>
+                            <span><a href="mailto:help@telsolutionspk.com" style="color: inherit; text-decoration: none;">help@telsolutionspk.com</a></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form-card">
+                <div id="contactForm">
+                    <div class="form-title">FREE AUDIT</div>
+                    <div class="form-subtitle">Fill in the details below and a senior strategist will review your account personally.</div>
+
+                    <div class="form-grid">
+                        
+                        <div class="form-row-2">
+                            <div class="form-group">
+                                <label class="form-label" for="cf-name">Full Name</label>
+                                <input type="text" id="cf-name" class="form-input" placeholder="Your name" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="cf-email">Business Email</label>
+                                <input type="email" id="cf-email" class="form-input" placeholder="you@company.com" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row-2">
+                            <div class="form-group">
+                                <label class="form-label" for="cf-brand">Brand / Company</label>
+                                <input type="text" id="cf-brand" class="form-input" placeholder="Your Amazon brand">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="cf-phone">Phone Number</label>
+                                <input type="tel" id="cf-phone" class="form-input" placeholder="+1 (555) 000-0000">
+                            </div>
+                        </div>
+
+                        <div class="form-group full">
+                            <label class="form-label" for="cf-revenue">Monthly Amazon Revenue</label>
+                            <select id="cf-revenue" class="form-select">
+                                <option value="" disabled selected>Select your revenue range</option>
+                                <option>Under $10,000 / month</option>
+                                <option>$10,000 – $50,000 / month</option>
+                                <option>$50,000 – $100,000 / month</option>
+                                <option>$100,000 – $500,000 / month</option>
+                                <option>$500,000+ / month</option>
+                                <option>Pre-launch (Not yet selling)</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group full">
+                            <label class="form-label" style="margin-bottom: 6px;">Services You're Interested In</label>
+                            <div class="form-checkgroup">
+                                <label class="form-check">
+                                    <input type="checkbox" value="ppc">
+                                    <span class="form-check-label">PPC Management</span>
+                                </label>
+                                <label class="form-check">
+                                    <input type="checkbox" value="listing">
+                                    <span class="form-check-label">Listing Optimisation</span>
+                                </label>
+                                <label class="form-check">
+                                    <input type="checkbox" value="creative">
+                                    <span class="form-check-label">Creative Studio</span>
+                                </label>
+                                <label class="form-check">
+                                    <input type="checkbox" value="health">
+                                    <span class="form-check-label">Account Health</span>
+                                </label>
+                                <label class="form-check">
+                                    <input type="checkbox" value="sourcing">
+                                    <span class="form-check-label">Product Sourcing</span>
+                                </label>
+                                <label class="form-check">
+                                    <input type="checkbox" value="global">
+                                    <span class="form-check-label">Global Expansion</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group full">
+                            <label class="form-label" for="cf-challenge">Primary Challenge</label>
+                            <select id="cf-challenge" class="form-select">
+                                <option value="" disabled selected>What's your biggest challenge right now?</option>
+                                <option>PPC / Ad spend efficiency</option>
+                                <option>Listing conversion rate</option>
+                                <option>Organic ranking & SEO</option>
+                                <option>Account health / suspension</option>
+                                <option>New product launch</option>
+                                <option>International expansion</option>
+                                <option>Brand protection</option>
+                                <option>Overall profitability</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group full">
+                            <label class="form-label" for="cf-message">Tell Us About Your Brand</label>
+                            <textarea id="cf-message" class="form-textarea" placeholder="Share your current situation, goals, or anything you'd like us to know going in — the more detail, the better your audit will be..."></textarea>
+                        </div>
+
+                    </div>
+                    
+                    <button class="form-submit" id="formSubmit" type="button">
+                        <span>REQUEST MY FREE AUDIT</span>
+                        <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </button>
+                    
+                    <p class="form-fine">By submitting you agree to our privacy policy. We never share your data with third parties, ever.</p>
+                </div>
+
+                <div class="form-success" id="formSuccess">
+                    <div class="form-success-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                    </div>
+                    <h3>AUDIT BOOKED.</h3>
+                    <p>A senior strategist from our team will review your account and be in touch personally within 24 hours. Check your inbox for a confirmation.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- DIVIDER: Red → Dark contact -->
+<div class="div-red-dark">
+  <svg viewBox="0 0 1440 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,0 L1440,100 L0,100 Z" fill="#050505"/>
+    <path d="M0,0 L1440,100" fill="none" stroke="rgba(217,35,45,0.3)" stroke-width="1.5"/>
+  </svg>
+</div>
+
+
+<!-- ═══════════════════ FOOTER ═══════════════════ -->
+<footer class="footer">
+    <div class="footer-glow"></div>
+
+    <div class="container relative-z">
+        <div class="footer-grid-premium">
+            
+            <div class="footer-brand-col">
+                <a href="#" class="brand-logo" style="margin-bottom: 24px; gap: 6px;">
+                    <div class="brand-icon-wrap" style="width: 48px; height: 48px;">
+                        <svg class="brand-icon-svg" viewBox="0 0 180 180" preserveAspectRatio="xMidYMid meet">
+                            <defs>
+                                <linearGradient id="header-lacquer" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#ff4d5a" />
+                                    <stop offset="40%" stop-color="#d9232d" />
+                                    <stop offset="100%" stop-color="#991118" />
+                                </linearGradient>
+                                <filter id="header-glow" x="-30%" y="-30%" width="160%" height="160%">
+                                    <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#d9232d" flood-opacity="0.45" />
+                                </filter>
+                            </defs>
+                            <g class="header-mark-group">
+                                <circle cx="90" cy="90" r="65" fill="url(#header-lacquer)" filter="url(#header-glow)" />
+                                <g class="header-ed-text">
+                                    <text x="68" y="110" font-family="'Montserrat', 'Futura', 'Century Gothic', sans-serif" font-weight="200" font-size="66" fill="#ffffff" text-anchor="middle" transform="rotate(-24 68 90)">e</text>
+                                    <text x="112" y="112" font-family="'Montserrat', 'Futura', 'Century Gothic', sans-serif" font-weight="200" font-size="74" fill="#ffffff" text-anchor="middle">d</text>
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="brand-text" style="font-size: 2.2rem;">ECOMM<span class="gradient-text">DOTS</span></div>
+                </a>
+                <p class="footer-desc">The global Amazon digital services agency for brands that are serious about growth. Data-driven, creatively led, and results-obsessed since 2019.</p>
+            </div>
+
+            <div class="footer-nav-col">
+                <div class="footer-col-title">Expertise</div>
+                <div class="footer-links">
+                    <a href="services#product-launch-strategy"><span>Product Launch</span></a>
+                    <a href="services#product-research-analysis"><span>Product Research</span></a>
+                    <a href="services#sourcing-logistics-solutions"><span>Sourcing & Logistics</span></a>
+                    <a href="services#creative-design-solutions"><span>Creative Design</span></a>
+                    <a href="services#ppc-account-management"><span>PPC Management</span></a>
+                    <a href="services#account-health-support"><span>Account Health</span></a>
+                </div>
+            </div>
+
+            <div class="footer-nav-col">
+                <div class="footer-col-title">The Agency</div>
+                <div class="footer-links">
+                    <a href="about"><span>About Us</span></a>
+                    <a href="./#case-studies"><span>Case Studies</span></a>
+                    <a href="about#team"><span>Our Team</span></a>
+                    <a href="blog"><span>Intelligence Hub</span></a>
+                    <a href="#contact"><span>Book an Audit</span></a>
+                </div>
+            </div>
+
+            <!-- Column 4: Corporate HQ -->
+            <div class="footer-nav-col">
+                <div class="footer-col-title">Corporate HQ</div>
+                <div class="footer-locations">
+                    <div class="loc-item">
+                        <strong>Operations Center</strong>
+                        <span>Lahore, Pakistan</span>
+                    </div>
+                    <div class="loc-item">
+                        <strong>Global Support Hours</strong>
+                        <span>Mon - Fri · 9:00 AM - 6:00 PM (PKT)</span>
+                    </div>
+                    <div class="loc-item">
+                        <strong>Direct Contact</strong>
+                        <a href="mailto:hello@ecommdots.com" class="loc-link">hello@ecommdots.com</a>
+                        <a href="tel:+923420147244" class="loc-link">+92 342 014 7244</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-giant-text">ECOMMDOTS</div>
+
+        <div class="footer-bottom-bar">
+            <div class="fb-copy-wrap">
+                <div class="fb-copy">© 2026 Ecommdots. Engineered for dominance.</div>
+                <div class="fb-watermark">
+                    <span class="wm-text">Developed by</span>
+                    <a href="https://choudaryhussainali.online/" target="_blank" rel="noopener noreferrer" class="wm-link">CHA</a>
+                </div>
+            </div>
+            
+            <div class="fb-legal">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+
+            <div class="fb-socials">
+                <a href="#" class="fb-social-btn" aria-label="LinkedIn">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                </a>
+                <a href="#" class="fb-social-btn" aria-label="Instagram">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                </a>
+                <a href="#" class="fb-social-btn" aria-label="YouTube">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.5 12 3.5 12 3.5s-7.505 0-9.377.55a3.015 3.015 0 0 0-2.122 2.136C0 8.07 0 12 0 12s0 3.93.501 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.55 9.377.55 9.377.55s7.505 0 9.377-.55a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+<script src="{{ url_for('static', filename='js/about.js') }}"></script>
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+</body>
+</html>

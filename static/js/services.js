@@ -1,0 +1,397 @@
+document.addEventListener('DOMContentLoaded', () => {
+
+    /* ════════════════════════════════════════════════════════════
+       01. ELITE CUSTOM CURSOR (120fps Lerp Engine)
+       ════════════════════════════════════════════════════════════ */
+    const initCursor = () => {
+        const dot = document.getElementById('cur-dot');
+        const ring = document.getElementById('cur-ring');
+        if(!dot || !ring) return;
+        
+        let mouseX = 0, mouseY = 0, ringX = 0, ringY = 0;
+        
+        // 1. Instantly track the real mouse position
+        document.addEventListener('mousemove', e => {
+            mouseX = e.clientX; 
+            mouseY = e.clientY;
+            dot.style.left = mouseX + 'px'; 
+            dot.style.top = mouseY + 'px';
+        });
+        
+        // 2. Mathematically drag the ring behind it (Linear Interpolation)
+        const renderCursor = () => {
+            ringX += (mouseX - ringX) * 0.15; // The trailing speed (lower = slower)
+            ringY += (mouseY - ringY) * 0.15;
+            ring.style.left = ringX + 'px'; 
+            ring.style.top = ringY + 'px';
+            requestAnimationFrame(renderCursor);
+        };
+        requestAnimationFrame(renderCursor);
+
+        // 3. Hover States for interactive elements
+        const HOV = 'a, button, .visual-box, .sub-card';
+        document.addEventListener('mouseover', e => { 
+            if(e.target.closest(HOV)){ dot.classList.add('hov'); ring.classList.add('hov'); }
+        });
+        document.addEventListener('mouseout', e => { 
+            if(e.target.closest(HOV)){ dot.classList.remove('hov'); ring.classList.remove('hov'); }
+        });
+    };
+    initCursor();
+
+
+
+
+    /* ════════════════════════════════════════════════════════════
+       04. PERFORMANCE OBSERVERS (Reveal, Sticky Nav, & Lux Cards)
+       ════════════════════════════════════════════════════════════ */
+    // A. Sticky Sub-Nav Sync
+    const snItems = document.querySelectorAll('.sn-item');
+    const serviceSections = document.querySelectorAll('.premium-section[id]');
+    
+    const navObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                snItems.forEach(item => {
+                    const targetId = item.getAttribute('href');
+                    item.classList.toggle('active', targetId === '#' + entry.target.id);
+                });
+                
+                // Smoothly scroll the sticky nav horizontally if on mobile
+                const activeNav = document.querySelector(`.sn-item[href="#${entry.target.id}"]`);
+                if(activeNav && window.innerWidth <= 1024) {
+                    activeNav.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+                }
+            }
+        });
+    }, { rootMargin: "-40% 0px -40% 0px" });
+    serviceSections.forEach(sec => navObserver.observe(sec));
+
+    // B. Base Reveal Animations
+    const revealObserver = new IntersectionObserver(entries => {
+        entries.forEach(e => { 
+            if(e.isIntersecting){ 
+                e.target.classList.add('is-visible'); 
+                revealObserver.unobserve(e.target); 
+            }
+        });
+    }, { rootMargin: "0px 0px -50px 0px" });
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    // C. Lux Scrolling Cards (Cinematic Scrubbing)
+    const luxCards = document.querySelectorAll('.lux-observe');
+    const luxObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-active');
+            } else {
+                entry.target.classList.remove('is-active');
+            }
+        });
+    }, { rootMargin: "-30% 0px -30% 0px", threshold: 0.1 });
+    luxCards.forEach(card => luxObserver.observe(card));
+
+    /* ════════════════════════════════════════════════════════════
+       05. INTELLIGENT MODAL ENGINE
+       ════════════════════════════════════════════════════════════ */
+    const eliteModal = document.getElementById('eliteModal');
+    const modalClose = document.getElementById('modalClose');
+    const modalActionBtn = document.getElementById('modalActionBtn');
+    const body = document.body;
+
+    const popImg = document.getElementById('modalImg');
+    const popIcon = document.getElementById('modalIcon');
+    const popTitle = document.getElementById('modalTitle');
+    const popLead = document.getElementById('modalLead');
+    const popExt = document.getElementById('modalExtended');
+
+    document.querySelectorAll('.sub-card-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const card = btn.closest('.sub-card');
+
+            // Extract Data
+            const imgSrc = card.querySelector('.sub-card-media img').src;
+            const iconSvg = card.querySelector('.sub-card-icon').innerHTML;
+            const title = card.querySelector('.sub-card-content h3').innerText;
+            const leadText = card.querySelector('.sub-card-content p').innerText;
+            const detailedDiv = card.querySelector('.hidden-details');
+            
+            const extendedHTML = detailedDiv 
+                ? detailedDiv.innerHTML 
+                : `<p>Deploy our proprietary framework to systematically capture market share, neutralize competitors, and scale revenue with algorithmic precision.</p>`;
+
+            // Inject Data
+            popImg.src = imgSrc;
+            popIcon.innerHTML = iconSvg;
+            popTitle.innerText = title;
+            popLead.innerText = leadText;
+            popExt.innerHTML = extendedHTML;
+
+            const btnText = btn.innerText.trim();
+            modalActionBtn.innerHTML = `${btnText} <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>`;
+
+            // Trigger Animation
+            eliteModal.classList.add('active');
+            body.style.overflow = 'hidden'; 
+        });
+    });
+
+    const closeEliteModal = () => {
+        eliteModal.classList.remove('active');
+        body.style.overflow = ''; 
+    };
+
+    if(modalClose) modalClose.addEventListener('click', closeEliteModal);
+    if(eliteModal) eliteModal.addEventListener('click', (e) => {
+        if(e.target === eliteModal) closeEliteModal();
+    });
+
+    /* ─── MOBILE HAMBURGER & NAV OVERLAY ─── */
+    (function(){
+      const hamburger = document.getElementById('hamburger');
+      const mobileNav = document.getElementById('mobileNav');
+      if(!hamburger || !mobileNav) return;
+      
+      const toggle = (open) => {
+        hamburger.classList.toggle('is-open', open);
+        hamburger.setAttribute('aria-expanded', String(open));
+        mobileNav.classList.toggle('is-open', open);
+        document.body.style.overflow = open ? 'hidden' : '';
+      };
+      
+      hamburger.addEventListener('click', () => toggle(!hamburger.classList.contains('is-open')));
+      document.querySelectorAll('[data-close-nav]').forEach(a => a.addEventListener('click', () => toggle(false)));
+      mobileNav.addEventListener('click', e => { if(e.target === mobileNav) toggle(false); });
+      document.addEventListener('keydown', e => { if(e.key === 'Escape') toggle(false); });
+    })();
+
+    /* ════════════════════════════════════════════════════════════
+       03. SMOOTH SCROLL ROUTING & GLOBAL CTA INTERCEPTOR
+       ════════════════════════════════════════════════════════════ */
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            // Ignore modal buttons to prevent logic conflicts
+            if (this.classList.contains('sub-card-btn') || this.id === 'modalActionBtn') return;
+            
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return; 
+            
+            // Intercept ANY link pointing to #contact and open the Form Modal instantly
+            if (targetId === '#contact') {
+                e.preventDefault();
+                const formModal = document.getElementById('conciergeModal');
+                if(formModal) {
+                    formModal.classList.add('active');
+                    document.body.style.overflow = 'hidden'; // Lock background scroll
+                }
+                
+                // Also close mobile nav if open
+                const mobileNav = document.getElementById('mobileNav');
+                const hamburger = document.getElementById('hamburger');
+                if(mobileNav && mobileNav.classList.contains('is-open')){
+                    mobileNav.classList.remove('is-open');
+                    hamburger && hamburger.classList.remove('is-open');
+                    hamburger && hamburger.setAttribute('aria-expanded', 'false');
+                }
+                
+                return;
+            }
+            
+            // Standard smooth scroll for navigation
+            const target = document.querySelector(targetId);
+            if (target) { 
+                e.preventDefault();
+                // Close mobile nav if open
+                const mobileNav = document.getElementById('mobileNav');
+                const hamburger = document.getElementById('hamburger');
+                if(mobileNav && mobileNav.classList.contains('is-open')){
+                    mobileNav.classList.remove('is-open');
+                    hamburger && hamburger.classList.remove('is-open');
+                    hamburger && hamburger.setAttribute('aria-expanded', 'false');
+                    document.body.style.overflow = '';
+                }
+                // Calculate offset to account for the pinned header
+                const headerH = document.getElementById('mainHeader')?.offsetHeight || 80;
+                const top = target.getBoundingClientRect().top + window.scrollY - headerH - 16;
+                window.scrollTo({ top, behavior: 'smooth' });
+            }
+        });
+    });
+    /* ════════════════════════════════════════════════════════════
+       SOCIAL SIDEBAR TOGGLE ENGINE
+       ════════════════════════════════════════════════════════════ */
+    (function(){
+      const sidebar = document.getElementById('socialSidebar');
+      const toggleBtn = document.getElementById('toggleBtn');
+      
+      if(sidebar && toggleBtn) {
+        toggleBtn.addEventListener('click', () => {
+          sidebar.classList.toggle('open');
+        });
+      }
+    })();
+    /* ════════════════════════════════════════════════════════════
+       CALENDLY POPUP ENGINE (STEALTH MODE)
+       ════════════════════════════════════════════════════════════ */
+    (function(){
+      // URL contains custom parameters for Obsidian Dark Mode & Agency Red
+      const calUrl='https://calendly.com/mailhussainali00/30min?hide_event_type_details=1&background_color=0a0a0a&text_color=ffffff&primary_color=d9232d';
+      
+      const openCal=(e)=>{
+        e.preventDefault(); // Stops the page from jumping
+        if(typeof Calendly !== 'undefined'){
+          Calendly.initPopupWidget({url: calUrl});
+        }
+        return false;
+      };
+      
+      // Bind the popup strictly to the header and mobile nav buttons
+      ['desktopCalendlyBtn','mobileCalendlyBtn'].forEach(id=>{
+        const el = document.getElementById(id);
+        if(el) {
+            el.addEventListener('click', openCal);
+        }
+      });
+    })();
+
+
+    /* ════════════════════════════════════════════════════════════
+       06. DUAL-FUNCTION CONCIERGE ENGINE (THE CROSS-FADE MAGIC)
+       ════════════════════════════════════════════════════════════ */
+    const targetGroup = document.getElementById('targetGroup');
+    const customSelectTrigger = document.getElementById('customSelectTrigger');
+    const customSelectText = document.getElementById('customSelectText');
+    const hiddenServiceInput = document.getElementById('serviceSubject');
+    const allOptions = document.querySelectorAll('.custom-option');
+    
+    // Concierge Modal Elements
+    const conciergeModal = document.getElementById('conciergeModal');
+    const conciergeClose = document.getElementById('conciergeClose');
+
+    // Toggle dropdown manually inside the form
+    if(customSelectTrigger && targetGroup) {
+        customSelectTrigger.addEventListener('click', () => targetGroup.classList.toggle('open'));
+
+        allOptions.forEach(option => {
+            option.addEventListener('click', () => {
+                const selectedValue = option.getAttribute('data-value');
+                customSelectText.innerText = selectedValue;
+                hiddenServiceInput.value = selectedValue;
+                
+                allOptions.forEach(opt => opt.classList.remove('active'));
+                option.classList.add('active');
+                targetGroup.classList.remove('open');
+            });
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!targetGroup.contains(e.target)) targetGroup.classList.remove('open');
+        });
+    }
+
+    // Modal Cross-Fade Logic (From Service Modal -> To Form Modal)
+    if(modalActionBtn && customSelectText) {
+        modalActionBtn.addEventListener('click', (e) => {
+            e.preventDefault(); 
+            
+            // 1. Grab service requested and update the form
+            const requestedService = document.getElementById('modalTitle').innerText;
+            customSelectText.innerText = requestedService;
+            hiddenServiceInput.value = requestedService;
+            
+            allOptions.forEach(opt => {
+                opt.classList.remove('active');
+                if (opt.getAttribute('data-value') === requestedService) opt.classList.add('active');
+            });
+            
+            // Trigger the visual pulse glow on the form input
+            targetGroup.classList.remove('pulse-glow'); 
+            void targetGroup.offsetWidth; 
+            targetGroup.classList.add('pulse-glow');
+            
+            // 2. THE MILLION DOLLAR CROSS-FADE
+            const eliteModal = document.getElementById('eliteModal');
+            eliteModal.classList.remove('active'); // Gracefully fade out the info modal
+            
+            setTimeout(() => {
+                conciergeModal.classList.add('active'); // Fade in the form exactly where they are looking
+                
+                // Focus the first input dynamically for frictionless typing
+                setTimeout(() => document.getElementById('name').focus(), 400);
+            }, 400); // 400ms perfectly aligns with your CSS blur/fade speeds
+        });
+    }
+
+    // Close functionality for the new Concierge Modal
+    const closeConciergeModal = () => {
+        conciergeModal.classList.remove('active');
+        document.body.style.overflow = ''; // Unlock background scroll
+    };
+
+    if(conciergeClose) conciergeClose.addEventListener('click', closeConciergeModal);
+    if(conciergeModal) conciergeModal.addEventListener('click', (e) => {
+        if(e.target === conciergeModal) closeConciergeModal();
+    });
+
+    /* ════════════════════════════════════════════════════════════
+       07. PROCESS TRACK ENGINE & APEX RETURN
+       ════════════════════════════════════════════════════════════ */
+    const processTrack = document.getElementById('processTrack');
+    const processLineFill = document.getElementById('processLineFill');
+    const processSteps = document.querySelectorAll('.process-step');
+    const apexReturnBtn = document.getElementById('apexReturn');
+
+    window.addEventListener('scroll', () => {
+        // Process Track Logic
+        if(processTrack && processLineFill) {
+            const trackRect = processTrack.getBoundingClientRect();
+            const triggerPoint = window.innerHeight * 0.8;
+            
+            let progress = (triggerPoint - trackRect.top) / trackRect.height;
+            progress = Math.max(0, Math.min(1, progress)); 
+            processLineFill.style.height = `${progress * 100}%`;
+            
+            processSteps.forEach(step => {
+                const stepRect = step.getBoundingClientRect();
+                if(stepRect.top < triggerPoint) {
+                    step.classList.add('active');
+                } else {
+                    step.classList.remove('active');
+                }
+            });
+        }
+
+        // Apex Return Reveal Logic
+        if(apexReturnBtn) {
+            if (window.scrollY > 800) { 
+                apexReturnBtn.classList.add('visible');
+            } else {
+                apexReturnBtn.classList.remove('visible');
+            }
+        }
+    }, {passive:true});
+
+    if(apexReturnBtn) {
+        apexReturnBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
+
+}); // End of DOMContentLoaded Master Wrap
+
+
+// CONTACT FORM CTA
+/* ─── FORM SUCCESS TOGGLE ─── */
+document.getElementById('formSubmit').addEventListener('click', function() {
+    const btn = this;
+    btn.innerHTML = '<span>SENDING...</span>';
+    setTimeout(() => {
+        const formContainer = document.getElementById('contactForm');
+        const successContainer = document.getElementById('formSuccess');
+        if(formContainer && successContainer) {
+            formContainer.style.display = 'none';
+            successContainer.classList.add('show');
+        }
+    }, 1500);
+});

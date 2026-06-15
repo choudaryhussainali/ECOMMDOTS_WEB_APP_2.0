@@ -1,0 +1,5356 @@
+/* ==========================================================================
+   ECOMMDOTS — MILLION DOLLAR AGENCY — MASTER STYLESHEET
+   ========================================================================== */
+
+
+
+:root {
+    --bg-base: #ffffff;
+    --bg-surface: #f8f9fa;
+    --text-main: #0a0a0a;
+    --text-inverse: #ffffff;
+    --header-bg: #050505;
+    --red: #d9232d;
+    --red-dark: #b30000;
+    --red-glow: rgba(230, 0, 0, 0.15);
+    --gray-sub: #555555;
+    --gray-light: #f2f2f2;
+    --charcoal: #111111;
+    --border-light: rgba(0,0,0,0.08);
+    --border-2: rgba(0,0,0,0.2);
+    --font-display: 'Bebas Neue', sans-serif;
+    --font-sans: 'Barlow', sans-serif;
+    --transition: 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    --gradient-primary: linear-gradient(135deg, #ff0044 0%, #cc0000 100%);
+    --glass-bg: rgba(10,10,10,0.85);
+    --glass-border: rgba(255,255,255,0.08);
+    --card:       #FFFFFF; /* Elevated Cards */
+    --border:     #E5E7EB; /* Crisp Borders */
+}
+/* ══════════════════════════════════════════════════════
+   ELITE CUSTOM CURSOR (HARDWARE DETECT ENGINE)
+══════════════════════════════════════════════════════ */
+
+/* 1. Only load custom cursors on devices with a real mouse */
+@media (hover: hover) and (pointer: fine) {
+    *, *::before, *::after { cursor: none !important; }
+    
+    #cur-dot {
+        position: fixed;
+        width: 8px;
+        height: 8px;
+        background: var(--red);
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 9999999; 
+        transform: translate(-50%,-50%);
+        transition: width 0.16s ease, height 0.16s ease, background 0.16s ease, opacity 0.2s ease;
+    }
+
+    #cur-ring {
+        position: fixed;
+        width: 40px;
+        height: 40px;
+        border: 1.5px solid var(--red);
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 9999998; 
+        transform: translate(-50%,-50%);
+        transition: width 0.38s ease, height 0.38s ease, background 0.28s ease, opacity 0.2s ease;
+    }
+
+    #cur-dot.hov {
+        width: 11px;
+        height: 11px;
+        box-shadow: 0 0 12px 4px rgba(217,35,45,0.5);
+    }
+
+    #cur-ring.hov {
+        width: 64px;
+        height: 64px;
+        background: rgba(217,35,45,0.09);
+        box-shadow: 0 0 20px 3px rgba(217,35,45,0.3);
+    }
+}
+
+/* 2. Absolute Kill-Switch for Touch Devices */
+@media (hover: none), (pointer: coarse) {
+    #cur-dot, #cur-ring { 
+        display: none !important; 
+    }
+}
+
+/* ─── ABSOLUTE CURSOR KILL-SWITCH (TABLET & MOBILE) ─── */
+@media (max-width: 1024px) {
+    *, *::before, *::after { cursor: auto !important; }
+    #cur-dot, #cur-ring { display: none !important; visibility: hidden !important; opacity: 0 !important; }
+}
+
+
+
+/* SOCIALS */
+
+
+  .social-sidebar {
+    position: fixed;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    z-index: 9999;
+  }
+ 
+  .toggle-btn {
+    width: 52px;
+    height: 58px;
+    background: #111111;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    padding: 0;
+    outline: none;
+    transition: background 0.2s;
+  }
+ 
+  .toggle-btn:hover {
+    background: #333333;
+  }
+ 
+  .arrow-icon {
+    width: 18px;
+    height: 18px;
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+ 
+  /* Rotate arrow when open */
+  .social-sidebar.open .arrow-icon {
+    transform: rotate(180deg);
+  }
+ 
+  /* The collapsible container */
+  .social-links {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+                opacity 0.3s ease;
+    opacity: 0;
+  }
+ 
+/* UPDATE: Increase max-height to prevent clipping the 4 icons */
+.social-sidebar.open .social-links {
+  max-height: 300px; 
+  opacity: 1;
+}
+
+/* ADD: Right below your existing .email-btn class */
+.linkedin-btn {
+  background: #0A66C2;
+  color: #ffffff;
+}
+
+.youtube-btn {
+  background: #FF0000;
+  color: #ffffff;
+}
+ 
+  .social-btn {
+    width: 52px;
+    height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: filter 0.2s;
+  }
+ 
+  .social-btn svg {
+    width: 22px;
+    height: 22px;
+  }
+ 
+  .social-btn:hover {
+    filter: brightness(1.15);
+  }
+ 
+  .whatsapp-btn {
+    background: #25D366;
+    color: #ffffff;
+  }
+ 
+  .email-btn {
+    background: #E53935;
+    color: #ffffff;
+  }
+
+
+
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--font-sans);line-height:1.6;color:var(--text-main);background:#fff;overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+.container{width:90%;max-width:1400px;margin:0 auto;}
+a{text-decoration:none;color:inherit;}
+img{display:block;}
+
+/* ─── KEYFRAMES ─────────────────────────────────────────────────────────── */
+@keyframes fadeUp{0%{opacity:0;transform:translateY(40px)}100%{opacity:1;transform:translateY(0)}}
+@keyframes fadeDown{0%{opacity:0;transform:translateY(-40px)}100%{opacity:1;transform:translateY(0)}}
+@keyframes fadeLeft{0%{opacity:0;transform:translateX(60px)}100%{opacity:1;transform:translateX(0)}}
+@keyframes fadeRight{0%{opacity:0;transform:translateX(-60px)}100%{opacity:1;transform:translateX(0)}}
+@keyframes scaleIn{0%{opacity:0;transform:scale(0.75)}100%{opacity:1;transform:scale(1)}}
+@keyframes flipIn{0%{opacity:0;transform:rotateY(-30deg) translateX(-30px)}100%{opacity:1;transform:rotateY(0) translateX(0)}}
+@keyframes slideReveal{0%{clip-path:inset(0 100% 0 0)}100%{clip-path:inset(0 0% 0 0)}}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+@keyframes livePulse{0%{transform:scale(1);opacity:0.8}100%{transform:scale(2.5);opacity:0}}
+@keyframes pulse{0%{transform:scale(0.5);opacity:0}50%{opacity:0.5}100%{transform:scale(2);opacity:0}}
+@keyframes numberCount{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes shimmer{0%{background-position:-200% center}100%{background-position:200% center}}
+@keyframes marqueeLeft{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+@keyframes marqueeRight{0%{transform:translateX(-50%)}100%{transform:translateX(0)}}
+@keyframes glowPulse{0%,100%{box-shadow:0 0 20px rgba(230,0,0,0.3)}50%{box-shadow:0 0 60px rgba(230,0,0,0.7)}}
+@keyframes rotateSlow{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+@keyframes borderGlow{0%,100%{border-color:rgba(230,0,0,0.3)}50%{border-color:rgba(230,0,0,0.9)}}
+@keyframes cardReveal3D{0%{opacity:0;transform:perspective(800px) rotateX(25deg) translateY(40px)}100%{opacity:1;transform:perspective(800px) rotateX(0deg) translateY(0)}}
+@keyframes textShine{0%{background-position:0% center}100%{background-position:200% center}}
+@keyframes floatY{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+@keyframes drawLine{from{width:0}to{width:100%}}
+@keyframes zoomIn{0%{opacity:0;transform:scale(0.85)}100%{opacity:1;transform:scale(1)}}
+@keyframes slideUp{0%{opacity:0;transform:translateY(80px)}100%{opacity:1;transform:translateY(0)}}
+
+
+
+/* ═══════════════════ MILLION DOLLAR PRELOADER STYLES (MASTER) ═══════════════════ */
+
+/* ==========================================================================
+   MILLION DOLLAR ENGINE: PRELOADER, SHUTTER EXIT, AND HERO IGNITION
+   ========================================================================== */
+
+/* ─── 1. SCROLL LOCK ─── */
+body.locked {
+    overflow: hidden !important;
+}
+
+/* ─── 2. THE SHUTTER CONTAINER ─── */
+#luxury-preloader {
+    position: fixed;
+    inset: 0;
+    /* Pristine off-white background with a subtle overhead light source */
+    background: #fdfdfd;
+    background-image: radial-gradient(circle at top center, #ffffff 0%, #f4f4f5 100%);
+    z-index: 9999999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* The physics of the heavy shutter lifting */
+    transition: transform 1.2s cubic-bezier(0.85, 0, 0.15, 1);
+    will-change: transform;
+}
+
+/* Subtle Data Grid Overlay (Bakes the digital agency feel into the shutter) */
+.lp-grid-overlay {
+    position: absolute;
+    inset: 0;
+    background-size: 40px 40px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.02) 1px, transparent 1px),
+                      linear-gradient(to bottom, rgba(0, 0, 0, 0.02) 1px, transparent 1px);
+    opacity: 0;
+    z-index: 2;
+    animation: gridFade 1.5s ease 3.5s forwards;
+    pointer-events: none;
+}
+
+/* ─── 3. PRELOADER CONTENT & SVG LAYOUT ─── */
+.lp-content {
+    width: 100%;
+    max-width: 680px; /* Perfectly frames the expanded SVG viewBox */
+    padding: 0 20px;
+    position: relative;
+    z-index: 10;
+    /* The physics of the logo vaporizing during the shutter lift */
+    transition: transform 1s cubic-bezier(0.85, 0, 0.15, 1), 
+                opacity 0.7s ease 0.1s, 
+                filter 0.7s ease;
+    will-change: transform, opacity, filter;
+}
+
+.lp-logo-svg {
+    width: 100%;
+    height: auto;
+    overflow: visible; /* Prevents the deep drop-shadow from clipping */
+}
+
+/* ─── 4. SVG CHOREOGRAPHY (THE BUILD SEQUENCE) ─── */
+.lp-spark-group {
+    opacity: 0;
+    transform: scale(0) translate(-50px, 20px);
+    transform-origin: 167px 33px; /* Locked to the accent ring's exact center */
+    animation: sparkIn 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
+}
+
+.lp-main-circle {
+    opacity: 0;
+    transform: scale(0.5);
+    transform-origin: 90px 95px; /* Locked to the main circle's exact center */
+    animation: circleGrow 1.4s cubic-bezier(0.16, 1, 0.3, 1) 1s forwards;
+}
+
+.lp-ed-text {
+    opacity: 0;
+    transform: translateY(10px);
+    animation: textRise 1s cubic-bezier(0.16, 1, 0.3, 1) 1.6s forwards;
+}
+
+.lp-divider {
+    transform: scaleY(0);
+    transform-origin: top;
+    animation: lineDrop 1s cubic-bezier(0.85, 0, 0.15, 1) 2s forwards;
+}
+
+.lp-wipe-rect {
+    animation: textWipe 1.4s cubic-bezier(0.16, 1, 0.3, 1) 2.4s forwards;
+}
+
+.lp-brand-main, .lp-brand-sub {
+    opacity: 0;
+    transform: translateX(-15px);
+    animation: textRise 1s cubic-bezier(0.16, 1, 0.3, 1) 2.5s forwards;
+}
+
+.lp-glare {
+    transform: translateX(-100px) skewX(-25deg);
+    opacity: 0;
+    animation: glareSweep 1.5s cubic-bezier(0.16, 1, 0.3, 1) 3.6s forwards;
+}
+
+/* ─── 5. THE KINETIC EXIT TRIGGER (SHUTTER LIFT) ─── */
+#luxury-preloader.fade-out {
+    /* Violently but smoothly pulls the entire white screen into the ceiling */
+    transform: translateY(-100%);
+    /* Casts a deep, moving shadow across your dark hero section as it slides up */
+    box-shadow: 0 50px 100px rgba(0,0,0,0.6);
+}
+
+#luxury-preloader.fade-out .lp-content {
+    /* The logo breaks free from the background, flying up and into the camera lens */
+    transform: scale(2.5) translateY(-100px);
+    opacity: 0;
+    filter: blur(20px);
+}
+
+
+/* ─── THE AMAZON KINETIC ARROW (IMAGE REVEAL) ─── */
+.lp-amz-img {
+    /* Starts hidden to the left, mimicking a drawing motion */
+    clip-path: inset(0 100% 0 0);
+    opacity: 0;
+    /* Sweeps open starting at 3.4s to match the original choreography */
+    animation: imageWipeReveal 1s cubic-bezier(0.25, 1, 0.5, 1) 3.4s forwards;
+    transform-origin: center;
+}
+
+.lp-amz-group {
+    /* The final "Ignition Pulse" before the screen lifts */
+    animation: amzIgnitionPulse 1s cubic-bezier(0.16, 1, 0.3, 1) 4.2s forwards;
+    will-change: filter, transform;
+}
+
+@keyframes imageWipeReveal {
+    0% { 
+        clip-path: inset(0 100% 0 0); 
+        opacity: 0; 
+        transform: translateX(-15px); 
+    }
+    100% { 
+        clip-path: inset(0 0% 0 0); 
+        opacity: 1; 
+        transform: translateX(0); 
+    }
+}
+
+@keyframes amzIgnitionPulse {
+    0% { filter: brightness(1); transform: scale(1); }
+    30% { filter: brightness(1.4) drop-shadow(0 0 15px rgba(217, 35, 45, 0.6)); transform: scale(1.02); }
+    100% { filter: brightness(1); transform: scale(1); }
+}
+
+/* ─── 6. HERO SECTION: THE VOID (PRE-IGNITION STATE) ─── */
+/* Force override all basic CSS animations on the hero elements */
+.hero-bg-img, .main-header, .hero-eyebrow, .hero-h1, 
+.trust-badges-pill, .hero-sub, .hero-ctas {
+    animation: none !important; 
+    will-change: transform, opacity, filter;
+}
+
+/* What the site looks like hiding behind the shutter */
+body:not(.site-ignited) .hero-bg-img {
+    transform: scale(1.2); /* Pushed deep into the background */
+    opacity: 0;
+    filter: blur(30px); /* Heavy atmospheric blur */
+}
+body:not(.site-ignited) .main-header {
+    transform: translate(-50%, -150%); /* Hidden completely in the top bounds */
+    opacity: 0;
+}
+body:not(.site-ignited) .hero-eyebrow,
+body:not(.site-ignited) .trust-badges-pill,
+body:not(.site-ignited) .hero-sub,
+body:not(.site-ignited) .hero-ctas {
+    opacity: 0;
+    transform: translateY(40px); /* Sunken into the floor */
+}
+body:not(.site-ignited) .hero-h1 {
+    opacity: 0;
+    /* Pushed down and tilted backwards in 3D space */
+    transform: perspective(1000px) rotateX(25deg) translateY(60px); 
+}
+
+
+/* ─── 7. HERO SECTION: THE IGNITION CASCADE ─── */
+/* The moments immediately after the shutter clears the screen */
+
+.site-ignited .hero-bg-img {
+    /* The atmosphere sharply pulls back into focus */
+    transform: scale(1);
+    opacity: 1;
+    filter: blur(0px);
+    transition: transform 2.5s cubic-bezier(0.16, 1, 0.3, 1) 0.1s, 
+                opacity 1.5s ease 0.1s, 
+                filter 2s ease 0.1s;
+}
+
+.site-ignited .main-header {
+    /* The glass header drops from the absolute ceiling */
+    transform: translate(-50%, 0);
+    opacity: 1;
+    transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.5s, 
+                opacity 1.2s ease 0.5s;
+}
+
+.site-ignited .hero-eyebrow {
+    transform: translateY(0);
+    opacity: 1;
+    transition: all 1s cubic-bezier(0.16, 1, 0.3, 1) 0.6s;
+}
+
+.site-ignited .hero-h1 {
+    /* The massive text snaps upward from its 3D tilt into physical perfection */
+    transform: perspective(1000px) rotateX(0deg) translateY(0);
+    opacity: 1;
+    transition: all 1.4s cubic-bezier(0.16, 1, 0.3, 1) 0.8s;
+}
+
+.site-ignited .trust-badges-pill {
+    transform: translateY(0);
+    opacity: 1;
+    transition: all 1s cubic-bezier(0.16, 1, 0.3, 1) 1.0s;
+}
+
+.site-ignited .hero-sub {
+    transform: translateY(0);
+    opacity: 1;
+    transition: all 1s cubic-bezier(0.16, 1, 0.3, 1) 1.1s;
+}
+
+.site-ignited .hero-ctas {
+    transform: translateY(0);
+    opacity: 1;
+    transition: all 1s cubic-bezier(0.16, 1, 0.3, 1) 1.2s;
+}
+
+/* ─── 8. PRELOADER KEYFRAMES ─── */
+@keyframes sparkIn {
+    0% { opacity: 0; transform: scale(0) translate(-100px, 40px); }
+    100% { opacity: 1; transform: scale(1) translate(0, 0); }
+}
+@keyframes circleGrow {
+    0% { opacity: 0; transform: scale(0.6); }
+    100% { opacity: 1; transform: scale(1); }
+}
+@keyframes textRise {
+    0% { opacity: 0; transform: translateY(10px) translateX(-5px); }
+    100% { opacity: 1; transform: translateY(0) translateX(0); }
+}
+@keyframes lineDrop {
+    0% { transform: scaleY(0); }
+    100% { transform: scaleY(1); }
+}
+@keyframes textWipe {
+    0% { width: 0; }
+    100% { width: 600px; } /* Ensures the entire "ECOMMDOTS DIGITAL AGENCY" text is uncovered */
+}
+@keyframes gridFade {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+@keyframes glareSweep {
+    0% { transform: translateX(-100px) skewX(-25deg); opacity: 0; }
+    20% { opacity: 0.8; }
+    100% { transform: translateX(800px) skewX(-25deg); opacity: 0; }
+}
+
+/* Mobile Adjustments */
+@media(max-width: 768px) {
+    .lp-content { padding: 0 40px; }
+}
+
+/* ─── HEADER ─────────────────────────────────────────────────────────────── */
+/* ─── HEADER (STUDIO PLATINUM MONOLITH) ─────────────────────── */
+/* ─── HEADER (STUDIO PLATINUM MONOLITH - PERMANENTLY PINNED) ─── */
+.main-header {
+    position: fixed;
+    top: 12px; /* Mathematically locked to the post-scroll position */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 1400px;
+    
+    /* Hardened Contrast Core */
+    background: #0d0d0f; 
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 100px;
+    
+    /* Compressed lift padding */
+    padding: 8px 16px 8px 24px; 
+    z-index: 1000;
+    
+    /* The "Million Dollar" separation: Continuous depth and red bloom */
+    box-shadow: 
+        0 40px 80px rgba(0,0,0,0.9), 
+        0 0 0 1px rgba(255,255,255,0.1),
+        0 0 60px rgba(217, 35, 45, 0.25);
+        
+    /* Transition retained ONLY for internal child elements, removing scroll jank */
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* IMPORTANT: Ensure .main-header.is-pinned is completely deleted from your stylesheet */
+
+.nav-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* ─── BRAND LOGO (PURE VECTOR INTEGRATION) ────────────────────────────── */
+.brand-logo {
+    display: flex;
+    align-items: center;
+    gap: 2px; /* Precision spacing between the vector mark and text */
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.brand-icon-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Adjusted to 44x40 to properly frame the 200x180 viewBox ratio */
+    width: 50px; 
+    height: 50px;
+    position: relative;
+    will-change: transform;
+}
+
+.brand-icon-svg {
+    width: 100%;
+    height: 100%;
+    overflow: visible; /* Prevents the deep drop-shadow from clipping */
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s ease;
+}
+
+/* ─── HEADER BRAND TEXT (TALL CONDENSED MATCH) ────────────────────────────── */
+.brand-text {
+    font-family: var(--font-display); /* Pulls in Bebas Neue */
+    font-weight: 400; /* Crucial: Bebas Neue must sit at 400 weight to remain elegant */
+    font-size: 2.1rem; /* Scaled up to balance the 44px vector icon */
+    letter-spacing: 0.02em; /* Tight, precise kerning matching your image */
+    color: var(--text-inverse);
+    line-height: 1;
+    padding-top: 4px; /* Optically pushes the text down slightly to align with the circle's center */
+    transition: opacity 0.4s ease, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* --- THE KINETIC HOVER STATE --- */
+.brand-logo:hover .brand-icon-svg {
+    /* Slight authoritative scale and microscopic forward tilt */
+    transform: scale(1.08) rotate(4deg); 
+    /* Pushes the red gradient to glow hotter */
+    filter: brightness(1.15); 
+}
+
+.brand-logo:hover .brand-text {
+    opacity: 0.95;
+}
+
+.gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+.nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: #a0a0a0;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    transition: var(--transition);
+}
+
+.nav-links a:hover {
+    color: #fff;
+    text-shadow: 0 0 10px rgba(255,255,255,0.3);
+}
+
+.nav-controls {
+    display: flex;
+    align-items: center;
+}
+
+/* ─── HEADER BUTTON (MILLION DOLLAR STEALTH & KINETIC ENGINE) ───────────── */
+/* ─── HEADER BUTTON (HIGH-CONTRAST & KINETIC ENGINE) ───────────── */
+.btn-audit {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 28px;
+    
+    /* 1. UPGRADE: Solid White Base */
+    background: #ffffff; 
+    border: 1px solid #ffffff; 
+    border-radius: 100px;
+    
+    /* 2. UPGRADE: Sharp dark text for maximum visibility */
+    color: #111111; 
+    
+    font-family: var(--font-sans);
+    font-size: 11px; 
+    font-weight: 800;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-decoration: none;
+    overflow: hidden;
+    z-index: 1;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* The Liquid Red Sweep Overlay (Untouched) */
+.btn-audit::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--gradient-primary); 
+    z-index: -1;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* The Kinetic Ignition State */
+.btn-audit:hover {
+    border-color: transparent;
+    
+    /* 3. Snaps the text to white as the red liquid sweeps in */
+    color: #ffffff; 
+    
+    box-shadow: 0 12px 30px rgba(217, 35, 45, 0.35);
+    transform: translateY(-2px);
+    padding-left: 32px; 
+    padding-right: 24px;
+}
+
+.btn-audit:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* ─── DROPDOWN NAVIGATION (MILLION DOLLAR STEALTH & KINETIC ENGINE) ───────────── */
+
+.nav-has-dropdown {
+    position: relative;
+    /* Deepened the 3D space for a more dramatic swing */
+    perspective: 1200px; 
+}
+
+/* The Trigger Link & Arrow */
+.nav-drop-trigger {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+}
+
+.nav-drop-trigger svg {
+    width: 14px; /* Scaled up slightly for better balance */
+    height: 14px;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), stroke 0.3s ease;
+}
+
+/* Ignites the arrow in red when the menu is open */
+.nav-has-dropdown:hover .nav-drop-trigger svg {
+    transform: rotate(180deg);
+    stroke: var(--red);
+}
+
+/* The Invisible Bridge */
+.nav-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    padding-top: 32px; /* Lengthened the safe zone so the menu never accidentally closes */
+    
+    transform: translateX(-50%) translateY(20px) rotateX(-10deg);
+    transform-origin: top center;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    z-index: 100;
+    
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nav-has-dropdown:hover .nav-dropdown {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(0) rotateX(0deg);
+}
+
+/* ─── THE MONOLITH PLATE ─── */
+.nav-dropdown-inner {
+    /* Solidified the dark base. Translucency ruins readability; pure solid dark elevates it. */
+    background: #0d0d0f; 
+    border: 1px solid rgba(255, 255, 255, 0.12); /* Sharper, crisper boundary */
+    border-radius: 12px;
+    padding: 16px; 
+    min-width: 320px; /* Expanded for luxurious breathing room */
+    
+    /* Deep cinematic shadow stacking */
+    box-shadow: 
+        0 50px 100px rgba(0, 0, 0, 0.8), 
+        0 0 0 1px rgba(255, 255, 255, 0.05),
+        0 20px 40px rgba(217, 35, 45, 0.15); /* Ambient red glow pushed to the back */
+        
+    position: relative;
+    overflow: hidden;
+}
+
+/* Solid Red Laser Top Edge */
+.nav-dropdown-inner::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; height: 2px;
+    background: var(--gradient-primary);
+}
+
+/* ─── INNER DROPDOWN ITEMS ─── */
+.nav-links .nav-drop-item {
+    display: flex;
+    flex-direction: column;
+    padding: 18px 24px; /* Dramatically increased hit-area padding */
+    border-radius: 8px;
+    text-transform: none;
+    letter-spacing: normal;
+    text-shadow: none !important;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Soft separator lines between items to establish hierarchy */
+.nav-links .nav-drop-item:not(:last-child) {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 0; 
+}
+
+/* The Stealth Accent Line on Hover */
+.nav-links .nav-drop-item::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0; width: 3px;
+    background: var(--red);
+    transform: scaleY(0);
+    transform-origin: center;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ─── KINETIC HOVER LOGIC ─── */
+.nav-links .nav-drop-item:hover {
+    background: rgba(255, 255, 255, 0.03); 
+    padding-left: 32px; /* Physically pushes the text inward */
+    border-radius: 8px;
+    border-bottom-color: transparent;
+}
+
+.nav-links .nav-drop-item:hover::before {
+    transform: scaleY(1);
+}
+
+/* ─── TYPOGRAPHY: MAX READABILITY ─── */
+.nd-title {
+    font-family: var(--font-sans);
+    font-size: 14px; /* Scaled up */
+    font-weight: 700; /* Clean semi-bold instead of heavy blocky 800 */
+    color: #ffffff; /* Pure white */
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+    transition: color 0.3s ease;
+}
+
+.nav-links .nav-drop-item:hover .nd-title {
+    color: var(--red);
+}
+
+.nd-sub {
+    font-family: var(--font-sans);
+    font-size: 14.5px; /* Scaled up significantly */
+    color: rgba(255, 255, 255, 0.6); /* Brighter, high-contrast slate */
+    font-weight: 400;
+    line-height: 1.5;
+    transition: color 0.3s ease;
+}
+
+/* The Illumination Effect: Subtext brightens when hovered */
+.nav-links .nav-drop-item:hover .nd-sub {
+    color: #ffffff; 
+}
+/* ─── TWO-COLUMN MEGA MENU EXTENSION ─── */
+.nav-dropdown-inner.mega-menu {
+    min-width: 720px; /* Expands the glass plate horizontally */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px; /* Precise breathing room between cards */
+    padding: 20px;
+}
+
+/* Kills the horizontal divider lines for grid items to keep the dashboard clean */
+.nav-dropdown-inner.mega-menu .nav-drop-item {
+    border-bottom: none !important; 
+    padding: 16px 20px;
+}
+
+/* Adjusts the hover indent specifically for the grid layout to maintain balance */
+.nav-dropdown-inner.mega-menu .nav-drop-item:hover {
+    padding-left: 28px;
+}
+
+
+/* ════════════════════════════════════════════════════════
+   MILLION DOLLAR CALENDLY OVERRIDE (STEALTH MODE)
+════════════════════════════════════════════════════════ */
+
+/* 1. The Backdrop: Swap cheap solid black for an Obsidian Glass Blur */
+.calendly-overlay {
+    background-color: rgba(5, 5, 5, 0.75) !important;
+    backdrop-filter: blur(16px) !important;
+    -webkit-backdrop-filter: blur(16px) !important;
+}
+
+/* 2. The Modal Container: Round the edges, add glass border, give it breathing room */
+.calendly-popup {
+    border-radius: 16px !important;
+    overflow: hidden !important;
+    /* Massive studio shadow and a crisp 1px hairline border */
+    box-shadow: 0 50px 100px rgba(0, 0, 0, 0.9), 0 0 0 1px rgba(255, 255, 255, 0.1) !important;
+    height: 720px !important; /* Force a taller height so it rarely needs to scroll internally */
+    max-height: 90vh !important;
+}
+
+/* 3. THE SCROLLBAR ASSASSIN: Nuke the ugly default tracks completely */
+.calendly-overlay,
+.calendly-popup,
+.calendly-popup-content {
+    scrollbar-width: none !important; /* Firefox */
+    -ms-overflow-style: none !important; /* IE/Edge */
+}
+
+.calendly-overlay::-webkit-scrollbar,
+.calendly-popup::-webkit-scrollbar,
+.calendly-popup-content::-webkit-scrollbar {
+    display: none !important; /* Chrome/Safari */
+}
+
+/* 4. The Close Button: Add a premium kinetic hover state */
+.calendly-close-overlay {
+    color: #ffffff !important;
+    opacity: 0.5 !important;
+    transition: opacity 0.3s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.calendly-close-overlay:hover {
+    opacity: 1 !important;
+    transform: scale(1.15) !important;
+}
+
+/* ─── HAMBURGER BUTTON ─── */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 28px;
+    height: 20px;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    z-index: 1100;
+    flex-shrink: 0;
+}
+.hamburger span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: #ffffff;
+    border-radius: 2px;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    transform-origin: left center;
+}
+.hamburger.is-open span:nth-child(1) { transform: rotate(45deg) translate(1px, -1px); }
+.hamburger.is-open span:nth-child(2) { opacity: 0; transform: translateX(-8px); }
+.hamburger.is-open span:nth-child(3) { transform: rotate(-45deg) translate(1px, 1px); }
+
+/* ─── MOBILE NAV OVERLAY ─── */
+.mobile-nav {
+    position: fixed;
+    inset: 0;
+    background: rgba(5, 5, 5, 0.98);
+    z-index: 1050;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+    padding: 80px 48px 48px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+    overflow-y: auto;
+}
+.mobile-nav.is-open {
+    opacity: 1;
+    visibility: visible;
+}
+.mobile-nav-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    width: 100%;
+    max-width: 400px;
+}
+.mobile-nav-links a {
+    font-family: var(--font-display);
+    font-size: clamp(36px, 8vw, 56px);
+    color: rgba(255, 255, 255, 0.7);
+    letter-spacing: 0.04em;
+    text-align: center;
+    display: block;
+    width: 100%;
+    padding: 12px 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    transition: color 0.3s;
+}
+.mobile-nav-links a:hover { color: #ffffff; }
+.mobile-nav-links a:last-child { border-bottom: none; }
+.mobile-nav-cta { margin-top: 48px; }
+.mobile-nav-cta .btn-audit { font-size: 12px; padding: 14px 32px; }
+
+/* ─── HERO ───────────────────────────────────────────────────────────────── */
+.hero-section{position:relative;min-height:100vh;display:grid;align-items:center;padding-top:180px;padding-bottom:80px;overflow:hidden;}
+/* ─── HERO BACKGROUND (FULL BLEED COVER ENGINE) ─── */
+.hero-bg-img {
+    position: absolute;
+    inset: 0;
+    width: 100vw; /* Forces strict viewport width */
+    height: 100%;
+    /* THE FIX: 'cover' guarantees zero empty gaps on any screen size */
+    object-fit: cover; 
+    /* Anchors your focal point to the right side so it never gets cropped */
+    object-position: center right; 
+    z-index: 0;
+    pointer-events: none;
+}
+.hero-ambient-glow{position:absolute;top:-10%;right:-5%;width:800px;height:800px;background:radial-gradient(circle,rgba(230,0,0,0.03) 0%,rgba(255,255,255,0) 70%);z-index:0;pointer-events:none;}
+.hero-content-wrapper{display:grid;grid-template-columns:1fr 1fr;gap:4rem;position:relative;z-index:10;}
+.hero-content{position:relative;z-index:1;}
+.cursor{display:inline-block;width:6px;height:0.74em;background-color:var(--red);position:relative;margin-left:6px;animation:blink 1s step-end infinite;}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:12px;margin-bottom:clamp(60px,8vh,100px);opacity:0;animation:fadeUp 0.8s ease 0.2s forwards;}
+.eyebrow-line{width:30px;height:2px;background-color:var(--red);}
+.eyebrow-text{font-family:var(--font-sans);font-size:14px;font-weight:700;letter-spacing:0.1em;color:var(--red);text-transform:uppercase;}
+.live-dot{width:8px;height:8px;background-color:var(--red);border-radius:50%;position:relative;}
+.live-dot::after{content:'';position:absolute;inset:0;border-radius:50%;background-color:var(--red);animation:livePulse 2s cubic-bezier(0.4,0,0.6,1) infinite;}
+.hero-h1{font-family:var(--font-display);font-size:clamp(50px,6.5vw,100px);letter-spacing:0.02em;line-height:0.88;color:var(--text-main);margin-bottom:28px;opacity:0;animation:fadeUp 0.8s ease 0.35s forwards;}
+.type-line{white-space:nowrap;}
+/* ─── HERO SUBTEXT (STEALTH GLASS PLATE UPGRADE) ─── */
+.hero-sub {
+    font-family: var(--font-sans);
+    font-size: 19px; 
+    font-weight: 400; /* Reverted to the elegant, premium weight */
+    color: #ffffff; 
+    line-height: 1.8;
+    letter-spacing: 0.02em;
+    
+    /* THE MILLION DOLLAR GRID TRICK: 
+       We add padding to create the glass box, but pull it left with negative margin 
+       so the actual text stays perfectly aligned with your H1 above it. */
+    padding: 24px 32px;
+    margin-left: -32px; 
+    max-width: 600px;
+    margin-bottom: 48px;
+
+    /* THE SHIELD: Melts sharp sparks and smoke into a smooth dark gradient */
+    background: linear-gradient(90deg, rgba(10, 10, 10, 0.65) 0%, rgba(10, 10, 10, 0.05) 100%);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    
+    /* THE ANCHOR: A crisp, emissive red hairline to frame the layout */
+    border-left: 2px solid rgba(255, 56, 70, 0.85); 
+    border-radius: 0 12px 12px 0;
+    
+    /* Subtle text armor just to keep the letters crisp inside the glass */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+.hero-ctas{display:flex;gap:16px;flex-wrap:wrap;opacity:0;animation:fadeUp 0.8s ease 0.65s forwards;}
+.btn-primary{background:var(--red);color:#fff;padding:15px 30px;font-family:var(--font-sans);font-size:13px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:10px;transition:var(--transition);position:relative;overflow:hidden;box-shadow:0 10px 30px rgba(230,0,0,0.25);border-radius:4px;}
+.btn-primary::before{content:'';position:absolute;inset:0;background:var(--red-dark);transform:translateX(-101%);transition:transform 0.3s ease;}
+.btn-primary:hover::before{transform:translateX(0);}
+.btn-primary:hover{box-shadow:0 15px 40px rgba(230,0,0,0.4);transform:translateY(-2px);}
+.btn-primary span{position:relative;z-index:1;}
+/* ─── HERO OUTLINE BUTTON (OBSIDIAN GLASS UPGRADE) ─── */
+/* ─── HERO OUTLINE BUTTON (PREMIUM WHITE UPGRADE) ─── */
+.btn-outline {
+    /* The Solid Core: Precision white for maximum visibility */
+    background: #ffffff; 
+    color: var(--charcoal); /* Sharp dark text for resting state */
+    
+    padding: 15px 32px; 
+    font-family: var(--font-sans);
+    font-size: 13px;
+    font-weight: 700; 
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    
+    /* Clean, high-end border frame */
+    border: 1px solid #ffffff; 
+    
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    border-radius: 4px;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    
+    /* Luxury Lift: Soft shadow to detach from the dark hero background */
+    box-shadow: 
+        0 10px 30px rgba(0, 0, 0, 0.3), 
+        inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.btn-outline:hover {
+    /* The Brand Ignition: Snaps to theme red on hover */
+    background: var(--red);
+    color: #ffffff; 
+    border-color: var(--red);
+    transform: translateY(-2px);
+    
+    /* Ambient Red Glow replaces the neutral shadow on hover */
+    box-shadow: 0 15px 40px rgba(217, 35, 45, 0.4);
+}
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@500;600&display=swap');
+ 
+  .trust-badges-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0;
+    background: linear-gradient(135deg, rgba(18,18,22,0.96) 0%, rgba(12,12,16,0.98) 100%);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 32px;
+    box-shadow:
+      0 0 0 1px rgba(255,255,255,0.03),
+      0 24px 64px rgba(0,0,0,0.55),
+      0 8px 20px rgba(0,0,0,0.3),
+      inset 0 1px 0 rgba(255,255,255,0.06);
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.45s forwards;
+  }
+ 
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+ 
+  .badge-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 11px;
+    padding: 20px 26px;
+    cursor: default;
+    position: relative;
+    transition: background 0.25s ease;
+    text-decoration: none;
+  }
+ 
+  .badge-item::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 50%;
+    transform: translateX(-50%) scaleX(0);
+    width: 55%; height: 2.5px;
+    border-radius: 2px;
+    transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1);
+  }
+  .badge-item.amazon::after  { background: #FF9900; }
+  .badge-item.walmart::after { background: #0071CE; }
+  .badge-item.etsy::after    { background: #F56400; }
+  .badge-item.other::after   { background: #a78bfa; }
+  .badge-item:hover::after   { transform: translateX(-50%) scaleX(1); }
+  .badge-item:hover { background: rgba(255,255,255,0.032); }
+ 
+  .badge-icon-wrap {
+    width: 48px; height: 48px;
+    border-radius: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .badge-item:hover .badge-icon-wrap { transform: translateY(-2px); }
+ 
+  .badge-item.amazon .badge-icon-wrap {
+    background: linear-gradient(145deg, #1a1f2e, #232F3E);
+    box-shadow: 0 4px 14px rgba(0,0,0,0.45), 0 0 0 1px rgba(255,153,0,0.18);
+  }
+  .badge-item.amazon:hover .badge-icon-wrap {
+    box-shadow: 0 8px 24px rgba(255,153,0,0.28), 0 0 0 1px rgba(255,153,0,0.45);
+  }
+  .badge-item.walmart .badge-icon-wrap {
+    background: linear-gradient(145deg, #071829, #0d2137);
+    box-shadow: 0 4px 14px rgba(0,0,0,0.45), 0 0 0 1px rgba(0,113,206,0.18);
+  }
+  .badge-item.walmart:hover .badge-icon-wrap {
+    box-shadow: 0 8px 24px rgba(0,113,206,0.3), 0 0 0 1px rgba(0,113,206,0.5);
+  }
+  .badge-item.etsy .badge-icon-wrap {
+    background: linear-gradient(145deg, #1e0e06, #2a1508);
+    box-shadow: 0 4px 14px rgba(0,0,0,0.45), 0 0 0 1px rgba(245,100,0,0.18);
+  }
+  .badge-item.etsy:hover .badge-icon-wrap {
+    box-shadow: 0 8px 24px rgba(245,100,0,0.28), 0 0 0 1px rgba(245,100,0,0.45);
+  }
+  .badge-item.other .badge-icon-wrap {
+    background: linear-gradient(145deg, #0f0a1a, #180f28);
+    box-shadow: 0 4px 14px rgba(0,0,0,0.45), 0 0 0 1px rgba(167,139,250,0.18);
+  }
+  .badge-item.other:hover .badge-icon-wrap {
+    box-shadow: 0 8px 24px rgba(167,139,250,0.22), 0 0 0 1px rgba(167,139,250,0.42);
+  }
+ 
+  .badge-icon-wrap img {
+    width: 26px; height: 26px;
+    object-fit: contain;
+    display: block;
+    filter: drop-shadow(0 1px 3px rgba(0,0,0,0.3));
+  }
+  .badge-icon-wrap svg { width: 26px; height: 26px; }
+ 
+  .badge-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: rgba(190,190,205,0.65);
+    transition: color 0.25s ease;
+    white-space: nowrap;
+  }
+  .badge-item:hover .badge-label { color: rgba(230,230,240,0.95); }
+ 
+  .badge-divider {
+    width: 1px; height: 56px;
+    background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.09), transparent);
+    flex-shrink: 0;
+  }
+
+/* ─── STATS BAR ─────────────────────────────────────────────────────────── */
+.stats-section{background:linear-gradient(180deg,#080808 0%,#0f0f0f 100%);padding:80px 0;position:relative;overflow:hidden;}
+.stats-section::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");pointer-events:none;}
+.stats-section::after{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(230,0,0,0.6),transparent);}
+.stats-wrapper-new{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative;}
+.stats-wrapper-new::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(230,0,0,0.06) 0%,transparent 70%);pointer-events:none;}
+.stat-card{padding:50px 40px;text-align:center;position:relative;border-right:1px solid rgba(255,255,255,0.06);opacity:0;transition:all 0.4s ease;}
+.stat-card:last-child{border-right:none;}
+.stat-card.visible{animation:slideUp 0.8s cubic-bezier(0.16,1,0.3,1) forwards;}
+.stat-card:nth-child(2).visible{animation-delay:0.1s;}
+.stat-card:nth-child(3).visible{animation-delay:0.2s;}
+.stat-card:nth-child(4).visible{animation-delay:0.3s;}
+.stat-card::before{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:0;height:2px;background:var(--red);transition:width 0.6s ease;}
+.stat-card:hover::before{width:60%;}
+.stat-card:hover{background:rgba(230,0,0,0.04);}
+.stat-num{font-family:var(--font-display);font-size:clamp(48px,5vw,80px);color:#fff;line-height:1;letter-spacing:0.02em;margin-bottom:8px;}
+.stat-num-accent{color:var(--red);}
+.stat-bar-label{font-family:var(--font-sans);font-size:13px;font-weight:600;letter-spacing:0.15em;color:#666;text-transform:uppercase;margin-bottom:20px;}
+.stat-bar-desc{font-family:var(--font-sans);font-size:13px;color:#444;line-height:1.6;}
+.stat-icon-wrap{width:48px;height:48px;border-radius:12px;background:rgba(230,0,0,0.1);border:1px solid rgba(230,0,0,0.2);display:flex;align-items:center;justify-content:center;margin:0 auto 24px;}
+.stat-icon-wrap svg{width:22px;height:22px;fill:var(--red);}
+
+/* ─── DIVIDER ELEMENTS ───────────────────────────────────────────────────── */
+.divider-dark-to-light{display:block;line-height:0;background:#0f0f0f;}
+.divider-dark-to-light svg{display:block;width:100%;height:80px;}
+.divider-light-to-dark{display:block;line-height:0;background:#f5f5f5;}
+.divider-light-to-dark svg{display:block;width:100%;height:80px;}
+.divider-dark-to-red{display:block;line-height:0;background:#111;}
+.divider-dark-to-red svg{display:block;width:100%;height:80px;}
+.divider-red-to-dark{display:block;line-height:0;background:linear-gradient(135deg,#cc0000,#e60000);}
+.divider-red-to-dark svg{display:block;width:100%;height:80px;}
+.divider-white-to-charcoal{display:block;line-height:0;background:#fff;}
+.divider-white-to-charcoal svg{display:block;width:100%;height:80px;}
+.divider-charcoal-to-white{display:block;line-height:0;background:#111;}
+.divider-charcoal-to-white svg{display:block;width:100%;height:80px;}
+
+/* ─── SECTION LABEL ──────────────────────────────────────────────────────── */
+.section-eyebrow{display:inline-flex;align-items:center;gap:12px;margin-bottom:20px;}
+.section-eyebrow .ey-line{width:30px;height:2px;background:var(--red);}
+.section-eyebrow .ey-text{font-family:var(--font-sans);font-size:12px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;}
+
+/* ─── SERVICES SECTION ───────────────────────────────────────────────────── */
+/* ==========================================================================
+   MILLION DOLLAR SERVICES SECTION (MASTER)
+   ========================================================================== */
+
+/* ─── SECTION WRAPPER ─── */
+.services-section {
+  background: linear-gradient(180deg, #f5f5f5 0%, #ebebeb 100%);
+  padding: 100px 0 120px;
+  position: relative;
+  overflow: hidden;
+}
+
+.services-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(230,0,0,0.04) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* ─── SECTION HEADER ─── */
+.services-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 80px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+
+.services-header .section-eyebrow {
+  justify-content: center;
+  margin-bottom: 0;
+}
+
+.services-h2 {
+  font-family: var(--font-display);
+  font-size: clamp(52px, 7vw, 100px);
+  line-height: 0.95;
+  letter-spacing: 0.01em;
+  margin-top: 10px;
+  margin-bottom: 0;
+  padding-top: 0;
+}
+
+.services-h2 .text-charcoal { color: var(--charcoal); }
+.services-h2 .text-red { color: var(--red); }
+
+/* ==========================================================================
+   SERVICES GRID (MILLION DOLLAR UPGRADE)
+   ========================================================================== */
+/* ==========================================================================
+   SERVICES GRID (MILLION DOLLAR 5-CARD PYRAMID LAYOUT)
+   ========================================================================== */
+.services-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 28px; /* Luxurious breathing room */
+    max-width: 1280px; /* Optically balanced container width */
+    margin: 0 auto 56px;
+}
+
+/* ─── PREMIUM CARD ARCHITECTURE ─── */
+.service-card {
+    /* Mathematically perfect 3-column width accounting for 28px gaps */
+    width: calc(33.333% - 19px); 
+    background: linear-gradient(180deg, #18181c 0%, #0d0d12 100%); 
+    border-radius: 12px; 
+    position: relative; 
+    overflow: hidden;
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex; 
+    flex-direction: column; 
+    min-height: 520px;
+    text-decoration: none;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    opacity: 0; 
+    transform: translateY(50px);
+}
+
+/* The Stealth Gradient Border Engine */
+.service-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    transition: background 0.6s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-14px);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5), 0 0 40px rgba(230, 0, 0, 0.12);
+}
+
+.service-card:hover::after {
+    background: linear-gradient(to bottom, var(--red), rgba(230,0,0,0.1));
+}
+
+
+/* Update the stagger animations to include the 5th card */
+.service-card.visible { animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+.service-card:nth-child(2).visible { animation-delay: 0.1s; }
+.service-card:nth-child(3).visible { animation-delay: 0.2s; }
+.service-card:nth-child(4).visible { animation-delay: 0.3s; }
+.service-card:nth-child(5).visible { animation-delay: 0.4s; }
+
+/* ─── CINEMATIC IMAGE ─── */
+.sc-image {
+    height: 220px; 
+    position: relative; 
+    overflow: hidden; 
+    flex-shrink: 0;
+    
+    /* ─── THE FIX: Forces strict GPU rendering to stop layer detachment ─── */
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.sc-image img {
+    /* ─── THE FIX: 102% width/height kills the white sub-pixel edge bleed ─── */
+    width: 102%; 
+    height: 102%; 
+    margin: -1%;
+    object-fit: cover;
+    transform: scale(1.02); 
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform;
+}
+
+.sc-image-overlay {
+    position: absolute; 
+    inset: 0;
+    background: linear-gradient(to bottom, transparent 40%, #18181c 100%);
+    
+    /* ─── THE FIX: Extends the gradient down by 2px to overlap the card body ─── */
+    bottom: -2px;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.service-card:hover .sc-image img {
+    transform: scale(1.08); /* Deeper zoom for premium feel */
+}
+
+
+
+.sc-body { 
+    padding: 36px 32px; 
+    flex: 1; 
+    display: flex; 
+    flex-direction: column; 
+    position: relative;
+    z-index: 2;
+}
+
+/* ─── THE FIX: Sub-Pixel Flexbox Bridge Seal ─── */
+.sc-body::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: #18181c; /* Mathematically matches the exact hex of your image overlay */
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* ─── THE MILLION DOLLAR NUMBER WATERMARK ─── */
+.sc-num {
+    font-family: var(--font-display); 
+    font-weight: 800; 
+    font-size: 84px; /* Scaled up for massive, confident presence */
+    color: rgba(255, 255, 255, 0.03); /* Subtle solid gray by default */
+    line-height: 0.8;
+    position: absolute; 
+    top: 24px; /* Pulled safely inside the card body to prevent clipping */
+    right: 20px;
+    z-index: 0; /* Forces it to sit behind the text */
+    letter-spacing: 0.02em;
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    pointer-events: none; /* Ensures it doesn't block cursor interactions */
+}
+
+/* Ensure the rest of the card content stays above the giant number */
+.sc-icon, .sc-title, .sc-body-text, .sc-link {
+    position: relative;
+    z-index: 2;
+}
+
+/* The Kinetic Hover State */
+.service-card:hover .sc-num {
+    transform: translateY(-8px) translateX(-4px) scale(1.1); /* Slight upward and outward expansion */
+}
+
+.sc-icon {
+    width: 48px; 
+    height: 48px; 
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px; /* Softer, modern edges */
+    background: rgba(255,255,255,0.02);
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    margin-bottom: 24px; 
+    transition: all 0.4s cubic-bezier(0.16,1,0.3,1);
+}
+
+.service-card:hover .sc-icon { 
+    border-color: transparent;
+    background: var(--red);
+    box-shadow: 0 10px 20px rgba(230,0,0,0.3);
+}
+
+.sc-icon svg { 
+    width: 22px; 
+    height: 22px; 
+    stroke: #C8A46D; 
+    fill: none;
+    transition: stroke 0.4s ease;
+}
+
+.service-card:hover .sc-icon svg {
+    stroke: #ffffff; /* Turns white when button turns red */
+}
+
+.sc-title {
+    font-family: var(--font-sans); 
+    font-weight: 700; 
+    font-size: 20px;
+    color: #ffffff; 
+    margin-bottom: 14px; 
+    line-height: 1.3;
+    transition: color .3s;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.service-card:hover .sc-title { 
+    color: var(--red); 
+}
+
+/* Upgraded Readability */
+.sc-body-text { 
+    font-family: var(--font-sans); 
+    font-size: 14.5px; 
+    font-weight: 400;
+    color: #A1A1AA; /* Much crisper silver tone */
+    line-height: 1.8; /* Better breathing room */
+    flex: 1; 
+    margin-bottom: 24px;
+}
+
+/* ─── LINK BUTTON (MILLION DOLLAR CTA) ─── */
+.sc-link {
+    display: inline-flex; 
+    align-items: center; 
+    justify-content: center;
+    gap: 12px; 
+    margin-top: auto;
+    padding: 14px 24px;
+    font-family: var(--font-sans); 
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.15em; 
+    text-transform: uppercase; 
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.sc-link::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--gradient-primary);
+    z-index: -1;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.service-card:hover .sc-link { 
+    border-color: transparent;
+    box-shadow: 0 10px 20px rgba(230, 0, 0, 0.25);
+    padding-left: 20px;
+    padding-right: 28px;
+}
+
+.service-card:hover .sc-link::before {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.sc-link svg {
+    width: 16px;
+    height: 16px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.service-card:hover .sc-link svg {
+    transform: translateX(6px);
+}
+
+.services-cta-row {
+  text-align: center; 
+  padding: 48px; 
+  background: transparent;
+}
+
+
+/* ==========================================================================
+   THE APEX CTA CARD (8TH SLOT)
+   ========================================================================== */
+.sc-cta-card {
+    background: linear-gradient(135deg, var(--red) 0%, var(--red-dark) 100%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+/* Disable the default service card glass border for this specific card */
+.sc-cta-card::after {
+    display: none;
+}
+
+/* The Ambient Interior Glow */
+.sc-cta-bg-glow {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(circle at top right, rgba(255, 255, 255, 0.25) 0%, transparent 60%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.sc-cta-body {
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 50px 40px;
+    position: relative;
+    z-index: 1;
+}
+
+/* The Floating Icon Orb */
+.sc-cta-icon-wrap {
+    width: 72px; 
+    height: 72px;
+    background: #ffffff;
+    border-radius: 50%;
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    margin-bottom: 32px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.sc-cta-icon-wrap svg {
+    width: 32px; 
+    height: 32px;
+    stroke: var(--red-dark);
+}
+
+/* Elite Typography Formatting */
+.sc-cta-title {
+    font-family: var(--font-display);
+    font-size: 40px;
+    color: #ffffff;
+    letter-spacing: 0.02em;
+    margin-bottom: 16px;
+    line-height: 1;
+}
+
+.sc-cta-text {
+    font-family: var(--font-sans);
+    font-size: 15px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.7;
+    margin-bottom: 40px;
+}
+
+/* The Kinetic Inverted Button */
+.sc-cta-btn {
+    background: #ffffff;
+    color: var(--charcoal);
+    padding: 16px 32px;
+    border-radius: 100px;
+    font-family: var(--font-sans);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.sc-cta-btn svg {
+    width: 16px; 
+    height: 16px;
+    fill: none; 
+    stroke: currentColor; 
+    stroke-width: 2;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ---- HIGH-END HOVER STATES ---- */
+.sc-cta-card:hover {
+    transform: translateY(-14px);
+    box-shadow: 0 40px 80px rgba(217, 35, 45, 0.4), inset 0 0 0 1px rgba(255, 255, 255, 0.4);
+}
+
+.sc-cta-card:hover .sc-cta-icon-wrap {
+    transform: scale(1.1) translateY(-5px);
+}
+
+.sc-cta-card:hover .sc-cta-btn {
+    background: var(--charcoal);
+    color: #ffffff;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.sc-cta-card:hover .sc-cta-btn svg {
+    transform: translateX(6px);
+}
+
+/* ==========================================================================
+   STEALTH TRUST STRIP (CHARCOAL & INFINITE SLIDE)
+   ========================================================================== */
+.trust-strip {
+  background: #111111; /* Rich, premium charcoal black */
+  border-top: none;
+  border-bottom: 2px solid var(--red); 
+  padding: 20px 0; 
+  overflow: hidden; 
+  position: relative;
+  display: flex;
+}
+
+/* Shadow fades updated to match charcoal */
+.trust-strip::before, 
+.trust-strip::after {
+  content: ''; 
+  position: absolute; 
+  top: 0; 
+  bottom: 0; 
+  width: 150px; 
+  z-index: 2;
+  pointer-events: none;
+}
+.trust-strip::before { left: 0; background: linear-gradient(90deg, #111111 0%, transparent 100%); }
+.trust-strip::after { right: 0; background: linear-gradient(-90deg, #111111 0%, transparent 100%); }
+
+.trust-track {
+  display: flex; 
+  /* The exact gap between items is critical for the math to work */
+  gap: 40px; 
+  width: max-content; 
+  align-items: center;
+  /* hardware acceleration and continuous animation */
+  will-change: transform;
+  animation: infinite-slide 30s linear infinite; 
+}
+
+/* Hover to pause so users can read it */
+.trust-strip:hover .trust-track {
+  animation-play-state: paused;
+}
+
+/* The mathematically perfect loop */
+@keyframes infinite-slide {
+  0% { transform: translateX(0); }
+  /* Translates exactly half the width of the track plus half the gap to be pixel-perfect */
+  100% { transform: translateX(calc(-50% - 20px)); }
+}
+
+.trust-item { 
+  display: flex; 
+  align-items: center; 
+  gap: 40px; /* Space between text and red dot */
+  white-space: nowrap; 
+}
+
+/* Highly readable, premium sans-serif typography */
+.trust-item-logo {
+  font-family: var(--font-sans); /* Switched to your clean Barlow font */
+  font-size: 15px; /* Slightly scaled down to account for the wider font */
+  font-weight: 700; /* Bold weight for instant legibility */
+  letter-spacing: 0.15em; /* Wide tracking so letters don't bleed together */
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5); /* Bumped up the brightness slightly for better contrast */
+  transition: color 0.3s ease;
+  cursor: default;
+}
+
+.trust-item:hover .trust-item-logo { 
+  color: #ffffff; /* Snaps to pure white on hover */
+}
+/* Sharp, flat red dot */
+.trust-sep { 
+  width: 5px; 
+  height: 5px; 
+  border-radius: 50%; 
+  background: var(--red); 
+}
+
+/* ─── RESULTS SECTION ────────────────────────────────────────────────────── */
+.results-section{background:#0a0a0a;padding:120px 0;position:relative;overflow:hidden;}
+.results-bg-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:0.07;filter:grayscale(100%);}
+.results-section::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(180,0,0,0.12) 0%,transparent 50%,rgba(180,0,0,0.08) 100%);}
+.results-section::after{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(230,0,0,0.5),transparent);}
+.results-inner{position:relative;z-index:2;}
+.results-header{text-align:center;margin-bottom:80px;}
+.results-h2{font-family:var(--font-display);font-size:clamp(48px,5.5vw,88px);color:#fff;letter-spacing:0.02em;line-height:0.9;margin-bottom:20px;}
+.results-h2 .shimmer-text{background:linear-gradient(90deg,#fff 0%,var(--red) 40%,#fff 60%,var(--red) 100%);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:shimmer 3s linear infinite;}
+.results-sub{font-family:var(--font-sans);color:#555;font-size:16px;max-width:500px;margin:0 auto;}
+.results-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;max-width:900px;margin:0 auto;}
+.result-block{padding:60px 50px;position:relative;overflow:hidden;opacity:0;}
+.result-block.visible{animation:cardReveal3D 0.8s cubic-bezier(0.16,1,0.3,1) forwards;}
+.result-block:nth-child(2).visible{animation-delay:0.15s;}
+.result-block:nth-child(3).visible{animation-delay:0.3s;}
+.result-block:nth-child(4).visible{animation-delay:0.45s;}
+.result-block:nth-child(odd){background:linear-gradient(135deg,rgba(230,0,0,0.1) 0%,rgba(20,5,5,0.9) 100%);border-right:1px solid rgba(255,255,255,0.04);}
+.result-block:nth-child(even){background:rgba(255,255,255,0.02);}
+.result-block::before{content:'';position:absolute;top:-1px;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(230,0,0,0.3),transparent);}
+.result-block:nth-child(3)::after,.result-block:nth-child(4)::after{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:rgba(255,255,255,0.04);}
+.result-label{font-family:var(--font-sans);font-size:11px;font-weight:700;letter-spacing:0.2em;color:#555;text-transform:uppercase;margin-bottom:16px;}
+.result-number{font-family:var(--font-display);font-size:clamp(56px,6vw,96px);color:#fff;line-height:0.9;letter-spacing:0.02em;margin-bottom:16px;}
+.result-number span{color:var(--red);}
+.result-desc{font-family:var(--font-sans);font-size:14px;color:#444;line-height:1.7;}
+.results-image-strip{margin-top:80px;position:relative;height:300px;overflow:hidden;border-radius:4px;}
+.results-image-strip img{width:100%;height:100%;object-fit:cover;filter:grayscale(40%) contrast(1.1);transition:filter 0.5s ease;}
+.results-image-strip:hover img{filter:grayscale(0%) contrast(1);}
+.results-image-strip::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,#0a0a0a 0%,transparent 30%,transparent 70%,#0a0a0a 100%);z-index:2;}
+.results-image-overlay{position:absolute;inset:0;z-index:3;display:flex;align-items:center;justify-content:center;}
+.results-image-overlay span{font-family:var(--font-display);font-size:clamp(28px,3vw,48px);color:#fff;letter-spacing:0.08em;text-align:center;}
+
+/* VISUALS RESULTS */
+
+
+/* ==========================================================================
+   MILLION DOLLAR VISUAL PROOF (3D MARQUEE) — REFINED PREMIER DESIGN
+   ========================================================================== */
+.visual-proof-section {
+    background: #050505;
+    padding: 80px 0 140px;
+    overflow: hidden;
+    position: relative;
+}
+
+.visual-proof-section::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 50%;
+    transform: translateX(-50%);
+    width: 800px; height: 800px;
+    background: radial-gradient(circle, rgba(230,0,0,0.05) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.vp-header {
+    text-align: center;
+    margin-bottom: 80px;
+    position: relative;
+    z-index: 10;
+}
+
+/* Seamless Edge Fading */
+.vp-track-container {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    position: relative;
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+}
+
+.vp-track {
+    display: flex;
+    gap: 32px;
+    width: max-content;
+    will-change: transform;
+}
+
+
+.vp-track.row-1 { animation: scrollLeft 45s linear infinite; }
+.vp-track.row-2 { animation: scrollRight 50s linear infinite; }
+
+@keyframes scrollLeft {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-50% - 16px)); } /* 16px is half the gap */
+}
+
+@keyframes scrollRight {
+    0% { transform: translateX(calc(-50% - 16px)); }
+    100% { transform: translateX(0); }
+}
+
+/* ─── THE 3D PARALLAX CARD ─── */
+.vp-card {
+    width: 400px;
+    height: 500px;
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+    background: #0a0a0a;
+    /* Establishes the 3D space */
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    border: 1px solid rgba(255,255,255,0.04);
+    transition: border-color 0.6s ease, box-shadow 0.6s ease;
+    cursor: crosshair; /* Adds an expert, precise feel */
+}
+
+/* Optional: Subtle internal shadow to keep card borders crisp on dark backgrounds */
+.vp-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    box-shadow: inset 0 0 40px rgba(0,0,0,0.3);
+    pointer-events: none;
+    z-index: 5; /* Above content, but below glare */
+}
+
+.vp-card:hover {
+    border-color: rgba(230,0,0,0.3);
+    box-shadow: 0 40px 80px rgba(0,0,0,0.9), inset 0 0 40px rgba(230,0,0,0.1);
+    z-index: 10;
+}
+
+/* The Image Base */
+.vp-image {
+    position: absolute;
+    inset: -20px; /* Oversized to allow panning */
+    width: calc(100% + 40px);
+    height: calc(100% + 40px);
+    object-fit: cover;
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), filter 0.8s ease;
+    /* Switched to a cleaner, more dramatic image treatement */
+    filter: grayscale(10%) contrast(1.1) brightness(0.9);
+    transform: translateZ(-10px); /* Pushed back in 3D space */
+}
+
+.vp-card:hover .vp-image {
+    transform: translateZ(0px) scale(1.05); /* Pushes forward while scaling */
+    filter: grayscale(0%) contrast(1.05) brightness(1);
+}
+
+/* ==========================================================================
+   MILLION DOLLAR CHARCOAL CARD UPGRADE (REFINED PREMIER CONTENT PLATES)
+   ========================================================================== */
+
+/* UPGRADE: Transitioning from floating text to a styled obsidian "Glass Plate" */
+.vp-content {
+    position: absolute;
+    /* DEFINES CONTAINER BOUNDS */
+    bottom: 30px; /* Lifed slightly to float cleaner */
+    left: 30px; /* Consistent inset */
+    right: 30px; /* Consistent inset */
+    
+    /* Spacing and Text Alignment */
+    padding: 24px 28px; /* Luxurious, luxurious internal padding */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Correct text alignment */
+    text-align: left; /* Correct text alignment */
+
+    /* The Premium Frosted Glass Core (Strategy 2) */
+    background: rgba(10, 10, 10, 0.6); /* <--- Obsidian black, semi-transparent base */
+    backdrop-filter: blur(16px); /* <--- The 'frosted glass' blur effect */
+    -webkit-backdrop-filter: blur(16px);
+    
+    /* CRISP HAIRSTREAK BORDER */
+    border: 1px solid rgba(255, 255, 255, 0.08); /* <--- A hairline, crisp white boundary */
+    border-radius: 8px; /* <--- Softer, modern edges */
+    
+    z-index: 3;
+    /*hardware acceleration and continuous animation*/
+    will-change: transform, backdrop-filter; /* Improvement in performance */
+    
+    /* Pushes content physically off the image */
+    transform: translateZ(40px);
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), background 0.4s ease, border-color 0.4s ease;
+    
+    /* A very subtle inner glow can push it forward from the background */
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.06); /* <--- Invisible inner light */
+}
+
+/* Enhanced hover action for the entire plate */
+.vp-card:hover .vp-content {
+    transform: translateZ(80px) translateY(-10px); /* Moves further forward and slightly up */
+    /* Increases background and border contrast slightly on hover */
+    background: rgba(10, 10, 10, 0.7);
+    border-color: rgba(255, 255, 255, 0.12);
+}
+
+.vp-brand {
+    font-family: var(--font-display); /* Bebas Neue */
+    font-size: 28px; /* Balanced size against other agency elements */
+    font-weight: 600; /* Bold weight */
+    /* Hyper-Readable White text on the dark obsidian plate */
+    color: #ffffff; 
+    letter-spacing: 0.05em;
+    margin-bottom: 6px; /* Precise separation from niche */
+    line-height: 1;
+    transition: color 0.3s ease;
+}
+
+/* Ignites on hover to match the card borders */
+.vp-card:hover .vp-brand {
+    color: var(--red); /* Turns red on hover */
+}
+
+.vp-category {
+    font-family: var(--font-sans); /* Barlow */
+    font-size: 11px;
+    font-weight: 700; /* Medium-bold for clarity */
+    color: rgba(255, 255, 255, 0.6); /* Switched to readable slate grey for niche sub-copy */
+    text-transform: uppercase;
+    letter-spacing: 0.25em; /* Wide tracking so letters don't bleed */
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+    padding-left: 20px; /* Precise space for the dash */
+}
+
+/* The Flat Red Dash Switched to a cleaner ::before psuedo-element */
+.vp-category::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 12px;
+    height: 2px;
+    background: var(--red);
+}
+
+/* 3D Glass Glare */
+.vp-card-glare {
+    position: absolute;
+    inset: 0;
+    z-index: 6; /* Above the content plate */
+    background: linear-gradient(135deg, rgba(255,255,255,0.06) 0%, transparent 40%);
+    opacity: 0;
+    transform: translateZ(100px); /* Sits significantly above everything */
+    transition: opacity 0.8s ease;
+    pointer-events: none;
+}
+
+.vp-card:hover .vp-card-glare { opacity: 1; }
+
+
+
+/* ==========================================================================
+   MILLION DOLLAR ABOUT SECTION (EDITORIAL UPGRADE)
+   ========================================================================== */
+/* ==========================================================================
+   MILLION DOLLAR ABOUT SECTION — PLATINUM STUDIO BACKGROUND UPGRADE
+   ========================================================================== */
+.about-premium {
+    /* 1. The Base: A rich, high-end platinum/slate off-white */
+    background: #f4f4f6; 
+    padding: 160px 0;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* 2. Studio Lighting Layer: White Spotlight on the Text */
+.about-premium::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 75% 50%, #ffffff 0%, transparent 65%);
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* 3. Studio Lighting Layer: Ambient Agency Red Glow Behind Images */
+.about-premium::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% 50%, rgba(217, 35, 45, 0.07) 0%, transparent 45%);
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* 4. Deepened Shadows: Forces the images to detach from the new backdrop */
+.ap-img-wrap {
+    position: absolute;
+    overflow: hidden;
+    border-radius: 4px;
+    /* UPGRADE: Heavier, more cinematic double drop-shadow */
+    box-shadow: 0 50px 100px rgba(0,0,0,0.25), 0 15px 35px rgba(0,0,0,0.1);
+    opacity: 1; 
+    animation: slideUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.ap-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr; /* Image-heavy distribution */
+    gap: 100px;
+    align-items: center;
+}
+
+/* ─── VISUAL COMPOSITION (THE MILLION DOLLAR ANIMATION) ─── */
+.ap-visual-composition {
+    position: relative;
+    height: 650px;
+    width: 100%;
+}
+
+
+
+/* Image 1: Main Background */
+.ap-img-1 {
+    top: 0; left: 0;
+    width: 80%; height: 85%;
+    z-index: 1;
+}
+
+/* Image 2: Overlapping Foreground */
+.ap-img-2 {
+    bottom: 0; right: 0;
+    width: 55%; height: 65%;
+    z-index: 2;
+    border: 8px solid #ffffff; /* Crisp white frame */
+}
+
+/* Cinematic Internal Zoom */
+.ap-img-inner {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transform: scale(1.15);
+    transition: transform 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+    filter: grayscale(15%) contrast(1.1);
+}
+
+.ap-visual-composition:hover .ap-img-1 .ap-img-inner { transform: scale(1.02); filter: grayscale(0%); }
+.ap-visual-composition:hover .ap-img-2 .ap-img-inner { transform: scale(1.08); filter: grayscale(0%); }
+
+/* Frosted Glass Floating Badge - REPOSITIONED FOR MAXIMUM VISIBILITY */
+.ap-glass-badge {
+    position: absolute;
+    /* The Expert Move: Pushed to top-right negative space and lifted slightly out of bounds */
+    top: -20px; 
+    right: 20px; 
+    left: auto; /* Clears the previous center alignment */
+    transform: scale(1); /* Clears the old translate(-50%, -50%) to fix animation fighting */
+    
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    width: 180px; height: 180px;
+    border-radius: 50%;
+    display: flex; flex-direction: column;
+    justify-content: center; align-items: center;
+    z-index: 3;
+    
+    /* Deepened the shadow slightly to account for the "higher" Z-space float */
+    box-shadow: 0 30px 60px rgba(0,0,0,0.12); 
+    opacity: 0;
+}
+
+.ap-glass-badge.visible {
+    /* Triggers the entrance scale, then seamlessly hands off to the continuous float */
+    animation: scaleIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.4s forwards, floatY 6s ease-in-out infinite 1.2s;
+}
+
+/* Mobile Adjustment: Ensures it doesn't break out too far on smaller screens */
+@media(max-width: 1024px) {
+    .ap-glass-badge {
+        top: -10px;
+        right: 10px;
+        width: 140px; height: 140px; /* Scaled down slightly for mobile balance */
+    }
+    .ap-badge-val { font-size: 42px; }
+    .ap-badge-label { font-size: 10px; }
+}
+
+.ap-badge-val {
+    font-family: var(--font-display);
+    font-size: 56px;
+    color: var(--charcoal);
+    line-height: 1;
+    letter-spacing: 0.02em;
+}
+
+.ap-badge-label {
+    font-family: var(--font-sans);
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--red);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin-top: 4px;
+}
+
+/* ─── TYPOGRAPHY & TEXT REDUCTION ─── */
+.ap-content {
+    opacity: 0;
+}
+
+.ap-content.visible {
+    animation: fadeLeft 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.ap-h2 {
+    font-family: var(--font-display);
+    font-size: clamp(50px, 6vw, 88px);
+    color: var(--charcoal);
+    letter-spacing: 0.02em;
+    line-height: 0.9;
+    margin-bottom: 28px;
+}
+
+.ap-lead {
+    font-family: var(--font-sans);
+    font-size: 18px;
+    color: #555555;
+    line-height: 1.7;
+    margin-bottom: 48px;
+    font-weight: 400;
+}
+
+/* Minimalist Index List (Replacing Paragraphs) */
+.ap-index-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-bottom: 48px;
+}
+
+.ap-index-item {
+    display: flex;
+    align-items: center;
+    padding: 24px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    transition: padding-left 0.4s ease, border-color 0.4s ease;
+}
+
+.ap-index-item:first-child { border-top: 1px solid rgba(0,0,0,0.1); }
+
+.ap-index-item:hover {
+    padding-left: 20px;
+    border-color: var(--red);
+}
+
+.ap-index-num {
+    font-family: var(--font-display);
+    font-size: 24px;
+    color: var(--red);
+    width: 60px;
+}
+
+.ap-index-text {
+    font-family: var(--font-sans);
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--charcoal);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+
+
+/* --- LUXURY ABOUT SECTION TYPOGRAPHY ADDITIONS --- */
+.ap-sub-lead {
+    font-family: var(--font-sans);
+    font-size: 15px;
+    font-weight: 400;
+    color: #71717A; /* A crisp, readable slate grey */
+    line-height: 1.8;
+    margin-bottom: 48px;
+    padding-left: 20px;
+    border-left: 2px solid rgba(217, 35, 45, 0.2); /* Subtle red accent line */
+}
+
+/* Flex container to stack the title and your new paragraph text inside the list */
+.ap-index-content {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.ap-index-desc {
+    font-family: var(--font-sans);
+    font-size: 14px;
+    font-weight: 400;
+    color: #555555;
+    line-height: 1.6;
+    max-width: 90%;
+}
+/* ==========================================================================
+   MILLION DOLLAR TESTIMONIALS (DUAL-AXIS MARQUEE ENGINE)
+   ========================================================================== */
+.testimonial-section {
+    background: #050505;
+    /* 1. THE FIX: Changed from strict height to min-height. 
+       The section will now stretch naturally, never squishing the cards. */
+    min-height: 100vh; 
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 0; /* Standardized safe-zone padding */
+    z-index: 1;
+}
+
+/* 1. Standardize the shadow/lift safe zones */
+.testi-marquee-wrapper {
+    position: relative;
+    width: 100vw;
+    padding-top: 40px; 
+    padding-bottom: 40px; 
+    display: flex;
+    overflow: hidden;
+    flex-shrink: 0;
+    transform: translate3d(0, 0, 0); 
+}
+
+/* 2. THE MILLION DOLLAR FIX: The "Gap Assassin" */
+/* 40px (Row 1 bottom) + 40px (Row 2 top) = 80px total gap. 
+   Pulling it up by -56px leaves exactly a 24px perfect vertical gap. */
+.testi-marquee-wrapper + .testi-marquee-wrapper {
+    margin-top: -56px; 
+}
+
+/* Ambient Deep Red Core Glow */
+.testimonial-section::before {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1000px; height: 600px;
+    background: radial-gradient(ellipse, rgba(230,0,0,0.04) 0%, transparent 60%);
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* --- HEADER TYPOGRAPHY --- */
+.testi-header {
+    text-align: center;
+    margin-bottom: 4vh; /* Responsive margin to respect the viewport lock */
+    position: relative;
+    z-index: 10;
+}
+.testi-h2 {
+    font-family: var(--font-display);
+    font-size: clamp(48px, 5vw, 72px);
+    color: #ffffff;
+    letter-spacing: 0.02em;
+    line-height: 1;
+    margin-bottom: 12px;
+}
+.testi-h2 .gradient-text {
+    color: var(--gradient-primary) /* Blue/Teal gradient matching your image */
+}
+.testi-stars {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-family: var(--font-sans);
+    font-size: 14px;
+    font-weight: 600;
+    color: #888;
+    letter-spacing: 0.05em;
+}
+.testi-stars svg { width: 16px; height: 16px; fill: #F59E0B; }
+
+
+/* Seamless Edge Fade Masks */
+.testi-marquee-wrapper::before,
+.testi-marquee-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0; bottom: 0;
+    width: 15vw;
+    z-index: 5;
+    pointer-events: none;
+}
+.testi-marquee-wrapper::before { left: 0; background: linear-gradient(90deg, #050505 0%, transparent 100%); }
+.testi-marquee-wrapper::after { right: 0; background: linear-gradient(-90deg, #050505 0%, transparent 100%); }
+
+.testi-track {
+    display: flex;
+    gap: 24px;
+    width: max-content;
+    padding-left: 24px; /* Offset for seamless looping */
+    will-change: transform;
+    /* ─── THE FIX: Centers cards away from the top/bottom edges ─── */
+    align-items: center; 
+}
+
+/* Opposing Animations */
+.testi-track.fwd { animation: marqueeLeft 45s linear infinite; }
+.testi-track.rev { animation: marqueeRight 50s linear infinite; }
+
+/* Pause on hover for readability/interaction */
+.testi-marquee-wrapper:hover .testi-track { animation-play-state: paused; }
+
+/* --- CARD ARCHITECTURE (OBSIDIAN GLASS) --- */
+.testi-card {
+    width: 360px;
+    background: #111111;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 12px;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1; /* Establishes baseline stacking */
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.testi-card:hover {
+    border-color: rgba(255, 255, 255, 0.15);
+    transform: translateY(-6px);
+    box-shadow: 0 24px 48px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.05);
+    z-index: 10; /* ─── THE FIX: Pops the hovered card above everything else ─── */
+}
+
+/* ─── TESTIMONIALS APEX CTA WRAPPER ─── */
+.testi-global-cta {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+    /* Forces the button to sit above the edge fade masks */
+    z-index: 40; 
+    /* Mathematically mirrors the 4vh margin-bottom of your .testi-header */
+    margin-top: 4vh; 
+}
+
+/* 1. Video Card Specifics (Top Row) */
+.tc-video {
+    height: 260px; /* Precisely tuned for viewport fit */
+    overflow: hidden;
+    padding: 0; /* Videos bleed to the edges */
+    cursor: pointer;
+}
+.tc-video video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.85) contrast(1.1);
+    transition: filter 0.4s ease;
+}
+.tc-video:hover video { filter: brightness(1) contrast(1.05); }
+
+/* The Play Button Overlay */
+.tc-play-btn {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 54px; height: 54px;
+    background: rgba(10, 10, 10, 0.6);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    z-index: 2;
+    transition: all 0.4s ease;
+}
+.tc-video:hover .tc-play-btn {
+    background: var(--red);
+    border-color: var(--red);
+    transform: translate(-50%, -50%) scale(1.1);
+}
+.tc-play-btn svg { width: 18px; height: 18px; fill: #fff; margin-left: 3px; }
+
+/* Video Meta Overlay */
+.tc-video-meta {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    padding: 30px 20px 16px;
+    background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 100%);
+    z-index: 2;
+}
+.tc-video-name { font-family: var(--font-sans); font-size: 15px; font-weight: 700; color: #fff; }
+.tc-video-role { font-family: var(--font-sans); font-size: 12px; color: #aaa; }
+
+/* 2. Text Card Specifics (Bottom Row) */
+.tc-text {
+    height: 220px; /* Shorter to balance the taller video row */
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+}
+.tc-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 12px;
+}
+.tc-user {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.tc-avatar {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-display); font-size: 20px; color: #fff;
+    /* Dynamic background colors to match your image */
+}
+.tc-avatar.blue { background: #2563EB; }
+.tc-avatar.pink { background: #EC4899; }
+.tc-avatar.green { background: #10B981; }
+.tc-avatar.orange { background: #F59E0B; }
+.tc-avatar.purple { background: #8B5CF6; }
+
+.tc-name { font-family: var(--font-sans); font-size: 15px; font-weight: 700; color: #fff; line-height: 1.2; margin-bottom: 2px;}
+.tc-role { font-family: var(--font-sans); font-size: 11px; color: #777; }
+.tc-platform svg { width: 18px; height: 18px; } /* For the Google G */
+
+.tc-rating { margin-bottom: 12px; display: flex; gap: 2px; }
+.tc-rating svg { width: 12px; height: 12px; fill: #F59E0B; }
+
+.tc-review {
+    font-family: var(--font-sans);
+    font-size: 13.5px;
+    line-height: 1.6;
+    color: #A1A1AA;
+    /* Line clamping ensures text never overflows the strict box height */
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+/* Micro-patch to ensure client images fit perfectly in the round avatars */
+img.tc-avatar { object-fit: cover; border: 1px solid rgba(255,255,255,0.1); background: #111; }
+
+/* ─── CASE STUDIES (MILLION DOLLAR STACKING DECK) ─────────────────────────── */
+.editorial-cases {
+    background: #fafafa;
+    padding: 120px 0 0; /* Removed bottom padding for seamless stacking */
+    position: relative;
+    /* Crucial: No overflow hidden here, or sticky will fail */
+}
+/* ─── CASE STUDIES APEX CTA WRAPPER ─── */
+.ec-global-cta {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+    /* Forces the button to sit above the final sticky card in the Z-space */
+    z-index: 40; 
+    padding-bottom: 60px;
+    /* Optically tucks it into the 15vh padding of the track so the spacing is tight */
+    margin-top: -6vh; 
+}
+
+.ec-header { 
+    margin-bottom: 60px; 
+}
+
+.ec-h2 { 
+    font-family: var(--font-display); 
+    font-size: clamp(56px, 7vw, 110px); 
+    color: #0a0a0a; 
+    letter-spacing: 0.02em; 
+    line-height: 0.9; 
+}
+
+/* The Track Container */
+.ec-track {
+    position: relative;
+    width: 100%;
+    padding-bottom: 15vh; /* Gives the final card room to breathe before the next section */
+}
+
+/* ─── THE MILLION DOLLAR STICKY CARDS ─── */
+.ec-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    /* THE MAGIC: Pins each case study to the screen */
+    position: sticky;
+    top: 0;
+    height: 100vh; /* Locks to exact viewport height */
+    min-height: 750px; 
+    
+    /* Solid background is required so it covers the card behind it */
+    background: #fafafa; 
+    
+    /* Overrides the old spacing and JS reveal animations */
+    margin-bottom: 0 !important;
+    opacity: 1 !important;
+    transform: none !important;
+    
+    /* The cinematic slide-over effect */
+    box-shadow: 0 -24px 60px rgba(0,0,0,0.06);
+    border-top: 1px solid rgba(0,0,0,0.04);
+    border-radius: 40px 40px 0 0; /* Premium curved top edge as it slides up */
+    
+    overflow: hidden;
+    will-change: transform;
+}
+
+/* Ensure strict z-index layering so they stack correctly */
+.ec-row:nth-child(1) { 
+    z-index: 10; 
+    /* The first card doesn't need a shadow or curve since it's the base */
+    box-shadow: none; 
+    border-top: none; 
+    border-radius: 0; 
+}
+.ec-row:nth-child(2) { z-index: 20; }
+.ec-row:nth-child(3) { z-index: 30; }
+
+.ec-row.ec-reverse { flex-direction: row-reverse; }
+
+/* The Visual Container */
+.ec-visual {
+    width: 58%; 
+    position: relative;
+    z-index: 1;
+}
+
+.ec-img-frame {
+    width: 100%;
+    height: 70vh; /* Responsive image height relative to the sticky screen */
+    max-height: 750px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 12px;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.12);
+    clip-path: none !important; /* Removed old wipe to favor the card slide */
+}
+
+.ec-parallax-img {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover;
+    filter: grayscale(15%) contrast(1.1);
+    transition: filter 0.8s ease, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); 
+}
+
+.ec-row:hover .ec-parallax-img { 
+    filter: grayscale(0%) contrast(1.05); 
+    transform: scale(1.06); /* Replaced JS parallax with kinetic zoom */
+}
+
+/* The Overlapping Content Block */
+.ec-content {
+    width: 42%;
+    background: #ffffff;
+    padding: 70px 60px;
+    margin-left: -8%; /* Forces the overlap */
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 40px 100px rgba(0,0,0,0.08);
+    border: 1px solid rgba(0,0,0,0.04);
+    border-radius: 8px;
+}
+
+.ec-reverse .ec-content {
+    margin-left: 0;
+    margin-right: -8%;
+}
+
+/* Brutalist Typography inside the block */
+.ec-meta {
+    display: flex; align-items: center; gap: 12px;
+    font-family: var(--font-sans); font-size: 11px; font-weight: 800; letter-spacing: 0.2em; color: var(--red);
+    margin-bottom: 24px; text-transform: uppercase;
+}
+
+.ec-num { font-family: var(--font-display); font-size: 20px; color: #0a0a0a; }
+.ec-dot { width: 4px; height: 4px; background: var(--red); border-radius: 50%; }
+
+.ec-client {
+    font-family: var(--font-display); font-size: clamp(48px, 5vw, 72px); color: #0a0a0a;
+    line-height: 0.9; letter-spacing: 0.02em; margin-bottom: 48px; text-transform: uppercase;
+}
+
+.ec-stats { display: flex; gap: 48px; margin-bottom: 48px; border-left: 3px solid var(--red); padding-left: 24px; }
+.ec-stat { display: flex; flex-direction: column; }
+.ec-val { font-family: var(--font-display); font-size: 64px; color: #050505; line-height: 0.8; margin-bottom: 12px; letter-spacing: -0.02em; }
+.ec-val span { color: var(--red); font-size: 48px; }
+.ec-lbl { font-family: var(--font-sans); font-size: 12px; font-weight: 700; color: #777; letter-spacing: 0.15em; text-transform: uppercase; }
+
+.ec-desc {
+    font-family: var(--font-sans);
+    font-size: 15px;
+    font-weight: 400;
+    color: #555555;
+    line-height: 1.7;
+    margin-top: 10px;
+    padding-left: 24px;
+    border-left: 2px solid rgba(217, 35, 45, 0.3);
+}
+
+
+
+/* Kinetic Action Link */
+.ec-action {
+    display: inline-flex; align-items: center; gap: 12px;
+    font-family: var(--font-sans); font-size: 13px; font-weight: 800; color: #050505;
+    letter-spacing: 0.2em; text-transform: uppercase; text-decoration: none;
+    padding-bottom: 6px; border-bottom: 2px solid #050505; transition: all 0.4s ease;
+}
+
+.ec-action svg { width: 16px; height: 16px; stroke: #050505; fill: none; stroke-width: 2; transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+.ec-action:hover { color: var(--red); border-color: var(--red); }
+.ec-action:hover svg { stroke: var(--red); transform: translateX(8px); }
+
+
+
+/* ==========================================================================
+   MILLION DOLLAR INTELLIGENCE HUB (EDITORIAL MASONRY V2)
+   ========================================================================== */
+.premium-blogs-v2 {
+    background: #050505;
+    padding: 140px 0;
+    position: relative;
+}
+
+.pb2-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.pb2-h2 {
+    font-family: var(--font-display);
+    font-size: clamp(48px, 6vw, 88px);
+    color: #ffffff;
+    line-height: 0.9;
+    letter-spacing: 0.02em;
+    margin-top: 16px;
+}
+
+/* Controls & Filters */
+.pb2-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 48px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 24px;
+}
+
+.pb2-filters {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.pb2-filter {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #A1A1AA;
+    padding: 10px 24px;
+    border-radius: 100px;
+    font-family: var(--font-sans);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.pb2-filter:hover {
+    border-color: rgba(255,255,255,0.3);
+    color: #ffffff;
+}
+
+.pb2-filter.active {
+    background: var(--red);
+    border-color: var(--red);
+    color: #ffffff;
+    box-shadow: 0 8px 20px rgba(217, 35, 45, 0.3);
+}
+
+.pb2-view-all {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--font-sans);
+    font-size: 13px;
+    font-weight: 700;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.pb2-view-all svg {
+    width: 20px;
+    height: 20px;
+    background: #ffffff;
+    border-radius: 50%;
+    fill: #050505;
+    padding: 4px;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), background 0.3s ease;
+}
+
+.pb2-view-all:hover {
+    color: var(--red);
+}
+
+.pb2-view-all:hover svg {
+    background: var(--red);
+    fill: #ffffff;
+    transform: translateX(4px);
+}
+
+/* Grid Layout */
+.pb2-grid {
+    display: grid;
+    grid-template-columns: 1.25fr 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+/* Featured Article (Left) */
+.pb2-featured {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+/* Featured Article (Left) */
+.pb2-feat-img-wrap {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid rgba(255,255,255,0.05);
+    margin-bottom: 32px; /* <-- ADDED: Perfect editorial breathing room */
+}
+
+.pb2-feat-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), filter 0.5s ease;
+    filter: brightness(0.85);
+}
+
+.pb2-featured:hover .pb2-feat-img-wrap img {
+    transform: scale(1.03);
+    filter: brightness(1);
+}
+
+.pb2-feat-title {
+    font-family: var(--font-display);
+    font-size: clamp(36px, 4vw, 56px);
+    color: #ffffff;
+    line-height: 1;
+    letter-spacing: 0.02em;
+    margin-bottom: 16px;
+    transition: color 0.3s ease;
+}
+
+.pb2-featured:hover .pb2-feat-title {
+    color: var(--red);
+}
+
+/* 1. Featured Article Description Upgrade */
+.pb2-feat-desc {
+    font-family: var(--font-sans);
+    font-size: 17.5px; /* Bumped up for premium optical balance */
+    font-weight: 400;
+    color: #E2E8F0; /* Brighter, high-contrast platinum silver */
+    line-height: 1.85; /* Luxurious breathing room between lines */
+    letter-spacing: 0.015em; /* Micro-kerning for crisp legibility */
+    margin-bottom: 32px;
+    max-width: 94%; /* Prevents lines from getting uncomfortably wide, reducing eye fatigue */
+}
+
+/* 2. Sidebar Title Upgrade */
+.pb2-side-title {
+    font-family: var(--font-sans);
+    font-size: 19px; /* Increased for stronger visual hierarchy */
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.45; /* Optimized spacing specifically for multi-line titles */
+    letter-spacing: 0.01em;
+    margin-bottom: 14px;
+    transition: color 0.3s ease;
+}
+
+/* 3. Sidebar Meta (Time & Date) Upgrade */
+.pb2-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--font-sans);
+    font-size: 12.5px; /* Micro-bump for better screen rendering */
+    font-weight: 600;
+    color: #A1A1AA; /* Lifted from dark grey to a brighter slate for better accessibility */
+    text-transform: uppercase;
+    letter-spacing: 0.12em; /* Slightly wider tracking so all-caps text breathes */
+}
+
+/* Sidebar Articles (Right) */
+.pb2-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.pb2-side-item {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 24px;
+    align-items: center;
+    cursor: pointer;
+    padding-bottom: 32px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    transition: all 0.4s ease;
+    text-decoration: none;
+}
+
+.pb2-side-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.pb2-side-img-wrap {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+.pb2-side-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), filter 0.5s ease;
+    filter: brightness(0.8);
+}
+
+.pb2-side-item:hover .pb2-side-img-wrap img {
+    transform: scale(1.08);
+    filter: brightness(1);
+}
+
+
+
+.pb2-side-item:hover .pb2-side-title {
+    color: var(--red);
+}
+
+
+
+
+
+/* ==========================================================================
+   MILLION DOLLAR SECTION ANCHOR BUTTONS (CONTINUOUS SLIDER ENGINE)
+   ========================================================================== */
+.md-section-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background: var(--red); /* Anchored in your signature theme red */
+    color: #ffffff;
+    padding: 20px 48px;
+    font-family: var(--font-sans);
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    border-radius: 4px; /* Professional, grounded architecture */
+    text-decoration: none;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    /* Resting 3D tactile lift */
+    box-shadow: 0 10px 30px rgba(217, 35, 45, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ─── LAYER 1: THE CONTINUOUS MILLION DOLLAR SLIDER (AMBIENT LIGHT) ─── */
+.md-section-btn::before {
+    content: '';
+    position: absolute;
+    inset: -2px; /* Prevents edge-clipping during the sweep */
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        transparent 35%,
+        rgba(255, 255, 255, 0.25) 50%, /* The glowing crest of the slider */
+        transparent 65%,
+        transparent 100%
+    );
+    background-size: 200% 100%;
+    z-index: -1;
+    /* Runs a slow, passive scanline loop infinitely */
+    animation: continuousSweep 4s linear infinite;
+}
+
+/* ─── LAYER 2: THE KINETIC DARK-RED CORE (HOVER REVEAL) ─── */
+.md-section-btn::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--red-dark);
+    z-index: -2;
+    opacity: 0;
+    transform: scale(0.9); /* Starts slightly shrunken */
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.md-section-btn span {
+    position: relative;
+    z-index: 2;
+    transition: padding 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.md-section-btn svg {
+    width: 18px;
+    height: 18px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2.5;
+    position: relative;
+    z-index: 2;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ─── THE APEX KINETIC HOVER STATE ─── */
+.md-section-btn:hover {
+    transform: translateY(-5px); /* Decisive physical lift off the canvas */
+    border-color: rgba(255, 255, 255, 0.35); /* Border snaps sharper */
+    /* Huge ambient red bloom pushes into the dark background */
+    box-shadow: 0 24px 48px rgba(217, 35, 45, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    padding-left: 56px; /* Button physically expands its stance */
+    padding-right: 40px;
+}
+
+/* Ignites the dark core, pushing it to the edges */
+.md-section-btn:hover::after {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Overdrives the continuous slider: faster and brighter */
+.md-section-btn:hover::before {
+    animation: continuousSweep 1.2s linear infinite;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        transparent 35%,
+        rgba(255, 255, 255, 0.45) 50%,
+        transparent 65%,
+        transparent 100%
+    );
+}
+
+.md-section-btn:hover svg {
+    transform: translateX(8px); /* Arrow drives forward */
+}
+
+/* ─── THE ENGINE BEHIND THE SLIDER ─── */
+@keyframes continuousSweep {
+    0% { background-position: 200% center; }
+    100% { background-position: -200% center; }
+}
+/* ─── TEAM SECTION — EDITORIAL SPLIT (CHARCOAL CARDS) ─────────────────────── */
+.team-section-light {
+    background: #ffffff;
+    padding: 140px 0;
+    position: relative;
+    overflow: hidden;
+}
+.tl-container {
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    gap: 80px;
+    align-items: center;
+}
+.tl-intro {
+    position: relative;
+    z-index: 2;
+}
+.tl-h2 {
+    font-family: var(--font-display);
+    font-size: clamp(56px, 6vw, 88px);
+    color: var(--charcoal);
+    line-height: 0.9;
+    letter-spacing: 0.02em;
+    margin-bottom: 24px;
+}
+.tl-highlight {
+    position: relative;
+    display: inline-block;
+}
+.tl-highlight::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 8px;
+    width: 100%;
+    height: 10px;
+    background: rgba(217, 35, 45, 0.15);
+    z-index: -1;
+    transition: height 0.3s ease;
+}
+
+/* UPGRADE: Drastically improved readability */
+.tl-sub {
+    font-family: var(--font-sans);
+    font-size: 18px; /* Increased size */
+    font-weight: 500; /* Medium weight for clarity */
+    color: #111111; /* Near black for maximum contrast */
+    line-height: 1.7;
+    margin-bottom: 48px;
+}
+
+/* ==========================================================================
+   TEAM CARDS: EQUAL HEIGHT & KINETIC IMAGE COMPRESSION
+   ========================================================================== */
+
+/* 1. Reset the track so cards stay perfectly aligned */
+.tl-track {
+    align-items: stretch;
+}
+
+/* 2. Lock the absolute height of ALL cards */
+.tl-card {
+    display: flex;
+    flex-direction: column;
+    height: 520px !important; /* Forces every card to be identical */
+    justify-content: flex-end; /* Anchors the black info box to the bottom */
+}
+
+/* 3. The Cinematic Image Box (Absorbs the expansion) */
+.tl-img-box {
+    height: auto !important; /* Overrides your old fixed 380px */
+    flex: 1; /* Dynamically fills all remaining space */
+    min-height: 0;
+    transition: flex 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* 4. The Info Box */
+.tl-info {
+    flex-shrink: 0; /* Prevents the text from squishing */
+}
+
+/* 5. The Ultra-Smooth Description Reveal */
+.tl-desc {
+    max-height: 0;
+    opacity: 0;
+    margin-top: 0;
+    padding-top: 0;
+    border-top: 1px solid transparent; 
+    transform: translateY(15px); /* Starts slightly lower */
+    
+    /* UPGRADED SMOOTHNESS: Opacity is delayed by 0.1s so it fades in perfectly *as* the box opens */
+    transition: max-height 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+                opacity 0.4s ease 0.1s, 
+                margin-top 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+                padding-top 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+                border-color 0.6s ease;
+}
+
+.tl-card:hover .tl-desc {
+    max-height: 120px;
+    opacity: 1;
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08); 
+    transform: translateY(0); /* Snaps up into place */
+}
+/* Nav Buttons */
+/* Nav Buttons (Forced Contrast) */
+.tl-nav {
+    display: flex;
+    gap: 12px;
+}
+.tl-nav-btn {
+    width: 52px;
+    height: 52px;
+    background: #181818;
+    border: 1px solid var(--border-light);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    color: #ffffff; /* Base color forced to sharp dark black */
+}
+.tl-nav-btn:hover {
+    background: #111111; /* Charcoal background on hover */
+    border-color: #111111;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    color: #ffffff; /* Inverts color to white on hover */
+}
+.tl-nav-btn svg {
+    width: 20px;
+    height: 20px;
+    stroke: currentColor; /* Inherits the strict colors set above */
+    stroke-width: 2.5; 
+    fill: none;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.tl-nav-btn.prev:hover svg { transform: translateX(-4px); }
+.tl-nav-btn.next:hover svg { transform: translateX(4px); }
+
+/* Track & Wrapper */
+/* Track & Wrapper (ULTRA-PREMIUM KINETIC CANVAS) */
+.tl-carousel-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding: 20px 0;
+    margin: -20px 0;
+    -webkit-mask-image: linear-gradient(to right, black 85%, transparent 100%);
+    mask-image: linear-gradient(to right, black 85%, transparent 100%);
+    touch-action: pan-y; /* Allows natural vertical page scrolling on mobile */
+}
+
+.tl-track {
+    display: flex;
+    gap: 24px;
+    width: max-content;
+    will-change: transform;
+    /* We handle the transition inside the animation loop for flawless 120Hz physics */
+    transition: none !important; 
+    cursor: grab;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.tl-track:active {
+    cursor: grabbing;
+}
+
+.tl-card {
+    width: 320px;
+    flex-shrink: 0;
+}
+/* ==========================================================================
+   MILLION DOLLAR CHARCOAL CARD UPGRADE
+   ========================================================================== */
+/* ==========================================================================
+   MILLION DOLLAR TEAM CARDS (TYPOGRAPHY & BIO UPGRADE)
+   ========================================================================== */
+
+/* Gives the name slightly more breathing room above the title */
+.tl-name {
+    margin-bottom: 8px; 
+}
+
+/* 1. The Premium Sub-Heading */
+.tl-role {
+    font-family: var(--font-sans);
+    font-size: 11.5px;
+    font-weight: 700; /* Dropped from 800 for a more elegant, refined weight */
+    color: var(--red); /* Ignites the sub-heading in your authoritative brand red */
+    letter-spacing: 0.2em; /* Ultra-wide editorial tracking */
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px; /* Perfect negative space before the bio starts */
+}
+
+/* The Micro-Accent Line */
+.tl-role::before {
+    content: '';
+    display: block;
+    width: 12px;
+    height: 1px;
+    background: var(--red);
+    opacity: 0.6;
+    transition: width 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Kinetically extends the accent line when the card is hovered */
+.tl-card:hover .tl-role::before {
+    width: 24px; 
+    opacity: 1;
+}
+
+/* 2. The Luxury Description Text */
+.tl-desc {
+    font-family: var(--font-sans);
+    font-size: 14.5px; /* Increased for effortless readability */
+    font-weight: 400;
+    color: #8A8A93; /* A deep, sophisticated slate gray */
+    line-height: 1.75; /* High-end editorial line spacing */
+    margin-top: 0;
+    padding-top: 0;
+    border-top: none; /* Removed the cheap full-width border */
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* 3. The "Lights On" Hover State */
+.tl-card:hover .tl-desc {
+    color: #E2E8F0; /* Snaps to crisp, high-contrast platinum white */
+    transform: translateX(4px); /* A microscopic physical shift forward */
+}
+.tl-img-box {
+    width: 100%;
+    height: 380px;
+    overflow: hidden;
+    background: #1a1a1a;
+    position: relative;
+}
+
+
+/* Ensure the image zoom inside the card is equally smooth */
+.tl-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    filter: contrast(1.05); 
+    will-change: transform;
+    transition: 
+        transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
+        filter 0.8s ease;
+}
+
+.tl-card:hover .tl-img-box img {
+    transform: scale(1.06) translateZ(0);
+}
+.tl-info {
+    padding: 24px 28px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    background: #111111;
+    transition: background 0.4s ease;
+}
+.tl-card:hover .tl-info {
+    background: #1a1a1a;
+}
+.tl-name {
+    font-family: var(--font-sans); 
+    font-size: 28px;
+    font-weight: 700;
+    color: #ffffff; 
+    letter-spacing: 0.02em;
+    margin-bottom: 6px;
+    transition: color 0.4s ease;
+}
+.tl-card:hover .tl-name {
+    color: var(--red);
+}
+.tl-role {
+    font-family: var(--font-sans);
+    font-size: 11px;
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.6); 
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}
+
+
+/* ==========================================================================
+   MILLION DOLLAR CHARCOAL CARD UPGRADE
+   ========================================================================== */
+.tl-card {
+    width: 320px;
+    flex-shrink: 0;
+    /* UPGRADE: Million Dollar Charcoal Black */
+    background: #111111; 
+    /* UPGRADE: Stealth Dark Border */
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: crosshair;
+}
+.tl-card:hover {
+    /* Deeper shadow for dark cards */
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.4), inset 0 0 40px rgba(230, 0, 0, 0.05);
+    border-color: rgba(230, 0, 0, 0.2);
+    transform: translateY(-12px);
+}
+.tl-img-box {
+    width: 100%;
+    height: 380px;
+    overflow: hidden;
+    background: #1a1a1a; /* Dark base for images */
+    position: relative;
+}
+.tl-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    /* UPGRADE: Removed greyscale. Images are full color. */
+    filter: contrast(1.05); 
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1), filter 0.5s ease;
+}
+.tl-card:hover .tl-img-box img {
+    transform: scale(1.06); /* Increased kinetic zoom */
+}
+.tl-info {
+    padding: 24px 28px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    background: #111111;
+    transition: background 0.4s ease;
+}
+.tl-card:hover .tl-info {
+    /* Slight lift within the card */
+    background: #1a1a1a;
+}
+.tl-name {
+    /* UPGRADE: Confirmed Million Dollar Sans (Barlow) */
+    font-family: var(--font-sans); 
+    font-size: 28px;
+    font-weight: 700; /* Heavy weight */
+    /* UPGRADE: Hyper-Readable White */
+    color: #ffffff; 
+    letter-spacing: 0.02em;
+    margin-bottom: 6px;
+    transition: color 0.4s ease;
+}
+/* Hover makes the name ignite in agency red */
+.tl-card:hover .tl-name {
+    color: var(--red);
+}
+/* ─── KINETIC DRAG STATE ─── */
+.tl-carousel-wrapper.is-dragging .tl-card {
+    pointer-events: none; /* Prevents accidental clicks while dragging */
+    transform: scale(0.98); /* Micro-compression while grabbed for tactile feel */
+    transition: transform 0.3s ease; /* Smooth compress, independent of the track slide */
+}
+.tl-role {
+    font-family: var(--font-sans);
+    font-size: 11px;
+    font-weight: 800;
+    /* UPGRADE: Readable slate grey */
+    color: rgba(255, 255, 255, 0.6); 
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}
+
+
+
+/* ==========================================================================
+   MILLION DOLLAR CLIENT LOGOS (OBSIDIAN GLASS PLATES + FULL COLOR)
+   ========================================================================== */
+
+/* ─── SECTION ARCHITECTURE ─── */
+.clients-section {
+    background: linear-gradient(180deg, #0a0a0a 0%, #111111 100%);
+    padding: 100px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Stealth SVG Grid Overlay */
+.clients-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.015' fill-rule='evenodd'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40'/%3E%3C/g%3E%3C/svg%3E");
+    pointer-events: none;
+}
+
+/* ─── TYPOGRAPHY ─── */
+.clients-header {
+    text-align: center;
+    margin-bottom: 60px;
+    position: relative;
+    z-index: 2;
+}
+
+.clients-h2 {
+    font-family: var(--font-display);
+    font-size: clamp(36px, 4vw, 64px);
+    color: #ffffff;
+    letter-spacing: 0.04em;
+    line-height: 0.9;
+    margin-bottom: 14px;
+}
+
+.clients-sub {
+    font-family: var(--font-sans);
+    font-size: 15px;
+    color: #444444;
+    letter-spacing: 0.05em;
+}
+
+/* ─── MARQUEE CONTAINER & FADE MASKS ─── */
+.marquee-container {
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 32px;
+}
+
+/* Dual-Edge Fade Gradient */
+.marquee-container::before, 
+.marquee-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 250px;
+    z-index: 2;
+    pointer-events: none;
+}
+.marquee-container::before {
+    left: 0;
+    background: linear-gradient(90deg, #0a0a0a, transparent);
+}
+.marquee-container::after {
+    right: 0;
+    background: linear-gradient(270deg, #0a0a0a, transparent);
+}
+
+/* ─── THE INFINITE TRACK ─── */
+.marquee-track {
+    display: flex;
+    gap: 32px; /* Tightened gap because the glass plates provide their own padding */
+    width: max-content;
+    align-items: center;
+    padding-left: 32px; /* Offset for seamless looping */
+    will-change: transform;
+}
+
+/* Hardware-Accelerated Animations */
+.marquee-track.fwd {
+    animation: marqueeLeft 40s linear infinite;
+}
+.marquee-track.rev {
+    animation: marqueeRight 45s linear infinite;
+}
+
+/* Pause Interaction on Hover */
+.marquee-container:hover .marquee-track {
+    animation-play-state: paused;
+}
+
+/* ─── THE OBSIDIAN GLASS PLATES ─── */
+.logo-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 300px; 
+    height: 200px;
+    /* NEW: We use padding to create a strict safe-zone, allowing logos to grow much larger */
+    padding: 20px 32px; 
+    background: rgba(255, 255, 255, 0.015);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    border-radius: 12px;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: crosshair;
+    position: relative;
+    overflow: hidden;
+}
+
+/* The Glass Top-Edge Highlight */
+.logo-item::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.12), transparent);
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
+
+/* ─── THE COLORFUL LOGO ENGINE ─── */
+.client-logo {
+    /* NEW: Forces the logo to maximize its footprint inside the padded plate */
+    width: 100%; 
+    height: 100%; 
+    object-fit: contain; /* Ensures the logo never stretches or distorts */
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    filter: saturate(1.2) opacity(1) drop-shadow(0 12px 24px rgba(255, 255, 255, 0.1));
+    /* Scaled back slightly to 1.08 so larger logos don't clip the box on hover */
+    transform: scale(1.08); 
+}
+
+/* ─── THE MILLION DOLLAR HOVER STATE ─── */
+.logo-item:hover {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(255, 255, 255, 0.15);
+    transform: translateY(-8px);
+    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.logo-item:hover::before {
+    opacity: 1; 
+}
+.logo-item:hover .client-logo {
+    filter: saturate(1.4) opacity(1) drop-shadow(0 16px 32px rgba(255, 255, 255, 0.15));
+    transform: scale(1.12);
+}
+
+/* ─── KEYFRAMES ─── */
+@keyframes marqueeLeft {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+@keyframes marqueeRight {
+    0% { transform: translateX(-50%); }
+    100% { transform: translateX(0); }
+}
+
+/* ==========================================================================
+   MILLION DOLLAR CONTACT SECTION (RED OVERDRIVE & OBSIDIAN GLASS)
+   ========================================================================== */
+
+/* ─── SECTION ARCHITECTURE ─── */
+.contact-section {
+    /* Anchored in the aggressive theme red to merge with the CTA strip */
+    background: linear-gradient(135deg,#a00000 0%,#cc0000 40%,#e60000 70%,#ff2200 100%);
+    padding: 140px 0;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* Abstract ambient light orb (Top Left) */
+.contact-section::before {
+    content: ''; 
+    position: absolute; 
+    top: -150px; 
+    left: -100px; 
+    width: 800px; 
+    height: 800px;
+    border-radius: 50%; 
+    background: rgba(255, 255, 255, 0.04);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Abstract deep shadow orb (Bottom Right) */
+.contact-section::after {
+    content: ''; 
+    position: absolute; 
+    bottom: -200px; 
+    right: -150px; 
+    width: 900px; 
+    height: 900px;
+    border-radius: 50%; 
+    background: rgba(0, 0, 0, 0.15);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Base Grid Layout */
+.contact-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+/* ─── LEFT SIDE: HIGH-CONTRAST TYPOGRAPHY ─── */
+.contact-copy { 
+    position: relative; 
+}
+
+.contact-h2 {
+    font-family: var(--font-display);
+    font-size: clamp(44px, 4.5vw, 76px);
+    color: #ffffff; /* Pure white against the red */
+    letter-spacing: 0.02em;
+    line-height: 0.88;
+    margin-bottom: 28px;
+}
+
+.contact-h2 em { 
+    font-style: normal; 
+    color: #ffffff; 
+    position: relative;
+    display: inline-block;
+}
+
+/* The dark anchor line under the emphasis text */
+.contact-h2 em::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 8px;
+    width: 100%;
+    height: 8px;
+    background: rgba(0, 0, 0, 0.2); 
+    z-index: -1;
+}
+
+.contact-lead {
+    font-family: var(--font-sans);
+    font-size: 18px; 
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.85); /* Premium legible silver */
+    line-height: 1.8;
+    margin-bottom: 48px;
+    max-width: 90%;
+}
+
+/* ─── LEFT SIDE: DIRECTORY & TRUST ORBS ─── */
+.contact-trust { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 40px; 
+}
+
+.ct-item { 
+    display: flex; 
+    align-items: center; 
+    gap: 24px; 
+}
+
+.ct-icon {
+    width: 64px; 
+    height: 64px; 
+    border-radius: 50%; 
+    background: #ffffff; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    flex-shrink: 0;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15); 
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+}
+
+.ct-item:hover .ct-icon {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.ct-icon svg { 
+    width: 24px; 
+    height: 24px; 
+    stroke: var(--red-dark); 
+    stroke-width: 1.5; 
+    fill: none; 
+}
+
+.ct-text { 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+}
+
+.ct-text strong {
+    font-family: var(--font-sans); 
+    font-size: 15px; 
+    font-weight: 800; 
+    color: #ffffff; 
+    display: block; 
+    margin-bottom: 4px; 
+    letter-spacing: 0.1em; 
+    text-transform: uppercase;
+}
+
+.ct-text span {
+    font-family: var(--font-sans); 
+    font-size: 16px; 
+    font-weight: 500; 
+    color: rgba(255, 255, 255, 0.75); 
+    line-height: 1.5;
+}
+
+/* ─── RIGHT SIDE: THE PLATINUM WHITE FORM CARD ─── */
+.contact-form-card {
+    background: rgba(255, 255, 255, 0.95); /* Crisp, bright white frosted glass */
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 12px;
+    padding: 56px 48px;
+    position: relative;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    /* Deep red shadow so the white card feels grounded in the blooming background */
+    box-shadow: 0 40px 100px rgba(150, 0, 0, 0.4), 0 10px 40px rgba(217, 35, 45, 0.15);
+}
+
+/* Subtle Red Accent Line on Top of the White Card */
+.contact-form-card::before {
+    content: ''; 
+    position: absolute; 
+    top: 0; left: 32px; right: 32px; height: 2px;
+    background: linear-gradient(90deg, transparent, var(--red), transparent);
+}
+
+/* Form Layout Grids */
+.form-grid { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 20px; 
+}
+.form-row-2 { 
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    gap: 20px; 
+}
+.form-group { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 10px; 
+    position: relative; 
+}
+
+/* Form Typography & Inputs (Light Theme) */
+.form-label {
+    font-family: var(--font-sans); 
+    font-size: 13.5px; 
+    font-weight: 600; 
+    letter-spacing: 0.08em; 
+    text-transform: uppercase;
+    color: #111111; /* Absolute black for readability */
+    margin-bottom: 2px; 
+}
+
+.form-input, .form-textarea, .form-select {
+    background: #f4f4f6; /* Premium soft gray */
+    border: 1px solid #e5e7eb;
+    border-radius: 6px; 
+    padding: 16px 20px;
+    font-family: var(--font-sans); 
+    font-size: 15px; 
+    font-weight: 500; 
+    color: #111111;
+    outline: none; 
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    width: 100%; 
+    -webkit-appearance: none;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.form-input::placeholder, .form-textarea::placeholder {
+    color: #a0a0a0; 
+    font-weight: 400;
+}
+
+/* Kinetic Input Focus (Red Accent) */
+.form-input:focus, .form-textarea:focus, .form-select:focus {
+    background: #ffffff;
+    border-color: var(--red); 
+    box-shadow: 0 0 0 4px rgba(217, 35, 45, 0.1);
+}
+
+.form-select {
+    cursor: pointer;
+    /* Dark grey SVG dropdown arrow */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='8' viewBox='0 0 14 8'%3E%3Cpath d='M1 1l6 6 6-6' stroke='%23555555' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat; 
+    background-position: right 18px center; 
+    padding-right: 48px;
+    color: #555555; 
+}
+
+.form-select option { 
+    background: #ffffff; 
+    color: #111111; 
+}
+
+.form-textarea { 
+    resize: vertical; 
+    min-height: 120px; 
+    line-height: 1.6; 
+}
+
+/* ─── NEW: Form Titles & Subtitles ─── */
+.form-title {
+    font-family: var(--font-display);
+    font-size: 44px; 
+    color: #111111;
+    letter-spacing: 0.04em; 
+    line-height: 1; 
+    margin-bottom: 8px;
+}
+
+.form-subtitle {
+    font-family: var(--font-sans); 
+    font-size: 14.5px; 
+    color: #555555; 
+    margin-bottom: 32px;
+    line-height: 1.6;
+}
+
+/* ─── NEW: Checkbox Grid Architecture ─── */
+.form-checkgroup { 
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    gap: 12px; 
+    margin-top: 4px;
+}
+
+.form-check {
+    display: flex; 
+    align-items: center; 
+    gap: 12px;
+    padding: 14px 16px;
+    background: #f4f4f6;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px; 
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.form-check:hover { 
+    border-color: var(--red); 
+    background: #ffffff; 
+    box-shadow: 0 4px 12px rgba(217, 35, 45, 0.06);
+}
+
+.form-check input[type="checkbox"] { 
+    width: 18px; 
+    height: 18px; 
+    accent-color: var(--red); 
+    cursor: pointer; 
+}
+
+.form-check-label {
+    font-family: var(--font-sans); 
+    font-size: 13.5px; 
+    font-weight: 600;
+    color: #111111; 
+    cursor: pointer; 
+    transition: color 0.3s ease;
+}
+
+.form-check:hover .form-check-label { 
+    color: var(--red); 
+}
+
+/* Submit Button remains exactly the same logic */
+.form-submit {
+  display: flex; align-items: center; justify-content: center; gap: 14px;
+  width: 100%; padding: 22px 40px; margin-top: 28px;
+  background: var(--red); color: #fff;
+  font-family: var(--font-sans); font-size: 14px; font-weight: 800;
+  letter-spacing: 0.15em; text-transform: uppercase;
+  border: none; border-radius: 8px; cursor: pointer;
+  position: relative; overflow: hidden;
+  transition: all 0.4s ease;
+  box-shadow: 0 16px 40px rgba(217,35,45,0.3);
+}
+.form-submit::before {
+  content: ''; position: absolute; inset: 0;
+  background: var(--red-dark); transform: translateX(-101%);
+  transition: transform 0.4s cubic-bezier(0.16,1,0.3,1);
+}
+.form-submit:hover::before { transform: translateX(0); }
+.form-submit:hover { transform: translateY(-3px); box-shadow: 0 24px 50px rgba(217,35,45,0.4); }
+.form-submit span, .form-submit svg { position: relative; z-index: 1; }
+.form-submit svg { width: 18px; height: 18px; stroke: #fff; fill: none; stroke-width: 2.5; transition: transform 0.4s ease; }
+.form-submit:hover svg { transform: translateX(6px); }
+
+.form-fine {
+    font-family: var(--font-sans); 
+    font-size: 12.5px;
+    color: #888888;
+    text-align: center; 
+    margin-top: 20px; 
+    line-height: 1.6;
+}
+
+/* ─── FORM SUCCESS STATE (Light Theme) ─── */
+.form-success { 
+    display: none; 
+    text-align: center; 
+    padding: 48px 0; 
+}
+
+.form-success.show { 
+    display: block; 
+    animation: scaleIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards; 
+}
+
+.form-success-icon {
+    width: 72px; 
+    height: 72px; 
+    border-radius: 50%;
+    background: rgba(217, 35, 45, 0.1); 
+    border: 1px solid rgba(217, 35, 45, 0.3);
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    margin: 0 auto 28px;
+}
+
+.form-success-icon svg { 
+    width: 32px; 
+    height: 32px; 
+    fill: var(--red); 
+}
+
+.form-success h3 {
+    font-family: var(--font-display); 
+    font-size: 44px; 
+    color: #111111;
+    letter-spacing: 0.04em; 
+    margin-bottom: 16px; 
+    line-height: 1;
+}
+
+.form-success p { 
+    font-family: var(--font-sans); 
+    font-size: 18px; 
+    color: #555555; 
+    line-height: 1.75; 
+}
+
+
+
+/* ─── CTA STRIP ──────────────────────────────────────────────────────────── */
+.cta-strip{background:linear-gradient(135deg,#a00000 0%,#cc0000 40%,#e60000 70%,#ff2200 100%);padding:100px 0;position:relative;overflow:hidden;text-align:center;}
+.cta-strip::before{content:'';position:absolute;top:-100px;left:-100px;width:600px;height:600px;border-radius:50%;background:rgba(255,255,255,0.04);}
+.cta-strip::after{content:'';position:absolute;bottom:-150px;right:-150px;width:700px;height:700px;border-radius:50%;background:rgba(0,0,0,0.1);}
+.cta-strip-inner{position:relative;z-index:2;}
+.cta-strip h2{font-family:var(--font-display);font-size:clamp(50px,6vw,96px);color:#fff;letter-spacing:0.02em;line-height:0.9;margin-bottom:24px;}
+.cta-strip p{font-family:var(--font-sans);font-size:19px;color:rgba(255,255,255,0.75);max-width:500px;margin:0 auto 48px;line-height:1.75;}
+.cta-strip-btn{display:inline-block;background:#fff;color:var(--red);padding:20px 48px;font-family:var(--font-sans);font-size:14px;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;border-radius:4px;transition:all 0.3s ease;}
+.cta-strip-btn:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(0,0,0,0.25);}
+.cta-trust-row{margin-top:32px;font-family:var(--font-sans);font-size:13px;color:rgba(255,255,255,0.5);display:flex;align-items:center;justify-content:center;gap:28px;flex-wrap:wrap;}
+.cta-trust-row span{display:inline-flex;align-items:center;gap:6px;}
+.cta-trust-row svg{width:14px;height:14px;fill:rgba(255,255,255,0.5);}
+
+/* ════════════════════════════════════════════════════════
+   9. MILLION DOLLAR FOOTER — STUDIO LUXURY
+════════════════════════════════════════════════════════ */
+.footer {
+    background: #030303; /* A true, void-level obsidian black */
+    padding: 120px 0 0; /* Massive top breathing room */
+    position: relative;
+    overflow: hidden; /* Required to contain the giant text and glow */
+}
+
+/* Subtle Crimson Ambient Light emerging from the top */
+.footer-glow {
+    position: absolute;
+    top: -300px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 800px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(217, 35, 45, 0.08) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.relative-z {
+    position: relative;
+    z-index: 2;
+}
+
+/* ─── GRID LAYOUT ─── */
+.footer-grid-premium {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 80px;
+    margin-bottom: 80px;
+}
+
+.footer-desc {
+    font-family: var(--font-sans);
+    font-size: 15.5px;
+    font-weight: 400;
+    color: #8A8A93; /* Crisp slate gray */
+    line-height: 1.85;
+    max-width: 320px;
+}
+
+.footer-col-title {
+    font-family: var(--font-sans);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: #ffffff;
+    margin-bottom: 32px;
+    position: relative;
+}
+
+/* ─── KINETIC LINK ENGINE ─── */
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.footer-links a {
+    font-family: var(--font-sans);
+    font-size: 15px;
+    font-weight: 500;
+    color: #A1A1AA;
+    text-decoration: none;
+    display: inline-flex;
+    width: max-content;
+    position: relative;
+    transition: color 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.footer-links a span {
+    position: relative;
+    padding-bottom: 4px;
+}
+
+/* The Line Draw Effect */
+.footer-links a span::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background: var(--red);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.footer-links a:hover {
+    color: #ffffff;
+}
+
+.footer-links a:hover span::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* ─── LOCATIONS ─── */
+.footer-locations {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.loc-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.loc-item strong {
+    font-family: var(--font-sans);
+    font-size: 14px;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 0.05em;
+}
+
+.loc-item span {
+    font-family: var(--font-sans);
+    font-size: 14px;
+    color: #8A8A93;
+    margin-top: 2px;
+}
+
+/* ─── THE MEGA-TYPOGRAPHY WATERMARK ─── */
+.footer-giant-text {
+    font-family: var(--font-display);
+    font-size: clamp(80px, 14.5vw, 240px); /* Scales dynamically with the screen */
+    font-weight: 800;
+    line-height: 0.8;
+    letter-spacing: 0.02em;
+    text-align: center;
+    
+    /* The Stealth Stroke Effect */
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.06);
+    
+    user-select: none;
+    pointer-events: none;
+    width: 100%;
+    margin: 40px 0 0 0;
+    
+    /* Pulls it slightly beneath the bottom grid line */
+    transform: translateY(20px);
+}
+
+/* ─── THE FINAL BASELINE ─── */
+.footer-bottom-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 32px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    position: relative;
+    z-index: 10;
+    background: #030303; /* Covers the bottom of the giant text */
+}
+
+.fb-copy {
+    font-family: var(--font-sans);
+    font-size: 13px;
+    color: #71717A;
+}
+
+.fb-legal {
+    display: flex;
+    gap: 32px;
+}
+
+.fb-legal a {
+    font-family: var(--font-sans);
+    font-size: 13px;
+    color: #71717A;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.fb-legal a:hover {
+    color: #ffffff;
+}
+
+/* Tactical Social Buttons */
+.fb-socials {
+    display: flex;
+    gap: 12px;
+}
+
+.fb-social-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    color: #A1A1AA;
+}
+
+.fb-social-btn svg {
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.fb-social-btn:hover {
+    background: var(--red);
+    border-color: var(--red);
+    color: #ffffff;
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(217, 35, 45, 0.2);
+}
+
+.fb-social-btn:hover svg {
+    transform: scale(1.1);
+}
+/* ─── CHA DEVELOPER WATERMARK ─── */
+.fb-copy-wrap {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.fb-watermark {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--font-sans);
+    font-size: 10.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    padding-left: 16px;
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.wm-text {
+    color: #555555; /* Stealth mode */
+}
+
+.wm-link {
+    color: #8A8A93;
+    font-weight: 800;
+    text-decoration: none;
+    position: relative;
+    transition: color 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* The Kinetic Signature Line */
+.wm-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 100%;
+    height: 1px;
+    background: var(--red);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.wm-link:hover {
+    color: #ffffff; /* Ignites to pure white on hover */
+}
+
+.wm-link:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+/* ─── HQ DIRECT CONTACT LINKS ─── */
+.loc-link {
+    font-family: var(--font-sans);
+    font-size: 14px;
+    color: #8A8A93;
+    margin-top: 4px;
+    text-decoration: none;
+    position: relative;
+    width: max-content;
+    transition: color 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.loc-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 1px;
+    background: var(--red);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.loc-link:hover {
+    color: #ffffff;
+}
+
+.loc-link:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* ─── FOOTER RESPONSIVE ─── */
+@media(max-width: 1024px) {
+    .footer-grid-premium {
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+    }
+    .footer-brand-col {
+        grid-column: span 2;
+    }
+    .footer-giant-text {
+        transform: translateY(10px);
+    }
+}
+
+@media(max-width: 768px) {
+    .footer { padding: 80px 0 0; }
+    .footer-grid-premium {
+        grid-template-columns: 1fr;
+        gap: 48px;
+    }
+    .footer-brand-col {
+        grid-column: span 1;
+    }
+    .footer-bottom-bar {
+        flex-direction: column;
+        gap: 24px;
+        text-align: center;
+    }
+}
+@media(max-width: 768px) {
+    /* ... your other mobile footer rules ... */
+    
+    .fb-copy-wrap {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .fb-watermark {
+        padding-left: 0;
+        border-left: none;
+        padding-top: 12px;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+}
+/* ─── MEDIA QUERIES ──────────────────────────────────────────────────────── */
+@media(max-width:1200px){
+    .team-grid{grid-template-columns:repeat(2,1fr);}
+    .footer-grid{grid-template-columns:1fr 1fr;gap:40px;}
+}
+@media(max-width:1024px){
+
+    .about-inner{grid-template-columns:1fr;}
+    .about-section::before{display:none;}
+    .cases-grid{grid-template-columns:1fr 1fr;}
+    .results-grid{grid-template-columns:1fr 1fr;}
+    .nav-links, .nav-controls .btn-audit { display: none; }
+    .hamburger { display: flex; }
+}
+@media(max-width:768px){
+    .nav-links{display:none;}
+    .cases-grid{grid-template-columns:1fr;}
+    .team-grid{grid-template-columns:1fr 1fr;}
+    .results-grid{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr;}
+    .cta-form{flex-direction:column;align-items:center;}
+    .cta-input{width:100%;max-width:400px;}
+    .about-accent-box{bottom:-20px;right:-10px;}
+    .cases-header{grid-template-columns:1fr;}
+    .main-header { top: 12px; width: 94%; padding: 10px 16px; }
+    .brand-text { font-size: 1.6rem; }
+    .brand-icon-wrap { width: 40px; height: 40px; }
+}
+
+@media(max-width: 480px) {
+    .main-header { top: 10px; width: 96%; padding: 8px 14px; }
+    .brand-text { font-size: 1.4rem; }
+}
+
+/* ─── MOBILE OVERRIDES: HIDE SOCIAL SIDEBAR ─── */
+@media (max-width: 768px) {
+    .social-sidebar {
+        display: none !important; 
+    }
+}
+
+/* ══════════════════════════════════════════════════════
+   HERO RESPONSIVE MATRIX (STRICTLY MOBILE/TABLET)
+   Desktop Base CSS remains 100% untouched.
+══════════════════════════════════════════════════════ */
+
+/* ─── 1024px: Tablets Landscape & Layout Collapse ─── */
+@media(max-width: 1024px) {
+    .hero-section { 
+        padding-top: 140px; 
+        padding-bottom: 60px; 
+    }
+    .hero-content-wrapper { 
+        grid-template-columns: 1fr; 
+        justify-items: center; 
+        text-align: center; 
+    }
+    /* Hide the empty right column to allow perfect centering */
+    .hero-graphic-col { display: none; }
+    .hero-eyebrow { justify-content: center; }
+    
+    /* Safely override the negative desktop margins to center the glass box */
+    .hero-sub {
+        margin-left: 0;
+        margin-right: 0;
+        margin-bottom: 40px;
+        border-left: none;
+        border-radius: 12px;
+        /* Shift gradient to bottom-heavy for centered text readability */
+        background: linear-gradient(180deg, rgba(10, 10, 10, 0.65) 0%, rgba(10, 10, 10, 0.05) 100%);
+        max-width: 600px;
+    }
+    .hero-ctas { justify-content: center; }
+    
+    /* Hardware-accelerated horizontal scroll for badges */
+    .trust-badges-pill {
+        max-width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none; /* Firefox */
+    }
+    .trust-badges-pill::-webkit-scrollbar { display: none; } /* Chrome/Safari */
+}
+
+/* ─── 768px: Tablets Portrait & Large Phones ─── */
+@media(max-width: 768px) {
+    .hero-section { padding-top: 120px; padding-bottom: 48px; min-height: auto; }
+    
+    /* Override desktop clamp to prevent text blow-out on phones */
+    .hero-h1 { font-size: clamp(38px, 9vw, 62px); margin-bottom: 24px; }
+    .hero-eyebrow { margin-bottom: 28px; }
+    
+    /* Subtext scaling */
+    .hero-sub { font-size: 15px; padding: 18px 20px; }
+    
+    /* Trust Badge Compression */
+    .trust-badges-pill { border-radius: 12px; }
+    .badge-item { padding: 14px 14px; }
+    .badge-icon-wrap { width: 36px; height: 36px; border-radius: 10px; }
+    .badge-icon-wrap svg, .badge-icon-wrap img { width: 20px; height: 20px; }
+    .badge-label { font-size: 9px; }
+    .badge-divider { height: 44px; }
+    
+    /* Button scaling */
+    .btn-primary, .btn-outline { padding: 13px 24px; font-size: 12px; }
+}
+
+/* ─── 480px: Small Phones & CTA Stacking ─── */
+@media(max-width: 480px) {
+    .hero-h1 { font-size: clamp(34px, 10vw, 48px); margin-bottom: 18px; }
+    .hero-sub { font-size: 14px; padding: 14px 16px; }
+    
+    /* Force 100% width touch targets for thumb accessibility */
+    .hero-ctas { 
+        flex-direction: column; 
+        align-items: stretch; 
+        width: 100%; 
+        max-width: 340px; 
+        margin: 0 auto; 
+    }
+    .btn-primary, .btn-outline { justify-content: center; width: 100%; }
+    
+    /* Final Edge-to-Edge Badge Compression */
+    .trust-badges-pill { gap: 0; }
+    .badge-item { padding: 12px 10px; }
+    .badge-icon-wrap { width: 32px; height: 32px; border-radius: 8px; }
+    .badge-icon-wrap svg, .badge-icon-wrap img { width: 18px; height: 18px; }
+    .badge-label { font-size: 8px; letter-spacing: 0.04em; }
+    .badge-divider { height: 36px; }
+}
+/* ══════════════════════════════════════════════════════
+   LAPTOP VIEWPORT SAFEGUARDS (RESTORED)
+   Prevents desktop CTAs from being pushed below the fold
+══════════════════════════════════════════════════════ */
+
+@media (max-height: 900px) and (min-width: 1025px) {
+    .hero-section { padding-top: 150px; padding-bottom: 20px; }
+    .hero-eyebrow { margin-bottom: 24px; }
+    .hero-h1 { font-size: clamp(72px, 7.5vw, 120px); line-height: 0.85; margin-bottom: 16px; }
+    .hero-sub { font-size: 16px; line-height: 1.6; margin-bottom: 24px; }
+}
+
+@media (max-height: 750px) and (min-width: 1025px) {
+    .hero-section { padding-top: 130px; }
+    .hero-h1 { font-size: clamp(55px, 6.5vw, 90px); }
+}
+
+
+/* ══════════════════════════════════════════════════════
+   SERVICES RESPONSIVE MATRIX (FLEXBOX ARCHITECTURE)
+   Desktop Base CSS remains 100% untouched.
+══════════════════════════════════════════════════════ */
+
+/* ─── 1200px: Small Laptops / Landscape Tablets ─── */
+@media (max-width: 1200px) {
+    /* Converts the 3-column flex layout to a perfect 2-column layout */
+    .service-card {
+        width: calc(50% - 14px); /* 14px accounts for half of the 28px gap */
+    }
+}
+
+/* ─── 768px: Portrait Tablets & Large Phones ─── */
+@media (max-width: 768px) {
+    /* Section Padding Compression */
+    .services-section {
+        padding: 80px 0 90px;
+    }
+    
+    /* Header Typography Scaling */
+    .services-header {
+        margin-bottom: 48px;
+    }
+    .services-h2 {
+        font-size: 48px; /* Mathematically locked */
+        line-height: 1.1; /* Adjusted slightly for the fixed size */
+    }
+    
+    /* Converts to a pristine Single Column */
+    .services-grid {
+        gap: 20px; /* Tighter gap for mobile scrolling */
+        margin-bottom: 40px;
+    }
+    .service-card {
+        width: 100%; /* Stacks cards edge-to-edge */
+        min-height: auto; /* Releases the fixed desktop height */
+    }
+    
+    /* Cinematic Image Compression */
+    .sc-image {
+        height: 200px;
+    }
+    
+    /* Internal Card Padding & Typography Adjustment */
+    .sc-body {
+        padding: 28px 24px;
+    }
+    .sc-title {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+    .sc-body-text {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+    
+    /* Scale down the massive background watermark number to fit the narrower card */
+    .sc-num {
+        font-size: 64px;
+        top: 16px;
+        right: 16px;
+    }
+}
+
+/* ─── 480px: Small Phones ─── */
+@media (max-width: 480px) {
+    /* Final Section Tightening */
+    .services-section {
+        padding: 60px 0 70px;
+    }
+    .services-h2 {
+        font-size: 48px; /* Strict 48px lock for all phone sizes */
+        line-height: 1.1; 
+    }
+    
+    /* Final Image Compression for small viewports */
+    .sc-image {
+        height: 180px;
+    }
+    
+    /* Scale down the CTA Card */
+    .sc-cta-body {
+        padding: 40px 24px;
+    }
+    .sc-cta-title {
+        font-size: 32px;
+    }
+    .sc-cta-icon-wrap {
+        width: 56px;
+        height: 56px;
+        margin-bottom: 24px;
+    }
+    .sc-cta-icon-wrap svg {
+        width: 24px;
+        height: 24px;
+    }
+    
+    /* Stretch the inner CTA button for thumb accessibility */
+    .sc-cta-btn {
+        width: 100%;
+        justify-content: center;
+        padding: 16px 20px;
+    }
+}
+
+
+/* ══════════════════════════════════════════════════════
+   ABOUT SECTION: FLUID & UNCROPPED RESPONSIVE MATRIX
+   Desktop Base CSS remains 100% untouched.
+══════════════════════════════════════════════════════ */
+
+/* ─── 1024px: Tablets Landscape & Layout Collapse ─── */
+@media (max-width: 1024px) {
+    .about-premium { padding: 100px 0; }
+    .ap-grid { grid-template-columns: 1fr; gap: 64px; }
+    
+    /* THE EXPERT MOVE: Fluid Aspect Ratio instead of Fixed Height */
+    .ap-visual-composition {
+        height: auto !important;
+        aspect-ratio: 1 / 1; /* Creates a perfect, fluid square */
+        max-width: 540px; 
+        margin: 0 auto;
+    }
+    
+    /* Re-proportioned to fit the new fluid square */
+    .ap-img-1 { width: 85%; height: 85%; }
+    .ap-img-2 { width: 55%; height: 55%; border-width: 4px; }
+    
+    /* KILL THE ZOOM: Removes the 15% desktop zoom to prevent cropping */
+    .ap-img-inner {
+        transform: scale(1) !important;
+        object-fit: cover !important; 
+        object-position: center !important;
+    }
+    
+    /* Reposition the Badge so it doesn't break out of the viewport */
+    .ap-glass-badge {
+        width: 130px; height: 130px;
+        top: -15px; right: -5px;
+    }
+    .ap-badge-val { font-size: 38px; }
+}
+
+/* ─── 768px: Tablets Portrait & Large Phones ─── */
+@media (max-width: 768px) {
+    .about-premium { padding: 80px 0; }
+    
+    /* Typography Scaling for Mobile Readability */
+    .ap-h2 { font-size: clamp(38px, 9vw, 56px); margin-bottom: 20px; }
+    .ap-lead { font-size: 16px; margin-bottom: 32px; }
+    .ap-sub-lead { font-size: 14px; padding-left: 16px; margin-bottom: 32px; }
+    
+    /* Shifts from square to landscape for a better phone fit */
+    .ap-visual-composition {
+        aspect-ratio: 4 / 3; 
+    }
+}
+
+/* ─── 480px: Small Phones ─── */
+@media (max-width: 480px) {
+    .ap-grid { gap: 48px; }
+    
+    /* Final Badge Compression */
+    .ap-glass-badge {
+        width: 100px; height: 100px;
+        top: -10px; right: -10px;
+        border-width: 1px;
+    }
+    .ap-badge-val { font-size: 28px; }
+    .ap-badge-label { font-size: 8px; margin-top: 2px; }
+    
+    /* Text Adjustments */
+    .ap-index-text { font-size: 14px; }
+    .ap-index-desc { font-size: 13px; max-width: 100%; }
+}
+
+
+/* ══════════════════════════════════════════════════════
+   CASE STUDIES: EDITORIAL SCROLL MATRIX
+   Desktop Base CSS remains 100% untouched.
+══════════════════════════════════════════════════════ */
+
+/* ─── 1024px: Break the Sticky Stack ─── */
+@media (max-width: 1024px) {
+    /* Release the 100vh lock and sticky behavior */
+    .ec-row, .ec-row.ec-reverse {
+        position: relative !important;
+        height: auto !important;
+        min-height: auto !important;
+        flex-direction: column;
+        padding: 80px 0;
+        margin-bottom: 20px !important;
+        box-shadow: none !important;
+        border-top: none !important;
+        border-radius: 0 !important;
+    }
+
+    /* Image Frame - Fluid and Uncropped */
+    .ec-visual { width: 100%; }
+    .ec-img-frame {
+        height: auto !important;
+        max-height: none !important;
+        aspect-ratio: 16 / 9; /* Cinematic uncropped framing */
+        border-radius: 12px;
+    }
+    
+    /* Disable hover zoom on tablet to prevent clipping */
+    .ec-row:hover .ec-parallax-img { transform: scale(1); }
+
+    /* Content Plate - Premium Overlap */
+    .ec-content {
+        width: 90%;
+        /* Overlaps bottom of image perfectly without crushing it */
+        margin: -8% auto 0 !important; 
+        padding: 48px;
+    }
+    
+    .ec-track { padding-bottom: 40px; }
+}
+
+/* ─── 768px: Portrait Tablets & Large Phones ─── */
+@media (max-width: 768px) {
+    .ec-h2 { font-size: clamp(48px, 8vw, 64px); letter-spacing: 0.02em; line-height: 1; }
+    .ec-client { font-size: 42px; margin-bottom: 32px; }
+    
+    /* Stats Re-Architecture */
+    .ec-stats {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 32px;
+        /* Shift the red line from the left to the top for horizontal flow */
+        border-left: none; 
+        padding-left: 0;
+        border-top: 3px solid var(--red); 
+        padding-top: 24px;
+    }
+    .ec-val { font-size: 52px; letter-spacing: 0.02em; line-height: 1;}
+    .ec-val span { font-size: 36px; }
+}
+
+/* ─── 480px: Small Phones ─── */
+@media (max-width: 480px) {
+    .editorial-cases { padding-top: 80px; }
+    .ec-row { padding: 40px 0; }
+    
+    /* Shift to taller image for better mobile viewing */
+    .ec-img-frame { aspect-ratio: 4 / 3; }
+    
+    /* Reduce overlap to give text maximum breathing room */
+    .ec-content {
+        width: 95%;
+        margin: -5% auto 0 !important;
+        padding: 32px 24px;
+    }
+    
+    .ec-client { font-size: 34px; }
+    .ec-meta { font-size: 10px; flex-wrap: wrap; }
+    
+    /* Stack stats vertically for instant scannability */
+    .ec-stats {
+        flex-direction: column;
+        gap: 24px;
+    }
+    .ec-val { font-size: 44px; margin-bottom: 4px;  letter-spacing: 0.02em; line-height: 1;}
+    .ec-desc { padding-left: 16px; font-size: 14px; }
+}
+/* ══════════════════════════════════════════════════════
+   STATS BAR: RESPONSIVE GRID MATRIX
+   Desktop Base CSS remains 100% untouched.
+══════════════════════════════════════════════════════ */
+
+/* ─── 1024px: Tablets (The Perfect 2x2 Grid) ─── */
+@media (max-width: 1024px) {
+    .stats-wrapper-new { 
+        grid-template-columns: repeat(2, 1fr); 
+    }
+    
+    .stat-card {
+        padding: 40px 24px;
+        /* Strip the desktop horizontal borders to prepare the new matrix */
+        border-right: none; 
+        border-bottom: none;
+    }
+    
+    /* THE EXPERT MOVE: The Perfect Crosshair Border Matrix */
+    /* Adds a right border ONLY to the left column (Cards 1 and 3) */
+    .stat-card:nth-child(odd) { 
+        border-right: 1px solid rgba(255, 255, 255, 0.06); 
+    }
+    /* Adds a bottom border ONLY to the top row (Cards 1 and 2) */
+    .stat-card:nth-child(1), 
+    .stat-card:nth-child(2) { 
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06); 
+    }
+}
+
+/* ─── 768px: Mobile Landscape & Typography Lock ─── */
+@media (max-width: 768px) {
+    .stats-section { padding: 60px 0; }
+    
+    /* Tighten internal padding to prevent text wrap */
+    .stat-card { padding: 32px 16px; }
+    
+    .stat-icon-wrap { 
+        width: 40px; 
+        height: 40px; 
+        margin-bottom: 16px; 
+    }
+    .stat-icon-wrap svg { width: 18px; height: 18px; }
+    
+    /* Safely override the desktop clamp() so numbers fit the 2x2 grid */
+    .stat-num { 
+        font-size: 44px; /* Mathematically locked */
+        margin-bottom: 6px; 
+    }
+    .stat-bar-label { 
+        font-size: 11px; 
+        letter-spacing: 0.1em; 
+    }
+}
+
+/* ─── 480px: Small Phones (Single Column Editorial Stack) ─── */
+@media (max-width: 480px) {
+    .stats-wrapper-new { 
+        grid-template-columns: 1fr; 
+    }
+    
+    .stat-card {
+        padding: 40px 24px;
+        /* Kill all right borders */
+        border-right: none !important;
+        /* Convert to horizontal stacking dividers */
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
+    }
+    
+    /* The final card in the stack should never have a bottom border */
+    .stat-card:last-child { 
+        border-bottom: none !important; 
+    }
+    
+    /* Since we have full width again, we can bump the typography back up */
+    .stat-num { font-size: 52px; }
+    .stat-bar-label { font-size: 12px; }
+}
+
+/* ══════════════════════════════════════════════════════
+   VISUAL PROOF: 3D MARQUEE RESPONSIVE MATRIX
+   Desktop Base CSS remains 100% untouched.
+══════════════════════════════════════════════════════ */
+
+/* ─── 1024px: Tablets (Gentle Compression) ─── */
+@media (max-width: 1024px) {
+    .visual-proof-section { padding: 80px 0 100px; }
+    .vp-header { margin-bottom: 60px; }
+    
+    /* Shrink cards slightly to keep the marquee balanced */
+    .vp-card { width: 320px; height: 400px; }
+    .vp-track-container { gap: 24px; }
+    .vp-track { gap: 24px; }
+}
+
+/* ─── 768px: Mobile Landscape & Typography Lock ─── */
+@media (max-width: 768px) {
+    /* THE 48px LOCK: 
+       Overriding the original clamp() to ensure the heading never 
+       drops below 48px on mobile devices. 
+    */
+    .vp-header .results-h2 { 
+        font-size: 48px !important; 
+        line-height: 1.1;
+        letter-spacing: 0.02em; 
+    }
+    
+    /* Further compress the track spacing */
+    .vp-track-container { gap: 16px; }
+    .vp-track { gap: 16px; }
+    
+    /* Tighten the internal obsidian glass plate */
+    .vp-content { 
+        padding: 18px 20px; 
+        bottom: 20px; left: 20px; right: 20px; 
+    }
+    .vp-brand { font-size: 24px; }
+    .vp-category { font-size: 10px; }
+}
+
+/* ─── 480px: Small Phones (The Million-Dollar Fluid Engine) ─── */
+@media (max-width: 480px) {
+    .visual-proof-section { padding: 60px 0 80px; }
+    
+    /* THE EXPERT MOVE: Fluid Viewport Widths
+       Instead of a fixed width, we set it to 75vw (75% of the screen).
+       This guarantees the card is always smaller than the phone, 
+       allowing the user to see the next card entering the frame.
+    */
+    .vp-card {
+        width: 75vw !important; 
+        max-width: 280px; 
+        height: auto !important; 
+        aspect-ratio: 4 / 5; /* Maintains perfect framing without fixed heights */
+    }
+    
+    /* Micro-adjustments for the glass plate so text doesn't crush */
+    .vp-content { 
+        padding: 16px; 
+        bottom: 16px; left: 16px; right: 16px; 
+    }
+    .vp-brand { font-size: 22px; margin-bottom: 4px; }
+}
+
+/* ══════════════════════════════════════════════════════
+   TESTIMONIALS: INFINITE MARQUEE RESPONSIVE MATRIX
+   Desktop Base CSS remains 100% untouched.
+══════════════════════════════════════════════════════ */
+
+/* ─── 1024px: Tablets Landscape & Viewport Unlock ─── */
+@media (max-width: 1024px) {
+    /* Release the strict 100vh and 800px locks to prevent mobile crushing */
+    .testimonial-section {
+        height: auto !important;
+        min-height: auto !important;
+        padding: 100px 0;
+    }
+    /* Switch spacing from viewport-height (vh) to fixed pixels for stability */
+    .testi-header {
+        margin-bottom: 48px; 
+    }
+}
+
+/* ─── 768px: Portrait Tablets & Large Phones ─── */
+@media (max-width: 768px) {
+    .testimonial-section { padding: 80px 0; }
+    
+    .testi-h2 { font-size: 48px !important; line-height: 1.1; margin-bottom: 16px; }
+    .testi-stars { flex-wrap: wrap; text-align: center; justify-content: center; }
+    
+    /* THE EXPERT MOVE: Compress the edge fade masks 
+       Reduces the shadows from taking up too much of the small screen */
+    .testi-marquee-wrapper::before,
+    .testi-marquee-wrapper::after {
+        width: 15% !important; 
+    }
+    
+    /* Fluid Card Architecture: Forces cards to always be 75% of the screen width */
+    .testi-card {
+        width: clamp(280px, 75vw, 340px) !important;
+    }
+    
+    /* Tighten the gaps between cards */
+    .testi-track { gap: 16px; padding-left: 16px; }
+    .testi-marquee-wrapper { margin-bottom: 16px; }
+}
+
+/* ─── 480px: Small Phones ─── */
+@media (max-width: 480px) {
+    .testimonial-section { padding: 60px 0; }
+    .testi-h2 { font-size: 40px !important; }
+    
+    /* Adjust card heights to fit the narrower fluid width */
+    .tc-text { height: auto !important; min-height: 200px; padding: 20px; }
+    .tc-video { height: 220px !important; }
+    
+    /* Micro-Typography scaling to keep the review text from overflowing */
+    .tc-avatar { width: 36px; height: 36px; font-size: 16px; }
+    .tc-name { font-size: 14px; }
+    .tc-role { font-size: 10px; }
+    .tc-review { font-size: 13px; -webkit-line-clamp: 5; } /* Allows 1 extra line of text */
+    
+    /* Ultimate shadow compression for the smallest screens */
+    .testi-marquee-wrapper::before,
+    .testi-marquee-wrapper::after {
+        width: 10% !important; 
+    }
+}
+
+/* ══════════════════════════════════════════════════════
+   INTELLIGENCE HUB (BLOGS): RESPONSIVE MATRIX
+   Desktop Base CSS remains 100% untouched.
+══════════════════════════════════════════════════════ */
+
+/* ─── 1024px: Tablets (Layout Collapse) ─── */
+@media (max-width: 1024px) {
+    .premium-blogs-v2 { padding: 100px 0; }
+    
+    /* Safely stack the asymmetrical grid into a single column */
+    .pb2-grid { 
+        grid-template-columns: 1fr; 
+        gap: 64px; 
+    }
+    
+    /* Realign header controls for tablet */
+    .pb2-controls { 
+        flex-direction: column; 
+        gap: 24px; 
+        align-items: flex-start; 
+    }
+    
+    /* Aligning to flex-start looks more premium than right-aligning on stacked layouts */
+    .pb2-view-all { align-self: flex-start; }
+}
+
+/* ─── 768px: Mobile Landscape & Image Stacking ─── */
+@media (max-width: 768px) {
+    .premium-blogs-v2 { padding: 80px 0; }
+    
+    /* Lock the section heading to prevent viewport blowout */
+    .pb2-h2 { font-size: 48px !important; margin-bottom: 32px; }
+    
+    /* Featured Article Typography Scaling */
+    .pb2-feat-title { font-size: 32px; margin-bottom: 16px; }
+    .pb2-feat-desc { font-size: 15px; margin-bottom: 24px; max-width: 100%; }
+    
+    /* THE EXPERT MOVE: Sidebar Image Stacking
+       Convert the 180px side-by-side layout into a beautiful vertical stack
+    */
+    .pb2-side-item { 
+        grid-template-columns: 1fr; 
+        gap: 20px; 
+        padding-bottom: 32px;
+    }
+    
+    /* Force cinematic uncropped ratio for the new stacked mobile images */
+    .pb2-side-img-wrap { 
+        aspect-ratio: 16 / 9; 
+    }
+    .pb2-side-title { font-size: 20px; line-height: 1.3; }
+}
+
+/* ─── 480px: Small Phones & Swipeable Filters ─── */
+@media (max-width: 480px) {
+    .premium-blogs-v2 { padding: 60px 0; }
+    .pb2-h2 { font-size: 40px !important; }
+    
+    /* THE PREMIUM UX UPGRADE: Swipeable Filter Row
+       Prevents buttons from wrapping into an ugly block. 
+       Creates a sleek, hardware-accelerated horizontal scroll instead.
+    */
+    .pb2-filters {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        width: calc(100% + 40px); /* Bleeds to the edge of the screen */
+        margin-left: -20px;
+        padding: 0 20px 16px;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none; /* Firefox */
+    }
+    .pb2-filters::-webkit-scrollbar { display: none; } /* Safari/Chrome */
+    
+    /* Force buttons to maintain their shape while scrolling */
+    .pb2-filter { 
+        white-space: nowrap; 
+        flex-shrink: 0; 
+    }
+    
+    /* Final Mobile Typography Polish */
+    .pb2-feat-title { font-size: 28px; }
+    .pb2-side-title { font-size: 18px; }
+}
+
+/* ══════════════════════════════════════════════════════
+   CONTACT & FORM: HIGH-DENSITY RESPONSIVE MATRIX
+   Desktop Base CSS remains 100% untouched.
+══════════════════════════════════════════════════════ */
+
+/* ─── 1024px: Tablets (Macro Layout Collapse) ─── */
+@media (max-width: 1024px) {
+    .contact-section { padding: 100px 0; }
+    
+    /* Stack the main grid */
+    .contact-inner { grid-template-columns: 1fr; gap: 64px; }
+    
+    /* Center the copy and trust elements for a balanced stack */
+    .contact-copy { 
+        text-align: center; 
+        display: flex; 
+        flex-direction: column; 
+        align-items: center; 
+    }
+    .contact-lead { max-width: 600px; margin: 0 auto 40px; }
+    
+    /* Convert vertical trust list to a horizontal wrapping row */
+    .contact-trust { 
+        flex-direction: row; 
+        flex-wrap: wrap; 
+        justify-content: center; 
+        gap: 32px; 
+    }
+    .ct-item { 
+        flex-direction: column; /* Stack icon above text */
+        text-align: center; 
+        gap: 16px; 
+    }
+}
+
+/* ─── 768px: Mobile Landscape & Form Row Collapse ─── */
+@media (max-width: 768px) {
+    .contact-section { padding: 80px 0; }
+    .contact-h2 { font-size: 48px !important; margin-bottom: 24px; line-height: 1.1; }
+    
+    /* Center form headers */
+    .form-title { font-size: 36px; text-align: center; }
+    .form-subtitle { text-align: center; }
+    
+    /* Compress the glass card */
+    .contact-form-card { padding: 40px 32px; }
+    
+    /* Collapse the side-by-side text inputs */
+    .form-row-2 { grid-template-columns: 1fr; gap: 16px; }
+    .form-grid { gap: 16px; }
+}
+
+/* ─── 480px: Small Phones (The Million-Dollar Density Engine) ─── */
+@media (max-width: 480px) {
+    .contact-section { padding: 60px 0; }
+    .contact-h2 { font-size: 40px !important; }
+    
+    /* Maximize screen real estate for the form */
+    .contact-form-card { 
+        padding: 32px 20px; 
+        border-radius: 8px; /* Slightly sharper for edge-to-edge feel */
+    }
+    .form-title { font-size: 28px; margin-bottom: 6px; }
+    .form-subtitle { font-size: 13px; margin-bottom: 24px; }
+    
+    /* Tighten inputs to save vertical height */
+    .form-input, .form-textarea, .form-select {
+        padding: 14px 16px;
+        font-size: 14px;
+    }
+    .form-textarea { min-height: 100px; }
+    
+    /* THE EXPERT MOVE: The Checkbox Density Fix
+       Instead of stacking 6 checkboxes into a massive vertical list,
+       we convert them into a fluid, wrapping "pill" grid. 
+       This cuts the visual height of the checkboxes by 60%.
+    */
+    .form-checkgroup {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+    .form-check {
+        width: calc(50% - 4px); /* Keeps them 2-up perfectly */
+        padding: 12px 10px;
+        gap: 8px;
+    }
+    .form-check-label { font-size: 11.5px; }
+    .form-check input[type="checkbox"] { width: 16px; height: 16px; }
+    
+    /* Submit Button Compression */
+    .form-submit {
+        padding: 18px 24px;
+        font-size: 13px;
+        margin-top: 16px;
+    }
+}
+
+/* ══════════════════════════════════════════════════════
+   TEAM SECTION: RESPONSIVE MEDIA QUERIES ONLY
+   (Paste these at the very bottom of your stylesheet)
+══════════════════════════════════════════════════════ */
+
+/* ─── 1024px: Tablets (Layout Collapse) ─── */
+@media (max-width: 1024px) {
+    .team-section-light { padding: 100px 0; }
+    .tl-container { grid-template-columns: 1fr; gap: 48px; }
+    .tl-intro { text-align: center; max-width: 640px; margin: 0 auto; }
+    .tl-nav { justify-content: center; }
+    .tl-carousel-wrapper { -webkit-mask-image: none; mask-image: none; padding: 10px 0; margin: -10px 0; }
+}
+
+/* ─── 768px: Portrait Tablets & Large Phones ─── */
+@media (max-width: 768px) {
+    .team-section-light { padding: 80px 0; }
+    .tl-h2 { font-size: 48px !important; margin-bottom: 16px; line-height: 1.1; }
+    
+    .tl-card { 
+        width: 300px; 
+        height: auto !important; 
+        min-height: 520px; 
+    }
+    
+    .tl-img-box { 
+        height: 320px !important; 
+        min-height: 320px; 
+        flex-shrink: 0 !important; 
+    }
+    
+    .tl-desc {
+        max-height: 150px;
+        opacity: 1;
+        margin-top: 12px;
+        padding-top: 12px;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        transform: translateY(0);
+    }
+}
+
+/* ─── 480px: Small Phones (Fluid Carousel Cards) ─── */
+@media (max-width: 480px) {
+    .team-section-light { padding: 60px 0; }
+    .tl-h2 { font-size: 40px !important; }
+    
+    .tl-card { 
+        width: 80vw !important; 
+        max-width: 300px;
+        height: auto !important; 
+        min-height: 500px;
+    }
+    
+    .tl-img-box { height: 280px !important; min-height: 280px; }
+    .tl-info { padding: 20px; }
+    .tl-name { font-size: 24px; }
+}
+
+
+/* TESTIMONIALS */
+
+
+/* ==========================================================================
+   MILLION DOLLAR TESTIMONIALS: RESPONSIVE GAP MATRIX
+   (Paste this at the very bottom of your stylesheet)
+   ========================================================================== */
+
+/* ─── 768px: Tablets & Large Phones ─── */
+@media (max-width: 768px) {
+    /* 1. Compress the horizontal gap */
+    .testi-track { 
+        gap: 16px !important; 
+        padding-left: 16px !important; 
+    }
+    
+    /* 2. Compress the shadow safe-zones for smaller screens */
+    .testi-marquee-wrapper {
+        padding-top: 24px !important;
+        padding-bottom: 24px !important;
+        margin-bottom: 0 !important; /* Kills old legacy margins */
+    }
+
+    /* 3. The Mobile Gap Assassin: 
+       24px (bottom) + 24px (top) = 48px invisible space.
+       Pull up by -32px to create a perfect 16px vertical gap. */
+    .testi-marquee-wrapper + .testi-marquee-wrapper {
+        margin-top: -32px !important;
+    }
+}
+
+/* ─── 480px: Small Phones ─── */
+@media (max-width: 480px) {
+    /* 1. Squeeze the horizontal gap even tighter for maximum density */
+    .testi-track { 
+        gap: 12px !important; 
+        padding-left: 12px !important; 
+    }
+    
+    /* 2. The Micro-Screen Gap Assassin:
+       24px (bottom) + 24px (top) = 48px invisible space. 
+       Pull up by -36px for a flawless 12px vertical gap. */
+    .testi-marquee-wrapper + .testi-marquee-wrapper {
+        margin-top: -36px !important;
+    }
+}
+
+/* ══════════════════════════════════════════════════════
+   MOBILE FIX: CONTACT ITEMS SINGLE COLUMN STACK
+══════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+    /* 1. Force the container into a strict vertical column */
+    .contact-trust { 
+        flex-direction: column !important; 
+        align-items: center !important; 
+        gap: 48px !important; /* Premium breathing room between items */
+        width: 100%;
+    }
+    
+    /* 2. Center each individual item perfectly */
+    .ct-item { 
+        flex-direction: column !important; /* Keeps the icon stacked above the text */
+        text-align: center !important; 
+        width: 100%;
+        max-width: 320px; /* Optically traps the text so it doesn't span too wide */
+        gap: 16px !important; 
+    }
+    
+    /* 3. Micro-scale the icons for mobile elegance */
+    .ct-icon {
+        width: 56px !important;
+        height: 56px !important;
+    }
+    
+    .ct-icon svg {
+        width: 20px !important;
+        height: 20px !important;
+    }
+}
+
+
+/* ══════════════════════════════════════════════════════
+   MOBILE FIX: PREMIUM FOOTER CENTER ALIGNMENT
+══════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+    /* 1. Center the Brand Identity */
+    .footer-brand-col {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .footer-brand-col .brand-logo {
+        justify-content: center;
+    }
+    .footer-desc {
+        margin: 0 auto; /* Optically centers the restricted max-width paragraph */
+    }
+
+    /* 2. Center the Navigation Columns */
+    .footer-nav-col {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .footer-links {
+        align-items: center;
+    }
+
+    /* 3. Center the Corporate HQ Locations */
+    .footer-locations {
+        align-items: center;
+    }
+    .loc-item {
+        align-items: center;
+        text-align: center;
+    }
+
+    /* 4. Center the Bottom Baseline Elements */
+    .fb-legal {
+        justify-content: center;
+        flex-wrap: wrap; /* Ensures legal links don't break on tiny screens */
+    }
+    .fb-socials {
+        justify-content: center;
+    }
+
+    /* 5. THE MILLION DOLLAR POLISH: Center-Origin Hover Sweeps */
+    /* Forces the red line to expand outward from the middle to match the centered layout */
+    .footer-links a span::after,
+    .loc-link::after,
+    .wm-link::after {
+        transform-origin: center !important; 
+    }
+    .footer-links a:hover span::after,
+    .loc-link:hover::after,
+    .wm-link:hover::after {
+        transform-origin: center !important;
+    }
+}
