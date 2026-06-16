@@ -22,15 +22,83 @@ trustTags.forEach((tag, i) => {
 
 
 
-// 6. FORM SUCCESS TOGGLE
-document.getElementById('formSubmit').addEventListener('click', function() {
-    const btn = this;
-    btn.innerHTML = '<span>SENDING...</span>';
-    setTimeout(() => {
-        document.getElementById('contactForm').style.display = 'none';
-        document.getElementById('formSuccess').classList.add('show');
-    }, 1500);
-});
+/* ─── FORM SUCCESS TOGGLE & FORMSPREE INTEGRATION ─── */
+const contactForm = document.getElementById('contactForm');
+
+if (contactForm) {
+    contactForm.addEventListener('submit', async function(e) {
+        e.preventDefault(); // Prevents the page from jumping/reloading
+        
+        const btn = document.getElementById('formSubmit');
+        const originalBtnContent = btn.innerHTML;
+        
+        // UX: Kinetic loading state
+        btn.innerHTML = '<span>AUTHORIZING & SENDING...</span>';
+        btn.style.pointerEvents = 'none'; 
+        
+        // Gather all checked services into an array
+        const servicesChecked = [];
+        document.querySelectorAll('.form-check input[type="checkbox"]:checked').forEach(checkbox => {
+            servicesChecked.push(checkbox.value);
+        });
+
+        // Construct a highly structured, premium payload for the Formspree email
+        // Using numbers and caps forces Formspree to render a beautiful, ordered email
+        const payload = {
+            "=== 1. CLIENT PROFILE ===": "",
+            "01. Full Name": document.getElementById('cf-name').value.trim(),
+            "02. Business Email": document.getElementById('cf-email').value.trim(),
+            "03. Brand / Company": document.getElementById('cf-brand').value.trim(),
+            "04. Phone Number": document.getElementById('cf-phone').value.trim(),
+            
+            "=== 2. BUSINESS INTELLIGENCE ===": "",
+            "05. Monthly Amazon Revenue": document.getElementById('cf-revenue').value || "Not Disclosed",
+            "06. Primary Challenge": document.getElementById('cf-challenge').value || "Not Disclosed",
+            "07. Requested Services": servicesChecked.length > 0 ? servicesChecked.join(' | ') : "None Selected",
+            
+            "=== 3. STRATEGIC BRIEF ===": "",
+            "08. Brand Message / Notes": document.getElementById('cf-message').value.trim() || "No additional notes provided."
+        };
+
+        try {
+            // Asynchronous Fetch to Formspree endpoint
+            const response = await fetch("https://formspree.io/f/mykaoybq", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Accept": "application/json"
+                },
+                body: JSON.stringify(payload)
+            });
+
+            if (response.ok) {
+                // UX: Seamless transition to your existing success state
+                btn.innerHTML = '<span>SECURELY TRANSMITTED</span>';
+                setTimeout(() => {
+                    const successContainer = document.getElementById('formSuccess');
+                    contactForm.style.display = 'none';
+                    successContainer.classList.add('show');
+                }, 800);
+            } else {
+                // Formspree error handling
+                const data = await response.json();
+                if (Object.hasOwn(data, 'errors')) {
+                    alert(data.errors.map(error => error.message).join(", "));
+                } else {
+                    alert("There was a problem transmitting your audit request. Please try again.");
+                }
+                // Reset button state
+                btn.innerHTML = originalBtnContent;
+                btn.style.pointerEvents = 'auto';
+            }
+        } catch (error) {
+            // Network error handling
+            alert("Network error. Please check your connection and try again.");
+            btn.innerHTML = originalBtnContent;
+            btn.style.pointerEvents = 'auto';
+        }
+    });
+}
 
 // 7. REFINED MOUSE PARALLAX ENGINE (Contact Form Removed)
 // We removed '.contact-form-card' from this array so it no longer receives 3D math.
@@ -428,7 +496,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 /* ─── CALENDLY POPUP ─── */
 (function(){
-  const calUrl='https://calendly.com/mailhussainali00/30min?hide_event_type_details=1&background_color=0a0a0a&text_color=ffffff&primary_color=d9232d';
+  const calUrl='https://calendly.com/ecommdots/1hr?hide_event_type_details=1&background_color=0a0a0a&text_color=ffffff&primary_color=d9232d';
   const openCal=(e)=>{
     e.preventDefault();
     if(typeof Calendly!=='undefined'){

@@ -469,7 +469,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 /* ─── CALENDLY POPUP ─── */
 (function(){
-  const calUrl='https://calendly.com/mailhussainali00/30min?hide_event_type_details=1&background_color=0a0a0a&text_color=ffffff&primary_color=d9232d';
+  const calUrl='https://calendly.com/ecommdots/1hr?hide_event_type_details=1&background_color=0a0a0a&text_color=ffffff&primary_color=d9232d';
   const openCal=(e)=>{
     e.preventDefault();
     if(typeof Calendly!=='undefined'){
