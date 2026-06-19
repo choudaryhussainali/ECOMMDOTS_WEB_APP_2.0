@@ -418,3 +418,93 @@ if (contactForm) {
         }
     });
 }
+
+/* ════════════════════════════════════════════════════════════
+       08. CONCIERGE MODAL FORMSPREE ENGINE (ELITE PAYLOAD)
+       ════════════════════════════════════════════════════════════ */
+    const eliteContactForm = document.getElementById('eliteContactForm');
+    const conciergeSuccess = document.getElementById('conciergeSuccess');
+    
+    // Fallback query in case the ID wasn't applied directly to the button
+    const conciergeSubmitBtn = document.getElementById('conciergeSubmitBtn') || eliteContactForm?.querySelector('.form-submit-btn');
+
+    if (eliteContactForm) {
+        eliteContactForm.addEventListener('submit', async function(e) {
+            e.preventDefault(); // Prevents page reload
+            
+            const originalBtnContent = conciergeSubmitBtn.innerHTML;
+            
+            // UX: Kinetic loading state
+            conciergeSubmitBtn.innerHTML = '<span>TRANSMITTING...</span>';
+            conciergeSubmitBtn.style.pointerEvents = 'none';
+
+            // Constructing a premium, ordered JSON payload for Formspree
+            const payload = {
+                "=== 1. EXECUTIVE PROFILE ===": "",
+                "01. Full Name": document.getElementById('name').value.trim(),
+                "02. Work Email": document.getElementById('email').value.trim(),
+                "03. Brand / Company": document.getElementById('brand').value.trim(),
+                
+                "=== 2. STRATEGIC TARGET ===": "",
+                "04. Targeted Protocol": document.getElementById('serviceSubject').value || "General Audit Request",
+                "05. Monthly Revenue & Goals": document.getElementById('message').value.trim()
+            };
+
+            try {
+                const response = await fetch("https://formspree.io/f/mykaoybq", {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify(payload)
+                });
+
+                if (response.ok) {
+                    // Million-dollar cross-fade to success state
+                    eliteContactForm.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+                    eliteContactForm.style.opacity = '0';
+                    eliteContactForm.style.transform = 'translateY(-10px)';
+                    
+                    setTimeout(() => {
+                        eliteContactForm.style.display = 'none';
+                        if (conciergeSuccess) {
+                            conciergeSuccess.style.display = 'block';
+                            // Slight delay ensures the browser registers display:block before fading in
+                            setTimeout(() => conciergeSuccess.classList.add('show'), 50);
+                        }
+                    }, 400);
+
+                    this.reset(); 
+                    
+                    // Visually reset the custom glass select engine
+                    const selectText = document.getElementById('customSelectText');
+                    const hiddenInput = document.getElementById('serviceSubject');
+                    if (selectText) selectText.innerText = "General Audit Request";
+                    if (hiddenInput) hiddenInput.value = "General Audit Request";
+                    
+                    document.querySelectorAll('.custom-option').forEach(opt => opt.classList.remove('active'));
+                    const defaultOpt = document.querySelector('.custom-option[data-value="General Audit Request"]');
+                    if (defaultOpt) defaultOpt.classList.add('active');
+                    
+                    const targetGroup = document.getElementById('targetGroup');
+                    if (targetGroup) targetGroup.classList.remove('pulse-glow');
+
+                } else {
+                    const data = await response.json();
+                    let errorMsg = "Transmission failed. Please try again.";
+                    if (Object.hasOwn(data, 'errors')) {
+                        errorMsg = data.errors.map(err => err.message).join(", ");
+                    }
+                    alert(errorMsg);
+                    
+                    conciergeSubmitBtn.innerHTML = originalBtnContent;
+                    conciergeSubmitBtn.style.pointerEvents = 'auto';
+                }
+            } catch (error) {
+                alert("Network error. Please check your connection and try again.");
+                conciergeSubmitBtn.innerHTML = originalBtnContent;
+                conciergeSubmitBtn.style.pointerEvents = 'auto';
+            }
+        });
+    }

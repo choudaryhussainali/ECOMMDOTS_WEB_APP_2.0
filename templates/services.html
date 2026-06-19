@@ -1924,26 +1924,30 @@
                 <h2 style="font-family: var(--font-display); font-size: 38px; color: #ffffff; letter-spacing: 0.05em; line-height: 1; margin-top: 8px;">SECURE <span class="red">AUDIT.</span></h2>
             </div>
             
-            <form id="eliteContactForm" class="elite-form">
+            <form id="eliteContactForm" class="elite-form" action="https://formspree.io/f/mykaoybq" method="POST">
+                <!-- Professional Email Subject Line Injection -->
+                <input type="hidden" name="_subject" value="🚨 NEW ELITE AUDIT REQUEST — Ecommdots">
+                
                 <div class="form-row">
                     <div class="input-group">
-                        <input type="text" id="name" required placeholder=" ">
+                        <input type="text" id="name" name="Full Name" required placeholder=" ">
                         <label for="name">Full Name</label>
                     </div>
                     <div class="input-group">
-                        <input type="email" id="email" required placeholder=" ">
+                        <!-- Named 'email' specifically to trigger Formspree's native Reply-To feature -->
+                        <input type="email" id="email" name="email" required placeholder=" ">
                         <label for="email">Work Email</label>
                     </div>
                 </div>
 
                 <div class="input-group">
-                    <input type="text" id="brand" required placeholder=" ">
+                    <input type="text" id="brand" name="Brand/Company URL" required placeholder=" ">
                     <label for="brand">Brand / Company URL</label>
                 </div>
 
                 <!-- The Dual-Function Concierge Field -->
                 <div class="input-group target-group" id="targetGroup">
-                    <input type="hidden" id="serviceSubject" name="serviceSubject" value="General Audit Request">
+                    <input type="hidden" id="serviceSubject" name="Targeted Protocol" value="General Audit Request">
                     <div class="custom-select-trigger" id="customSelectTrigger">
                         <span id="customSelectText">General Audit Request</span>
                         <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
@@ -1952,27 +1956,34 @@
 
                     <div class="custom-select-options" id="customSelectOptions">
                         <div class="custom-option active" data-value="General Audit Request">General Audit Request</div>
-                        <div class="custom-option" data-value="Product Launch Strategy">Product Launch Strategy</div>
-                        <div class="custom-option" data-value="Product Research Analysis">Product Research Analysis</div>
-                        <div class="custom-option" data-value="Sourcing Logistics Solutions">Sourcing Logistics Solutions</div>
-                        <div class="custom-option" data-value="Listing Optimization Services">Listing Optimization Services</div>
-                        <div class="custom-option" data-value="Creative Design Solutions">Creative Design Solutions</div>
-                        <div class="custom-option" data-value="PPC Account Management">PPC Account Management</div>
-                        <div class="custom-option" data-value="Account Health Support">Account Health Support</div>
-                        <div class="custom-option" data-value="Multichannel Commerce Integration">Multichannel Integration</div>
+                        <div class="custom-option" data-value="Full Account Management">Full Account Management</div>
+                        <div class="custom-option" data-value="PPC & Advertising Audit">PPC & Advertising Audit</div>
+                        <div class="custom-option" data-value="Listing & SEO Optimization">Listing & SEO Optimization</div>
+                        <div class="custom-option" data-value="Creative Studio & A+">Creative Studio & A+</div>
+                        <div class="custom-option" data-value="Supply Chain & Sourcing">Supply Chain & Sourcing</div>
+                        <div class="custom-option" data-value="Account Reinstatement">Account Reinstatement</div>
                     </div>
                 </div>
 
                 <div class="input-group">
-                    <textarea id="message" rows="3" required placeholder=" "></textarea>
+                    <textarea id="message" name="Current Revenue & Goals" rows="3" required placeholder=" "></textarea>
                     <label for="message">Current Monthly Revenue & Goals</label>
                 </div>
 
-                <button type="submit" class="form-submit-btn">
-                    Book a Consulation
+                <button type="submit" class="form-submit-btn" id="conciergeSubmitBtn">
+                    <span>BOOK A CONSULTATION</span>
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                 </button>
             </form>
+
+            <!-- The Stealth Success UI (Hidden by default) -->
+            <div class="form-success" id="conciergeSuccess" style="display: none; padding: 40px 0; text-align: center;">
+                <div class="form-success-icon" style="margin: 0 auto 24px;">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                </div>
+                <h3 style="font-family: var(--font-display); font-size: 38px; color: #ffffff; letter-spacing: 0.05em; line-height: 1; margin-bottom: 16px;">PROTOCOL <span class="red">INITIALIZED.</span></h3>
+                <p style="font-size: 16px; color: rgba(255,255,255,0.7); line-height: 1.6;">Your executive audit request has been securely transmitted. A senior director will review your metrics and be in touch within 24 hours.</p>
+            </div>
         </div>
     </div>
 </div>
