@@ -228,10 +228,10 @@
       <!-- Visual stack (Untouched) -->
       <div class="about-visual reveal-right">
         <div class="av-main">
-          <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=900&q=80" alt="Ecommdots Strategy Team">
+          <img src="{{ url_for('static', filename='images/homepage/office.jpg') }}" alt="Ecommdots Strategy Team">
         </div>
         <div class="av-accent">
-          <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=700&q=80" alt="Data Analytics Session">
+          <img src="{{ url_for('static', filename='images/homepage/logo3.png') }}" alt="Data Analytics Session">
         </div>
         <div class="av-badge reveal-scale delay-3">
           <div class="av-badge-num">7</div>
@@ -703,12 +703,6 @@
       </div>
       <div class="reveal-left">
         <p class="team-sub">Our team is made up of former Amazon sellers, performance strategists, data analysts, creative specialists, and eCommerce operators. Every member brings hands-on marketplace experience, not just theory—people who understand what it actually takes to build, scale, and sustain profitable brands on Amazon and beyond.</p>
-        <div class="team-tabs">
-          <button class="tt-btn active" data-dept="all">All Team</button>
-          <button class="tt-btn" data-dept="leadership">Leadership</button>
-          <button class="tt-btn" data-dept="strategy">Strategy</button>
-          <button class="tt-btn" data-dept="creative">Creative</button>
-        </div>
       </div>
     </div>
 
@@ -723,7 +717,7 @@
       <!-- Saif Ur Rehman -->
       <div class="team-card reveal delay-1">
         <div class="tc-img-box">
-          <img src="Team/Saif Ur Rehman.jpg" alt="Saif Ur Rehman">
+          <img src="{{ url_for('static', filename='images/team/Saif-Ur-Rehman.jpg') }}" alt="Saif Ur Rehman">
           <div class="tc-overlay">
             <div class="tc-hover-content">
               <p class="tc-hover-bio">Visionary leader driving the company's growth, strategic direction, and client success across global eCommerce marketplaces.</p>
@@ -740,9 +734,9 @@
       </div>
 
       <!-- Muhammad Arslan -->
-      <div class="team-card reveal delay-2">
+      <!-- <div class="team-card reveal delay-2">
         <div class="tc-img-box">
-          <img src="Team/Muhammad Arslan.jpg" alt="Muhammad Arslan">
+          <img src="{{ url_for('static', filename='images/team/Muhammad-Arslan.jpg') }}" alt="Muhammad Arslan">
           <div class="tc-overlay">
             <div class="tc-hover-content">
               <p class="tc-hover-bio">Oversees daily operations, team coordination, and process optimization to ensure smooth, flawless business execution.</p>
@@ -756,12 +750,12 @@
           <div class="tc-name">Muhammad Arslan</div>
           <div class="tc-role">Chief Operating Officer</div>
         </div>
-      </div>
+      </div> -->
 
       <!-- Abdul Wahab -->
       <div class="team-card reveal delay-3">
         <div class="tc-img-box">
-          <img src="Team/Abdul Wahab.jpg" alt="Abdul Wahab">
+          <img src="{{ url_for('static', filename='images/team/Abdul-Wahab.jpg') }}" alt="Abdul Wahab">
           <div class="tc-overlay">
             <div class="tc-hover-content">
               <p class="tc-hover-bio">Leads branding initiatives and marketing campaigns focused on customer engagement, market dominance, and revenue growth.</p>
@@ -780,7 +774,7 @@
       <!-- Abdul Moeed -->
       <div class="team-card reveal delay-4">
         <div class="tc-img-box">
-          <img src="Team/Abdul Moeed.jpg" alt="Abdul Moeed">
+          <img src="{{ url_for('static', filename='images/team/Abdul-Moeed.jpg') }}" alt="Abdul Moeed">
           <div class="tc-overlay">
             <div class="tc-hover-content">
               <p class="tc-hover-bio">Specializes in Amazon brand management, catalog optimization, and scalable listing strategies designed for rapid marketplace growth.</p>
@@ -807,7 +801,7 @@
       <!-- Ahsan Zahid -->
       <div class="team-card reveal delay-1">
         <div class="tc-img-box">
-          <img src="Team/Ahsan Zahid.jpg" alt="Ahsan Zahid">
+          <img src="{{ url_for('static', filename='images/team/Ahsan-Zahid.jpg') }}" alt="Ahsan Zahid">
           <div class="tc-overlay">
             <div class="tc-hover-content">
               <p class="tc-hover-bio">Oversees global supplier sourcing, purchasing operations, and inventory coordination for highly streamlined fulfillment.</p>
@@ -826,7 +820,7 @@
       <!-- Ali Hassan -->
       <div class="team-card reveal delay-2">
         <div class="tc-img-box">
-          <img src="Team/Ali Hassan.jpg" alt="Ali Hassan">
+          <img src="{{ url_for('static', filename='images/team/Ali-Hassan.jpg') }}" alt="Ali Hassan">
           <div class="tc-overlay">
             <div class="tc-hover-content">
               <p class="tc-hover-bio">Identifies profitable product opportunities and develops sophisticated, data-driven strategies for successful product launches.</p>
@@ -845,7 +839,7 @@
       <!-- Muhammad Kabeer -->
       <div class="team-card reveal delay-3">
         <div class="tc-img-box">
-          <img src="Team/Muhammad Kabeer.jpg" alt="Muhammad Kabeer">
+          <img src="{{ url_for('static', filename='images/team/Muhammad-Kabeer.jpg') }}" alt="Muhammad Kabeer">
           <div class="tc-overlay">
             <div class="tc-hover-content">
               <p class="tc-hover-bio">Drives organic visibility through advanced SEO strategies, precise keyword optimization, and aggressive marketplace ranking improvements.</p>
@@ -864,7 +858,7 @@
       <!-- Abdullah Ahsan -->
       <div class="team-card reveal delay-4">
         <div class="tc-img-box">
-          <img src="Team/Abdullah Ahsaan.jpg" alt="Abdullah Ahsan">
+          <img src="{{ url_for('static', filename='images/team/Abdullah-Ahsan.jpg') }}" alt="Abdullah Ahsan">
           <div class="tc-overlay">
             <div class="tc-hover-content">
               <p class="tc-hover-bio">Handles critical account operations, daily performance monitoring, and comprehensive marketplace management to maintain business efficiency.</p>
@@ -883,7 +877,7 @@
       <!-- Saqib Tufail -->
       <div class="team-card reveal delay-1">
         <div class="tc-img-box">
-          <img src="Team/Saqib Tufail.jpg" alt="Saqib Tufail">
+          <img src="{{ url_for('static', filename='images/team/Saqib-Tufail.jpg') }}" alt="Saqib Tufail">
           <div class="tc-overlay">
             <div class="tc-hover-content">
               <p class="tc-hover-bio">Ensures account and product compliance with Amazon's strict policies while rapidly resolving regulatory and listing issues.</p>
@@ -902,7 +896,7 @@
       <!-- Aryan Khalid -->
       <div class="team-card reveal delay-2">
         <div class="tc-img-box">
-          <img src="Team/Aryan Khalid.jpg" alt="Aryan Khalid">
+          <img src="{{ url_for('static', filename='images/team/Aryan-Khalid.jpg') }}" alt="Aryan Khalid">
           <div class="tc-overlay">
             <div class="tc-hover-content">
               <p class="tc-hover-bio">Monitors vital seller account health metrics and implements proactive, defensive solutions to maintain flawless marketplace compliance.</p>
@@ -921,7 +915,7 @@
       <!-- Abid Saeed -->
       <div class="team-card reveal delay-3">
         <div class="tc-img-box">
-          <img src="Team/Abid Saeed.jpg" alt="Abid Saeed">
+          <img src="{{ url_for('static', filename='images/team/Abid-Saeed.jpg') }}" alt="Abid Saeed">
           <div class="tc-overlay">
             <div class="tc-hover-content">
               <p class="tc-hover-bio">Conducts in-depth market and competitor analysis, reverse-engineering the landscape to identify high-potential eCommerce opportunities.</p>
@@ -940,7 +934,7 @@
       <!-- Abdul Qayyum -->
       <div class="team-card reveal delay-4">
         <div class="tc-img-box">
-          <img src="Team/Abdul Qayyum.jpg" alt="Abdul Qayyum">
+          <img src="{{ url_for('static', filename='images/team/Abdul-Qayyum.jpg') }}" alt="Abdul Qayyum">
           <div class="tc-overlay">
             <div class="tc-hover-content">
               <p class="tc-hover-bio">Identifies and connects with potential elite clients through strategic outreach and business development initiatives to drive company growth.</p>
@@ -968,7 +962,7 @@
       <!-- Muhammad Farhan -->
       <div class="team-card reveal delay-1">
         <div class="tc-img-box">
-          <img src="Team/Muhammad Farhan.jpg" alt="Muhammad Farhan">
+          <img src="{{ url_for('static', filename='images/team/Muhammad-Farhan.jpg') }}" alt="Muhammad Farhan">
           <div class="tc-overlay">
             <div class="tc-hover-content">
               <p class="tc-hover-bio">Manages visual branding, overall creative direction, and high-converting multimedia content for top-tier eCommerce brands.</p>
@@ -987,7 +981,7 @@
       <!-- Abu Zar -->
       <div class="team-card reveal delay-2">
         <div class="tc-img-box">
-          <img src="Team/Abu Zar.jpg" alt="Abu Zar">
+          <img src="{{ url_for('static', filename='images/team/Abu-Zar.jpg') }}" alt="Abu Zar">
           <div class="tc-overlay">
             <div class="tc-hover-content">
               <p class="tc-hover-bio">Creates compelling visual assets, premium product creatives, and brand-focused designs engineered for digital marketplaces.</p>
@@ -1006,7 +1000,7 @@
       <!-- Ramish -->
       <div class="team-card reveal delay-3">
         <div class="tc-img-box">
-          <img src="Team/Ramish.jpg" alt="Ramish">
+          <img src="{{ url_for('static', filename='images/team/Ramish.jpg') }}" alt="Ramish">
           <div class="tc-overlay">
             <div class="tc-hover-content">
               <p class="tc-hover-bio">Designs engaging graphics and visual content tailored to aggressively strengthen product presentation and brand identity.</p>
@@ -1027,11 +1021,11 @@
     <div class="advisor-strip reveal" style="margin-top: 80px;">
       <span class="as-label">Advisory Board</span>
       <div class="as-avatars">
-        <div class="as-avatar"><img src="Team/Abdul Moeed.jpg" alt="Advisor"></div>
-        <div class="as-avatar"><img src="Team/Ahsan Zahid.jpg" alt="Advisor"></div>
-        <div class="as-avatar"><img src="Team/Ali Hassan.jpg" alt="Advisor"></div>
-        <div class="as-avatar"><img src="Team/Muhammad Kabeer.jpg" alt="Advisor"></div>
-        <div class="as-avatar"><img src="Team/Abdullah Ahsaan.jpg" alt="Advisor"></div>
+        <div class="as-avatar"><img src="{{ url_for('static', filename='images/team/Abdul-Moeed.jpg') }}" alt="Advisor"></div>
+        <div class="as-avatar"><img src="{{ url_for('static', filename='images/team/Ahsan-Zahid.jpg') }}" alt="Advisor"></div>
+        <div class="as-avatar"><img src="{{ url_for('static', filename='images/team/Ali-Hassan.jpg') }}" alt="Advisor"></div>
+        <div class="as-avatar"><img src="{{ url_for('static', filename='images/team/Muhammad-Kabeer.jpg') }}" alt="Advisor"></div>
+        <div class="as-avatar"><img src="{{ url_for('static', filename='images/team/Abdullah-Ahsan.jpg') }}" alt="Advisor"></div>
       </div>
       <p class="as-text"><strong>12 world-class advisors.</strong> Ex-Amazon executives, PE-backed brand operators, and digital marketing legends who guide our long-term strategy and client outcomes.</p>
     </div>
