@@ -117,52 +117,14 @@ color: #ffffff;
 
 /* ─── RESET ─── */
 /* ─── RESET ─── */
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;cursor:none!important;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;overflow-x:hidden;} /* Moved overflow here */
 body{font-family:var(--font-sans);line-height:1.6;color:var(--text-main);background:#fff;-webkit-font-smoothing:antialiased;} /* Removed overflow here */
 .container{width:90%;max-width:1400px;margin:0 auto;}
 a{text-decoration:none;color:inherit;}
 img{display:block;max-width:100%;}
 
-/* ─── ELITE CUSTOM CURSOR (MAX Z-INDEX) ─── */
-#cur-dot {
-    position: fixed;
-    width: 8px;
-    height: 8px;
-    background: var(--red);
-    border-radius: 50%;
-    pointer-events: none;
-    /* Elevated to guarantee it sits above all modals */
-    z-index: 9999999; 
-    transform: translate(-50%,-50%);
-    transition: width 0.16s ease, height 0.16s ease, background 0.16s ease, opacity 0.2s ease;
-}
 
-#cur-ring {
-    position: fixed;
-    width: 40px;
-    height: 40px;
-    border: 1.5px solid var(--red);
-    border-radius: 50%;
-    pointer-events: none;
-    /* One layer just below the dot, but above everything else */
-    z-index: 9999998; 
-    transform: translate(-50%,-50%);
-    transition: width 0.38s ease, height 0.38s ease, background 0.28s ease, opacity 0.2s ease;
-}
-
-#cur-dot.hov {
-    width: 11px;
-    height: 11px;
-    box-shadow: 0 0 12px 4px rgba(217,35,45,0.5);
-}
-
-#cur-ring.hov {
-    width: 64px;
-    height: 64px;
-    background: rgba(217,35,45,0.09);
-    box-shadow: 0 0 20px 3px rgba(217,35,45,0.3);
-}
 /* ─── FONT IMPORTS & VARIABLES ─── */
 @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;800;900&family=Bebas+Neue&display=swap');
 

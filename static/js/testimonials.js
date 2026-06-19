@@ -1,16 +1,4 @@
-/* ── CURSOR ── */
-(() => {
-  const dot = document.getElementById('cur-dot');
-  const ring = document.getElementById('cur-ring');
-  if(!dot||!ring) return;
-  let mx=0,my=0,rx=0,ry=0;
-  document.addEventListener('mousemove', e => { mx=e.clientX;my=e.clientY;dot.style.left=mx+'px';dot.style.top=my+'px'; });
-  const render = () => { rx+=(mx-rx)*.14;ry+=(my-ry)*.14;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(render); };
-  requestAnimationFrame(render);
-  const hov = 'a,button,.video-card,.review-card,.ro-platform,.portrait-card';
-  document.addEventListener('mouseover', e => { if(e.target.closest(hov)){dot.classList.add('hov');ring.classList.add('hov');} });
-  document.addEventListener('mouseout',  e => { if(e.target.closest(hov)){dot.classList.remove('hov');ring.classList.remove('hov');} });
-})();
+
 
 /* ════════════════════════════════════════════════════════════
    SOCIAL SIDEBAR TOGGLE ENGINE

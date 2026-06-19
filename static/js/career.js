@@ -104,37 +104,6 @@ async function saveEditForm() {
     closeEditForm();
 }
 
-/* ═══════════════════════════════════════════════════════════
-   3. UI & VISUAL INITIALIZERS (ISOLATED & DOM SAFE)
-═══════════════════════════════════════════════════════════ */
-function initCursor() {
-    const dot = document.getElementById('cur-dot');
-    const ring = document.getElementById('cur-ring');
-    if (!dot || !ring) return;
-
-    let mouseX = 0, mouseY = 0, ringX = 0, ringY = 0;
-    document.addEventListener('mousemove', e => {
-        mouseX = e.clientX; mouseY = e.clientY;
-        dot.style.left = mouseX + 'px'; dot.style.top = mouseY + 'px';
-    });
-
-    const render = () => {
-        ringX += (mouseX - ringX) * 0.15; 
-        ringY += (mouseY - ringY) * 0.15;
-        ring.style.left = ringX + 'px'; 
-        ring.style.top = ringY + 'px';
-        requestAnimationFrame(render);
-    };
-    requestAnimationFrame(render);
-
-    const HOV = 'a, button, .job-card, .benefit-card, .pillar-item';
-    document.addEventListener('mouseover', e => {
-        if (e.target.closest(HOV)) { dot.classList.add('hov'); ring.classList.add('hov'); }
-    });
-    document.addEventListener('mouseout', e => {
-        if (e.target.closest(HOV)) { dot.classList.remove('hov'); ring.classList.remove('hov'); }
-    });
-}
 
 
 
@@ -433,7 +402,6 @@ function closeEditForm() {
 document.addEventListener('DOMContentLoaded', async () => {
     
     // 1. Initialize Visuals instantly to ensure UI works
-    try { initCursor(); } catch(e) { console.error(e); }
     try { initSocialSidebar(); } catch(e) { console.error(e); }
     try { initScrollAnimations(); } catch(e) { console.error(e); }
     try { renderFaq(); } catch(e) { console.error(e); }

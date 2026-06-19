@@ -41,16 +41,6 @@ img { display: block; }
 @keyframes drawLine { from { width: 0; } to { width: 100%; } }
 @keyframes glowPulse { 0%, 100% { box-shadow: 0 0 20px rgba(230,0,0,0.3); } 50% { box-shadow: 0 0 60px rgba(230,0,0,0.7); } }
 
-/* ─── CURSOR ─── */
-@media (hover: hover) and (pointer: fine) {
-    *, *::before, *::after { cursor: none !important; }
-    #cur-dot { position: fixed; width: 8px; height: 8px; background: var(--red); border-radius: 50%; pointer-events: none; z-index: 9999999; transform: translate(-50%,-50%); transition: width 0.16s ease, height 0.16s ease; }
-    #cur-ring { position: fixed; width: 40px; height: 40px; border: 1.5px solid var(--red); border-radius: 50%; pointer-events: none; z-index: 9999998; transform: translate(-50%,-50%); transition: width 0.38s ease, height 0.38s ease; }
-    #cur-dot.hov { width: 11px; height: 11px; box-shadow: 0 0 12px 4px rgba(217,35,45,0.5); }
-    #cur-ring.hov { width: 64px; height: 64px; background: rgba(217,35,45,0.09); }
-}
-@media (hover: none), (pointer: coarse) { #cur-dot, #cur-ring { display: none !important; } }
-@media (max-width: 1024px) { *, *::before, *::after { cursor: auto !important; } #cur-dot, #cur-ring { display: none !important; } }
 
 /* ─── HEADER (STUDIO PLATINUM MONOLITH - PERMANENTLY PINNED) ─── */
 .main-header {

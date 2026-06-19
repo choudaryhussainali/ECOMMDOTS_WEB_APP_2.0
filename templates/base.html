@@ -13,8 +13,6 @@
 </head>
 <body>
 
-<div id="cur-dot"></div>
-<div id="cur-ring"></div>
 
 <div class="social-sidebar open" id="socialSidebar">
     <button class="toggle-btn" id="toggleBtn" aria-label="Toggle sidebar">
@@ -95,45 +93,45 @@
         </a>
         <ul class="nav-links">
             <li class="nav-has-dropdown">
-                <a href="services" class="nav-drop-trigger">
+                <a href="./#services" class="nav-drop-trigger">
                     Services 
                     <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" fill="none"><path d="M6 9l6 6 6-6"/></svg>
                 </a>
                 <div class="nav-dropdown">
                     <div class="nav-dropdown-inner mega-menu">
-                        <a href="services#product-launch-strategy" class="nav-drop-item">
+                        <a href="./services#product-launch-strategy" class="nav-drop-item">
                             <span class="nd-title">Product Launch Strategy</span>
                             <span class="nd-sub">End-to-end marketplace readiness</span>
                         </a>
-                        <a href="services#product-research-analysis" class="nav-drop-item">
+                        <a href="./services#product-research-analysis" class="nav-drop-item">
                             <span class="nd-title">Product Research Analysis</span>
                             <span class="nd-sub">Data-driven opportunity discovery</span>
                         </a>
-                        <a href="services#sourcing-logistics-solutions" class="nav-drop-item">
+                        <a href="./services#sourcing-logistics-solutions" class="nav-drop-item">
                             <span class="nd-title">Sourcing & Logistics</span>
                             <span class="nd-sub">Supply chain & global manufacturing</span>
                         </a>
-                        <a href="services#listing-optimization" class="nav-drop-item">
+                        <a href="./services#listing-optimization" class="nav-drop-item">
                             <span class="nd-title">Listing Optimization</span>
                             <span class="nd-sub">SEO & conversion rate refinement</span>
                         </a>
-                        <a href="services#creative-design-solutions" class="nav-drop-item">
+                        <a href="./services#creative-design-solutions" class="nav-drop-item">
                             <span class="nd-title">Creative Design</span>
                             <span class="nd-sub">High-converting visual assets</span>
                         </a>
-                        <a href="services#ppc-account-management" class="nav-drop-item">
+                        <a href="./services#ppc-account-management" class="nav-drop-item">
                             <span class="nd-title">PPC Management</span>
                             <span class="nd-sub">Strategic ad spend optimization</span>
                         </a>
-                        <a href="services#account-health-support" class="nav-drop-item">
+                        <a href="./services#account-health-support" class="nav-drop-item">
                             <span class="nd-title">Account Health Support</span>
                             <span class="nd-sub">Compliance & risk mitigation</span>
                         </a>
-                        <a href="services#multichannel-commerce-integration" class="nav-drop-item">
+                        <a href="./services#multichannel-commerce-integration" class="nav-drop-item">
                             <span class="nd-title">Multichannel Integration</span>
                             <span class="nd-sub">Unified ecommerce ecosystem</span>
                         </a>
-                        <a href="services" class="nav-drop-item">
+                        <a href="./services" class="nav-drop-item">
                             <span class="nd-title">All Services</span>
                             <span class="nd-sub">Bespoke 8-figure architectures</span>
                         </a>
@@ -142,33 +140,33 @@
             </li>
             <li><a href="./#brands">Brands</a></li>
             <li class="nav-has-dropdown">
-                <a href="about" class="nav-drop-trigger">
+                <a href="./about" class="nav-drop-trigger">
                     About 
                     <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" fill="none"><path d="M6 9l6 6 6-6"/></svg>
                 </a>
                 <div class="nav-dropdown">
                     <div class="nav-dropdown-inner">
-                        <a href="about#about" class="nav-drop-item">
+                        <a href="./about#about" class="nav-drop-item">
                             <span class="nd-title">Our Story</span>
                             <span class="nd-sub">About ECOMMDOTS</span>
                         </a>
-                        <a href="/about#mission" class="nav-drop-item">
+                        <a href="./about#mission" class="nav-drop-item">
                             <span class="nd-title">Core Philosophy</span>
                             <span class="nd-sub">Our mission & manifesto</span>
                         </a>
-                        <a href="/about#legacy" class="nav-drop-item">
+                        <a href="./about#legacy" class="nav-drop-item">
                             <span class="nd-title">Agency Genesis</span>
                             <span class="nd-sub">The legacy we're building</span>
                         </a>
-                        <a href="/about#team" class="nav-drop-item">
+                        <a href="./about#team" class="nav-drop-item">
                             <span class="nd-title">The Architects</span>
                             <span class="nd-sub">Leadership & strategy team</span>
                         </a>
                     </div>
                 </div>
             </li>
-            <li><a href="testimonials">Testimonials</a></li>
-            <li><a href="career">Career</a></li>
+            <li><a href="./testimonials">Testimonials</a></li>
+            <li><a href="./career">Career</a></li>
         </ul>
         <div class="nav-controls">
             <a href="#" class="btn-audit" id="desktopCalendlyBtn">BOOK FREE CONSULTATION</a>
@@ -365,28 +363,6 @@ document.addEventListener("DOMContentLoaded", () => {
         document.body.classList.add("site-ignited");
     }, 100);
 });
-
-/* ── ELITE CUSTOM CURSOR (Lerp Engine) ── */
-(() => {
-    const dot = document.getElementById('cur-dot');
-    const ring = document.getElementById('cur-ring');
-    if (!dot || !ring) return;
-    let mouseX = 0, mouseY = 0, ringX = 0, ringY = 0;
-    document.addEventListener('mousemove', e => {
-        mouseX = e.clientX; mouseY = e.clientY;
-        dot.style.left = mouseX + 'px'; dot.style.top = mouseY + 'px';
-    });
-    const renderCursor = () => {
-        ringX += (mouseX - ringX) * 0.14;
-        ringY += (mouseY - ringY) * 0.14;
-        ring.style.left = ringX + 'px'; ring.style.top = ringY + 'px';
-        requestAnimationFrame(renderCursor);
-    };
-    requestAnimationFrame(renderCursor);
-    const HOV = 'a, button, .blog-card, .topic-tag, .featured-visual, .sort-btn, .cat-btn';
-    document.addEventListener('mouseover', e => { if (e.target.closest(HOV)) { dot.classList.add('hov'); ring.classList.add('hov'); }});
-    document.addEventListener('mouseout', e => { if (e.target.closest(HOV)) { dot.classList.remove('hov'); ring.classList.remove('hov'); }});
-})();
 
 
 

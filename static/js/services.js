@@ -1,46 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    /* ════════════════════════════════════════════════════════════
-       01. ELITE CUSTOM CURSOR (120fps Lerp Engine)
-       ════════════════════════════════════════════════════════════ */
-    const initCursor = () => {
-        const dot = document.getElementById('cur-dot');
-        const ring = document.getElementById('cur-ring');
-        if(!dot || !ring) return;
-        
-        let mouseX = 0, mouseY = 0, ringX = 0, ringY = 0;
-        
-        // 1. Instantly track the real mouse position
-        document.addEventListener('mousemove', e => {
-            mouseX = e.clientX; 
-            mouseY = e.clientY;
-            dot.style.left = mouseX + 'px'; 
-            dot.style.top = mouseY + 'px';
-        });
-        
-        // 2. Mathematically drag the ring behind it (Linear Interpolation)
-        const renderCursor = () => {
-            ringX += (mouseX - ringX) * 0.15; // The trailing speed (lower = slower)
-            ringY += (mouseY - ringY) * 0.15;
-            ring.style.left = ringX + 'px'; 
-            ring.style.top = ringY + 'px';
-            requestAnimationFrame(renderCursor);
-        };
-        requestAnimationFrame(renderCursor);
-
-        // 3. Hover States for interactive elements
-        const HOV = 'a, button, .visual-box, .sub-card';
-        document.addEventListener('mouseover', e => { 
-            if(e.target.closest(HOV)){ dot.classList.add('hov'); ring.classList.add('hov'); }
-        });
-        document.addEventListener('mouseout', e => { 
-            if(e.target.closest(HOV)){ dot.classList.remove('hov'); ring.classList.remove('hov'); }
-        });
-    };
-    initCursor();
-
-
-
 
     /* ════════════════════════════════════════════════════════════
        04. PERFORMANCE OBSERVERS (Reveal, Sticky Nav, & Lux Cards)

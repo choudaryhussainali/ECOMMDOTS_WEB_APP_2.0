@@ -21,7 +21,7 @@
 }
 
 /* ─── RESET & BASE ─── */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; cursor: none !important; }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; cursor: default; }
 html { scroll-behavior: smooth; }
 body {
   font-family: var(--font-sans);
@@ -34,26 +34,6 @@ body {
 a { text-decoration: none; color: inherit; }
 img { display: block; max-width: 100%; }
 .container { width: 90%; max-width: 1400px; margin: 0 auto; }
-
-/* ─── CUSTOM CURSOR ─── */
-#cur-dot {
-  position: fixed; width: 8px; height: 8px;
-  background: #b43333; border-radius: 50%;
-  pointer-events: none; z-index: 99999;
-  transform: translate(-50%,-50%);
-  transition: width .16s ease, height .16s ease, background .16s ease;
-  box-shadow: 0 0 6px 2px rgba(220,38,38,.55);
-}
-#cur-ring {
-  position: fixed; width: 40px; height: 40px;
-  border: 1.5px solid #dc2626; border-radius: 50%;
-  pointer-events: none; z-index: 99998;
-  transform: translate(-50%,-50%);
-  box-shadow: 0 0 10px rgba(220,38,38,.4);
-  transition: width .38s cubic-bezier(.22,1,.36,1), height .38s cubic-bezier(.22,1,.36,1), background .28s ease;
-}
-#cur-dot.hov { width: 11px; height: 11px; background: #dc2626; box-shadow: 0 0 12px 4px rgba(220,38,38,.75); }
-#cur-ring.hov { width: 64px; height: 64px; background: rgba(220,38,38,.09); border-color: #ef4444; }
 
 /* ─── KEYFRAMES ─── */
 @keyframes fadeUp    { from { opacity:0; transform:translateY(50px) } to { opacity:1; transform:translateY(0) } }
