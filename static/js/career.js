@@ -7,7 +7,7 @@ const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBh
 // DECLARE AS NULL TO PREVENT FATAL CRASHES
 let supabaseClient = null; 
 
-const APPLY_FORM_DEFAULT = 'mailto:careers@ecommdots.com';
+const APPLY_FORM_DEFAULT = 'mailto:ecommdots@gmail.com';
 let jobs = [];
 let activeFilter = 'All';
 let editingJobId = null;
