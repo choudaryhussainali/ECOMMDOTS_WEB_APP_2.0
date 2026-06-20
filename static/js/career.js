@@ -180,6 +180,7 @@ function initFilters() {
 /* ═══════════════════════════════════════════════════════════
    4. RENDER SYSTEM (Dynamic Data)
 ═══════════════════════════════════════════════════════════ */
+/* REPLACE existing renderJobs() */
 function renderJobs() {
     const grid = document.getElementById('jobsGrid');
     if (!grid) return;
@@ -195,8 +196,15 @@ function renderJobs() {
         return;
     }
 
-    grid.innerHTML = visible.map((job, i) => `
-        <div class="job-card" style="animation-delay: ${i * 0.08}s;">
+    grid.innerHTML = visible.map((job, i) => {
+        // Million-Dollar Move: Create a foolproof plain-text preview for the grid
+        // We parse the markdown, put it in a dummy element, and extract raw text so the grid never breaks.
+        const tempDiv = document.createElement('div');
+        tempDiv.innerHTML = typeof marked !== 'undefined' ? marked.parse(job.desc || '') : (job.desc || '');
+        const plainTextPreview = tempDiv.textContent || tempDiv.innerText || "";
+
+        return `
+        <div class="job-card" style="animation-delay: ${i * 0.08}s;" onclick="openJobDetails('${job.id}')">
             <div class="job-card-top">
                 <span class="job-dept-badge">${job.dept}</span>
                 <span class="job-type-badge">${job.type}</span>
@@ -206,24 +214,71 @@ function renderJobs() {
                 <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
                 <span class="job-location">${job.location}</span>
             </div>
-            <div class="job-desc">${job.desc}</div>
+            <div class="job-desc">${plainTextPreview}</div>
             <div class="job-card-footer">
-                <a href="${job.applyLink}" target="_blank" rel="noopener noreferrer" class="btn-apply">
+                <a href="${job.applyLink}" target="_blank" rel="noopener noreferrer" class="btn-apply" onclick="event.stopPropagation()">
                     <span>APPLY NOW</span>
                     <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 </a>
                 <span class="job-date">Posted ${job.date}</span>
             </div>
         </div>
-    `).join('');
+        `;
+    }).join('');
 
-    // Trigger animations for dynamically loaded cards
     const cards = grid.querySelectorAll('.job-card');
     const obs = new IntersectionObserver((entries) => {
         entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
     }, { threshold: 0.1 });
     cards.forEach(c => obs.observe(c));
 }
+
+/* REPLACE existing openJobDetails() */
+function openJobDetails(id) {
+    const job = jobs.find(j => j.id === id);
+    if (!job) return;
+
+    document.getElementById('jobModalTitle').textContent = job.title;
+    document.getElementById('jobModalTags').innerHTML = `<span class="job-dept-badge">${job.dept}</span><span class="job-type-badge">${job.type}</span>`;
+    document.getElementById('jobModalLocation').textContent = job.location;
+    
+    // Million-Dollar Move: Compile Markdown to Rich HTML instantly
+    const richHTML = typeof marked !== 'undefined' ? marked.parse(job.desc || '') : job.desc.replace(/\n/g, '<br>');
+    document.getElementById('jobModalDesc').innerHTML = richHTML;
+    
+    document.getElementById('jobModalDate').textContent = `Posted ${job.date}`;
+    document.getElementById('jobModalApply').href = job.applyLink;
+
+    const overlay = document.getElementById('jobModalOverlay');
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden'; 
+}
+
+function closeJobDetails() {
+    const overlay = document.getElementById('jobModalOverlay');
+    if (overlay) {
+        overlay.classList.remove('open');
+        document.body.style.overflow = ''; // Unlock background scrolling
+    }
+}
+
+// Attach Event Listeners to DOM loaded state
+document.addEventListener('DOMContentLoaded', () => {
+    const modalOverlay = document.getElementById('jobModalOverlay');
+    const modalClose = document.getElementById('jobModalClose');
+    
+    if (modalClose) modalClose.addEventListener('click', closeJobDetails);
+    if (modalOverlay) modalOverlay.addEventListener('click', (e) => {
+        // Close modal if user clicks outside the panel
+        if (e.target === modalOverlay) closeJobDetails();
+    });
+    
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modalOverlay && modalOverlay.classList.contains('open')) {
+            closeJobDetails();
+        }
+    });
+});
 
 function renderAdminList() {
     const list = document.getElementById('adminJobList');

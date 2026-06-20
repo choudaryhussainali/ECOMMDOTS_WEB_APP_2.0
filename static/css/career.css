@@ -581,50 +581,113 @@ img { display: block; }
     padding-left: 24px;
 }
 
+/* ══════════════════════════════════════════════════════
+   HERO CTAs (STRUCTURALLY LOCKED & RESPONSIVE)
+══════════════════════════════════════════════════════ */
 .careers-hero-ctas {
     display: flex;
     gap: 16px;
     flex-wrap: wrap;
+    align-items: center; /* Locks vertical alignment */
 }
 
+/* 1. SHARED FOUNDATION: Guarantees 100% exact dimensions for both buttons */
+.btn-hero-primary,
+.btn-hero-outline {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 56px; /* Explicit height instead of padding fixes misalignment */
+    padding: 0 40px;
+    font-family: var(--font-sans);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    border-radius: 4px;
+    line-height: 1;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    text-align: center;
+    text-decoration: none;
+}
+
+/* 2. PRIMARY BUTTON SPECIFICS */
 .btn-hero-primary {
     background: var(--red);
     color: #fff;
-    padding: 16px 40px;
-    font-family: var(--font-sans);
-    font-size: 12px;
-    font-weight: 800;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    border-radius: 4px;
-    display: inline-flex;
-    align-items: center;
     gap: 10px;
-    transition: all 0.4s cubic-bezier(0.16,1,0.3,1);
     position: relative;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(217,35,45,0.3);
+    box-shadow: 0 10px 30px rgba(217, 35, 45, 0.3);
 }
-.btn-hero-primary::before { content: ''; position: absolute; inset: 0; background: var(--red-dark); transform: translateX(-101%); transition: transform 0.4s cubic-bezier(0.16,1,0.3,1); }
-.btn-hero-primary:hover::before { transform: translateX(0); }
-.btn-hero-primary:hover { transform: translateY(-3px); box-shadow: 0 16px 40px rgba(217,35,45,0.4); }
-.btn-hero-primary span { position: relative; z-index: 1; }
 
+.btn-hero-primary svg {
+    width: 16px;
+    height: 16px;
+    stroke-width: 2.5;
+    position: relative;
+    z-index: 1;
+}
+
+.btn-hero-primary span {
+    position: relative;
+    z-index: 1;
+}
+
+.btn-hero-primary::before { 
+    content: ''; 
+    position: absolute; 
+    inset: 0; 
+    background: var(--red-dark); 
+    transform: translateX(-101%); 
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); 
+}
+
+.btn-hero-primary:hover::before { transform: translateX(0); }
+.btn-hero-primary:hover { transform: translateY(-3px); box-shadow: 0 16px 40px rgba(217, 35, 45, 0.4); }
+
+/* 3. OUTLINE BUTTON SPECIFICS */
 .btn-hero-outline {
     background: transparent;
-    color: rgba(255,255,255,0.85);
-    padding: 16px 40px;
-    font-family: var(--font-sans);
-    font-size: 12px;
-    font-weight: 800;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    border-radius: 4px;
-    border: 1px solid rgba(255,255,255,0.2);
-    transition: all 0.4s cubic-bezier(0.16,1,0.3,1);
+    color: rgba(255, 255, 255, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
-.btn-hero-outline:hover { border-color: #fff; color: #fff; background: rgba(255,255,255,0.06); transform: translateY(-3px); }
 
+.btn-hero-outline:hover { 
+    border-color: #fff; 
+    color: #fff; 
+    background: rgba(255, 255, 255, 0.06); 
+    transform: translateY(-3px); 
+}
+
+/* ══════════════════════════════════════════════════════
+   MOBILE & TABLET BREAKPOINTS
+══════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+    /* Tablet: Shrink slightly but keep side-by-side */
+    .btn-hero-primary,
+    .btn-hero-outline {
+        height: 50px;
+        padding: 0 32px;
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Mobile: Stack them into sleek, full-width blocks */
+    .careers-hero-ctas {
+        flex-direction: column;
+        width: 100%;
+        gap: 12px;
+    }
+    
+    .btn-hero-primary,
+    .btn-hero-outline {
+        width: 100%; /* Force full width */
+        height: 52px;
+        padding: 0 20px;
+    }
+}
 /* Hero Visual: Stats Card */
 .careers-hero-visual {
     display: flex;
@@ -983,6 +1046,7 @@ img { display: block; }
     gap: 28px;
 }
 
+/* UPDATE THESE EXISTING CLASSES */
 .job-card {
     background: #fff;
     border: 1px solid rgba(0,0,0,0.08);
@@ -994,6 +1058,125 @@ img { display: block; }
     display: flex;
     flex-direction: column;
     opacity: 0;
+    cursor: pointer; /* Makes the whole card feel clickable */
+}
+
+.job-desc {
+    font-family: var(--font-sans);
+    font-size: 14.5px;
+    font-weight: 400;
+    color: #666;
+    line-height: 1.7;
+    flex: 1;
+    margin-bottom: 28px;
+    
+    /* ENFORCED HEIGHT & TRUNCATION */
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Limits description to 3 perfect lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* ADD THIS NEW BLOCK ANYWHERE IN CSS */
+/* ══════════════════════════════════════════════════════
+   JOB DETAIL MODAL (STEALTH GLASSMORPHISM)
+══════════════════════════════════════════════════════ */
+.job-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(5,5,5,0.85);
+    backdrop-filter: blur(8px);
+    z-index: 4500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+}
+.job-modal-overlay.open { opacity: 1; pointer-events: auto; }
+
+.job-modal-panel {
+    background: #fff;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 720px;
+    max-height: 90vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 50px 100px rgba(0,0,0,0.6);
+    position: relative;
+    transform: scale(0.95) translateY(20px);
+    transition: transform 0.4s cubic-bezier(0.16,1,0.3,1);
+}
+.job-modal-overlay.open .job-modal-panel { transform: scale(1) translateY(0); }
+.job-modal-panel::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; height: 3px;
+    background: var(--gradient-primary);
+    z-index: 10;
+}
+
+.job-modal-header {
+    padding: 40px 48px 24px;
+    position: relative;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+.job-modal-close {
+    position: absolute;
+    top: 24px; right: 24px;
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    background: #f5f5f5;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 5;
+}
+.job-modal-close:hover { background: rgba(217,35,45,0.1); }
+.job-modal-close svg { width: 18px; height: 18px; stroke: #333; fill: none; stroke-width: 2.5; transition: stroke 0.3s; }
+.job-modal-close:hover svg { stroke: var(--red); }
+
+.job-modal-title { font-family: var(--font-display); font-size: clamp(32px, 4vw, 48px); color: var(--charcoal); line-height: 0.95; margin-bottom: 16px; }
+.job-modal-tags { display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; }
+.job-modal-meta { display: flex; align-items: center; gap: 8px; font-family: var(--font-sans); font-size: 14px; color: #666; font-weight: 600; }
+.job-modal-meta svg { width: 16px; height: 16px; stroke: #aaa; fill: none; stroke-width: 2; }
+
+.job-modal-body {
+    padding: 32px 48px 40px;
+    overflow-y: auto;
+    flex: 1;
+    font-family: var(--font-sans);
+    font-size: 15.5px;
+    color: #444;
+    line-height: 1.8;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(217,35,45,0.3) transparent;
+}
+.job-modal-body::-webkit-scrollbar { width: 6px; }
+.job-modal-body::-webkit-scrollbar-thumb { background: rgba(217,35,45,0.3); border-radius: 3px; }
+
+.job-modal-footer {
+    padding: 24px 48px;
+    background: #fafafa;
+    border-top: 1px solid rgba(0,0,0,0.06);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .job-modal-header { padding: 32px 24px 20px; }
+    .job-modal-body { padding: 24px 24px 32px; }
+    .job-modal-footer { padding: 20px 24px; flex-direction: column; gap: 16px; text-align: center; }
+    .job-modal-close { top: 16px; right: 16px; }
 }
 .job-card.visible { animation: slideUp 0.6s cubic-bezier(0.16,1,0.3,1) forwards; }
 .job-card:nth-child(2).visible { animation-delay: 0.08s; }
@@ -1076,15 +1259,7 @@ img { display: block; }
     letter-spacing: 0.05em;
 }
 
-.job-desc {
-    font-family: var(--font-sans);
-    font-size: 14.5px;
-    font-weight: 400;
-    color: #666;
-    line-height: 1.7;
-    flex: 1;
-    margin-bottom: 28px;
-}
+
 
 .job-card-footer {
     display: flex;
@@ -1918,4 +2093,215 @@ select.form-control option { background: #111; color: #fff; }
     .careers-hero { padding-top: 130px; }
     .positions-filters { gap: 6px; }
     .admin-fab { bottom: 20px; right: 20px; width: 54px; height: 54px; }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ══════════════════════════════════════════════════════
+   PREMIUM MODAL TYPOGRAPHY (MARKDOWN SUPPORT)
+══════════════════════════════════════════════════════ */
+/* UPDATE: Switched to clean Sans-Serif and reduced font weights */
+.job-modal-body h1, 
+.job-modal-body h2, 
+.job-modal-body h3, 
+.job-modal-body h4 {
+    font-family: var(--font-sans);
+    color: var(--charcoal);
+    font-weight: 700; /* Crisp, controlled boldness */
+    margin: 1.5em 0 0.5em;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+}
+
+.job-modal-body h1 { 
+    font-size: 28px; 
+}
+
+.job-modal-body h2 { 
+    font-size: 22px; 
+    color: var(--red); 
+}
+
+.job-modal-body h3 { 
+    font-size: 18px; 
+    font-weight: 600; /* Lighter weight for sub-sections */
+    text-transform: uppercase; 
+    letter-spacing: 0.05em; 
+}
+
+.job-modal-body p {
+    margin-bottom: 1.25em;
+    color: #555;
+}
+
+.job-modal-body strong {
+    font-weight: 700; /* Toned down from 800 */
+    color: #111;
+}
+
+.job-modal-body em {
+    font-style: italic;
+    color: #777;
+}
+
+/* Custom Agency Bullet Points */
+.job-modal-body ul, 
+.job-modal-body ol {
+    margin: 0 0 1.5em 0;
+    padding-left: 24px;
+}
+
+.job-modal-body li {
+    margin-bottom: 0.6em;
+    position: relative;
+    color: #555;
+}
+
+.job-modal-body ul li {
+    list-style: none;
+}
+
+.job-modal-body ul li::before {
+    content: '';
+    position: absolute;
+    left: -20px;
+    top: 0.65em;
+    width: 6px;
+    height: 6px;
+    background: var(--red);
+    border-radius: 50%;
+    box-shadow: 0 0 8px rgba(217,35,45,0.3); /* Slightly softer glow */
+}
+
+/* Elegant Links */
+.job-modal-body a {
+    color: var(--red);
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(217, 35, 45, 0.3);
+    transition: all 0.3s ease;
+}
+
+.job-modal-body a:hover {
+    border-bottom-color: var(--red);
+    background: rgba(217, 35, 45, 0.05);
+}
+
+
+
+/* ══════════════════════════════════════════════════════
+   PREMIUM PAGE LOAD CHOREOGRAPHY (STAGGERED ENTRANCE)
+══════════════════════════════════════════════════════ */
+/* 1. Header slides down smoothly */
+@keyframes headerDrop {
+    from { opacity: 0; transform: translate(-50%, -30px); }
+    to { opacity: 1; transform: translate(-50%, 0); }
+}
+
+.main-header {
+    opacity: 0;
+    animation: headerDrop 1s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards;
+}
+
+/* 2. Hero Elements Cascade In */
+.careers-hero-eyebrow {
+    opacity: 0;
+    animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
+}
+
+.careers-hero-h1 {
+    opacity: 0;
+    animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.35s forwards;
+}
+
+.careers-hero-sub {
+    opacity: 0;
+    animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.5s forwards;
+}
+
+.careers-hero-ctas {
+    opacity: 0;
+    animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.65s forwards;
+}
+
+/* 3. Hero Visual Container fades in (Child card keeps its continuous float) */
+.careers-hero-visual {
+    opacity: 0;
+    animation: fadeUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.5s forwards;
+}
+
+
+
+/* ══════════════════════════════════════════════════════
+   PREMIUM MOBILE HERO ALIGNMENT 
+══════════════════════════════════════════════════════ */
+@media (max-width: 1024px) {
+    /* Stack the grid and enforce center alignment */
+    .careers-hero-inner { 
+        grid-template-columns: 1fr; 
+        gap: 64px; 
+        text-align: center; 
+    }
+
+    /* Force the eyebrow to sit in the exact center */
+    .careers-hero-eyebrow { 
+        width: 100%;
+        justify-content: center; 
+        margin-bottom: 24px; 
+    }
+
+    .careers-hero-h1 {
+        text-align: center;
+    }
+
+    /* Strip the desktop borders and perfectly center the subtext */
+    .careers-hero-sub { 
+        margin: 0 auto 40px; 
+        border-left: none; /* Removes desktop left border */
+        border-top: none; /* Removes previous top border hack */
+        padding: 0; 
+        text-align: center; 
+        max-width: 540px; /* Keeps line length readable */
+    }
+
+    .careers-hero-ctas { 
+        justify-content: center; 
+    }
+    
+    .careers-hero-visual { 
+        justify-content: center; 
+    }
+}
+
+@media (max-width: 480px) {
+    /* Tighter spacing for phone screens */
+    .careers-hero { 
+        padding-top: 120px; 
+        padding-bottom: 60px; 
+    }
+    
+    .careers-hero-inner { 
+        gap: 48px; 
+    }
+    
+    .careers-hero-h1 { 
+        margin-bottom: 20px; 
+    }
+    
+    .careers-hero-sub { 
+        font-size: 15px; /* Slightly scaled down for small screens */
+        line-height: 1.65;
+        margin-bottom: 32px; 
+        padding: 0 12px; /* Prevents text from touching the edge of the glass */
+    }
 }

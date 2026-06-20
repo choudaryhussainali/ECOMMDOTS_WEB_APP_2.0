@@ -661,6 +661,32 @@
     </div>
 </div>
 
+
+<div class="job-modal-overlay" id="jobModalOverlay">
+    <div class="job-modal-panel">
+        <div class="job-modal-header">
+            <button class="job-modal-close" id="jobModalClose" aria-label="Close modal">
+                <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
+            <div class="job-modal-tags" id="jobModalTags"></div>
+            <div class="job-modal-title" id="jobModalTitle"></div>
+            <div class="job-modal-meta">
+                <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                <span id="jobModalLocation"></span>
+            </div>
+        </div>
+        <div class="job-modal-body" id="jobModalDesc"></div>
+        <div class="job-modal-footer">
+            <span class="job-date" id="jobModalDate"></span>
+            <a href="#" target="_blank" rel="noopener noreferrer" class="btn-apply" id="jobModalApply">
+                <span>APPLY NOW</span>
+                <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+        </div>
+    </div>
+</div>
+
+
 <!-- ═══════════════ EDIT FORM OVERLAY ═══════════════ -->
 <div class="edit-form-overlay" id="editFormOverlay">
     <div class="edit-form-panel">
@@ -713,6 +739,11 @@
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
+
+<!-- Markdown Parser for LLM Copy-Paste Support -->
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+<script src="{{ url_for('static', filename='js/career.js') }}"></script>
 
 <script src="{{ url_for('static', filename='js/career.js') }}"></script>
 <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
