@@ -5295,3 +5295,87 @@ img.tc-avatar { object-fit: cover; border: 1px solid rgba(255,255,255,0.1); back
         transform-origin: center !important;
     }
 }
+
+
+/* ══════════════════════════════════════════════════════
+   MOBILE HERO UPGRADE: THE MILLION-DOLLAR CONTRAST FIX
+══════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+    /* 1. Typography Contrast & Elevation */
+    .hero-h1 {
+        color: #ffffff !important; /* Force pure white for maximum legibility */
+        /* Deep cinematic shadow to pull the text off the complex background */
+        text-shadow: 0 15px 40px rgba(0, 0, 0, 0.9), 0 2px 10px rgba(0, 0, 0, 0.6);
+        line-height: 1.05;
+        z-index: 3;
+    }
+
+    /* Keep the eyebrow text crisp and visible */
+    .hero-eyebrow .eyebrow-text {
+        color: #ffffff !important;
+        text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+    }
+
+    /* 2. Atmospheric Depth & Background Control */
+    .hero-section::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        /* A stealth gradient shield that darkens the bottom and center where the text sits */
+        background: linear-gradient(
+            to bottom, 
+            rgba(0, 0, 0, 0.1) 0%, 
+            rgba(0, 0, 0, 0.6) 40%, 
+            rgba(5, 5, 5, 0.95) 100%
+        );
+        z-index: 1; /* Sits directly above the image but below the content */
+        pointer-events: none;
+    }
+
+    /* Ensure all hero content stays above our new gradient shield */
+    .hero-content-wrapper {
+        position: relative;
+        z-index: 2;
+    }
+
+    /* 3. Refine the Glass Badges for better mobile breathing room */
+    .trust-badges-pill {
+        background: rgba(10, 10, 12, 0.7); /* Slightly darker glass for contrast */
+        border-color: rgba(255, 255, 255, 0.12);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+        margin-bottom: 40px; /* Increased padding to separate from the CTAs */
+    }
+
+    /* ══════════════════════════════════════════════════════
+       MOBILE HERO: RAZOR-SHARP SOLID RED (ZERO BLUR)
+    ══════════════════════════════════════════════════════ */
+    
+    /* 1. The Typing Effect: Solid & Sharp */
+    .hero-h1 .gradient-text {
+        /* Strip the gradient background and force a solid, high-contrast red */
+        background: none !important;
+        -webkit-text-fill-color: #FF1A26 !important; 
+        color: #FF1A26 !important;
+        
+        /* Kill all shadows, glows, and filters to guarantee crisp vector edges */
+        text-shadow: none !important; 
+        filter: none !important; 
+    }
+
+    /* 2. Sharp Eyebrow Line */
+    .eyebrow-line {
+        background-color: #FF1A26 !important; 
+        box-shadow: none !important; /* Remove any ambient blur */
+    }
+
+    /* 3. Sharp Live Dot */
+    .live-dot {
+        background-color: #FF1A26 !important;
+        box-shadow: none !important; /* Remove any ambient blur */
+    }
+    
+    .live-dot::after {
+        background-color: #FF1A26 !important;
+    }
+}
+
