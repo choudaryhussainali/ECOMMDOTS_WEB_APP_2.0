@@ -2038,6 +2038,10 @@ select.form-control option { background: #111; color: #fff; }
 .whatsapp-btn { background: #25D366; color: #fff; }
 .linkedin-btn { background: #0A66C2; color: #fff; }
 .youtube-btn { background: #FF0000; color: #fff; }
+.facebook-btn{
+    background: #1877F2;
+    color: #ffffff;
+}
 
 /* ══════════════════════════════════════════════════════
    RESPONSIVE
