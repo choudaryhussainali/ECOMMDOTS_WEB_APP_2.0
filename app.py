@@ -80,7 +80,30 @@ def rows_to_dicts(rows):
 # 1. PUBLIC ROUTES (FRONTEND)
 # ──────────────────────────────────────────────
 
+# ==========================================
+# MAIN AGENCY ROUTES
+# ==========================================
 @app.route('/')
+def home():
+    return render_template('index.html')
+
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
+@app.route('/services')
+def services():
+    return render_template('services.html')
+
+@app.route('/testimonials')
+def testimonials():
+    return render_template('testimonials.html')
+
+@app.route('/career')
+def career():
+    return render_template('career.html')
+
+@app.route('/blog')
 def blog_grid():
     """Homepage: first 10 articles + category counts."""
     try:
@@ -259,23 +282,23 @@ def admin_login():
     )
 
     return f'''<!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><title>CMS Login — Ecommdots</title></head>
-<body style="background:#0a0a0a;color:#fff;font-family:sans-serif;display:flex;justify-content:center;align-items:center;height:100vh;margin:0;">
-    <div style="background:#111;padding:40px;border-radius:8px;border:1px solid rgba(255,255,255,0.1);width:100%;max-width:350px;box-shadow:0 20px 40px rgba(0,0,0,0.5),0 0 40px rgba(217,35,45,0.1);">
-        <h2 style="margin-top:0;font-weight:800;letter-spacing:2px;">CMS <span style="color:#d9232d;">ECOMMDOTS</span></h2>
-        {flash_html}
-        <form method="post" style="display:flex;flex-direction:column;gap:15px;">
-            <input type="text" name="username" placeholder="Username" required
-                   style="background:#050505;border:1px solid #333;color:#fff;padding:12px;outline:none;border-radius:4px;">
-            <input type="password" name="password" placeholder="Password" required
-                   style="background:#050505;border:1px solid #333;color:#fff;padding:12px;outline:none;border-radius:4px;">
-            <button type="submit"
-                    style="background:#d9232d;color:#fff;border:none;padding:14px;font-weight:bold;letter-spacing:1px;cursor:pointer;margin-top:10px;border-radius:4px;">
-                LOGIN
-            </button>
-        </form>
-    </div>
-</body></html>'''
+    <html lang="en"><head><meta charset="UTF-8"><title>CMS Login — Ecommdots</title></head>
+    <body style="background:#0a0a0a;color:#fff;font-family:sans-serif;display:flex;justify-content:center;align-items:center;height:100vh;margin:0;">
+        <div style="background:#111;padding:40px;border-radius:8px;border:1px solid rgba(255,255,255,0.1);width:100%;max-width:350px;box-shadow:0 20px 40px rgba(0,0,0,0.5),0 0 40px rgba(217,35,45,0.1);">
+            <h2 style="margin-top:0;font-weight:800;letter-spacing:2px;">CMS <span style="color:#d9232d;">ECOMMDOTS</span></h2>
+            {flash_html}
+            <form method="post" style="display:flex;flex-direction:column;gap:15px;">
+                <input type="text" name="username" placeholder="Username" required
+                    style="background:#050505;border:1px solid #333;color:#fff;padding:12px;outline:none;border-radius:4px;">
+                <input type="password" name="password" placeholder="Password" required
+                    style="background:#050505;border:1px solid #333;color:#fff;padding:12px;outline:none;border-radius:4px;">
+                <button type="submit"
+                        style="background:#d9232d;color:#fff;border:none;padding:14px;font-weight:bold;letter-spacing:1px;cursor:pointer;margin-top:10px;border-radius:4px;">
+                    LOGIN
+                </button>
+            </form>
+        </div>
+    </body></html>'''
 
 
 @app.route('/admin', methods=['GET', 'POST'])
