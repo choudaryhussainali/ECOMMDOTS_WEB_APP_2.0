@@ -1,0 +1,30 @@
+# ── Environment secrets — NEVER commit these ──
+.env
+*.env
+
+# ── Old SQLite database — not needed in production ──
+*.db
+*.sqlite
+*.sqlite3
+
+# ── Python cache ──
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+
+# ── Virtual environments ──
+venv/
+.venv/
+env/
+
+# ── OS files ──
+.DS_Store
+Thumbs.db
+
+# ── IDE files ──
+.vscode/
+.idea/
+
+# ── Vercel build output ──
+.vercel/
