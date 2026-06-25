@@ -1,0 +1,181 @@
+/* ══════════════════════════════════════════════════════════════════════
+   LUX 3D SIGNATURE HEADINGS — three distinct premium load sequences
+   for the Services, Brands, and Contact section headlines.
+   Additive only. Namespaced under .lux-3d-* to avoid any collision
+   with .lux-reveal / .lux-mask-reveal or any existing class.
+   ══════════════════════════════════════════════════════════════════════ */
+
+/* ─────────────────────────────────────────────────────────────────────
+   EFFECT 1 — SERVICES HEADING: "3D LETTER ASSEMBLY"
+   Each character tumbles in from behind the viewer along the Z-axis,
+   rotating into place with a slight overshoot settle, left to right.
+   Reads as: engineered, precise, structural. Fits "ONE SYSTEM."
+   ───────────────────────────────────────────────────────────────────── */
+
+.lux-3d-assembly {
+    perspective: 1400px;
+}
+
+/* Groups the letters of one word so the browser can only wrap lines
+   between words, never inside one — prevents the heading from
+   breaking mid-word once each letter becomes its own inline-block. */
+.lux-3d-word {
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.lux-3d-letter {
+    display: inline-block;
+    opacity: 0;
+    transform: translateZ(-260px) translateY(50px) rotateX(-75deg);
+    transform-origin: 50% 100%;
+    will-change: transform, opacity;
+}
+
+.lux-3d-assembly.lux-in .lux-3d-letter {
+    opacity: 1;
+    transform: translateZ(0) translateY(0) rotateX(0deg);
+    transition:
+        transform 0.85s cubic-bezier(0.22, 1, 0.36, 1) calc(var(--lux-i, 0) * 0.035s),
+        opacity 0.5s ease calc(var(--lux-i, 0) * 0.035s);
+}
+
+/* A soft ground-contact shadow that fades in just after each letter lands,
+   reinforcing the sense that the letters are physically settling. */
+.lux-3d-assembly .lux-3d-line {
+    display: block;
+}
+
+
+/* ─────────────────────────────────────────────────────────────────────
+   EFFECT 2 — BRANDS HEADING: "3D SLAB RISE WITH RIM-LIGHT SWEEP"
+   The whole heading rises out of a horizontal plane (as if a slab is
+   tilting up out of the floor toward the viewer), settling flat, then
+   a single light sweep crosses it once it locks into place.
+   Reads as: cinematic, dark-stage, monumental. Fits a brand showcase.
+   ───────────────────────────────────────────────────────────────────── */
+
+.lux-3d-slab-wrap {
+    perspective: 1600px;
+    overflow: visible;
+}
+
+.lux-3d-slab {
+    display: inline-block;
+    opacity: 0;
+    transform: rotateX(82deg) translateY(70px) scale(0.92);
+    transform-origin: 50% 100%;
+    position: relative;
+    will-change: transform, opacity;
+}
+
+.lux-3d-slab-wrap.lux-in .lux-3d-slab {
+    opacity: 1;
+    transform: rotateX(0deg) translateY(0) scale(1);
+    transition:
+        transform 1.15s cubic-bezier(0.16, 1, 0.3, 1),
+        opacity 0.7s ease;
+}
+
+/* Rim-light sweep — a thin diagonal red-white highlight that crosses
+   the heading once after it has finished rising into place. */
+.lux-3d-slab::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -30%;
+    width: 22%;
+    height: 100%;
+    background: linear-gradient(
+        100deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(230, 0, 0, 0.55) 45%,
+        rgba(255, 255, 255, 0.85) 50%,
+        rgba(230, 0, 0, 0.55) 55%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    transform: skewX(-18deg);
+    pointer-events: none;
+    opacity: 0;
+    mix-blend-mode: screen;
+}
+
+.lux-3d-slab-wrap.lux-in .lux-3d-slab::after {
+    animation: luxSlabSweep 1.1s cubic-bezier(0.45, 0, 0.55, 1) 0.95s 1;
+}
+
+@keyframes luxSlabSweep {
+    0%   { left: -30%; opacity: 0; }
+    12%  { opacity: 1; }
+    88%  { opacity: 1; }
+    100% { left: 115%; opacity: 0; }
+}
+
+
+/* ─────────────────────────────────────────────────────────────────────
+   EFFECT 3 — CONTACT HEADING: "3D DEPTH-LAYERED FOCUS PULL"
+   Each line of the heading starts at a different depth/distance and
+   blur, drifting and converging into one sharp focal plane — like a
+   camera pulling focus. Reads as: cinematic, emotional, "the moment."
+   ───────────────────────────────────────────────────────────────────── */
+
+.lux-3d-focus-wrap {
+    perspective: 1800px;
+}
+
+.lux-3d-focus-line {
+    display: block;
+    opacity: 0;
+    filter: blur(16px);
+    will-change: transform, opacity, filter;
+}
+
+/* Each line gets its own starting depth/offset via inline custom
+   properties (--lz, --lx) set directly on the element — see the HTML
+   integration step. This lets three lines converge from genuinely
+   different directions instead of repeating the same motion. */
+.lux-3d-focus-line {
+    transform: translateZ(var(--lz, -180px)) translateX(var(--lx, 0px)) scale(1.18);
+}
+
+.lux-3d-focus-wrap.lux-in .lux-3d-focus-line {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateZ(0) translateX(0) scale(1);
+    transition:
+        transform 1.05s cubic-bezier(0.16, 1, 0.3, 1) calc(var(--lux-i, 0) * 0.16s),
+        opacity 0.8s ease calc(var(--lux-i, 0) * 0.16s),
+        filter 1.05s ease calc(var(--lux-i, 0) * 0.16s);
+}
+
+
+/* ═══════════════════ ACCESSIBILITY: REDUCED MOTION ═══════════════════ */
+@media (prefers-reduced-motion: reduce) {
+    .lux-3d-letter,
+    .lux-3d-slab,
+    .lux-3d-focus-line {
+        transition: none !important;
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+        filter: none !important;
+    }
+    .lux-3d-slab::after {
+        display: none !important;
+    }
+}
+
+/* ═══════════════════ MOBILE: REDUCED DEPTH, SHORTER TRAVEL ═══════════════════ */
+@media (max-width: 768px) {
+    .lux-3d-assembly { perspective: 900px; }
+    .lux-3d-letter { transform: translateZ(-120px) translateY(28px) rotateX(-55deg); }
+
+    .lux-3d-slab-wrap { perspective: 1000px; }
+    .lux-3d-slab { transform: rotateX(60deg) translateY(40px) scale(0.95); }
+
+    .lux-3d-focus-wrap { perspective: 1000px; }
+    .lux-3d-focus-line {
+        filter: blur(8px);
+        transform: translateZ(calc(var(--lz, -180px) * 0.4)) translateX(calc(var(--lx, 0px) * 0.4)) scale(1.08);
+    }
+}

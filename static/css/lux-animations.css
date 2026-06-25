@@ -1,0 +1,231 @@
+/* ══════════════════════════════════════════════════════════════════════
+   LUXURY MOTION SYSTEM — Premium scroll & micro-interaction layer
+   Additive only. Does not modify any existing rule.
+   ══════════════════════════════════════════════════════════════════════ */
+
+/* ─── 1. BASE STATE: elements start hidden, JS flips them to .lux-in ─── */
+/* Using :not(.lux-in) keeps elements visible-by-default if JS fails to load,
+   so the page never breaks if JavaScript errors out for any reason. */
+
+.lux-reveal,
+.lux-reveal-up,
+.lux-reveal-left,
+.lux-reveal-right,
+.lux-blur-reveal,
+.lux-scale-reveal,
+.lux-mask-reveal {
+    opacity: 0;
+}
+
+.lux-reveal-up      { transform: translateY(42px); }
+.lux-reveal-left    { transform: translateX(-48px); }
+.lux-reveal-right   { transform: translateX(48px); }
+.lux-blur-reveal     { filter: blur(14px); transform: translateY(20px); }
+.lux-scale-reveal    { transform: scale(0.92); }
+
+.lux-mask-reveal {
+    overflow: hidden;
+}
+.lux-mask-reveal .lux-mask-inner {
+    display: block;
+    transform: translateY(110%);
+    will-change: transform;
+}
+
+/* The "in" state — applied by JS via IntersectionObserver */
+.lux-reveal.lux-in,
+.lux-reveal-up.lux-in,
+.lux-reveal-left.lux-in,
+.lux-reveal-right.lux-in,
+.lux-blur-reveal.lux-in,
+.lux-scale-reveal.lux-in,
+.lux-mask-reveal.lux-in {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+    filter: blur(0);
+    transition:
+        opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1) var(--lux-delay, 0s),
+        transform 0.9s cubic-bezier(0.16, 1, 0.3, 1) var(--lux-delay, 0s),
+        filter 1s ease var(--lux-delay, 0s);
+}
+
+.lux-mask-reveal.lux-in .lux-mask-inner {
+    transform: translateY(0);
+    transition: transform 0.85s cubic-bezier(0.16, 1, 0.3, 1) var(--lux-delay, 0s);
+}
+
+/* ─── 2. STAGGER GROUPS — children fan out using --lux-i index ─── */
+.lux-stagger > * {
+    opacity: 0;
+    transform: translateY(36px);
+}
+.lux-stagger.lux-in > * {
+    opacity: 1;
+    transform: translateY(0);
+    transition:
+        opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1) calc(var(--lux-i, 0) * 0.09s),
+        transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) calc(var(--lux-i, 0) * 0.09s);
+}
+
+/* ─── 3. WORD-BY-WORD HEADLINE REVEAL ─── */
+.lux-word-reveal {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: top;
+}
+.lux-word-reveal .lux-word-inner {
+    display: inline-block;
+    transform: translateY(115%) rotate(2deg);
+    will-change: transform;
+}
+.lux-word-reveal.lux-in .lux-word-inner {
+    transform: translateY(0) rotate(0deg);
+    transition: transform 0.75s cubic-bezier(0.16, 1, 0.3, 1) calc(var(--lux-i, 0) * 0.07s);
+}
+
+/* ─── 4. NUMBER / STAT POP (for non-counter numeric displays) ─── */
+.lux-num-pop {
+    opacity: 0;
+    transform: translateY(16px) scale(0.85);
+}
+.lux-num-pop.lux-in {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1) var(--lux-delay, 0s),
+                transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) var(--lux-delay, 0s);
+}
+
+/* ─── 5. IMAGE REVEAL — soft cinematic clip + scale settle ─── */
+.lux-img-reveal {
+    overflow: hidden;
+}
+.lux-img-reveal img,
+.lux-img-reveal .lux-img-target {
+    transform: scale(1.12);
+    filter: saturate(0.9);
+    transition: transform 1.4s cubic-bezier(0.16, 1, 0.3, 1) var(--lux-delay, 0s),
+                filter 1.4s ease var(--lux-delay, 0s);
+}
+.lux-img-reveal.lux-in img,
+.lux-img-reveal.lux-in .lux-img-target {
+    transform: scale(1);
+    filter: saturate(1);
+}
+
+/* ─── 6. FLOATING DECORATIVE MOTION (continuous, subtle) ─── */
+@keyframes luxFloat {
+    0%, 100% { transform: translateY(0) translateX(0); }
+    50%      { transform: translateY(-10px) translateX(3px); }
+}
+.lux-float {
+    animation: luxFloat 7s ease-in-out infinite;
+}
+.lux-float-slow {
+    animation: luxFloat 11s ease-in-out infinite;
+}
+
+/* ─── 7. BACKGROUND BREATHING (very subtle ambient glow pulse) ─── */
+@keyframes luxBreathe {
+    0%, 100% { opacity: 0.5; transform: scale(1); }
+    50%      { opacity: 0.85; transform: scale(1.04); }
+}
+.lux-breathe {
+    animation: luxBreathe 8s ease-in-out infinite;
+}
+
+/* ─── 8. MAGNETIC BUTTON HOVER (uses inline transform from JS, this just eases it) ─── */
+.lux-magnetic {
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ─── 9. PREMIUM SHINE SWEEP — a soft diagonal light pass on hover ─── */
+.lux-shine {
+    position: relative;
+    overflow: hidden;
+}
+.lux-shine::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -60%;
+    width: 40%;
+    height: 100%;
+    background: linear-gradient(
+        115deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.35) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    transform: skewX(-20deg);
+    pointer-events: none;
+    transition: left 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.lux-shine:hover::after {
+    left: 130%;
+}
+
+/* ─── 10. GRADIENT SHIMMER TEXT SWEEP (reuses existing var(--red)) ─── */
+.lux-shimmer-sweep {
+    background-image: linear-gradient(
+        100deg,
+        rgba(255, 255, 255, 0) 30%,
+        rgba(255, 255, 255, 0.55) 48%,
+        rgba(255, 255, 255, 0) 66%
+    );
+    background-size: 200% 100%;
+    background-repeat: no-repeat;
+    background-position: -150% 0;
+}
+.lux-shimmer-sweep.lux-in {
+    animation: luxShimmerSweep 1.6s ease 0.3s 1;
+}
+@keyframes luxShimmerSweep {
+    to { background-position: 150% 0; }
+}
+
+/* ─── 11. SOFT 3D TILT (pointer-driven, applied via inline transform from JS) ─── */
+.lux-tilt {
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    transform-style: preserve-3d;
+}
+
+/* ═══════════════════ ACCESSIBILITY: REDUCED MOTION ═══════════════════ */
+@media (prefers-reduced-motion: reduce) {
+    .lux-reveal,
+    .lux-reveal-up,
+    .lux-reveal-left,
+    .lux-reveal-right,
+    .lux-blur-reveal,
+    .lux-scale-reveal,
+    .lux-mask-reveal .lux-mask-inner,
+    .lux-stagger > *,
+    .lux-word-reveal .lux-word-inner,
+    .lux-num-pop,
+    .lux-img-reveal img,
+    .lux-img-reveal .lux-img-target {
+        transition: none !important;
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+        filter: none !important;
+    }
+    .lux-float,
+    .lux-float-slow,
+    .lux-breathe,
+    .lux-shimmer-sweep.lux-in {
+        animation: none !important;
+    }
+    .lux-shine::after {
+        display: none;
+    }
+}
+
+/* ═══════════════════ MOBILE: SOFTER, SHORTER TRAVEL ═══════════════════ */
+@media (max-width: 768px) {
+    .lux-reveal-up      { transform: translateY(24px); }
+    .lux-reveal-left    { transform: translateX(-24px); }
+    .lux-reveal-right   { transform: translateX(24px); }
+    .lux-blur-reveal     { filter: blur(8px); transform: translateY(14px); }
+    .lux-stagger > *     { transform: translateY(20px); }
+    .lux-float, .lux-float-slow { animation-duration: 9s; }
+}
