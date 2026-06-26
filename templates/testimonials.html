@@ -494,153 +494,18 @@
       <p style="color:#666;">Authentic, verified feedback from brand owners and operators across multiple platforms. Real experiences from clients who partnered with Ecommdots to scale their Amazon and eCommerce businesses through structured execution and measurable growth.</p>
     </div>
 
-    <div class="reviews-mosaic">
-
-      <!-- Card 1 — Featured Dark -->
-      <div class="review-card featured reveal del-1">
-        <div class="rv-header">
-          <div class="rv-stars">
-            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          </div>
-          <span class="rv-platform-badge badge-direct">Direct</span>
-        </div>
-        <span class="rv-quote">"</span>
-        <div class="rv-text">Saif Is Fantastic! He went above and beyond what was necessary. Very high level of expertise in ecommerce. Highly recommended!!!</div>
-        <div class="rv-author">
-          <img class="rv-avatar" src="  {{ url_for('static', filename='images/testimonials/1.jpg') }}" alt="Adrian J.">
-          <div>
-            <div class="rv-name">Adrian J.</div>
-            <div class="rv-role">Co-Founder · UNO Brands</div>
-            <div class="rv-date">Verified · Upwork</div>
-          </div>
-        </div>
+    <!-- ════ MAIN PAGE REVIEWS GRID ════ -->
+      <div class="reviews-mosaic" id="dynamicReviewsGrid">
+        <!-- Dynamic Supabase Reviews Will Inject Here -->
       </div>
 
-      <!-- Card 2 -->
-      <div class="review-card reveal del-2">
-        <div class="rv-header">
-          <div class="rv-stars">
-            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          </div>
-          <span class="rv-platform-badge badge-upwork">Upwork</span>
-        </div>
-        <span class="rv-quote">"</span>
-        <div class="rv-text">Very hardworking freelancer, very good English skills. Very reliable and understands new tasks in a short time. I would hire him again anytime.</div>
-        <div class="rv-author">
-          <img class="rv-avatar" src="{{ url_for('static', filename='images/testimonials/2.jpg') }}" alt="Serdar A.">
-          <div>
-            <div class="rv-name">Serdar A.</div>
-            <div class="rv-role">Founder · Serasar</div>
-            <div class="rv-date">Verified · Upwork</div>
-          </div>
-        </div>
+      <!-- ════ THE CLEAN ACTION ROW (NO FADE) ════ -->
+      <div class="reviews-action-row" id="reviewsActionRow" style="display: none; text-align: center; margin-top: 60px;">
+        <button class="btn-load-more" id="btnLoadMoreReviews">
+          <span>READ ALL VERIFIED REVIEWS</span>
+          <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
       </div>
-
-      <!-- Card 3 -->
-      <div class="review-card reveal del-3">
-        <div class="rv-header">
-          <div class="rv-stars">
-            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          </div>
-          <span class="rv-platform-badge badge-amazon">Amazon</span>
-        </div>
-        <span class="rv-quote">"</span>
-        <div class="rv-text">Did exactly what was needed to upload and repair multiple Amazon listings. Clean, efficient, and delivered exactly on time without back-and-forth.</div>
-        <div class="rv-author">
-          <img class="rv-avatar" src="{{ url_for('static', filename='images/testimonials/3.jpg') }}" alt="Brooks M.">
-          <div>
-            <div class="rv-name">Brooks M.</div>
-            <div class="rv-role">Founder · Earth Fed Muscle</div>
-            <div class="rv-date">Verified · Amazon Seller Community</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Card 4 -->
-      <div class="review-card reveal del-1">
-        <div class="rv-header">
-          <div class="rv-stars">
-            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          </div>
-          <span class="rv-platform-badge badge-upwork">Upwork</span>
-        </div>
-        <span class="rv-quote">"</span>
-        <div class="rv-text">I've worked with Saif on several projects; I am always happy with the quality of work and his timeliness. I will work with him in the future.</div>
-        <div class="rv-author">
-          <img class="rv-avatar" src="{{ url_for('static', filename='images/testimonials/5.jpg') }}" alt="Emily B.">
-          <div>
-            <div class="rv-name">Emily B.</div>
-            <div class="rv-role">Author · Amazon KDP Seller</div>
-            <div class="rv-date">Verified · Upwork</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Card 5 — Featured Dark -->
-      <div class="review-card featured reveal del-2">
-        <div class="rv-header">
-          <div class="rv-stars">
-            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          </div>
-          <span class="rv-platform-badge badge-direct">Direct</span>
-        </div>
-        <span class="rv-quote">"</span>
-        <div class="rv-text">Great work. Was a fast learner and helped us manage a large portfolio of products. Great communication and work ethic. Highly recommend!</div>
-        <div class="rv-author">
-          <img class="rv-avatar" src="{{ url_for('static', filename='images/testimonials/4.jpg') }}" alt="Joseph W.">
-          <div>
-            <div class="rv-name">Joseph W.</div>
-            <div class="rv-role">Founder · Willis Worxs</div>
-            <div class="rv-date">Verified · Upwork</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Card 6 -->
-      <div class="review-card reveal del-3">
-        <div class="rv-header">
-          <div class="rv-stars">
-            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          </div>
-          <span class="rv-platform-badge badge-upwork">Upwork</span>
-        </div>
-        <span class="rv-quote">"</span>
-        <div class="rv-text">Saif is professional and highly experienced with Amazon. Would definitely recommend for anyone looking to scale their e-commerce operations.</div>
-        <div class="rv-author">
-          <img class="rv-avatar" src="{{ url_for('static', filename='images/testimonials/6.jpg') }}" alt="Leesa M.">
-          <div>
-            <div class="rv-name">Leesa M.</div>
-            <div class="rv-role">Author · Amazon KDP Seller</div>
-            <div class="rv-date">Verified · Upwork</div>
-          </div>
-        </div>
-      </div>
-
-    </div><!-- /reviews-mosaic -->
   </div>
 </section>
 
@@ -918,6 +783,81 @@
     </div>
 </section>
 
+
+<!-- ═══════════════ ADMIN FAB & COMMAND CENTER ═══════════════ -->
+<button class="admin-fab" id="adminFab" aria-label="Manage Reviews">
+  <span class="admin-fab-label">MANAGE REVIEWS</span>
+  <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+</button>
+
+<div class="admin-overlay" id="adminOverlay">
+  <div class="admin-panel">
+    <div class="admin-header">
+      <div>
+        <div class="admin-title">REVIEW MANAGER</div>
+        <div class="admin-subtitle">Live control over client testimonials</div>
+      </div>
+      <button class="admin-close" id="adminClose">
+        <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="admin-body">
+      <button class="admin-add-btn" id="adminAddBtn">
+        <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        ADD NEW REVIEW
+      </button>
+      <div class="admin-job-list" id="adminReviewList"></div>
+    </div>
+  </div>
+</div>
+
+<div class="edit-form-overlay" id="editFormOverlay">
+  <div class="edit-form-panel">
+    <div class="edit-form-title" id="editFormTitle">ADD REVIEW</div>
+    
+    <div class="form-row-2">
+      <div class="form-group">
+        <label class="form-label" for="rvName">Client Name</label>
+        <input type="text" id="rvName" class="form-control" placeholder="e.g. Marcus T.">
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="rvRole">Client Role / Company</label>
+        <input type="text" id="rvRole" class="form-control" placeholder="e.g. Founder · Brand">
+      </div>
+    </div>
+
+    <div class="form-group" style="margin-top:20px;">
+      <label class="form-label" for="rvPlatform">Verification Platform</label>
+      <select id="rvPlatform" class="form-control">
+        <option value="Direct">Direct Client</option>
+        <option value="Amazon">Amazon Seller Community</option>
+        <option value="Upwork">Verified Upwork</option>
+      </select>
+    </div>
+
+    <div class="form-group" style="margin-top:20px;">
+      <label class="form-label" for="rvQuote">Review Text</label>
+      <textarea id="rvQuote" class="form-control" placeholder="Paste the client's exact words..."></textarea>
+    </div>
+
+    <div class="form-group" style="margin-top:20px;">
+      <label class="form-label" for="rvAvatar">Avatar Filename (Optional)</label>
+      <input type="text" id="rvAvatar" class="form-control" placeholder="e.g. 1.jpg (leave blank for auto-monogram)">
+    </div>
+
+    <div class="form-group" style="margin-top:20px; display:flex; align-items:center; gap:12px;">
+      <input type="checkbox" id="rvFeatured" style="width:20px;height:20px;accent-color:var(--red);cursor:pointer;">
+      <label for="rvFeatured" style="color:#fff;font-family:var(--font-sans);font-weight:600;cursor:pointer;">Make this a Featured Dark Card</label>
+    </div>
+
+    <div class="edit-form-actions">
+      <button class="btn-cancel" id="editFormCancel">CANCEL</button>
+      <button class="btn-save" id="editFormSave">SAVE REVIEW</button>
+    </div>
+  </div>
+</div>
+
+
 <!-- ═══════════════════ FOOTER ═══════════════════ -->
 <footer class="footer">
     <div class="footer-glow"></div>
@@ -1044,6 +984,23 @@
   </div>
 </div>
 
+
+<div class="review-vault-overlay" id="reviewVaultModal">
+  <div class="review-vault-container">
+    <div class="rv-vault-header">
+      <div class="rv-vault-title">HALL OF PROOF <span>VERIFIED REVIEWS</span></div>
+      <button class="rv-vault-close" id="rvVaultClose" aria-label="Close Vault">
+        <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="rv-vault-grid" id="vaultReviewsGrid">
+      </div>
+  </div>
+</div>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="{{ url_for('static', filename='js/testimonials.js') }}"></script>
 <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 </body>
