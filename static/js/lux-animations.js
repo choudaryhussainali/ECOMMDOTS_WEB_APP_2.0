@@ -96,7 +96,8 @@
                 entries.forEach(function (entry) {
                     if (entry.isIntersecting) {
                         entry.target.classList.add("lux-in");
-                        io.unobserve(entry.target);
+                    } else {
+                        entry.target.classList.remove("lux-in");
                     }
                 });
             },
