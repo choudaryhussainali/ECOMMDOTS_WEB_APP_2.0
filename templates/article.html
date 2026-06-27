@@ -81,20 +81,29 @@
             display: block;
         }
 
-        /* ── THE READING COLUMN (Strictly Left-Aligned & Contained) ── */
         /* ── THE READING COLUMN (Widescreen Optimized) ── */
         .editorial-body {
-            /* Widened to 900px to drastically reduce empty lateral space on desktop */
-            max-width: 900px; 
+            /* 1. Expanded container to span the desktop screen symmetrically */
+            width: 100%;
+            max-width: 1300px; 
             margin: 0 auto;
-            /* Dynamic clamp padding: keeps it safe inside the screen on all devices */
-            padding: 0 clamp(24px, 5vw, 60px);
+            
+            /* 2. Mobile Baseline Padding (Keeps phones safe and untouched) */
+            padding: 0 clamp(24px, 5vw, 40px);
+            
             font-family: var(--font-sans);
-            /* Fluid Typography: Text subtly grows larger on big screens to fill the void */
             font-size: clamp(18px, 1.2vw, 21px); 
             line-height: 1.85;
             color: #d1d1d6; 
             text-align: left; 
+        }
+
+        /* 3. The Professional Desktop Breathing Room */
+        @media (min-width: 1024px) {
+            .editorial-body {
+                /* Forces wide span but locks in generous, luxurious side margins */
+                padding: 0 100px; 
+            }
         }
 
         /* TinyMCE Injection Styling Overrides */
