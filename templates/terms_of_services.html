@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service | Ecommdots Digital Agency</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;800;900&family=Bebas+Neue&display=swap" rel="stylesheet">
+    <!-- Reusing the exact same stylesheet for 0 redundancy and max performance -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/career.css') }}">
+</head>
+<body>
+
+<nav class="mobile-nav" id="mobileNav" aria-label="Mobile Navigation">
+  <div class="mobile-nav-links">
+    <a href="services" data-close-nav>Services</a>
+    <a href="./#brands" data-close-nav>Brands</a>
+    <a href="about" data-close-nav>About</a>
+    <a href="./#case-studies" data-close-nav>Case Studies</a>
+    <a href="blog" data-close-nav>Blog</a>
+    <a href="testimonials" data-close-nav>Testimonials</a>
+    <a href="career" data-close-nav>Careers</a>
+  </div>
+  <div class="mobile-nav-cta">
+    <a href="#" class="btn-audit" id="mobileCalendlyBtn">BOOK FREE CONSULTATION</a>
+  </div>
+</nav>
+
+<header class="main-header" id="mainHeader">
+    <nav class="container nav-wrapper">
+        <a href="/" class="brand-logo">
+            <div class="brand-icon-wrap">
+                <svg class="brand-icon-svg" viewBox="0 0 180 180" preserveAspectRatio="xMidYMid meet">
+                    <defs>
+                        <linearGradient id="header-lacquer" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#ff4d5a" />
+                            <stop offset="40%" stop-color="#d9232d" />
+                            <stop offset="100%" stop-color="#991118" />
+                        </linearGradient>
+                        <filter id="header-glow" x="-30%" y="-30%" width="160%" height="160%">
+                            <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#d9232d" flood-opacity="0.45" />
+                        </filter>
+                    </defs>
+                    <g class="header-mark-group">
+                        <circle cx="90" cy="90" r="65" fill="url(#header-lacquer)" filter="url(#header-glow)" />
+                        <g class="header-ed-text">
+                            <text x="68" y="110" font-family="'Montserrat', 'Futura', 'Century Gothic', sans-serif" font-weight="200" font-size="66" fill="#ffffff" text-anchor="middle" transform="rotate(-24 68 90)">e</text>
+                            <text x="112" y="112" font-family="'Montserrat', 'Futura', 'Century Gothic', sans-serif" font-weight="200" font-size="74" fill="#ffffff" text-anchor="middle">d</text>
+                        </g>
+                    </g>
+                </svg>
+            </div>
+            <div class="brand-text">ECOMM<span class="gradient-text">DOTS</span></div>
+        </a>
+        <ul class="nav-links">
+            <li class="nav-has-dropdown">
+                <a href="services" class="nav-drop-trigger">
+                    Services 
+                    <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" fill="none"><path d="M6 9l6 6 6-6"/></svg>
+                </a>
+                <div class="nav-dropdown">
+                    <div class="nav-dropdown-inner mega-menu">
+                        <a href="services#product-launch-strategy" class="nav-drop-item">
+                            <span class="nd-title">Product Launch Strategy</span>
+                            <span class="nd-sub">End-to-end marketplace readiness</span>
+                        </a>
+                        <a href="services#product-research-analysis" class="nav-drop-item">
+                            <span class="nd-title">Product Research Analysis</span>
+                            <span class="nd-sub">Data-driven opportunity discovery</span>
+                        </a>
+                        <a href="services#sourcing-logistics-solutions" class="nav-drop-item">
+                            <span class="nd-title">Sourcing & Logistics</span>
+                            <span class="nd-sub">Supply chain & global manufacturing</span>
+                        </a>
+                        <a href="services#listing-optimization" class="nav-drop-item">
+                            <span class="nd-title">Listing Optimization</span>
+                            <span class="nd-sub">SEO & conversion rate refinement</span>
+                        </a>
+                        <a href="services#creative-design-solutions" class="nav-drop-item">
+                            <span class="nd-title">Creative Design</span>
+                            <span class="nd-sub">High-converting visual assets</span>
+                        </a>
+                        <a href="services#ppc-account-management" class="nav-drop-item">
+                            <span class="nd-title">PPC Management</span>
+                            <span class="nd-sub">Strategic ad spend optimization</span>
+                        </a>
+                        <a href="services#account-health-support" class="nav-drop-item">
+                            <span class="nd-title">Account Health Support</span>
+                            <span class="nd-sub">Compliance & risk mitigation</span>
+                        </a>
+                        <a href="services#multichannel-commerce-integration" class="nav-drop-item">
+                            <span class="nd-title">Multichannel Integration</span>
+                            <span class="nd-sub">Unified ecommerce ecosystem</span>
+                        </a>
+                        <a href="services" class="nav-drop-item">
+                            <span class="nd-title">All Services</span>
+                            <span class="nd-sub">Bespoke 8-figure architectures</span>
+                        </a>
+                    </div>
+                </div>
+            </li>
+            <!-- <li><a href="./#brands">Brands</a></li> -->
+            <li class="nav-has-dropdown">
+                <a href="about" class="nav-drop-trigger">
+                    About 
+                    <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" fill="none"><path d="M6 9l6 6 6-6"/></svg>
+                </a>
+                <div class="nav-dropdown">
+                    <div class="nav-dropdown-inner">
+                        <a href="about#about" class="nav-drop-item">
+                            <span class="nd-title">Our Story</span>
+                            <span class="nd-sub">About ECOMMDOTS</span>
+                        </a>
+                        <a href="/about#mission" class="nav-drop-item">
+                            <span class="nd-title">Core Philosophy</span>
+                            <span class="nd-sub">Our mission & manifesto</span>
+                        </a>
+                        <a href="/about#legacy" class="nav-drop-item">
+                            <span class="nd-title">Agency Genesis</span>
+                            <span class="nd-sub">The legacy we're building</span>
+                        </a>
+                        <a href="./#brands" class="nav-drop-item">
+                            <span class="nd-title">Brands</span>
+                            <span class="nd-sub">The brands we represent</span>
+                        </a>
+                        
+                        <a href="/about#team" class="nav-drop-item">
+                            <span class="nd-title">The Architects</span>
+                            <span class="nd-sub">Leadership & strategy team</span>
+                        </a>
+                    </div>
+                </div>
+            </li>
+            <li><a href="testimonials">Testimonials</a></li>
+            <li><a href="blog">Blogs</a></li>
+            <li><a href="career">Career</a></li>
+        </ul>
+        <div class="nav-controls">
+            <a href="#" class="btn-audit" id="desktopCalendlyBtn">BOOK FREE CONSULTATION</a>
+            <button class="hamburger" id="hamburger" aria-label="Open Menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+</header>
+
+
+<!-- ═══════════════ HERO ═══════════════ -->
+<section class="policy-hero">
+    <div class="policy-hero-bg"></div>
+    <div class="container policy-hero-inner">
+        <div class="policy-hero-content">
+            <div class="section-eyebrow" style="justify-content: center;">
+                <span class="ey-line"></span>
+                <span class="ey-text-pp">LEGAL & COMPLIANCE</span>
+                <span class="ey-line"></span>
+            </div>
+            <h1 class="policy-hero-h1">
+                TERMS OF <span class="gradient-text">SERVICE.</span>
+            </h1>
+            <p class="policy-hero-sub">
+                Last Updated: June 28, 2026<br>
+                These Terms of Service (“Terms”) govern your access to and use of the Ecommdots website, content, consultations, and services.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- DIVIDER -->
+<div class="divider-dark-to-light">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,80 L1440,0 L1440,80 Z" fill="#f8f9fa"/>
+    </svg>
+</div>
+
+<!-- ═══════════════ POLICY CONTENT ═══════════════ -->
+<section class="policy-body-section">
+    <div class="container policy-grid">
+        
+        <!-- Mobile Floating Action Button (Trigger) -->
+        <button class="mobile-index-trigger" id="mobileIndexTrigger" aria-label="Open Document Index">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="8" y1="6" x2="21" y2="6"></line>
+                <line x1="8" y1="12" x2="21" y2="12"></line>
+                <line x1="8" y1="18" x2="21" y2="18"></line>
+                <line x1="3" y1="6" x2="3.01" y2="6"></line>
+                <line x1="3" y1="12" x2="3.01" y2="12"></line>
+                <line x1="3" y1="18" x2="3.01" y2="18"></line>
+            </svg>
+            <span>INDEX</span>
+        </button>
+
+        <!-- Dark Glass Overlay for Mobile -->
+        <div class="mobile-index-overlay" id="mobileIndexOverlay"></div>
+
+        <!-- Sticky Sidebar (Desktop) / Bottom Sheet Modal (Mobile) -->
+        <aside class="policy-sidebar" id="policySidebar">
+            <div class="sidebar-inner">
+                <div class="sidebar-header-mobile">
+                    <div class="sidebar-title">DOCUMENT INDEX</div>
+                    <button class="mobile-index-close" id="mobileIndexClose" aria-label="Close Index">
+                        <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                    </button>
+                </div>
+                <nav class="sidebar-nav" id="policyNav">
+                    <a href="#section-1" class="active">1. About Ecommdots</a>
+                    <a href="#section-2">2. Use of Our Website</a>
+                    <a href="#section-3">3. Audits & Consultations</a>
+                    <a href="#section-4">4. Services</a>
+                    <a href="#section-5">5. Client Responsibilities</a>
+                    <a href="#section-6">6. Account Access</a>
+                    <a href="#section-7">7. Third-Party Platforms</a>
+                    <a href="#section-8">8. Guaranteed Results</a>
+                    <a href="#section-9">9. Sourcing & Logistics</a>
+                    <a href="#section-10">10. Advertising & PPC</a>
+                    <a href="#section-11">11. Fees & Billing</a>
+                    <a href="#section-12">12. Refunds</a>
+                    <a href="#section-13">13. Project Timelines</a>
+                    <a href="#section-14">14. Intellectual Property</a>
+                    <a href="#section-15">15. Portfolio & Case Studies</a>
+                    <a href="#section-16">16. Confidentiality</a>
+                    <a href="#section-17">17. Content Accuracy</a>
+                    <a href="#section-18">18. Careers</a>
+                    <a href="#section-19">19. Liability Limitation</a>
+                    <a href="#section-20">20. Indemnification</a>
+                    <a href="#section-21">21. Service Termination</a>
+                    <a href="#section-22">22. Force Majeure</a>
+                    <a href="#section-23">23. Governing Law</a>
+                    <a href="#section-24">24. Changes to Terms</a>
+                    <a href="#section-25">25. Contact Us</a>
+                </nav>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="policy-content">
+            <div class="policy-intro">
+                <p>By using our website, submitting a form, requesting a free audit, communicating with us, or purchasing services, you agree to these Terms.</p>
+            </div>
+
+            <div id="section-1" class="policy-block">
+                <h2>1. About Ecommdots</h2>
+                <p>Ecommdots is an Amazon and eCommerce digital services agency based in Lahore, Pakistan. We help brands launch, optimize, manage, and scale across Amazon and other eCommerce channels through services such as product launch strategy, product research, sourcing and logistics coordination, listing optimization, creative design, PPC management, account health support, and multichannel integration.</p>
+            </div>
+
+            <div id="section-2" class="policy-block">
+                <h2>2. Use of Our Website</h2>
+                <p>You may use our website for lawful business purposes only. You agree not to:</p>
+                <ul>
+                    <li>Interfere with website security or functionality</li>
+                    <li>Submit false, misleading, or unlawful information</li>
+                    <li>Attempt unauthorized access to our systems</li>
+                    <li>Copy, scrape, reproduce, or misuse website content without permission</li>
+                    <li>Use our website or content for fraudulent, harmful, or illegal activity</li>
+                    <li>Impersonate another person, brand, or company</li>
+                </ul>
+                <p>We may restrict or block access to the website if we believe these Terms are being violated.</p>
+            </div>
+
+            <div id="section-3" class="policy-block">
+                <h2>3. Free Audits and Consultations</h2>
+                <p>Ecommdots may offer free audits, strategy calls, or initial consultations. These are provided for informational and evaluation purposes only.</p>
+                <p>A free audit does not guarantee:</p>
+                <ul>
+                    <li>Specific rankings</li>
+                    <li>Sales growth</li>
+                    <li>Advertising performance</li>
+                    <li>Account reinstatement</li>
+                    <li>Listing approval</li>
+                    <li>Marketplace eligibility</li>
+                    <li>Supplier availability</li>
+                    <li>Profitability</li>
+                    <li>Any specific business outcome</li>
+                </ul>
+                <p>A paid client relationship begins only when both parties agree to a written proposal, invoice, statement of work, service agreement, or other commercial arrangement.</p>
+            </div>
+
+            <div id="section-4" class="policy-block">
+                <h2>4. Services</h2>
+                <p>Depending on the agreed scope, our services may include:</p>
+                <ul>
+                    <li>Amazon product launch strategy</li>
+                    <li>Product research and market analysis</li>
+                    <li>Supplier sourcing and logistics coordination</li>
+                    <li>Amazon listing optimization</li>
+                    <li>Keyword research and SEO</li>
+                    <li>Product title, bullet, description, and backend search term optimization</li>
+                    <li>Listing image design, infographics, A+ Content, Brand Story, and Storefront design</li>
+                    <li>Amazon PPC campaign setup, management, and optimization</li>
+                    <li>Account health monitoring and compliance support</li>
+                    <li>Listing issue resolution, appeal support, and reinstatement assistance</li>
+                    <li>Multichannel integration with platforms such as Shopify and other marketplaces</li>
+                    <li>Inventory, order, fulfillment, and customer experience workflow support</li>
+                    <li>Business reporting, strategy, and growth consulting</li>
+                </ul>
+                <p>The exact services, deliverables, timelines, fees, and responsibilities will be defined in the applicable written agreement, proposal, or invoice.</p>
+            </div>
+
+            <div id="section-5" class="policy-block">
+                <h2>5. Client Responsibilities</h2>
+                <p>To allow us to perform services effectively, you agree to:</p>
+                <ul>
+                    <li>Provide accurate and complete business information</li>
+                    <li>Give timely feedback and approvals</li>
+                    <li>Provide access to required accounts, tools, listings, platforms, files, or assets</li>
+                    <li>Maintain ownership or authorization for all materials you provide</li>
+                    <li>Comply with Amazon, marketplace, advertising, intellectual property, consumer protection, tax, and applicable business rules</li>
+                    <li>Review deliverables before publishing or implementation</li>
+                    <li>Keep your account credentials secure</li>
+                    <li>Make final business decisions regarding pricing, inventory, compliance, product claims, and marketplace risk</li>
+                </ul>
+                <p>You remain responsible for your marketplace accounts, products, inventory, customer obligations, legal compliance, and business decisions.</p>
+            </div>
+
+            <div id="section-6" class="policy-block">
+                <h2>6. Account Access and Permissions</h2>
+                <p>Some services may require access to Amazon Seller Central, Vendor Central, advertising accounts, Shopify, Walmart, Etsy, analytics tools, logistics platforms, or other third-party systems.</p>
+                <p>You agree to provide access through secure and appropriate permission methods where possible. We may use access only for agreed service purposes. You may revoke access after services end, but revocation during an active project may affect our ability to deliver services.</p>
+                <p>We are not responsible for delays, losses, or performance issues caused by lack of access, restricted permissions, inaccurate account data, platform outages, or third-party system limitations.</p>
+            </div>
+
+            <div id="section-7" class="policy-block">
+                <h2>7. Third-Party Platforms</h2>
+                <p>Our services may involve third-party platforms such as Amazon, Shopify, Walmart, Etsy, advertising networks, analytics tools, suppliers, freight forwarders, and fulfillment providers.</p>
+                <p>You understand that:</p>
+                <ul>
+                    <li>Third-party platforms have their own rules, algorithms, fees, policies, and enforcement practices</li>
+                    <li>We do not control Amazon or any other marketplace</li>
+                    <li>Platform rules may change at any time</li>
+                    <li>Marketplace decisions may affect listings, ads, rankings, account health, or sales</li>
+                    <li>You are responsible for complying with third-party platform terms</li>
+                </ul>
+                <p>We are not liable for actions, suspensions, policy changes, listing suppressions, ad disapprovals, account restrictions, or decisions made by third-party platforms.</p>
+            </div>
+
+            <div id="section-8" class="policy-block">
+                <h2>8. No Guaranteed Results</h2>
+                <p>Ecommdots uses professional experience, data analysis, marketplace research, creative strategy, and performance optimization to support client growth. However, eCommerce results depend on many factors beyond our control, including product quality, competition, pricing, reviews, inventory, demand, marketplace algorithms, ad auction dynamics, platform policies, and customer behavior.</p>
+                <p>We do not guarantee:</p>
+                <ul>
+                    <li>Sales revenue</li>
+                    <li>Profit margins</li>
+                    <li>ROAS, ACoS, TACoS, ranking, or conversion rate</li>
+                    <li>Organic keyword ranking</li>
+                    <li>Listing approval or reinstatement</li>
+                    <li>Account reinstatement</li>
+                    <li>Category ranking</li>
+                    <li>Supplier pricing or quality</li>
+                    <li>Inventory sell-through</li>
+                    <li>Customer reviews</li>
+                    <li>Marketplace approval or continued eligibility</li>
+                </ul>
+                <p>Any case studies, testimonials, metrics, or examples shown on our website are illustrative and do not promise the same results for every client.</p>
+            </div>
+
+            <div id="section-9" class="policy-block">
+                <h2>9. Sourcing and Logistics Support</h2>
+                <p>When we assist with sourcing, supplier communication, production coordination, freight planning, customs documentation review, or FBA delivery planning, our role is advisory and coordination-based unless otherwise stated in writing.</p>
+                <p>We are not a manufacturer, customs broker, freight carrier, warehouse, insurer, government authority, or product compliance laboratory. You remain responsible for:</p>
+                <ul>
+                    <li>Final supplier selection</li>
+                    <li>Product safety and legal compliance</li>
+                    <li>Product testing and certifications</li>
+                    <li>Customs duties, taxes, tariffs, and import/export requirements</li>
+                    <li>Freight, insurance, storage, and logistics costs</li>
+                    <li>Supplier contracts and payment obligations</li>
+                    <li>Product quality, packaging, labeling, and marketplace eligibility</li>
+                </ul>
+            </div>
+
+            <div id="section-10" class="policy-block">
+                <h2>10. Advertising and PPC Management</h2>
+                <p>If we manage advertising campaigns, you remain responsible for advertising account ownership, product eligibility, ad spend, product claims, and compliance with marketplace advertising policies.</p>
+                <p>Unless agreed otherwise in writing:</p>
+                <ul>
+                    <li>Advertising spend is separate from our service fees</li>
+                    <li>You are responsible for funding ad accounts</li>
+                    <li>We may recommend budgets, bids, campaign structures, and optimizations</li>
+                    <li>Performance may fluctuate due to competition, seasonality, demand, platform changes, inventory, pricing, reviews, and other market factors</li>
+                </ul>
+            </div>
+
+            <div id="section-11" class="policy-block">
+                <h2>11. Fees, Payments, and Billing</h2>
+                <p>Fees, payment schedules, billing terms, project scope, and deliverables will be stated in the applicable proposal, invoice, statement of work, or service agreement.</p>
+                <p>Unless otherwise agreed in writing:</p>
+                <ul>
+                    <li>Payments must be made by the due date stated on the invoice</li>
+                    <li>Work may pause if payment is late</li>
+                    <li>Fees are charged for professional services, strategy, execution, and time allocated</li>
+                    <li>Third-party costs, software subscriptions, advertising spend, supplier costs, logistics fees, taxes, duties, and marketplace charges are separate from Ecommdots service fees</li>
+                    <li>Bank charges, currency conversion fees, or payment processor fees may be the client’s responsibility</li>
+                </ul>
+            </div>
+
+            <div id="section-12" class="policy-block">
+                <h2>12. Refunds and Cancellations</h2>
+                <p>Refunds, cancellations, pauses, and termination rights depend on the applicable written agreement, proposal, or invoice.</p>
+                <p>Because our services involve strategy, research, labor, account work, creative production, and time allocation, completed work, partial work, audit work, strategy work, and delivered assets are generally non-refundable unless otherwise agreed in writing.</p>
+            </div>
+
+            <div id="section-13" class="policy-block">
+                <h2>13. Project Timelines</h2>
+                <p>We make reasonable efforts to meet agreed timelines. However, timelines may be affected by:</p>
+                <ul>
+                    <li>Client feedback delays</li>
+                    <li>Missing account access or assets</li>
+                    <li>Marketplace review times</li>
+                    <li>Supplier delays</li>
+                    <li>Platform outages</li>
+                    <li>Ad account or listing restrictions</li>
+                    <li>Scope changes</li>
+                    <li>Third-party approvals</li>
+                    <li>Force majeure events</li>
+                </ul>
+                <p>Timeline estimates are not guarantees unless expressly stated in a signed agreement.</p>
+            </div>
+
+            <div id="section-14" class="policy-block">
+                <h2>14. Intellectual Property</h2>
+                <h3>A. Ecommdots Materials</h3>
+                <p>Our website content, service frameworks, strategies, systems, templates, processes, internal documents, visuals, copy, designs, and branding are owned by Ecommdots or its licensors and may not be copied or reused without written permission.</p>
+
+                <h3>B. Client Materials</h3>
+                <p>You retain ownership of the brand assets, product information, logos, trademarks, images, account data, and materials you provide to us. You grant us permission to use those materials as needed to perform agreed services.</p>
+
+                <h3>C. Deliverables</h3>
+                <p>Ownership of final deliverables will be handled according to the applicable written agreement. Unless otherwise agreed, final approved creative or written deliverables prepared specifically for your brand may be used by you after full payment is received.</p>
+                <p>We may retain ownership of underlying methods, templates, know-how, concepts, processes, strategy frameworks, and non-client-specific tools used to create deliverables.</p>
+            </div>
+
+            <div id="section-15" class="policy-block">
+                <h2>15. Portfolio, Case Studies, and Testimonials</h2>
+                <p>We may request permission to use your brand name, logo, testimonial, project results, screenshots, or case study information. We will not disclose confidential client information in public marketing materials without permission, unless the information is already publicly available or allowed under the applicable agreement.</p>
+                <p>If you provide a testimonial, review, or feedback, you grant us permission to display it on our website, social media, portfolio, proposals, and marketing materials unless you withdraw permission in writing.</p>
+            </div>
+
+            <div id="section-16" class="policy-block">
+                <h2>16. Confidentiality</h2>
+                <p>Both parties may receive confidential business information during discussions or service delivery. Confidential information may include marketplace data, product plans, supplier details, advertising performance, financial information, strategy documents, account information, pricing, and internal business processes.</p>
+                <p>Each party agrees to use confidential information only for the intended business purpose and to protect it from unauthorized disclosure, except where disclosure is required by law or permitted by agreement.</p>
+            </div>
+
+            <div id="section-17" class="policy-block">
+                <h2>17. Content Accuracy and Website Information</h2>
+                <p>We aim to keep website content accurate and current, but we do not guarantee that all information, service descriptions, blog content, statistics, testimonials, pricing references, or examples are error-free, complete, or up to date.</p>
+                <p>Website content is provided for general business information only and should not be treated as legal, tax, financial, customs, product compliance, or accounting advice.</p>
+            </div>
+
+            <div id="section-18" class="policy-block">
+                <h2>18. Careers and Applications</h2>
+                <p>If you apply for a role with Ecommdots, you agree to provide accurate information. Submitting an application does not guarantee an interview, assessment, offer, employment, contract, or engagement.</p>
+                <p>We may retain recruitment information for hiring, evaluation, and recordkeeping purposes in accordance with our Privacy Policy.</p>
+            </div>
+
+            <div id="section-19" class="policy-block">
+                <h2>19. Limitation of Liability</h2>
+                <p>To the fullest extent permitted by law, Ecommdots will not be liable for indirect, incidental, consequential, special, punitive, or exemplary damages, including lost profits, lost revenue, lost sales, lost rankings, lost data, account suspension, product suppression, advertising loss, inventory loss, supplier issues, or business interruption.</p>
+                <p>Our total liability for any claim related to the website or services will not exceed the amount you paid to Ecommdots for the specific service giving rise to the claim during the three months before the claim arose, unless a different limit is required by law or agreed in writing.</p>
+            </div>
+
+            <div id="section-20" class="policy-block">
+                <h2>20. Indemnification</h2>
+                <p>You agree to defend, indemnify, and hold harmless Ecommdots, its team members, contractors, officers, and partners from claims, damages, liabilities, costs, and expenses arising from:</p>
+                <ul>
+                    <li>Your products, listings, claims, or business operations</li>
+                    <li>Your violation of marketplace policies or applicable laws</li>
+                    <li>Materials, data, or instructions you provide</li>
+                    <li>Your misuse of our website or services</li>
+                    <li>Your breach of these Terms or any written agreement</li>
+                    <li>Intellectual property, product compliance, advertising, consumer, customs, or tax issues connected to your business</li>
+                </ul>
+            </div>
+
+            <div id="section-21" class="policy-block">
+                <h2>21. Service Suspension or Termination</h2>
+                <p>We may suspend or terminate website access or services if:</p>
+                <ul>
+                    <li>You fail to pay fees when due</li>
+                    <li>You provide false or misleading information</li>
+                    <li>You misuse our services or website</li>
+                    <li>You request unlawful, unethical, or policy-violating activity</li>
+                    <li>Continued work creates legal, compliance, reputational, or operational risk</li>
+                    <li>You breach these Terms or a written agreement</li>
+                </ul>
+                <p>Termination does not remove payment obligations for work already completed or costs already incurred.</p>
+            </div>
+
+            <div id="section-22" class="policy-block">
+                <h2>22. Force Majeure</h2>
+                <p>We are not responsible for delays or failures caused by events beyond our reasonable control, including natural disasters, internet outages, platform outages, government action, war, civil unrest, cyberattacks, labor disruptions, supply chain disruptions, payment processor issues, marketplace outages, or other force majeure events.</p>
+            </div>
+
+            <div id="section-23" class="policy-block">
+                <h2>23. Governing Law</h2>
+                <p>Unless a separate written agreement states otherwise, these Terms are governed by the laws of Pakistan. Any dispute will be handled by the competent courts located in Lahore, Pakistan, unless another jurisdiction is required by applicable law or agreed in writing.</p>
+            </div>
+
+            <div id="section-24" class="policy-block">
+                <h2>24. Changes to These Terms</h2>
+                <p>We may update these Terms from time to time. The updated version will be posted on this page with a revised “Last Updated” date. Continued use of our website or services after changes are posted means you accept the updated Terms.</p>
+            </div>
+
+            <div id="section-25" class="policy-block">
+                <h2>25. Contact Us</h2>
+                <p>For questions about these Terms, contact:</p>
+                <div class="contact-card">
+                    <strong>Ecommdots Digital Agency</strong><br>
+                    Operations Center: Lahore, Pakistan<br>
+                    Email: <a href="mailto:hello@ecommdots.com">hello@ecommdots.com</a><br>
+                    Alternative Email: <a href="mailto:ecommdots@gmail.com">ecommdots@gmail.com</a><br>
+                    Phone: <a href="tel:+923066542027">+92 306 654 2027</a>
+                </div>
+            </div>
+        </main>
+    </div>
+</section>
+
+<!-- DIVIDER -->
+<div class="divider-light-to-dark" style="background:#f8f9fa;">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,0 L1440,80 L0,80 Z" fill="#030303"/>
+    </svg>
+</div>
+
+<!-- ═══════════════════ FOOTER ═══════════════════ -->
+<footer class="footer">
+    <div class="footer-glow"></div>
+
+    <div class="container relative-z">
+        <div class="footer-grid-premium">
+            
+            <div class="footer-brand-col">
+                <a href="/" class="brand-logo" style="margin-bottom: 24px; gap: 6px;">
+                    <div class="brand-icon-wrap" style="width: 48px; height: 48px;">
+                        <svg class="brand-icon-svg" viewBox="0 0 180 180" preserveAspectRatio="xMidYMid meet">
+                            <defs>
+                                <linearGradient id="header-lacquer" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#ff4d5a" />
+                                    <stop offset="40%" stop-color="#d9232d" />
+                                    <stop offset="100%" stop-color="#991118" />
+                                </linearGradient>
+                                <filter id="header-glow" x="-30%" y="-30%" width="160%" height="160%">
+                                    <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#d9232d" flood-opacity="0.45" />
+                                </filter>
+                            </defs>
+                            <g class="header-mark-group">
+                                <circle cx="90" cy="90" r="65" fill="url(#header-lacquer)" filter="url(#header-glow)" />
+                                <g class="header-ed-text">
+                                    <text x="68" y="110" font-family="'Montserrat', 'Futura', 'Century Gothic', sans-serif" font-weight="200" font-size="66" fill="#ffffff" text-anchor="middle" transform="rotate(-24 68 90)">e</text>
+                                    <text x="112" y="112" font-family="'Montserrat', 'Futura', 'Century Gothic', sans-serif" font-weight="200" font-size="74" fill="#ffffff" text-anchor="middle">d</text>
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="brand-text" style="font-size: 2.2rem;">ECOMM<span class="gradient-text">DOTS</span></div>
+                </a>
+                <p class="footer-desc">The global Amazon digital services agency for brands that are serious about growth. Data-driven, creatively led, and results-obsessed since 2019.</p>
+            </div>
+
+            <div class="footer-nav-col">
+                <div class="footer-col-title">Expertise</div>
+                <div class="footer-links">
+                    <a href="#product-launch-strategy"><span>Product Launch</span></a>
+                    <a href="#product-research-analysis"><span>Product Research</span></a>
+                    <a href="#sourcing-logistics-solutions"><span>Sourcing & Logistics</span></a>
+                    <a href="#creative-design-solutions"><span>Creative Design</span></a>
+                    <a href="#ppc-account-management"><span>PPC Management</span></a>
+                    <a href="#account-health-support"><span>Account Health</span></a>
+                </div>
+            </div>
+
+            <div class="footer-nav-col">
+                <div class="footer-col-title">The Agency</div>
+                <div class="footer-links">
+                    <a href="about"><span>About Us</span></a>
+                    <a href="./#case-studies"><span>Case Studies</span></a>
+                    <a href="about#team"><span>Our Team</span></a>
+                    <a href="blog"><span>Intelligence Hub</span></a>
+                    <a href="#contact"><span>Book an Audit</span></a>
+                </div>
+            </div>
+
+            <!-- Column 4: Corporate HQ -->
+            <div class="footer-nav-col">
+                <div class="footer-col-title">Corporate HQ</div>
+                <div class="footer-locations">
+                    <div class="loc-item">
+                        <strong>Operations Center</strong>
+                        <span>Lahore, Pakistan</span>
+                    </div>
+                    <div class="loc-item">
+                        <strong>Global Support Hours</strong>
+                        <span>Mon - Fri · 9:00 AM - 6:00 PM (PKT)</span>
+                    </div>
+                    <div class="loc-item">
+                        <strong>Direct Contact</strong>
+                        <a href="mailto:hello@ecommdots.com" class="loc-link">hello@ecommdots.com</a>
+                        <a href="tel:+923066542027" class="loc-link">+92 306 654 2027</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-giant-text">ECOMMDOTS</div>
+
+        <div class="footer-bottom-bar">
+            <div class="fb-copy-wrap">
+                <div class="fb-copy">© 2026 Ecommdots. Engineered for dominance.</div>
+                <div class="fb-watermark">
+                    <span class="wm-text">Developed by</span>
+                    <a href="https://choudaryhussainali.online/" target="_blank" rel="noopener noreferrer" class="wm-link">CHA</a>
+                </div>
+            </div>
+            
+            <div class="fb-legal">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+
+            <div class="fb-socials">
+                <a href="https://www.linkedin.com/company/ecommdots-digital-agency" class="fb-social-btn" aria-label="LinkedIn">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                </a>
+                <a href="https://www.facebook.com/ecommdotsofficial" class="fb-social-btn" aria-label="Facebook">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073c0 6.019 4.388 11.009 10.125 11.927v-8.437H7.078v-3.49h3.047V9.413c0-3.007 1.792-4.669 4.533-4.669 1.313 0 2.686.235 2.686.235v2.953h-1.514c-1.491 0-1.956.927-1.956 1.878v2.263h3.328l-.532 3.49h-2.796V24C19.612 23.082 24 18.092 24 12.073z"/>
+                    </svg>
+                </a>
+                <a href="https://www.youtube.com/@ecommdotsdigitalagency" class="fb-social-btn" aria-label="YouTube">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.5 12 3.5 12 3.5s-7.505 0-9.377.55a3.015 3.015 0 0 0-2.122 2.136C0 8.07 0 12 0 12s0 3.93.501 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.55 9.377.55 9.377.55s7.505 0 9.377-.55a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="{{ url_for('static', filename='js/career.js') }}"></script>
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const sections = document.querySelectorAll('.policy-block');
+        const navLinks = document.querySelectorAll('.sidebar-nav a');
+        
+        // Mobile Elements
+        const triggerBtn = document.getElementById('mobileIndexTrigger');
+        const closeBtn = document.getElementById('mobileIndexClose');
+        const overlay = document.getElementById('mobileIndexOverlay');
+        const sidebar = document.getElementById('policySidebar');
+
+        // Scroll Spy Logic
+        const observerOptions = {
+            root: null,
+            rootMargin: '-20% 0px -60% 0px',
+            threshold: 0
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href').substring(1) === entry.target.id) {
+                            link.classList.add('active');
+                            // Optional: auto-scroll the active pill into view on mobile
+                            if (window.innerWidth <= 1024) {
+                                link.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                            }
+                        }
+                    });
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => observer.observe(section));
+
+        // Mobile Bottom Sheet Toggle Logic
+        const toggleMobileIndex = (isOpen) => {
+            if (isOpen) {
+                sidebar.classList.add('active');
+                overlay.classList.add('active');
+                document.body.style.overflow = 'hidden'; // Lock background scrolling
+            } else {
+                sidebar.classList.remove('active');
+                overlay.classList.remove('active');
+                document.body.style.overflow = ''; // Unlock background scrolling
+            }
+        };
+
+        if (triggerBtn) triggerBtn.addEventListener('click', () => toggleMobileIndex(true));
+        if (closeBtn) closeBtn.addEventListener('click', () => toggleMobileIndex(false));
+        if (overlay) overlay.addEventListener('click', () => toggleMobileIndex(false));
+
+        // Smooth Scroll & Auto-Close Sheet
+        navLinks.forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Close mobile sheet if it's open
+                if (window.innerWidth <= 1024) {
+                    toggleMobileIndex(false);
+                }
+
+                const targetId = this.getAttribute('href');
+                const target = document.querySelector(targetId);
+                if(target) {
+                    const headerH = document.getElementById('mainHeader')?.offsetHeight || 80;
+                    const top = target.getBoundingClientRect().top + window.scrollY - headerH - 40;
+                    window.scrollTo({ top, behavior: 'smooth' });
+                }
+            });
+        });
+    });
+</script>
+</body>
+</html>

@@ -103,6 +103,14 @@ def testimonials():
 def career():
     return render_template('career.html')
 
+@app.route('/privacy_policy')
+def privacy_policy():
+    return render_template('privacy_policy.html')
+
+@app.route('/terms_of_service')
+def terms_of_service():
+    return render_template('terms_of_services.html')
+
 @app.route('/blog')
 def blog_grid():
     """Homepage: first 10 articles + category counts."""
