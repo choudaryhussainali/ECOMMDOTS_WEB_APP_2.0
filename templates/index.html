@@ -2012,6 +2012,52 @@ DIVIDER: Neon Eclipse Arc -->
 <script src="{{ url_for('static', filename='js/lux-3d-headings.js') }}"></script>
 
 <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+<!-- ══════════ MOBILE BOOK-A-CALL · shows only on mobile (≤1024px) · opens Calendly · fully additive ══════════ -->
+<style>
+  .wa-call-fab{
+    position:fixed;
+    right:calc(22px + env(safe-area-inset-right,0px));
+    bottom:calc(96px + env(safe-area-inset-bottom,0px));
+    z-index:1040;
+    width:60px;height:60px;
+    display:none;
+    align-items:center;justify-content:center;
+    border-radius:50%;
+    background:linear-gradient(145deg,#ff4d5a 0%,#d9232d 55%,#991118 100%);
+    box-shadow:0 8px 22px rgba(217,35,45,.4),0 3px 8px rgba(0,0,0,.28),inset 0 1px 1px rgba(255,255,255,.28);
+    border:none;padding:0;cursor:pointer;
+    -webkit-tap-highlight-color:transparent;
+    transition:transform .35s cubic-bezier(.16,1,.3,1),box-shadow .35s ease;
+    animation:wa-fab-in .6s cubic-bezier(.16,1,.3,1) .32s both;
+  }
+  .wa-call-fab::before{
+    content:"";position:absolute;inset:0;border-radius:50%;
+    box-shadow:0 0 0 0 rgba(217,35,45,.5);
+    animation:wa-call-ring 2.4s cubic-bezier(.16,1,.3,1) -1.2s infinite;
+  }
+  .wa-call-fab svg{width:30px;height:30px;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;filter:drop-shadow(0 1px 1px rgba(0,0,0,.18));}
+  .wa-call-fab:active{transform:scale(.92);}
+  .wa-call-fab:focus-visible{outline:3px solid rgba(217,35,45,.65);outline-offset:3px;}
+  @keyframes wa-call-ring{0%{box-shadow:0 0 0 0 rgba(217,35,45,.5);}70%{box-shadow:0 0 0 16px rgba(217,35,45,0);}100%{box-shadow:0 0 0 0 rgba(217,35,45,0);}}
+  @media (max-width:1024px){.wa-call-fab{display:flex;}}
+  @media (prefers-reduced-motion:reduce){.wa-call-fab{animation:none;}.wa-call-fab::before{animation:none;box-shadow:none;}}
+</style>
+<button type="button" class="wa-call-fab" id="waCallFab" aria-label="Book a free consultation call">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4.5" width="18" height="16.5" rx="2.5"></rect><line x1="3" y1="9.5" x2="21" y2="9.5"></line><line x1="8" y1="2.5" x2="8" y2="6.5"></line><line x1="16" y1="2.5" x2="16" y2="6.5"></line><polyline points="8 14.5 10.8 17.2 16 12"></polyline></svg>
+</button>
+<script>
+(function(){
+  var b=document.getElementById('waCallFab');
+  if(!b)return;
+  b.addEventListener('click',function(e){
+    e.preventDefault();
+    var cta=document.getElementById('mobileCalendlyBtn')||document.getElementById('desktopCalendlyBtn');
+    if(cta){cta.click();return;}
+    if(window.Calendly&&window.Calendly.initPopupWidget){window.Calendly.initPopupWidget({url:'https://calendly.com/ecommdots/1hr?hide_event_type_details=1&background_color=0a0a0a&text_color=ffffff&primary_color=d9232d'});}
+  });
+})();
+</script>
+<!-- ══════════ /MOBILE BOOK-A-CALL ══════════ -->
 <!-- ══════════ MOBILE WHATSAPP CHAT · shows only on mobile (≤1024px) · fully additive ══════════ -->
 <style>
   .wa-chat-fab{
