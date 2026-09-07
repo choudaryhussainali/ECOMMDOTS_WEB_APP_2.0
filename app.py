@@ -1,7 +1,7 @@
 import os
 import re
 import datetime
-from flask import Flask, render_template, request, redirect, url_for, flash, session, make_response
+from flask import Flask, render_template, request, redirect, url_for, flash, session, make_response, send_from_directory
 from werkzeug.security import generate_password_hash, check_password_hash
 from supabase import create_client, Client
 from dotenv import load_dotenv
@@ -83,6 +83,16 @@ def rows_to_dicts(rows):
 # ==========================================
 # MAIN AGENCY ROUTES
 # ==========================================
+@app.route('/favicon.ico')
+def favicon():
+    # Browsers request /favicon.ico at the root regardless of the <link> tags,
+    # and vercel.json sends every path to this app — serve it instead of 404ing.
+    return send_from_directory(
+        os.path.join(app.root_path, 'static', 'images', 'favicon'),
+        'favicon.ico',
+        mimetype='image/vnd.microsoft.icon'
+    )
+
 @app.route('/')
 def home():
     return render_template('index.html')
