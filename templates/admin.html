@@ -37,7 +37,16 @@
         .article-meta { font-size: 12px; color: #888; margin-top: 4px; }
         .btn-delete { background: transparent; color: #d9232d; border: 1px solid #d9232d; padding: 6px 12px; border-radius: 4px; cursor: pointer; font-size: 12px; font-weight: bold; }
         .btn-delete:hover { background: #d9232d; color: #fff; }
-        
+
+        .item-actions { display: flex; gap: 8px; flex-shrink: 0; }
+        .btn-edit { background: transparent; color: #888; border: 1px solid #444; padding: 6px 12px; border-radius: 4px; cursor: pointer; font-size: 12px; font-weight: bold; text-decoration: none; display: inline-block; line-height: normal; }
+        .btn-edit:hover { border-color: #fff; color: #fff; }
+        .article-item.is-editing { background: rgba(217,35,45,0.07); border-left: 3px solid #d9232d; padding-left: 12px; margin-left: -15px; }
+        .btn-cancel { display: inline-block; text-align: center; width: 100%; margin-top: 12px; color: #888; text-decoration: none; font-size: 12px; font-weight: bold; letter-spacing: 1px; }
+        .btn-cancel:hover { color: #fff; }
+        .edit-banner { background: rgba(217,35,45,0.12); border: 1px solid #d9232d; color: #fff; padding: 12px 15px; border-radius: 4px; margin-bottom: 25px; font-size: 13px; }
+        .edit-banner code { color: #ff8a92; }
+
         .flash { background: #166534; color: #fff; padding: 15px; border-radius: 4px; margin-bottom: 20px; font-weight: bold; grid-column: 1 / -1; }
     </style>
     <!-- Premium WYSIWYG Editor -->
@@ -67,65 +76,80 @@
       {% endif %}
     {% endwith %}
 
-    <!-- PUBLISHING TERMINAL -->
+    <!-- PUBLISHING TERMINAL — doubles as the edit screen when `a` is set -->
+    {% set a = edit_article %}
+    {% set categories = ['Amazon Strategy', 'PPC & Ads', 'Brand Building', 'Sourcing', 'Creative Studio', 'Case Study'] %}
     <div class="panel">
-        <h3>DRAFT NEW INTELLIGENCE</h3>
-        <form method="POST">
+        <h3>{{ 'EDIT INTELLIGENCE' if a else 'DRAFT NEW INTELLIGENCE' }}</h3>
+
+        {% if a %}
+        <div class="edit-banner">
+            Editing <strong>{{ a.title }}</strong> — live at <code>/blog/{{ a.slug }}</code>.
+            Saving overwrites the published article immediately.
+        </div>
+        {% endif %}
+
+        <form method="POST" action="{{ url_for('edit_article', id=a.id) if a else url_for('admin_dashboard') }}">
             <label>Headline (Title)</label>
-            <input type="text" name="title" required placeholder="e.g., THE Q4 ALGORITHMIC PLAYBOOK">
+            <input type="text" name="title" required placeholder="e.g., THE Q4 ALGORITHMIC PLAYBOOK" value="{{ a.title if a else '' }}">
+
+            {% if a %}
+            <label>URL Slug — changing this breaks existing links to the article</label>
+            <input type="text" name="slug" required value="{{ a.slug }}">
+            {% endif %}
 
             <div class="flex-row">
                 <div>
                     <label>Primary Category</label>
                     <select name="category" required>
-                        <option value="Amazon Strategy">Amazon Strategy</option>
-                        <option value="PPC & Ads">PPC & Ads</option>
-                        <option value="Brand Building">Brand Building</option>
-                        <option value="Sourcing">Sourcing</option>
-                        <option value="Creative Studio">Creative Studio</option>
-                        <option value="Case Study">Case Study</option>
+                        {% for c in categories %}
+                        <option value="{{ c }}" {% if a and a.category == c %}selected{% endif %}>{{ c }}</option>
+                        {% endfor %}
                     </select>
                 </div>
                 <div>
                     <label>Subcategory (Meta Tag)</label>
-                    <input type="text" name="subcategory" required placeholder="e.g., Advanced, Operations">
+                    <input type="text" name="subcategory" required placeholder="e.g., Advanced, Operations" value="{{ a.subcategory if a else '' }}">
                 </div>
                 <div>
                     <label>Read Time (Minutes)</label>
-                    <input type="number" name="read_time" required value="5">
+                    <input type="number" name="read_time" required value="{{ a.read_time if a else 5 }}">
                 </div>
             </div>
 
             <label>Thumbnail Image URL</label>
-            <input type="text" name="thumbnail_url" required placeholder="https://images.unsplash.com/...">
+            <input type="text" name="thumbnail_url" required placeholder="https://images.unsplash.com/..." value="{{ a.thumbnail_url if a else '' }}">
 
             <label>Short Excerpt (Grid Description)</label>
-            <textarea name="excerpt" required rows="3" placeholder="A compelling 2-sentence hook..."></textarea>
+            <textarea name="excerpt" required rows="3" placeholder="A compelling 2-sentence hook...">{{ a.excerpt if a else '' }}</textarea>
 
             <label>Full Intelligence Brief (Article Body)</label>
-            <textarea id="content" name="content"></textarea>
+            <textarea id="content" name="content">{{ a.content if a else '' }}</textarea>
 
             <h3 style="margin-top:30px; font-size:16px;">AUTHOR CREDENTIALS</h3>
             <div class="flex-row">
                 <div>
                     <label>Author Name</label>
-                    <input type="text" name="author_name" required value="Saif Ur Rehman">
+                    <input type="text" name="author_name" required value="{{ a.author_name if a else 'Saif Ur Rehman' }}">
                 </div>
                 <div>
                     <label>Author Avatar URL</label>
-                    <input type="text" name="author_image" required value="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80">
+                    <input type="text" name="author_image" required value="{{ a.author_image if a else 'https://www.ecommdots.co/static/images/team/Saif-Ur-Rehman.jpg' }}">
                 </div>
             </div>
 
             <h3 style="margin-top:10px; font-size:16px;">LAYOUT OVERRIDES</h3>
             <div class="flex-row" style="margin-bottom: 30px;">
                 <div class="checkbox-group">
-                    <input type="checkbox" id="is_wide" name="is_wide" value="1">
+                    <input type="checkbox" id="is_wide" name="is_wide" value="1" {% if a and a.is_wide %}checked{% endif %}>
                     <label for="is_wide" style="margin:0;">Make Card Wide (Spans 2 Grid Columns)</label>
                 </div>
             </div>
 
-            <button type="submit" class="btn-primary">DEPLOY TO LIVE GRID</button>
+            <button type="submit" class="btn-primary">{{ 'SAVE CHANGES' if a else 'DEPLOY TO LIVE GRID' }}</button>
+            {% if a %}
+            <a href="{{ url_for('admin_dashboard') }}" class="btn-cancel">CANCEL — BACK TO NEW ARTICLE</a>
+            {% endif %}
         </form>
     </div>
 
@@ -134,14 +158,17 @@
         <h3>ACTIVE ASSETS ({{ articles|length }})</h3>
         <ul class="article-list">
             {% for article in articles %}
-            <li class="article-item">
+            <li class="article-item {% if a and a.id == article.id %}is-editing{% endif %}">
                 <div>
                     <div style="font-weight:bold;">{{ article.title }}</div>
                     <div class="article-meta">{{ article.category }} &bull; {{ article.publish_date }} &bull; /blog/{{ article.slug }}</div>
                 </div>
-                <form action="{{ url_for('delete_article', id=article.id) }}" method="POST" onsubmit="return confirm('WARNING: Are you sure you want to permanently delete this digital asset?');">
-                    <button type="submit" class="btn-delete">DELETE</button>
-                </form>
+                <div class="item-actions">
+                    <a href="{{ url_for('edit_article', id=article.id) }}" class="btn-edit">EDIT</a>
+                    <form action="{{ url_for('delete_article', id=article.id) }}" method="POST" onsubmit="return confirm('WARNING: Are you sure you want to permanently delete this digital asset?');">
+                        <button type="submit" class="btn-delete">DELETE</button>
+                    </form>
+                </div>
             </li>
             {% endfor %}
         </ul>

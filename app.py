@@ -76,6 +76,21 @@ def rows_to_dicts(rows):
     return rows if rows else []
 
 
+def load_article_index():
+    """The sidebar asset list — shared by the dashboard and the edit screen."""
+    try:
+        resp = (
+            supabase.table('articles')
+            .select('id, title, category, publish_date, slug')
+            .order('created_at', desc=True)
+            .execute()
+        )
+        return rows_to_dicts(resp.data)
+    except Exception as e:
+        print(f"[ECOMMDOTS] load_article_index error: {e}")
+        return []
+
+
 # ──────────────────────────────────────────────
 # 1. PUBLIC ROUTES (FRONTEND)
 # ──────────────────────────────────────────────
@@ -375,20 +390,94 @@ def admin_dashboard():
             flash(f'Deploy Failed: {str(e)}')
 
     # ── Load article list ──
-    try:
-        articles_resp = (
-            supabase.table('articles')
-            .select('id, title, category, publish_date, slug')
-            .order('created_at', desc=True)
-            .execute()
-        )
-        articles = rows_to_dicts(articles_resp.data)
-    except Exception as e:
-        print(f"[ECOMMDOTS] admin GET error: {e}")
-        articles = []
-        flash(f'Could not load articles: {str(e)}')
+    articles = load_article_index()
 
     return render_template('admin.html', articles=articles)
+
+
+@app.route('/admin/edit/<int:id>', methods=['GET', 'POST'])
+def edit_article(id):
+    """Loads an existing article back into the publishing form and saves changes."""
+    if not session.get('logged_in'):
+        return redirect(url_for('admin_login'))
+
+    # ── Save changes ──
+    if request.method == 'POST':
+        try:
+            title = request.form['title']
+            # The slug is NOT regenerated from the title. Live articles are
+            # already indexed at /blog/<slug>, so it only changes when the
+            # admin edits the slug field on purpose.
+            slug = generate_slug(request.form.get('slug') or title)
+
+            clash = (
+                supabase.table('articles')
+                .select('id')
+                .eq('slug', slug)
+                .neq('id', id)
+                .limit(1)
+                .execute()
+            )
+
+            if clash.data:
+                # Re-render with what they typed so the edit isn't lost.
+                flash(f'Update Failed: another article already uses the slug "{slug}".')
+                submitted = request.form.to_dict()
+                submitted['id']      = id
+                submitted['is_wide'] = 'is_wide' in request.form
+                return render_template(
+                    'admin.html',
+                    articles=load_article_index(),
+                    edit_article=submitted
+                )
+
+            supabase.table('articles').update({
+                'title':         title,
+                'slug':          slug,
+                'category':      request.form['category'],
+                'subcategory':   request.form['subcategory'],
+                'read_time':     int(request.form['read_time']),
+                'excerpt':       request.form['excerpt'],
+                'content':       request.form['content'],
+                'author_name':   request.form['author_name'],
+                'author_image':  request.form['author_image'],
+                'thumbnail_url': request.form['thumbnail_url'],
+                'is_wide':       'is_wide' in request.form,
+                # publish_date and is_featured are deliberately untouched —
+                # editing an article is not republishing it.
+            }).eq('id', id).execute()
+
+            flash('Article updated. Changes are live.')
+            return redirect(url_for('admin_dashboard'))
+
+        except Exception as e:
+            print(f"[ECOMMDOTS] edit_article POST error: {e}")
+            flash(f'Update Failed: {str(e)}')
+            return redirect(url_for('edit_article', id=id))
+
+    # ── Load the article into the form ──
+    try:
+        resp = (
+            supabase.table('articles')
+            .select('*')
+            .eq('id', id)
+            .limit(1)
+            .execute()
+        )
+        if not resp.data:
+            flash('That article no longer exists.')
+            return redirect(url_for('admin_dashboard'))
+        article = resp.data[0]
+    except Exception as e:
+        print(f"[ECOMMDOTS] edit_article GET error: {e}")
+        flash(f'Could not load that article: {str(e)}')
+        return redirect(url_for('admin_dashboard'))
+
+    return render_template(
+        'admin.html',
+        articles=load_article_index(),
+        edit_article=article
+    )
 
 
 # ── CRITICAL: parameter name must be "id" to match admin.html template ──
